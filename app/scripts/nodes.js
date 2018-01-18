@@ -234,4 +234,8 @@ nodes.nodeList = {
 
 
 nodes.ethPrice = require('./nodeHelpers/ethPrice');
+
+nodes.token = {
+    'abi': require('./abiDefinitions/tokenAbi.json'),
+};
 module.exports = nodes;

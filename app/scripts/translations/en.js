@@ -617,6 +617,8 @@ en.data = {
     CREATETOKEN_decimals_short: 'From 0 to 8',
     CREATETOKEN_preview: 'Preview',
     CREATETOKEN_generate: 'Generate',
+    CREATETOKEN_fee: 'Fee',
+    CREATETOKEN_Warning_1:'Your balance is not enough to pay transaction fees',
     
     HELP_0_Desc_1: 'MyEtherWallet gives you the ability to generate new wallets so you can store your Ether yourself, not on an exchange. This process happens entirely on your computer, not our servers. Therefore, when you generate a new wallet, **you are responsible for safely backing it up**.',
     HELP_0_Desc_2: 'Create a new wallet.',
