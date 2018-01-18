@@ -36,7 +36,7 @@
 
     <!-- Total tokens -->
     <article class="clearfix">
-        <section class="col-sm-11">
+        <section class="col-xs-11">
             <label translate="CREATETOKEN_totalTokens">
                 Total tokens
             </label>
@@ -83,11 +83,17 @@
             </p>
         </section>
         <section class="col-xs-11">
-            <a class="btn btn-primary btn-block" type="submit" ng-click="generateToken()" translate="CREATETOKEN_generate">
+            <a class="btn btn-primary btn-block"
+               type="submit"
+               ng-click="generateToken()"
+               data-toggle="modal"
+               data-target="#deployToken"
+               translate="CREATETOKEN_generate">
                 Generate
             </a>
         </section>
     </article>
+    @@if (site === 'mew' ) { @@include( '../includes/tokenCreation-content-modal.tpl', { "site": "mew" } ) }
 
 </article>
 <!-- / Content -->

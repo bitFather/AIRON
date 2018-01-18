@@ -92,23 +92,33 @@ var contractsCtrl = function($scope, $sce, walletService) {
     }
     $scope.generateTx = function() {
         try {
+            console.log($scope.tx)
             if ($scope.wallet == null) throw globalFuncs.errorMsgs[3];
             else if (!ethFuncs.validateHexString($scope.tx.data)) throw globalFuncs.errorMsgs[9];
             else if (!globalFuncs.isNumeric($scope.tx.gasLimit) || parseFloat($scope.tx.gasLimit) <= 0) throw globalFuncs.errorMsgs[8];
             $scope.tx.data = ethFuncs.sanitizeHex($scope.tx.data);
+            console.log($scope.tx.data)
+            console.log(1)
             ajaxReq.getTransactionData($scope.wallet.getAddressString(), function(data) {
+                console.log(2)
+                console.log(data)
                 if (data.error) $scope.notifier.danger(data.msg);
                 data = data.data;
                 $scope.tx.to = $scope.tx.to == '' ? '0xCONTRACT' : $scope.tx.to;
                 $scope.tx.contractAddr = $scope.tx.to == '0xCONTRACT' ? ethFuncs.getDeteministicContractAddress($scope.wallet.getAddressString(), data.nonce) : '';
                 var txData = uiFuncs.getTxData($scope);
+                console.log(txData)
+                console.log(3)
                 uiFuncs.generateTx(txData, function(rawTx) {
+                    console.log(4)
                     if (!rawTx.isError) {
+                        console.log(5)
                         $scope.rawTx = rawTx.rawTx;
                         $scope.signedTx = rawTx.signedTx;
 
                         $scope.showRaw = true;
                     } else {
+                        console.log(6)
                         $scope.showRaw = false;
                         $scope.notifier.danger(rawTx.error);
                     }

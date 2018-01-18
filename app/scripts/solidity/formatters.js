@@ -24,6 +24,7 @@ var BigNumber = require('bignumber.js');
 var utils = require('./utils');
 var c = require('./config');
 var SolidityParam = require('./param');
+var Web3 = require('web3');
 
 
 /**
