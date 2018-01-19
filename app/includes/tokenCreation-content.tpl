@@ -65,27 +65,13 @@
     <!-- ABI Textarea -->
     <article class="clearfix">
         <section class="col-xs-11">
-            <label translate="CREATETOKEN_preview">
-                Preview
-            </label>
-            <textarea class="form-control"
-                      rows="6"
-                      readonly=true
-                      ng-model="contract.abi">
-            </textarea>
-        </section>
-        <section class="col-xs-11">
-            <label translate="CREATETOKEN_fee" class="red-fee" ng-show="tokenCalculate.fee != null">
-                {{'CREATETOKEN_fee' | translate }}
-            </label>
-            <p translate="CREATETOKEN_Warning_1" class="red-fee" ng-show="tokenCalculate.isFeeErr">
-                Your balance is not enough to pay transaction fees
-            </p>
+            <div class="red-fee" ng-show="tx.gasLimit !== null">
+                {{'CREATETOKEN_fee' | translate }} {{calculateFee()}} ether
+            </div>
         </section>
         <section class="col-xs-11">
             <a class="btn btn-primary btn-block"
                type="submit"
-               ng-click="generateToken()"
                data-toggle="modal"
                data-target="#deployToken"
                translate="CREATETOKEN_generate">

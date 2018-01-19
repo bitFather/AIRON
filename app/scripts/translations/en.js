@@ -614,7 +614,7 @@ en.data = {
     CREATETOKEN_totalTokens: 'Total tokens',
     CREATETOKEN_decimals: 'Decimals',
     CREATETOKEN_decimals_help: 'This field defines the number of decimal signs for your token',
-    CREATETOKEN_decimals_short: 'From 0 to 8',
+    CREATETOKEN_decimals_short: 'From 0 to 18',
     CREATETOKEN_preview: 'Preview',
     CREATETOKEN_generate: 'Generate',
     CREATETOKEN_fee: 'Fee',
