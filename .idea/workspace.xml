@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ecc9755-455e-4a90-8732-9dd35fdcb01a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/contracts/DetailedERC20.sol" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/tokenCreation-content-modal.tpl" afterPath="$PROJECT_DIR$/app/includes/tokenCreation-content-modal.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/tokenCreation-content.tpl" afterPath="$PROJECT_DIR$/app/includes/tokenCreation-content.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/layouts/index.html" afterPath="$PROJECT_DIR$/app/layouts/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/abiDefinitions/tokenAbi.json" afterPath="$PROJECT_DIR$/app/scripts/abiDefinitions/tokenAbi.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/globalService.js" afterPath="$PROJECT_DIR$/app/scripts/services/globalService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/header.tpl" afterPath="$PROJECT_DIR$/app/includes/header.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/tokenCreation.tpl" afterPath="$PROJECT_DIR$/app/includes/tokenCreation.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/en.js" afterPath="$PROJECT_DIR$/app/scripts/translations/en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/ru.js" afterPath="$PROJECT_DIR$/app/scripts/translations/ru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/translate.js" afterPath="$PROJECT_DIR$/app/scripts/translations/translate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/cx-wallet.html" afterPath="$PROJECT_DIR$/chrome-extension/cx-wallet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/helpers.html" afterPath="$PROJECT_DIR$/chrome-extension/helpers.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/index.html" afterPath="$PROJECT_DIR$/chrome-extension/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/js/etherwallet-master.js" afterPath="$PROJECT_DIR$/chrome-extension/js/etherwallet-master.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/cx-wallet.html" afterPath="$PROJECT_DIR$/dist/cx-wallet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/helpers.html" afterPath="$PROJECT_DIR$/dist/helpers.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/etherwallet-master.js" afterPath="$PROJECT_DIR$/dist/js/etherwallet-master.js" />
     </list>
@@ -27,41 +28,86 @@
     <splitter split-orientation="horizontal" split-proportion="0.56736714">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="globalService.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/services/globalService.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="182">
-                  <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/layouts/index.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="225">
-                  <caret line="15" column="72" lean-forward="true" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+                  <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="translate.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="translate.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/scripts/translations/translate.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="506">
-                  <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+                <state relative-caret-position="447">
+                  <caret line="58" column="2" lean-forward="false" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tokenCreation-content.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation-content.tpl">
+          <file leaf-file-name="header.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/includes/header.tpl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="365">
-                  <caret line="76" column="48" lean-forward="true" selection-start-line="76" selection-start-column="48" selection-end-line="76" selection-end-column="48" />
+                <state relative-caret-position="186">
+                  <caret line="114" column="205" lean-forward="false" selection-start-line="114" selection-start-column="198" selection-end-line="114" selection-end-column="205" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="footerCtrl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/footerCtrl.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="210">
+                  <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="40" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="globalFuncs.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/globalFuncs.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3165">
+                  <caret line="211" column="52" lean-forward="false" selection-start-line="211" selection-start-column="52" selection-end-line="211" selection-end-column="52" />
+                  <folding>
+                    <marker date="1515918546850" expanded="true" signature="1996:2010" ph="..." />
+                    <marker date="1515918546850" expanded="true" signature="2082:2117" ph="..." />
+                    <marker date="1515918546850" expanded="true" signature="2522:2540" ph="..." />
+                    <marker date="1515918546850" expanded="true" signature="2868:2886" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tabsCtrl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tabsCtrl.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="193">
+                  <caret line="260" column="62" lean-forward="false" selection-start-line="260" selection-start-column="62" selection-end-line="260" selection-end-column="62" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="en.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/translations/en.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="178">
+                  <caret line="414" column="33" lean-forward="false" selection-start-line="414" selection-start-column="33" selection-end-line="415" selection-end-column="38" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ru.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/translations/ru.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="260">
+                  <caret line="281" column="17" lean-forward="false" selection-start-line="281" selection-start-column="4" selection-end-line="281" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -70,58 +116,18 @@
           <file leaf-file-name="tokenCreation.tpl" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation.tpl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="10" />
+                <state relative-caret-position="300">
+                  <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tokenCreation.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js">
+          <file leaf-file-name="domainsale.tpl" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/includes/domainsale.tpl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="93" column="18" lean-forward="true" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DetailedERC20.sol" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/contracts/DetailedERC20.sol">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="572">
-                  <caret line="117" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="tokenAbi.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/abiDefinitions/tokenAbi.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="24" column="6" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="275" selection-end-column="1" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="tokenCreation-content-modal.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation-content-modal.tpl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" column="69" lean-forward="true" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ethFuncs.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/ethFuncs.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-949">
-                  <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="22" />
+                <state relative-caret-position="405">
+                  <caret line="27" column="65" lean-forward="false" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
                   <folding />
                 </state>
               </provider>
@@ -145,7 +151,7 @@
             <entry file="file://$PROJECT_DIR$/app/includes/sendTx-content.tpl">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="160">
-                  <caret line="170" column="14" lean-forward="true" selection-start-line="170" selection-start-column="14" selection-end-line="170" selection-end-column="14" />
+                  <caret line="170" column="14" lean-forward="false" selection-start-line="170" selection-start-column="14" selection-end-line="170" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
@@ -236,20 +242,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CREATETOKEN_decimals_short</find>
-      <find>bab</find>
-      <find>ba</find>
-      <find>babel</find>
-      <find>canGenerateToken</find>
-      <find>digest</find>
-      <find>generateToken</find>
-      <find>ng-show</find>
-      <find>calculateFee</find>
-      <find>createRawContract</find>
-      <find>show</find>
-      <find>tx.gasLimit</find>
-      <find>gasAdjustment</find>
-      <find>watch</find>
       <find>btn</find>
       <find>btn-primary</find>
       <find>btn-block</find>
@@ -265,15 +257,30 @@
       <find>gasLimit</find>
       <find>estimateGas</find>
       <find>contracts.tpl</find>
+      <find>Polski</find>
       <find>langua</find>
+      <find>English</find>
+      <find>Cata</find>
+      <find>curl</find>
+      <find>curLang</find>
+      <find>CREATETOKEN_Warning_4</find>
+      <find>CREATETOKEN_Warning_3</find>
+      <find>Create t</find>
+      <find>x_W</find>
+      <find>Domain</find>
+      <find>english</find>
+      <find>NAV_SendEther</find>
+      <find>NAV_To</find>
+      <find>NAV_DomainSale</find>
     </findStrings>
     <replaceStrings>
       <replace>AironWallet</replace>
     </replaceStrings>
     <dirStrings>
+      <dir>$PROJECT_DIR$/app/scripts</dir>
+      <dir>$PROJECT_DIR$/app/fonts</dir>
       <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/app</dir>
-      <dir>$PROJECT_DIR$/app/scripts</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -296,16 +303,19 @@
         <option value="$PROJECT_DIR$/app/scripts/solidity/formatters.js" />
         <option value="$PROJECT_DIR$/app/scripts/main.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/contractsCtrl.js" />
-        <option value="$PROJECT_DIR$/app/includes/tokenCreation.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/contracts/DetailedERC20.sol" />
         <option value="$PROJECT_DIR$/app/scripts/abiDefinitions/tokenAbi.json" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/sendTxCtrl.js" />
-        <option value="$PROJECT_DIR$/app/scripts/translations/en.js" />
         <option value="$PROJECT_DIR$/app/includes/tokenCreation-content.tpl" />
         <option value="$PROJECT_DIR$/app/includes/tokenCreation-content-modal.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/globalService.js" />
         <option value="$PROJECT_DIR$/app/layouts/index.html" />
+        <option value="$PROJECT_DIR$/app/scripts/translations/translate.js" />
+        <option value="$PROJECT_DIR$/app/includes/header.tpl" />
+        <option value="$PROJECT_DIR$/app/scripts/translations/en.js" />
+        <option value="$PROJECT_DIR$/app/scripts/translations/ru.js" />
+        <option value="$PROJECT_DIR$/app/includes/tokenCreation.tpl" />
       </list>
     </option>
   </component>
@@ -350,6 +360,19 @@
               <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
               <item name="mew-client" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="translations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
@@ -407,7 +430,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54389000" />
+    <option name="totallyTimeSpent" value="55991000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="23" width="1920" height="1057" extended-state="6" />
@@ -452,13 +475,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../neuron-crypto-api/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.npm/_logs/2018-01-18T09_42_50_206Z-debug.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="465">
@@ -553,19 +569,6 @@
         <state relative-caret-position="213">
           <caret line="82" column="47" lean-forward="false" selection-start-line="82" selection-start-column="47" selection-end-line="82" selection-end-column="47" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/globalFuncs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1598">
-          <caret line="198" column="5" lean-forward="true" selection-start-line="198" selection-start-column="5" selection-end-line="198" selection-end-column="5" />
-          <folding>
-            <marker date="1515918546850" expanded="true" signature="1996:2010" ph="..." />
-            <marker date="1515918546850" expanded="true" signature="2082:2117" ph="..." />
-            <marker date="1515918546850" expanded="true" signature="2522:2540" ph="..." />
-            <marker date="1515918546850" expanded="true" signature="2868:2886" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,40 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/translations/ru.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="259" column="14" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/header.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="154" column="12" lean-forward="false" selection-start-line="154" selection-start-column="12" selection-end-line="154" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#p#3;n#div#0;n#ul#0;n#span#2;n#div#0;n#section#0;n#section#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/footerCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="30" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tabsCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="18" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -732,14 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-374">
           <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/translations/en.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="616" column="44" lean-forward="false" selection-start-line="616" selection-start-column="44" selection-end-line="616" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -795,7 +756,7 @@
     <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation-content.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
-          <caret line="76" column="48" lean-forward="true" selection-start-line="76" selection-start-column="48" selection-end-line="76" selection-end-column="48" />
+          <caret line="76" column="48" lean-forward="false" selection-start-line="76" selection-start-column="48" selection-end-line="76" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -803,15 +764,7 @@
     <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation-content-modal.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="69" lean-forward="true" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="10" />
+          <caret line="12" column="69" lean-forward="false" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
           <folding />
         </state>
       </provider>
@@ -827,7 +780,7 @@
     <entry file="file://$PROJECT_DIR$/app/scripts/abiDefinitions/tokenAbi.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="24" column="6" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="275" selection-end-column="1" />
+          <caret line="24" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="275" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -835,7 +788,7 @@
     <entry file="file://$PROJECT_DIR$/app/includes/sendTx-content.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
-          <caret line="170" column="14" lean-forward="true" selection-start-line="170" selection-start-column="14" selection-end-line="170" selection-end-column="14" />
+          <caret line="170" column="14" lean-forward="false" selection-start-line="170" selection-start-column="14" selection-end-line="170" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -850,8 +803,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="93" column="18" lean-forward="true" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
+        <state relative-caret-position="138">
+          <caret line="93" column="18" lean-forward="false" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -867,15 +820,84 @@
     <entry file="file://$PROJECT_DIR$/app/layouts/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="72" lean-forward="true" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+          <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/translations/translate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state relative-caret-position="447">
+          <caret line="58" column="2" lean-forward="false" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/header.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="114" column="205" lean-forward="false" selection-start-line="114" selection-start-column="198" selection-end-line="114" selection-end-column="205" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/globalFuncs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3165">
+          <caret line="211" column="52" lean-forward="false" selection-start-line="211" selection-start-column="52" selection-end-line="211" selection-end-column="52" />
+          <folding>
+            <marker date="1515918546850" expanded="true" signature="1996:2010" ph="..." />
+            <marker date="1515918546850" expanded="true" signature="2082:2117" ph="..." />
+            <marker date="1515918546850" expanded="true" signature="2522:2540" ph="..." />
+            <marker date="1515918546850" expanded="true" signature="2868:2886" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/footerCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/translations/en.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="414" column="33" lean-forward="false" selection-start-line="414" selection-start-column="33" selection-end-line="415" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tabsCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="260" column="62" lean-forward="false" selection-start-line="260" selection-start-column="62" selection-end-line="260" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/translations/ru.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="281" column="17" lean-forward="false" selection-start-line="281" selection-start-column="4" selection-end-line="281" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/domainsale.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="65" lean-forward="false" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
           <folding />
         </state>
       </provider>

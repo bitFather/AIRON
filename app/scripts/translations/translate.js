@@ -1,8 +1,8 @@
  'use strict';
+/*
   var ca = require('./ca');
   var de = require('./de');
   var el = require('./el');
-  var en = require('./en');
   var es = require('./es');
   var fa = require('./fa');
   var fi = require('./fi');
@@ -17,18 +17,20 @@
   var no = require('./no');
   var pl = require('./pl');
   var pt = require('./pt');
-  var ru = require('./ru');
   var th = require('./th');
   var tr = require('./tr');
   var vi = require('./vi');
   var zhcn = require('./zhcn');
   var zhtw = require('./zhtw');
+  */
+ var en = require('./en');
+ var ru = require('./ru');
 
  var translate = function($translateProvider) {
+     /*
   $translateProvider.translations(ca.code, translate.marked(ca.data));
   $translateProvider.translations(de.code, translate.marked(de.data));
   $translateProvider.translations(el.code, translate.marked(el.data));
-  $translateProvider.translations(en.code, translate.marked(en.data));
   $translateProvider.translations(es.code, translate.marked(es.data));
   $translateProvider.translations(fa.code, translate.marked(fa.data));
   $translateProvider.translations(fi.code, translate.marked(fi.data));
@@ -43,12 +45,14 @@
   $translateProvider.translations(no.code, translate.marked(no.data));
   $translateProvider.translations(pl.code, translate.marked(pl.data));
   $translateProvider.translations(pt.code, translate.marked(pt.data));
-  $translateProvider.translations(ru.code, translate.marked(ru.data));
   $translateProvider.translations(th.code, translate.marked(th.data));
   $translateProvider.translations(tr.code, translate.marked(tr.data));
   $translateProvider.translations(vi.code, translate.marked(vi.data));
   $translateProvider.translations(zhcn.code, translate.marked(zhcn.data));
   $translateProvider.translations(zhtw.code, translate.marked(zhtw.data));
+  */
+     $translateProvider.translations(en.code, translate.marked(en.data));
+     $translateProvider.translations(ru.code, translate.marked(ru.data));
   $translateProvider.preferredLanguage('en');
   $translateProvider.fallbackLanguage('en');
   $translateProvider.useSanitizeValueStrategy(null);

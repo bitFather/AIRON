@@ -615,13 +615,10 @@ en.data = {
     CREATETOKEN_decimals: 'Decimals',
     CREATETOKEN_decimals_help: 'This field defines the number of decimal signs for your token',
     CREATETOKEN_decimals_short: 'From 0 to 18',
-    CREATETOKEN_preview: 'Preview',
     CREATETOKEN_generate: 'Generate',
     CREATETOKEN_fee: 'Fee',
-    CREATETOKEN_Warning_1:'Your balance is not enough to pay transaction fees',
     CREATETOKEN_Warning_2: 'You are about to **deploy a token**.',
     CREATETOKEN_Warning_3: 'It will be deployed on the following network:',
-    CREATETOKEN_Warning_4: 'You are about to **execute a function on contract**.',
     
     HELP_0_Desc_1: 'MyEtherWallet gives you the ability to generate new wallets so you can store your Ether yourself, not on an exchange. This process happens entirely on your computer, not our servers. Therefore, when you generate a new wallet, **you are responsible for safely backing it up**.',
     HELP_0_Desc_2: 'Create a new wallet.',
