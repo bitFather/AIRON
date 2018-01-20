@@ -81,6 +81,9 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
                 $scope.tx.gasLimit = null
                 return
             }
+            let calculatedTotalCount = new BigNumber($scope.token.totalCount).mul(
+                new BigNumber(10).pow($scope.token.decimals),
+            )
             $scope.tx.data = $scope.contract
                 .deploy({
                     data: $scope.tokenBytecode,
@@ -89,7 +92,7 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
                         $scope.token.name,
                         $scope.token.description,
                         $scope.token.decimals,
-                        $scope.token.totalCount,
+                        calculatedTotalCount,
                     ],
                 })
                 .encodeABI()
@@ -125,7 +128,6 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
             let calculatedTotalCount = new BigNumber($scope.token.totalCount).mul(
                 new BigNumber(10).pow($scope.token.decimals),
             )
-            console.log(calculatedTotalCount)
             $scope.tx.data = $scope.contract
                 .deploy({
                     data: $scope.tokenBytecode,
@@ -197,7 +199,6 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
                 $scope.notifier.success(
                     globalFuncs.successMsgs[2] + '<br />' + resp.data + '<br />' + bExStr + contractAddr,
                 )
-                console.log(resp.data)
             } else {
                 $scope.notifier.danger(resp.error)
             }
