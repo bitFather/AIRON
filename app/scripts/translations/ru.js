@@ -323,7 +323,7 @@ ru.data = {
     CREATETOKEN_decimals_help: 'Это поле определяет количество знаков после запятой для токена',
     CREATETOKEN_decimals_short: 'От 0 до 18',
     CREATETOKEN_generate: 'Сгенерировать',
-    CREATETOKEN_fee: 'Коммисия',
+    CREATETOKEN_fee: 'Комиссия',
     CREATETOKEN_Warning_2: 'Вы собираетесь **развернуть токен**.',
     CREATETOKEN_Warning_3: 'Он будет развернут на следующей сети:',
 
