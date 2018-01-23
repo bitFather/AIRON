@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ecc9755-455e-4a90-8732-9dd35fdcb01a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/logo-myetherwallet.svg" afterPath="$PROJECT_DIR$/app/images/logo-myetherwallet.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/onboardingModal.tpl" afterPath="$PROJECT_DIR$/app/includes/onboardingModal.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/tokenCreation-content.tpl" afterPath="$PROJECT_DIR$/app/includes/tokenCreation-content.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html" afterPath="$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/globalFuncs.js" afterPath="$PROJECT_DIR$/app/scripts/globalFuncs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/en.js" afterPath="$PROJECT_DIR$/app/scripts/translations/en.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/ru.js" afterPath="$PROJECT_DIR$/app/scripts/translations/ru.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/cx-wallet.html" afterPath="$PROJECT_DIR$/chrome-extension/cx-wallet.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/helpers.html" afterPath="$PROJECT_DIR$/chrome-extension/helpers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/index.html" afterPath="$PROJECT_DIR$/chrome-extension/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/js/etherwallet-master.js" afterPath="$PROJECT_DIR$/chrome-extension/js/etherwallet-master.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/cx-wallet.html" afterPath="$PROJECT_DIR$/dist/cx-wallet.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/helpers.html" afterPath="$PROJECT_DIR$/dist/helpers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/logo-myetherwallet.svg" afterPath="$PROJECT_DIR$/dist/images/logo-myetherwallet.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/etherwallet-master.js" afterPath="$PROJECT_DIR$/dist/js/etherwallet-master.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -91,11 +74,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ru.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ru.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/scripts/translations/ru.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="114">
-                  <caret line="603" column="31" lean-forward="false" selection-start-line="619" selection-start-column="86" selection-end-line="622" selection-end-column="92" />
+                <state relative-caret-position="183">
+                  <caret line="325" column="31" lean-forward="false" selection-start-line="325" selection-start-column="31" selection-end-line="325" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
@@ -123,7 +106,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="sendTx-content.tpl" pinned="false" current-in-tab="true">
+          <file leaf-file-name="sendTx-content.tpl" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/includes/sendTx-content.tpl">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="318">
@@ -158,7 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getEstimatedGas</find>
       <find>tabs</find>
       <find>gasL</find>
       <find>estimateGasLimit</find>
@@ -188,6 +170,7 @@
       <find>token</find>
       <find>errorMsgs</find>
       <find>generateToken</find>
+      <find>sign</find>
     </findStrings>
     <replaceStrings>
       <replace>AironWallet</replace>
@@ -239,11 +222,11 @@
         <option value="$PROJECT_DIR$/app/layouts/index.html" />
         <option value="$PROJECT_DIR$/app/includes/onboardingModal.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html" />
-        <option value="$PROJECT_DIR$/app/scripts/translations/ru.js" />
         <option value="$PROJECT_DIR$/app/scripts/globalFuncs.js" />
         <option value="$PROJECT_DIR$/app/scripts/translations/en.js" />
         <option value="$PROJECT_DIR$/app/includes/tokenCreation-content.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" />
+        <option value="$PROJECT_DIR$/app/scripts/translations/ru.js" />
       </list>
     </option>
   </component>
@@ -355,12 +338,12 @@
       <workItem from="1516216268305" duration="371000" />
       <workItem from="1516644809788" duration="7080000" />
       <workItem from="1516693047519" duration="306000" />
-      <workItem from="1516694548295" duration="3417000" />
+      <workItem from="1516694548295" duration="3807000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71741000" />
+    <option name="totallyTimeSpent" value="72131000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="23" width="1920" height="1057" extended-state="6" />
@@ -762,14 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/translations/ru.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="603" column="31" lean-forward="false" selection-start-line="619" selection-start-column="86" selection-end-line="622" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/includes/sendTx-content.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -790,6 +765,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
           <caret line="85" column="37" lean-forward="true" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/translations/ru.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="325" column="31" lean-forward="false" selection-start-line="325" selection-start-column="31" selection-end-line="325" selection-end-column="31" />
           <folding />
         </state>
       </provider>
