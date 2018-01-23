@@ -38,6 +38,18 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
         if (!$scope.$$phase) $scope.$apply()
     }
 
+    $scope.getFromLS = (key, errorMsg) => {
+        var localStorageItemString = globalFuncs.localStorage.getItem(key);
+        if (!localStorageItemString && errorMsg) {
+            throw Error(errorMsg)
+        } else if (!localStorageItemString) {
+            return null
+        }
+        else {
+            return JSON.parse(localStorageItemString)
+        }
+    }
+
     $scope.$watch(
         function() {
             if (walletService.wallet == null) return null
@@ -50,7 +62,10 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
             $scope.wallet.setBalance(applyScope)
             $scope.wallet.setTokens()
             $scope.tx.nonce = 0
-            $scope.web3 = new window.Web3(new window.Web3.providers.HttpProvider('http://localhost:8545'))
+            let current = $scope.getFromLS("curNode", "").key;
+            console.log(current)
+            console.log(nodes.nodeList[current])
+            $scope.web3 = new window.Web3(new window.Web3.providers.HttpProvider(nodes.nodeList[current].lib.SERVERURL))
             $scope.contract = new $scope.web3.eth.Contract(nodes.token.abi)
         },
     )
@@ -96,16 +111,20 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
                     ],
                 })
                 .encodeABI()
-            $scope.web3.eth
-                .estimateGas({
-                    from: $scope.wallet != null ? $scope.wallet.getAddressString() : globalFuncs.donateAddress,
-                    data: $scope.tx.data,
-                })
-                .then(fee => {
-                    $scope.$apply(function() {
-                        $scope.tx.gasLimit = fee
-                    })
-                })
+            let data = {
+                from: $scope.wallet.getAddressString(),
+                value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(etherUnits.toWei(0, $scope.tx.unit))),
+                data: ethFuncs.sanitizeHex('0x' + $scope.tx.data),
+            }
+            console.log(data)
+            ethFuncs.estimateGas(data, function(data) {
+                if (!data.error) {
+                    $scope.tx.gasLimit = data.data;
+                }
+                else {
+                    console.log(data)
+                }
+            });
         },
         true,
     )
@@ -140,13 +159,17 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
                     ],
                 })
                 .encodeABI()
-            $scope.web3.eth
-                .estimateGas({
-                    from: $scope.wallet != null ? $scope.wallet.getAddressString() : globalFuncs.donateAddress,
-                    data: $scope.tx.data,
-                })
-                .then(fee => {
-                    $scope.tx.gasLimit = fee
+            let data = {
+                from: $scope.wallet.getAddressString(),
+                value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(etherUnits.toWei(0, $scope.tx.unit))),
+                data: ethFuncs.sanitizeHex('0x' + $scope.tx.data),
+            }
+            ethFuncs.estimateGas(data,
+                fee => {
+                    if (!fee.error) {
+                        if (fee.data == '-1') throw globalFuncs.errorMsgs[21];
+                        $scope.tx.gasLimit = fee.data;
+                    } else throw fee.msg;
                     if ($scope.wallet == null) throw globalFuncs.errorMsgs[3]
                     else if (!ethFuncs.validateHexString($scope.tx.data)) throw globalFuncs.errorMsgs[9]
                     else if (!globalFuncs.isNumeric($scope.tx.gasLimit) || parseFloat($scope.tx.gasLimit) <= 0)
@@ -155,11 +178,8 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
                     ajaxReq.getTransactionData($scope.wallet.getAddressString(), function(data) {
                         if (data.error) $scope.notifier.danger(data.msg)
                         data = data.data
-                        $scope.tx.to = $scope.tx.to == '' ? '0xCONTRACT' : $scope.tx.to
-                        $scope.tx.contractAddr =
-                            $scope.tx.to == '0xCONTRACT'
-                                ? ethFuncs.getDeteministicContractAddress($scope.wallet.getAddressString(), data.nonce)
-                                : ''
+                        $scope.tx.to = '0xCONTRACT'
+                        $scope.tx.contractAddr = ethFuncs.getDeteministicContractAddress($scope.wallet.getAddressString(), data.nonce)
                         var txData = uiFuncs.getTxData($scope)
                         uiFuncs.generateTx(txData, function(rawTx) {
                             if (!rawTx.isError) {
