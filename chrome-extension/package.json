@@ -1,8 +1,8 @@
 {
-    "name": "MyEtherWallet",
+    "name": "AironWallet",
     "version": "3.11.2.3",
-    "description": "An NPM dist of MyEtherWallet. For easier downloading & updating via CLI.",
-    "author": "MyEtherWallet",
+    "description": "An NPM dist of AironWallet. For easier downloading & updating via CLI.",
+    "author": "AironWallet",
     "license": "ISC",
     "devDependencies": {
         "open": "0.0.5"

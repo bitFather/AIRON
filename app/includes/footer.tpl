@@ -1,7 +1,7 @@
 <section class="pre-footer">
   <div class="container">
     <p>
-      MyEtherWallet.com does not hold your keys for you. We cannot access accounts, recover keys, reset passwords, nor reverse transactions. Protect your keys &amp; always check that you are on correct URL.
+      AironWallet.com does not hold your keys for you. We cannot access accounts, recover keys, reset passwords, nor reverse transactions. Protect your keys &amp; always check that you are on correct URL.
       <a role="link" tabindex="0" data-toggle="modal" data-target="#disclaimerModal">
         You are responsible for your security.
       </a>
@@ -40,7 +40,7 @@
       </p>
 
       <p>
-        &copy; 2018 MyEtherWallet, LLC
+        &copy; 2018 AironWallet, LLC
       </p>
 
     </section>
@@ -95,8 +95,8 @@
     <section class="footer--righ">
 
       <p>
-        <a aria-label="website via my ether wallet dot com" href="https://www.MyEtherWallet.com" target="_blank" rel="noopener noreferrer" role="link" tabindex="0">
-          MyEtherWallet.com
+        <a aria-label="website via my ether wallet dot com" href="https://www.AironWallet.com" target="_blank" rel="noopener noreferrer" role="link" tabindex="0">
+          AironWallet.com
         </a>
       </p>
 

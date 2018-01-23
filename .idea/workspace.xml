@@ -2,7 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ecc9755-455e-4a90-8732-9dd35fdcb01a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/logo-myetherwallet.min.svg" afterPath="$PROJECT_DIR$/app/images/logo-myetherwallet.min.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/browser_action/browser_action.html" afterPath="$PROJECT_DIR$/app/includes/browser_action/browser_action.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/footer-disclaimer-modal.tpl" afterPath="$PROJECT_DIR$/app/includes/footer-disclaimer-modal.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/footer.tpl" afterPath="$PROJECT_DIR$/app/includes/footer.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/footerEmbedded.tpl" afterPath="$PROJECT_DIR$/app/includes/footerEmbedded.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/header-node-modal.tpl" afterPath="$PROJECT_DIR$/app/includes/header-node-modal.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/header.tpl" afterPath="$PROJECT_DIR$/app/includes/header.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/help.tpl" afterPath="$PROJECT_DIR$/app/includes/help.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/onboardingModal.tpl" afterPath="$PROJECT_DIR$/app/includes/onboardingModal.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/sendTx-content.tpl" afterPath="$PROJECT_DIR$/app/includes/sendTx-content.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/package.json" afterPath="$PROJECT_DIR$/app/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html" afterPath="$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/globalFuncs.js" afterPath="$PROJECT_DIR$/app/scripts/globalFuncs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/en.js" afterPath="$PROJECT_DIR$/app/scripts/translations/en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/browser_action/browser_action.html" afterPath="$PROJECT_DIR$/chrome-extension/browser_action/browser_action.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/cx-wallet.html" afterPath="$PROJECT_DIR$/chrome-extension/cx-wallet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/embedded.html" afterPath="$PROJECT_DIR$/chrome-extension/embedded.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/helpers.html" afterPath="$PROJECT_DIR$/chrome-extension/helpers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/images/logo-myetherwallet.min.svg" afterPath="$PROJECT_DIR$/chrome-extension/images/logo-myetherwallet.min.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/index.html" afterPath="$PROJECT_DIR$/chrome-extension/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/js/etherwallet-master.js" afterPath="$PROJECT_DIR$/chrome-extension/js/etherwallet-master.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/package.json" afterPath="$PROJECT_DIR$/chrome-extension/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/signmsg.html" afterPath="$PROJECT_DIR$/chrome-extension/signmsg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/cx-wallet.html" afterPath="$PROJECT_DIR$/dist/cx-wallet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/embedded.html" afterPath="$PROJECT_DIR$/dist/embedded.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/helpers.html" afterPath="$PROJECT_DIR$/dist/helpers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/logo-myetherwallet.min.svg" afterPath="$PROJECT_DIR$/dist/images/logo-myetherwallet.min.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/etherwallet-master.js" afterPath="$PROJECT_DIR$/dist/js/etherwallet-master.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/package.json" afterPath="$PROJECT_DIR$/dist/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/signmsg.html" afterPath="$PROJECT_DIR$/dist/signmsg.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,44 +44,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.56736714">
+    <splitter split-orientation="horizontal" split-proportion="0.5608974">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="globalService.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/services/globalService.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/layouts/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ru.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/translations/ru.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="200">
-                  <caret line="276" column="12" lean-forward="false" selection-start-line="276" selection-start-column="4" selection-end-line="276" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="header.tpl" pinned="false" current-in-tab="true">
+          <file leaf-file-name="header.tpl" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/includes/header.tpl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="380">
-                  <caret line="246" column="12" lean-forward="true" selection-start-line="246" selection-start-column="12" selection-end-line="246" selection-end-column="12" />
+                <state relative-caret-position="153">
+                  <caret line="105" column="95" lean-forward="false" selection-start-line="105" selection-start-column="95" selection-end-line="105" selection-end-column="95" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="nodes.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/nodes.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                  <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -58,24 +70,14 @@
           <file leaf-file-name="globalFuncs.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/scripts/globalFuncs.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3165">
-                  <caret line="211" column="52" lean-forward="false" selection-start-line="211" selection-start-column="52" selection-end-line="211" selection-end-column="52" />
+                <state relative-caret-position="297">
+                  <caret line="74" column="47" lean-forward="false" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
                   <folding>
-                    <marker date="1515918546850" expanded="true" signature="1996:2010" ph="..." />
-                    <marker date="1515918546850" expanded="true" signature="2082:2117" ph="..." />
-                    <marker date="1515918546850" expanded="true" signature="2522:2540" ph="..." />
-                    <marker date="1515918546850" expanded="true" signature="2868:2886" ph="..." />
+                    <marker date="1516648137774" expanded="true" signature="1996:2010" ph="..." />
+                    <marker date="1516648137774" expanded="true" signature="2082:2117" ph="..." />
+                    <marker date="1516648137774" expanded="true" signature="2522:2540" ph="..." />
+                    <marker date="1516648137774" expanded="true" signature="2868:2886" ph="..." />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="tokenCreation.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation.tpl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -83,9 +85,71 @@
           <file leaf-file-name="tokenCreation.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="351">
-                  <caret line="86" column="19" lean-forward="false" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
+                <state relative-caret-position="259">
+                  <caret line="80" column="30" lean-forward="false" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="footerEmbedded.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/includes/footerEmbedded.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="45">
+                  <caret line="3" column="492" lean-forward="false" selection-start-line="3" selection-start-column="492" selection-end-line="3" selection-end-column="492" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="header-node-modal.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/includes/header-node-modal.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="100">
+                  <caret line="12" column="114" lean-forward="false" selection-start-line="12" selection-start-column="114" selection-end-line="12" selection-end-column="114" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="onboardingModal.tpl" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/includes/onboardingModal.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="154">
+                  <caret line="480" column="21" lean-forward="false" selection-start-line="480" selection-start-column="21" selection-end-line="480" selection-end-column="21" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="help.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/includes/help.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="113">
+                  <caret line="565" column="186" lean-forward="false" selection-start-line="565" selection-start-column="186" selection-end-line="565" selection-end-column="186" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="myetherwallet.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/myetherwallet.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="264">
+                  <caret line="421" column="82" lean-forward="false" selection-start-line="421" selection-start-column="69" selection-end-line="421" selection-end-column="82" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="walletDecryptDrtv.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="143">
+                  <caret line="615" column="24" lean-forward="false" selection-start-line="615" selection-start-column="24" selection-end-line="615" selection-end-column="24" />
+                  <folding>
+                    <element signature="e#18691#18696#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -97,8 +161,18 @@
           <file leaf-file-name="sendTxCtrl.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/scripts/controllers/sendTxCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-599">
-                  <caret line="122" column="17" lean-forward="false" selection-start-line="122" selection-start-column="12" selection-end-line="122" selection-end-column="17" />
+                <state relative-caret-position="195">
+                  <caret line="186" column="0" lean-forward="false" selection-start-line="186" selection-start-column="0" selection-end-line="190" selection-end-column="52" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/layouts/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="231">
+                  <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
@@ -107,29 +181,105 @@
           <file leaf-file-name="sendTx-content.tpl" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/includes/sendTx-content.tpl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="170" column="14" lean-forward="false" selection-start-line="170" selection-start-column="14" selection-end-line="170" selection-end-column="14" />
+                <state relative-caret-position="146">
+                  <caret line="43" column="45" lean-forward="false" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
+          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="183">
-                  <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="7" />
+                <state relative-caret-position="45">
+                  <caret line="3" column="46" lean-forward="false" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="contractsCtrl.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="contractsCtrl.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/scripts/controllers/contractsCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-361">
-                  <caret line="89" column="60" lean-forward="true" selection-start-line="89" selection-start-column="60" selection-end-line="89" selection-end-column="60" />
+                <state relative-caret-position="-451">
+                  <caret line="89" column="60" lean-forward="false" selection-start-line="89" selection-start-column="60" selection-end-line="89" selection-end-column="60" />
+                  <folding>
+                    <marker date="1516688429676" expanded="true" signature="72:9499" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="3078:3578" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="3498:3570" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="3529:3560" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="3614:5431" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="3628:5364" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="4192:5352" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="4786:5336" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="4863:5083" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="5089:5260" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="5375:5425" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="5463:6341" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="5598:6333" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="5631:6250" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="6256:6323" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="6464:6813" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="6629:6716" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="6848:7703" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="7306:7614" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="7349:7582" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="7745:8482" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="7848:8474" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="7879:8442" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="8037:8091" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="8238:8428" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="8520:9194" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="8534:9127" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="8924:9075" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="9138:9188" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="9238:9497" ph="{...}" />
+                    <marker date="1516688429676" expanded="true" signature="9264:9357" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="en.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/translations/en.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="143">
+                  <caret line="377" column="7" lean-forward="false" selection-start-line="377" selection-start-column="4" selection-end-line="377" selection-end-column="7" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="swap.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/includes/swap.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="130">
+                  <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="footer.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/includes/footer.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+                  <folding>
+                    <element signature="e#220#225#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="footer-disclaimer-modal.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/includes/footer-disclaimer-modal.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="53">
+                  <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+                  <folding>
+                    <element signature="e#796#801#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -139,46 +289,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="570">
                   <caret line="38" column="77" lean-forward="false" selection-start-line="38" selection-start-column="72" selection-end-line="38" selection-end-column="77" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="contracts-deploy-1.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/contracts-deploy-1.tpl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="870">
-                  <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="bitcoin.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../neuron-crypto-api/clients/abstract/bitcoin.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="123">
-                  <caret line="121" column="13" lean-forward="false" selection-start-line="125" selection-start-column="42" selection-end-line="125" selection-end-column="75" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ethereum.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../neuron-crypto-api/clients/abstract/ethereum.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="contracts-deploy-modal.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/contracts-deploy-modal.tpl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="46" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="46" />
                   <folding />
                 </state>
               </provider>
@@ -199,36 +309,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>btn btn-primary</find>
-      <find>createAndSendRawContract</find>
-      <find>createRaw</find>
-      <find>is</find>
-      <find>s</find>
-      <find>totalCount</find>
-      <find>gasLimit</find>
-      <find>estimateGas</find>
-      <find>contracts.tpl</find>
-      <find>Polski</find>
-      <find>langua</find>
-      <find>English</find>
-      <find>Cata</find>
-      <find>curl</find>
-      <find>curLang</find>
-      <find>CREATETOKEN_Warning_4</find>
-      <find>CREATETOKEN_Warning_3</find>
-      <find>Create t</find>
-      <find>x_W</find>
-      <find>Domain</find>
       <find>english</find>
       <find>NAV_SendEther</find>
       <find>NAV_To</find>
       <find>NAV_DomainSale</find>
       <find>дщп</find>
-      <find>tabs</find>
       <find>log</find>
       <find>true</find>
       <find>справка</find>
       <find>NAV_Help</find>
+      <find>getFromLS</find>
+      <find>nodeList</find>
+      <find>rin_ethscan</find>
+      <find>urlGet</find>
+      <find>customNode</find>
+      <find>trimHexZero</find>
+      <find>method transitions through the following stages</find>
+      <find>url</find>
+      <find>web3</find>
+      <find>callback</find>
+      <find>getEstimatedGas</find>
+      <find>tabs</find>
+      <find>gasL</find>
+      <find>estimateGasLimit</find>
+      <find>data</find>
+      <find>MyEtherWallet.com does not hold your keys for you.</find>
+      <find>MyEtherWallet.com</find>
+      <find>AironWallet</find>
+      <find>MyEtherWallet</find>
+      <find>MEW</find>
+      <find>myetherwallet</find>
     </findStrings>
     <replaceStrings>
       <replace>AironWallet</replace>
@@ -259,20 +369,32 @@
         <option value="$PROJECT_DIR$/app/scripts/solidity/utils.js" />
         <option value="$PROJECT_DIR$/app/scripts/solidity/formatters.js" />
         <option value="$PROJECT_DIR$/app/scripts/main.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/contractsCtrl.js" />
         <option value="$PROJECT_DIR$/app/scripts/contracts/DetailedERC20.sol" />
         <option value="$PROJECT_DIR$/app/scripts/abiDefinitions/tokenAbi.json" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/sendTxCtrl.js" />
         <option value="$PROJECT_DIR$/app/includes/tokenCreation-content.tpl" />
         <option value="$PROJECT_DIR$/app/includes/tokenCreation-content-modal.tpl" />
-        <option value="$PROJECT_DIR$/app/scripts/services/globalService.js" />
-        <option value="$PROJECT_DIR$/app/layouts/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/translations/translate.js" />
-        <option value="$PROJECT_DIR$/app/scripts/translations/en.js" />
         <option value="$PROJECT_DIR$/app/scripts/translations/ru.js" />
         <option value="$PROJECT_DIR$/app/includes/tokenCreation.tpl" />
+        <option value="$PROJECT_DIR$/app/scripts/ethFuncs.js" />
+        <option value="$PROJECT_DIR$/app/scripts/nodeHelpers/customNode.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/globalService.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/contractsCtrl.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" />
+        <option value="$PROJECT_DIR$/app/scripts/globalFuncs.js" />
+        <option value="$PROJECT_DIR$/app/includes/footerEmbedded.tpl" />
         <option value="$PROJECT_DIR$/app/includes/header.tpl" />
+        <option value="$PROJECT_DIR$/app/includes/sendTx-content.tpl" />
+        <option value="$PROJECT_DIR$/app/package.json" />
+        <option value="$PROJECT_DIR$/app/includes/footer.tpl" />
+        <option value="$PROJECT_DIR$/app/includes/footer-disclaimer-modal.tpl" />
+        <option value="$PROJECT_DIR$/app/includes/header-node-modal.tpl" />
+        <option value="$PROJECT_DIR$/app/includes/help.tpl" />
+        <option value="$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html" />
+        <option value="$PROJECT_DIR$/app/scripts/translations/en.js" />
+        <option value="$PROJECT_DIR$/app/includes/onboardingModal.tpl" />
+        <option value="$PROJECT_DIR$/app/layouts/index.html" />
       </list>
     </option>
   </component>
@@ -285,11 +407,10 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1585" />
-    <option name="y" value="199" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="773" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -306,6 +427,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -317,12 +439,6 @@
               <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
               <item name="mew-client" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="includes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
@@ -341,20 +457,6 @@
               <item name="mew-client" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
               <item name="translations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -366,7 +468,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -409,42 +510,33 @@
       <workItem from="1516088874506" duration="389000" />
       <workItem from="1516089272269" duration="23619000" />
       <workItem from="1516216268305" duration="371000" />
+      <workItem from="1516644809788" duration="5960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57251000" />
+    <option name="totallyTimeSpent" value="66898000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14797261" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25655282" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23003195" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22913505" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23003195" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14797261" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,162 +550,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/web3/package.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/web3/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="95" column="4" lean-forward="true" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/CX/myWalletsCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1019">
-          <caret line="68" column="59" lean-forward="false" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chrome-extension/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="1469" column="54" lean-forward="false" selection-start-line="1469" selection-start-column="54" selection-end-line="1469" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../neuron-crypto-api/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/solidity/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/solidity/formatters.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/nodes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1531">
-          <caret line="102" column="14" lean-forward="false" selection-start-line="102" selection-start-column="14" selection-end-line="102" selection-end-column="14" />
-          <folding>
-            <marker date="1516281423246" expanded="true" signature="903:9078" ph="{...}" />
-            <marker date="1516281423246" expanded="true" signature="920:1303" ph="{&quot;name&quot;: 'ETH'...}" />
-            <marker date="1516281423246" expanded="true" signature="3770:3858" ph="{&quot;name&quot;: 'Ropsten'...}" />
-            <marker date="1516281423246" expanded="true" signature="3878:4379" ph="{&quot;name&quot;: 'Ropsten'...}" />
-            <marker date="1516281423246" expanded="true" signature="4400:4877" ph="{&quot;name&quot;: 'Kovan'...}" />
-            <marker date="1516281423246" expanded="true" signature="4897:5385" ph="{&quot;name&quot;: 'Kovan'...}" />
-            <marker date="1516281423246" expanded="true" signature="5406:5894" ph="{&quot;name&quot;: 'Rinkeby'...}" />
-            <marker date="1516281423246" expanded="true" signature="5914:6415" ph="{&quot;name&quot;: 'Rinkeby'...}" />
-            <marker date="1516281423246" expanded="true" signature="6428:6934" ph="{&quot;name&quot;: 'EXP'...}" />
-            <marker date="1516281423246" expanded="true" signature="6947:7452" ph="{&quot;name&quot;: 'UBQ'...}" />
-            <marker date="1516281423246" expanded="true" signature="7465:7996" ph="{&quot;name&quot;: 'POA'...}" />
-            <marker date="1516281423246" expanded="true" signature="8010:8542" ph="{&quot;name&quot;: 'TOMO'...}" />
-            <marker date="1516281423246" expanded="true" signature="8556:9076" ph="{&quot;name&quot;: 'ELLA'...}" />
-            <marker date="1516281423246" expanded="true" signature="9149:9206" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/json_relay_node/response.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="82" column="47" lean-forward="false" selection-start-line="82" selection-start-column="47" selection-end-line="82" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/contracts-interact-modal.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="59" lean-forward="true" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/images/fav/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-          <folding>
-            <marker date="1516281424133" expanded="true" signature="0:438" ph="{&quot;name&quot;: &quot;MyEtherWallet&quot;...}" />
-            <marker date="1516281424133" expanded="true" signature="44:342" ph="[...]" />
-            <marker date="1516281424133" expanded="true" signature="54:190" ph="{&quot;src&quot;: &quot;/images/fav/android-chrome-192x192.png&quot;...}" />
-            <marker date="1516281424133" expanded="true" signature="200:336" ph="{&quot;src&quot;: &quot;/images/fav/android-chrome-512x512.png&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/nodeHelpers/mewServerTpl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/images/logo-myetherwallet.min.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/contracts-deploy-1.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/contracts-deploy-modal.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="46" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/translations/sv.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="616" column="31" lean-forward="true" selection-start-line="616" selection-start-column="31" selection-end-line="616" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../neuron-crypto-api/clients/abstract/bitcoin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="121" column="13" lean-forward="false" selection-start-line="125" selection-start-column="42" selection-end-line="125" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -629,7 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="36" column="10" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -645,7 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -653,7 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="155" column="59" lean-forward="false" selection-start-line="155" selection-start-column="59" selection-end-line="155" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,7 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1935">
           <caret line="129" column="24" lean-forward="false" selection-start-line="129" selection-start-column="16" selection-end-line="129" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -677,7 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-374">
           <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -685,23 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/ethFuncs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-949">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/sendTxCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-599">
-          <caret line="122" column="17" lean-forward="false" selection-start-line="122" selection-start-column="12" selection-end-line="122" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,7 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1740">
           <caret line="116" column="1" lean-forward="false" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -717,7 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -725,7 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2685">
           <caret line="181" column="1" lean-forward="false" selection-start-line="181" selection-start-column="1" selection-end-line="181" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -733,7 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="76" column="48" lean-forward="false" selection-start-line="76" selection-start-column="48" selection-end-line="76" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -741,7 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="69" lean-forward="false" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -749,7 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
           <caret line="117" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -757,15 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="275" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/sendTx-content.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="170" column="14" lean-forward="false" selection-start-line="170" selection-start-column="14" selection-end-line="170" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -773,20 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
           <caret line="58" column="2" lean-forward="false" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/globalFuncs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3165">
-          <caret line="211" column="52" lean-forward="false" selection-start-line="211" selection-start-column="52" selection-end-line="211" selection-end-column="52" />
-          <folding>
-            <marker date="1515918546850" expanded="true" signature="1996:2010" ph="..." />
-            <marker date="1515918546850" expanded="true" signature="2082:2117" ph="..." />
-            <marker date="1515918546850" expanded="true" signature="2522:2540" ph="..." />
-            <marker date="1515918546850" expanded="true" signature="2868:2886" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -794,23 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/translations/en.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="414" column="33" lean-forward="false" selection-start-line="414" selection-start-column="33" selection-end-line="415" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tabsCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="260" column="62" lean-forward="false" selection-start-line="260" selection-start-column="62" selection-end-line="260" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,7 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="48" lean-forward="true" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,31 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/contractsCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-361">
-          <caret line="89" column="60" lean-forward="true" selection-start-line="89" selection-start-column="60" selection-end-line="89" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="86" column="19" lean-forward="false" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/globalService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,15 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/layouts/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -874,14 +711,272 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="276" column="12" lean-forward="false" selection-start-line="276" selection-start-column="4" selection-end-line="276" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/ethFuncs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="82" column="27" lean-forward="false" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/nodeHelpers/mewServerTpl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/nodeHelpers/customNode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-151">
+          <caret line="56" column="41" lean-forward="false" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/browser_action/browser_action.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tabsCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2272">
+          <caret line="134" column="46" lean-forward="false" selection-start-line="134" selection-start-column="36" selection-end-line="134" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/ensCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-55">
+          <caret line="31" column="15" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/contractsCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-451">
+          <caret line="89" column="60" lean-forward="false" selection-start-line="89" selection-start-column="60" selection-end-line="89" selection-end-column="60" />
+          <folding>
+            <marker date="1516688429676" expanded="true" signature="72:9499" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="3078:3578" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="3498:3570" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="3529:3560" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="3614:5431" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="3628:5364" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="4192:5352" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="4786:5336" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="4863:5083" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="5089:5260" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="5375:5425" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="5463:6341" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="5598:6333" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="5631:6250" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="6256:6323" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="6464:6813" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="6629:6716" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="6848:7703" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="7306:7614" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="7349:7582" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="7745:8482" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="7848:8474" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="7879:8442" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="8037:8091" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="8238:8428" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="8520:9194" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="8534:9127" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="8924:9075" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="9138:9188" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="9238:9497" ph="{...}" />
+            <marker date="1516688429676" expanded="true" signature="9264:9357" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/globalService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="22" lean-forward="false" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/nodes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/globalFuncs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="74" column="47" lean-forward="false" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
+          <folding>
+            <marker date="1516648137774" expanded="true" signature="1996:2010" ph="..." />
+            <marker date="1516648137774" expanded="true" signature="2082:2117" ph="..." />
+            <marker date="1516648137774" expanded="true" signature="2522:2540" ph="..." />
+            <marker date="1516648137774" expanded="true" signature="2868:2886" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="80" column="30" lean-forward="false" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/sendTxCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="186" column="0" lean-forward="false" selection-start-line="186" selection-start-column="0" selection-end-line="190" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/sendTx-content.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="43" column="45" lean-forward="false" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="46" lean-forward="false" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/footer.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding>
+            <element signature="e#220#225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json_relay_node/runServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/includes/header.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="246" column="12" lean-forward="true" selection-start-line="246" selection-start-column="12" selection-end-line="246" selection-end-column="12" />
+        <state relative-caret-position="153">
+          <caret line="105" column="95" lean-forward="false" selection-start-line="105" selection-start-column="95" selection-end-line="105" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/footerEmbedded.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="492" lean-forward="false" selection-start-line="3" selection-start-column="492" selection-end-line="3" selection-end-column="492" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/header-node-modal.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="12" column="114" lean-forward="false" selection-start-line="12" selection-start-column="114" selection-end-line="12" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/help.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="565" column="186" lean-forward="false" selection-start-line="565" selection-start-column="186" selection-end-line="565" selection-end-column="186" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/myetherwallet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="421" column="82" lean-forward="false" selection-start-line="421" selection-start-column="69" selection-end-line="421" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/footer-disclaimer-modal.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding>
+            <element signature="e#796#801#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/translations/en.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="377" column="7" lean-forward="false" selection-start-line="377" selection-start-column="4" selection-end-line="377" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json_relay_node/runLocalServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="615" column="24" lean-forward="false" selection-start-line="615" selection-start-column="24" selection-end-line="615" selection-end-column="24" />
+          <folding>
+            <element signature="e#18691#18696#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/onboardingModal.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="480" column="21" lean-forward="false" selection-start-line="480" selection-start-column="21" selection-end-line="480" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/swap.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/layouts/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
           <folding />
         </state>
       </provider>
