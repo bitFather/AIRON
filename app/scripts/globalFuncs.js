@@ -72,7 +72,10 @@ globalFuncs.errorMsgs = [
     'Please enter valid hex string. Hex only contains: 0x, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, a, b, c, d, e, f', // 37
     'Offer must have either price or reserve set to more than 0', // 38
     'Bid must be more than the specified minimum', // 39
-    'Can not estimate fee. Try to change node.'     //40
+    'Can not estimate fee. Try to change node and refresh the page.' ,    //40
+    'Name of the asset should contain 3-4 Latin letters.', // 41
+    'Total tokens is not defined', // 42
+    'Decimals from 0 to 18' // 43
 ];
 
 // These are translated in the translation files

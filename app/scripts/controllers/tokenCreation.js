@@ -39,13 +39,12 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
     }
 
     $scope.getFromLS = (key, errorMsg) => {
-        var localStorageItemString = globalFuncs.localStorage.getItem(key);
+        var localStorageItemString = globalFuncs.localStorage.getItem(key)
         if (!localStorageItemString && errorMsg) {
             throw Error(errorMsg)
         } else if (!localStorageItemString) {
             return null
-        }
-        else {
+        } else {
             return JSON.parse(localStorageItemString)
         }
     }
@@ -62,7 +61,7 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
             $scope.wallet.setBalance(applyScope)
             $scope.wallet.setTokens()
             $scope.tx.nonce = 0
-            let current = $scope.getFromLS("curNode", "").key;
+            let current = $scope.getFromLS('curNode', '').key
             console.log(current)
             console.log(nodes.nodeList[current])
             $scope.web3 = new window.Web3(new window.Web3.providers.HttpProvider(nodes.nodeList[current].lib.SERVERURL))
@@ -70,15 +69,21 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
         },
     )
 
-    $scope.generateToken = function() {
-        if (!$scope.token.name) {
-            throw new Error('Name 3-4 symbols')
-        }
-        if (!$scope.token.totalCount) {
-            throw new Error('Total tokens count not specified')
-        }
-        if (!$scope.token.decimals) {
-            throw new Error('Decimals from 0 to 18')
+    $scope.tryOpenModal = function() {
+        try {
+            if (!$scope.token.name) {
+                throw globalFuncs.errorMsgs[41]
+            }
+            if (!$scope.token.totalCount) {
+                throw globalFuncs.errorMsgs[42]
+            }
+            if (!$scope.token.decimals) {
+                throw globalFuncs.errorMsgs[43]
+            }
+
+            $scope.sendTxModal.open()
+        } catch (e) {
+            $scope.notifier.danger(e)
         }
     }
 
@@ -119,12 +124,11 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
             console.log(data)
             ethFuncs.estimateGas(data, function(data) {
                 if (!data.error) {
-                    $scope.tx.gasLimit = data.data;
+                    $scope.tx.gasLimit = data.data
+                } else {
+                    $scope.notifier.danger(globalFuncs.errorMsgs[40])
                 }
-                else {
-                    console.log(data)
-                }
-            });
+            })
         },
         true,
     )
@@ -141,7 +145,6 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
         try {
             $scope.tx.gasLimit = null
             if (!$scope.canGenerateToken()) {
-                $scope.generateToken()
                 return
             }
             let calculatedTotalCount = new BigNumber($scope.token.totalCount).mul(
@@ -164,35 +167,37 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
                 value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(etherUnits.toWei(0, $scope.tx.unit))),
                 data: ethFuncs.sanitizeHex('0x' + $scope.tx.data),
             }
-            ethFuncs.estimateGas(data,
-                fee => {
-                    if (!fee.error) {
-                        if (fee.data == '-1') throw globalFuncs.errorMsgs[21];
-                        $scope.tx.gasLimit = fee.data;
-                    } else throw fee.msg;
-                    if ($scope.wallet == null) throw globalFuncs.errorMsgs[3]
-                    else if (!ethFuncs.validateHexString($scope.tx.data)) throw globalFuncs.errorMsgs[9]
-                    else if (!globalFuncs.isNumeric($scope.tx.gasLimit) || parseFloat($scope.tx.gasLimit) <= 0)
-                        throw globalFuncs.errorMsgs[8]
-                    $scope.tx.data = ethFuncs.sanitizeHex($scope.tx.data)
-                    ajaxReq.getTransactionData($scope.wallet.getAddressString(), function(data) {
-                        if (data.error) $scope.notifier.danger(data.msg)
-                        data = data.data
-                        $scope.tx.to = '0xCONTRACT'
-                        $scope.tx.contractAddr = ethFuncs.getDeteministicContractAddress($scope.wallet.getAddressString(), data.nonce)
-                        var txData = uiFuncs.getTxData($scope)
-                        uiFuncs.generateTx(txData, function(rawTx) {
-                            if (!rawTx.isError) {
-                                $scope.rawTx = rawTx.rawTx
-                                $scope.signedTx = rawTx.signedTx
-                                $scope.sendTx()
-                            } else {
-                                $scope.notifier.danger(rawTx.error)
-                            }
-                            if (!$scope.$$phase) $scope.$apply()
-                        })
+            ethFuncs.estimateGas(data, fee => {
+                if (!fee.error) {
+                    if (fee.data == '-1') throw globalFuncs.errorMsgs[21]
+                    $scope.tx.gasLimit = fee.data
+                } else throw fee.msg
+                if ($scope.wallet == null) throw globalFuncs.errorMsgs[3]
+                else if (!ethFuncs.validateHexString($scope.tx.data)) throw globalFuncs.errorMsgs[9]
+                else if (!globalFuncs.isNumeric($scope.tx.gasLimit) || parseFloat($scope.tx.gasLimit) <= 0)
+                    throw globalFuncs.errorMsgs[8]
+                $scope.tx.data = ethFuncs.sanitizeHex($scope.tx.data)
+                ajaxReq.getTransactionData($scope.wallet.getAddressString(), function(data) {
+                    if (data.error) $scope.notifier.danger(data.msg)
+                    data = data.data
+                    $scope.tx.to = '0xCONTRACT'
+                    $scope.tx.contractAddr = ethFuncs.getDeteministicContractAddress(
+                        $scope.wallet.getAddressString(),
+                        data.nonce,
+                    )
+                    var txData = uiFuncs.getTxData($scope)
+                    uiFuncs.generateTx(txData, function(rawTx) {
+                        if (!rawTx.isError) {
+                            $scope.rawTx = rawTx.rawTx
+                            $scope.signedTx = rawTx.signedTx
+                            $scope.sendTx()
+                        } else {
+                            $scope.notifier.danger(rawTx.error)
+                        }
+                        if (!$scope.$$phase) $scope.$apply()
                     })
                 })
+            })
         } catch (e) {
             $scope.notifier.danger(e)
         }

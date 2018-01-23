@@ -72,8 +72,7 @@
         <section class="col-xs-11">
             <a class="btn btn-primary btn-block"
                type="submit"
-               data-toggle="modal"
-               data-target="#deployToken"
+               ng-click="tryOpenModal()"
                translate="CREATETOKEN_generate">
                 Generate
             </a>
