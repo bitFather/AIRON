@@ -1,6 +1,7 @@
 'use strict';
 var tabsCtrl = function($scope, globalService, $translate, $sce) {
     $scope.gService = globalService;
+    $scope.gService.currentTab = 3
     $scope.tabNames = $scope.gService.tabs;
     $scope.curLang = 'English';
     $scope.customNodeModal = document.getElementById('customNodeModal') ? new Modal(document.getElementById('customNodeModal')) : null;
@@ -184,6 +185,7 @@ var tabsCtrl = function($scope, globalService, $translate, $sce) {
     }
 
     $scope.setTab = function(hval) {
+        console.log("asdasd" + hval + " " + globalService.currentTab)
         if (hval != '') {
             hval = hval.replace('#', '');
             for (var key in $scope.tabNames) {
