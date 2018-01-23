@@ -846,7 +846,7 @@ HELP_SecCX_Desc_6           : 'SI NOU TA DWE METE KÒD NAN ENFÒMASYON YO, FÒK 
 
 HELP_Sec_Title              : 'KLE ',
 HELP_Sec_Desc_1             : 'SI YOUN NAN PREMYE KESYON W’  OU POZE TÈT OU SE "POUKISA W’ DWE FÈ MOUN SA YO KONFYANS ? "  SE YON BON DEMACH. ESPERANS NOU SE SA KI AP VINI AN KI PRAL FÈ W PI BYEN KONPRANN. ',
-HELP_Sec_Desc_2             : 'NOU TE KÒMANSE NAN MWA DAWOU 2015. SI W’ AL CHÈCHE ["myetherwallet" SOU reddit](https://www.reddit.com/search?q=myetherwallet), OU KAPAB WÈ YON PAKÈT BANN MOUN K’AP SÈVI AK NOU SAN OKENN PWOBLÈM. ',
+HELP_Sec_Desc_2             : 'NOU TE KÒMANSE NAN MWA DAiron.ioOU 2015. SI W’ AL CHÈCHE ["myetherwallet" SOU reddit](https://www.reddit.com/search?q=myetherwallet), OU KAPAB WÈ YON PAKÈT BANN MOUN K’AP SÈVI AK NOU SAN OKENN PWOBLÈM. ',
 HELP_Sec_Desc_3             : 'NOU PA PRAL PRAN KÒB OU OSWA VÒLÈ KLE SEKRÈ W’ YO. PA GEN KÒD MALVEYAN SOU SIT LA. EPI, PAJ "KREYASYON BOUS YO" YO  TOUT ANTYE SE POU KLIYAN AN. SA VLE DI KE TOUT KÒD YO FÈT SOU **KOMPITÈ W’ LA** YO PA JANM SOVE EPI/OSWA ALE OKENN LÒT KOTE.	 ',
 HELP_Sec_Desc_4             : 'VERIFYE URL LA – SIT SA SÈVI AK GITHUB EPI OU KAPAB WÈ KÒD SOUS LA LA : : [https://github.com/kvhnuke/etherwallet/tree/gh-pages](https://github.com/kvhnuke/etherwallet/tree/gh-pages) NAN  [https://www.myetherwallet.com](https://www.myetherwallet.com). ',
 HELP_Sec_Desc_5             : 'POU W’ KREYE BOUS YO, OU KAPAB PRAN [KÒD SOUS LA] (https://github.com/kvhnuke/etherwallet/releases/latest). GADE #5 KI ANLÈ A.  ',

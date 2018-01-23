@@ -2,7 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ecc9755-455e-4a90-8732-9dd35fdcb01a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/logo-myetherwallet.min.svg" afterPath="$PROJECT_DIR$/app/images/logo-myetherwallet.min.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/logo-myetherwallet.svg" afterPath="$PROJECT_DIR$/app/images/logo-myetherwallet.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/browser_action/browser_action.html" afterPath="$PROJECT_DIR$/app/includes/browser_action/browser_action.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/footer-disclaimer-modal.tpl" afterPath="$PROJECT_DIR$/app/includes/footer-disclaimer-modal.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/footer.tpl" afterPath="$PROJECT_DIR$/app/includes/footer.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/footerEmbedded.tpl" afterPath="$PROJECT_DIR$/app/includes/footerEmbedded.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/header-node-modal.tpl" afterPath="$PROJECT_DIR$/app/includes/header-node-modal.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/header.tpl" afterPath="$PROJECT_DIR$/app/includes/header.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/headerEmbedded.tpl" afterPath="$PROJECT_DIR$/app/includes/headerEmbedded.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/help.tpl" afterPath="$PROJECT_DIR$/app/includes/help.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/onboardingModal.tpl" afterPath="$PROJECT_DIR$/app/includes/onboardingModal.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/sendTx-content.tpl" afterPath="$PROJECT_DIR$/app/includes/sendTx-content.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/package.json" afterPath="$PROJECT_DIR$/app/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/footerCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/footerCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html" afterPath="$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/main.js" afterPath="$PROJECT_DIR$/app/scripts/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/globalService.js" afterPath="$PROJECT_DIR$/app/scripts/services/globalService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/en.js" afterPath="$PROJECT_DIR$/app/scripts/translations/en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/ht.js" afterPath="$PROJECT_DIR$/app/scripts/translations/ht.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/pl.js" afterPath="$PROJECT_DIR$/app/scripts/translations/pl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/ru.js" afterPath="$PROJECT_DIR$/app/scripts/translations/ru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/translate.js" afterPath="$PROJECT_DIR$/app/scripts/translations/translate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/zhcn.js" afterPath="$PROJECT_DIR$/app/scripts/translations/zhcn.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/zhtw.js" afterPath="$PROJECT_DIR$/app/scripts/translations/zhtw.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/browser_action/browser_action.html" afterPath="$PROJECT_DIR$/chrome-extension/browser_action/browser_action.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/cx-wallet.html" afterPath="$PROJECT_DIR$/chrome-extension/cx-wallet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/embedded.html" afterPath="$PROJECT_DIR$/chrome-extension/embedded.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/helpers.html" afterPath="$PROJECT_DIR$/chrome-extension/helpers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/images/logo-myetherwallet.min.svg" afterPath="$PROJECT_DIR$/chrome-extension/images/logo-myetherwallet.min.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/images/logo-myetherwallet.svg" afterPath="$PROJECT_DIR$/chrome-extension/images/logo-myetherwallet.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/index.html" afterPath="$PROJECT_DIR$/chrome-extension/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/js/etherwallet-master.js" afterPath="$PROJECT_DIR$/chrome-extension/js/etherwallet-master.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/package.json" afterPath="$PROJECT_DIR$/chrome-extension/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/signmsg.html" afterPath="$PROJECT_DIR$/chrome-extension/signmsg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/cx-wallet.html" afterPath="$PROJECT_DIR$/dist/cx-wallet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/embedded.html" afterPath="$PROJECT_DIR$/dist/embedded.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/helpers.html" afterPath="$PROJECT_DIR$/dist/helpers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/logo-myetherwallet.min.svg" afterPath="$PROJECT_DIR$/dist/images/logo-myetherwallet.min.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/logo-myetherwallet.svg" afterPath="$PROJECT_DIR$/dist/images/logo-myetherwallet.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/etherwallet-master.js" afterPath="$PROJECT_DIR$/dist/js/etherwallet-master.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/package.json" afterPath="$PROJECT_DIR$/dist/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/signmsg.html" afterPath="$PROJECT_DIR$/dist/signmsg.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,7 +56,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.40864024">
+    <splitter split-orientation="horizontal" split-proportion="0.52478755">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="globalFuncs.js" pinned="false" current-in-tab="false">
@@ -30,41 +74,68 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tokenCreation.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="tokenCreation.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="367">
-                  <caret line="85" column="37" lean-forward="true" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
+                <state relative-caret-position="75">
+                  <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="help.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/help.tpl">
+          <file leaf-file-name="ethFuncs.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/ethFuncs.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="8475">
-                  <caret line="565" column="186" lean-forward="false" selection-start-line="565" selection-start-column="186" selection-end-line="565" selection-end-column="186" />
+                <state relative-caret-position="401">
+                  <caret line="82" column="27" lean-forward="false" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tokenCreation-content.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation-content.tpl">
+          <file leaf-file-name="footer.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/includes/footer.tpl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="434">
-                  <caret line="73" column="28" lean-forward="false" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+                <state relative-caret-position="45">
+                  <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+                  <folding>
+                    <element signature="e#213#218#0" expanded="true" />
+                    <element signature="n#style#0;n#article#0;n#footer#0;n#!!top" expanded="true" />
+                    <element signature="e#657#663#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="footer-disclaimer-modal.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/includes/footer-disclaimer-modal.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="420">
+                  <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+                  <folding>
+                    <element signature="e#789#794#0" expanded="true" />
+                    <element signature="e#1279#1284#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="translate.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/scripts/translations/translate.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="525">
+                  <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="myetherwallet.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/myetherwallet.js">
+          <file leaf-file-name="globalService.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/services/globalService.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="6315">
-                  <caret line="421" column="82" lean-forward="false" selection-start-line="421" selection-start-column="69" selection-end-line="421" selection-end-column="82" />
+                <state relative-caret-position="259">
+                  <caret line="63" column="23" lean-forward="false" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -74,53 +145,101 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ru.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="header.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/includes/header.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="242">
+                  <caret line="117" column="62" lean-forward="false" selection-start-line="117" selection-start-column="62" selection-end-line="117" selection-end-column="62" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="zhcn.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/translations/zhcn.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="133">
+                  <caret line="132" column="51" lean-forward="false" selection-start-line="132" selection-start-column="51" selection-end-line="132" selection-end-column="51" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Airon.io.svg" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/Downloads/Airon.io.svg">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="zhtw.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/translations/zhtw.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="137">
+                  <caret line="317" column="17" lean-forward="true" selection-start-line="317" selection-start-column="17" selection-end-line="317" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="headerEmbedded.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/includes/headerEmbedded.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="510">
+                  <caret line="34" column="73" lean-forward="false" selection-start-line="34" selection-start-column="73" selection-end-line="34" selection-end-column="73" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="logo-myetherwallet.svg" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/images/logo-myetherwallet.svg">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="logo-myetherwallet.svg" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dist/images/logo-myetherwallet.svg">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="signmsg.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/layouts/signmsg.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="38" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="signMsg.tpl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/includes/signMsg.tpl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="199">
+                  <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ru.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/scripts/translations/ru.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="183">
-                  <caret line="325" column="31" lean-forward="false" selection-start-line="325" selection-start-column="31" selection-end-line="325" selection-end-column="31" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="contractsCtrl.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/contractsCtrl.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="215">
-                  <caret line="95" column="66" lean-forward="false" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="66" />
-                  <folding>
-                    <marker date="1516688429676" expanded="true" signature="3529:3560" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="en.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/translations/en.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="376">
-                  <caret line="318" column="56" lean-forward="false" selection-start-line="318" selection-start-column="56" selection-end-line="318" selection-end-column="56" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sendTx-content.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/sendTx-content.tpl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="318">
-                  <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sendTxCtrl.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/sendTxCtrl.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="190" column="52" lean-forward="false" selection-start-line="190" selection-start-column="52" selection-end-line="190" selection-end-column="52" />
+                <state relative-caret-position="286">
+                  <caret line="217" column="49" lean-forward="false" selection-start-line="217" selection-start-column="49" selection-end-line="217" selection-end-column="49" />
                   <folding />
                 </state>
               </provider>
@@ -141,39 +260,42 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tabs</find>
-      <find>gasL</find>
-      <find>estimateGasLimit</find>
-      <find>data</find>
-      <find>MyEtherWallet.com does not hold your keys for you.</find>
-      <find>MyEtherWallet.com</find>
+      <find>applyScope</find>
+      <find>tab-pane</find>
+      <find>active</find>
+      <find>tokenCreationCtrl</find>
+      <find>footerCtrl</find>
+      <find>unitReadable</find>
+      <find>sce</find>
+      <find>curLang</find>
+      <find>AironWallet.com</find>
+      <find>aironwallet.com</find>
+      <find>AW</find>
       <find>AironWallet</find>
-      <find>MyEtherWallet</find>
-      <find>MyEther</find>
-      <find>MEW</find>
-      <find>TokenCr</find>
-      <find>Token</find>
-      <find>Bid must be more than the specified minimum</find>
-      <find>сет</find>
-      <find>New</find>
-      <find>check</find>
-      <find>check t</find>
-      <find>check tx</find>
-      <find>MYETHERWALLET LLC</find>
+      <find>AIRONWALLET LLC [US]</find>
+      <find>en</find>
+      <find>view</find>
+      <find>NAV_ViewWallet</find>
+      <find>Send</find>
+      <find>NAV_SendEther</find>
+      <find>Check</find>
+      <find>tab</find>
+      <find>DON'T GET PHISHED</find>
       <find>NAV_CheckTxStatus</find>
-      <find>myether</find>
+      <find>Wallet</find>
+      <find>aw</find>
+      <find>tabsCtrl</find>
+      <find>mye</find>
+      <find>svg</find>
+      <find>ru</find>
+      <find>MEW</find>
       <find>myetherwallet</find>
-      <find>LLC</find>
-      <find>MYETHERWALLET</find>
-      <find>ether</find>
-      <find>error</find>
-      <find>token</find>
-      <find>errorMsgs</find>
-      <find>generateToken</find>
-      <find>sign</find>
     </findStrings>
     <replaceStrings>
       <replace>AironWallet</replace>
+      <replace>airon.io</replace>
+      <replace>Airon.io</replace>
+      <replace>airon</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app/scripts</dir>
@@ -200,33 +322,40 @@
         <option value="$PROJECT_DIR$/app/scripts/solidity/config.js" />
         <option value="$PROJECT_DIR$/app/scripts/solidity/utils.js" />
         <option value="$PROJECT_DIR$/app/scripts/solidity/formatters.js" />
-        <option value="$PROJECT_DIR$/app/scripts/main.js" />
         <option value="$PROJECT_DIR$/app/scripts/contracts/DetailedERC20.sol" />
         <option value="$PROJECT_DIR$/app/scripts/abiDefinitions/tokenAbi.json" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/sendTxCtrl.js" />
         <option value="$PROJECT_DIR$/app/includes/tokenCreation-content-modal.tpl" />
-        <option value="$PROJECT_DIR$/app/scripts/translations/translate.js" />
-        <option value="$PROJECT_DIR$/app/includes/tokenCreation.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/ethFuncs.js" />
         <option value="$PROJECT_DIR$/app/scripts/nodeHelpers/customNode.js" />
-        <option value="$PROJECT_DIR$/app/scripts/services/globalService.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/contractsCtrl.js" />
-        <option value="$PROJECT_DIR$/app/includes/footerEmbedded.tpl" />
-        <option value="$PROJECT_DIR$/app/includes/header.tpl" />
         <option value="$PROJECT_DIR$/app/includes/sendTx-content.tpl" />
         <option value="$PROJECT_DIR$/app/package.json" />
+        <option value="$PROJECT_DIR$/app/layouts/index.html" />
+        <option value="$PROJECT_DIR$/app/scripts/globalFuncs.js" />
+        <option value="$PROJECT_DIR$/app/includes/tokenCreation-content.tpl" />
+        <option value="$PROJECT_DIR$/app/includes/tokenCreation.tpl" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" />
+        <option value="$PROJECT_DIR$/app/scripts/main.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/footerCtrl.js" />
+        <option value="$PROJECT_DIR$/app/includes/header-node-modal.tpl" />
         <option value="$PROJECT_DIR$/app/includes/footer.tpl" />
         <option value="$PROJECT_DIR$/app/includes/footer-disclaimer-modal.tpl" />
-        <option value="$PROJECT_DIR$/app/includes/header-node-modal.tpl" />
         <option value="$PROJECT_DIR$/app/includes/help.tpl" />
-        <option value="$PROJECT_DIR$/app/layouts/index.html" />
+        <option value="$PROJECT_DIR$/app/images/logo-myetherwallet.min.svg" />
         <option value="$PROJECT_DIR$/app/includes/onboardingModal.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html" />
-        <option value="$PROJECT_DIR$/app/scripts/globalFuncs.js" />
         <option value="$PROJECT_DIR$/app/scripts/translations/en.js" />
-        <option value="$PROJECT_DIR$/app/includes/tokenCreation-content.tpl" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" />
         <option value="$PROJECT_DIR$/app/scripts/translations/ru.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/globalService.js" />
+        <option value="$PROJECT_DIR$/app/includes/footerEmbedded.tpl" />
+        <option value="$PROJECT_DIR$/app/includes/headerEmbedded.tpl" />
+        <option value="$PROJECT_DIR$/app/includes/header.tpl" />
+        <option value="$PROJECT_DIR$/app/scripts/translations/translate.js" />
+        <option value="$PROJECT_DIR$/app/scripts/translations/zhtw.js" />
+        <option value="$PROJECT_DIR$/app/scripts/translations/zhcn.js" />
+        <option value="$PROJECT_DIR$/dist/images/logo-myetherwallet.svg" />
+        <option value="$PROJECT_DIR$/app/images/logo-myetherwallet.svg" />
       </list>
     </option>
   </component>
@@ -239,11 +368,11 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1663" />
-    <option name="y" value="228" />
-    <option name="width" value="1280" />
-    <option name="height" value="777" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1920" />
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -276,13 +405,51 @@
               <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
               <item name="mew-client" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="includes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
               <item name="mew-client" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="translations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
@@ -338,22 +505,21 @@
       <workItem from="1516216268305" duration="371000" />
       <workItem from="1516644809788" duration="7080000" />
       <workItem from="1516693047519" duration="306000" />
-      <workItem from="1516694548295" duration="3807000" />
+      <workItem from="1516694548295" duration="10844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72131000" />
+    <option name="totallyTimeSpent" value="79168000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="23" width="1920" height="1057" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1920" y="23" width="1920" height="1057" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25645077" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25645077" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22896698" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -378,83 +544,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/scripts/etherUnits.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="36" column="10" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/contracts.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="77" lean-forward="false" selection-start-line="38" selection-start-column="72" selection-end-line="38" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/solidity/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/txStatus.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="155" column="59" lean-forward="false" selection-start-line="155" selection-start-column="59" selection-end-line="155" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/uiFuncs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1935">
-          <caret line="129" column="24" lean-forward="false" selection-start-line="129" selection-start-column="16" selection-end-line="129" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/staticJS/to-compile-to-static/modal-native.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-374">
-          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/swap-stage-2.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/etherwallet-variables.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1740">
-          <caret line="116" column="1" lean-forward="false" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/onboarding.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/bootstrap/buttons.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2685">
-          <caret line="181" column="1" lean-forward="false" selection-start-line="181" selection-start-column="1" selection-end-line="181" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation-content-modal.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -476,20 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/translations/translate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="58" column="2" lean-forward="false" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/footerCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/includes/domainsale.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -497,24 +572,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/includes/print.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/ethFuncs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="82" column="27" lean-forward="false" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -553,33 +614,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/globalService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" column="22" lean-forward="false" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/json_relay_node/runServer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/footerEmbedded.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="492" lean-forward="false" selection-start-line="3" selection-start-column="492" selection-end-line="3" selection-end-column="492" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/help.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8475">
-          <caret line="565" column="186" lean-forward="false" selection-start-line="565" selection-start-column="186" selection-end-line="565" selection-end-column="186" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -622,42 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/footer.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-          <folding>
-            <element signature="e#220#225#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/footer-disclaimer-modal.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding>
-            <element signature="e#796#801#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/images/logo-myetherwallet.min.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/header.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="57" column="22" lean-forward="false" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/nodes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -692,34 +694,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html">
+    <entry file="file://$PROJECT_DIR$/app/includes/sendTx-content.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="965">
-          <caret line="630" column="30" lean-forward="true" selection-start-line="630" selection-start-column="30" selection-end-line="630" selection-end-column="30" />
-          <folding>
-            <element signature="e#18691#18696#0" expanded="false" />
-            <element signature="e#19106#19111#0" expanded="false" />
-            <element signature="e#19181#19186#0" expanded="false" />
-            <element signature="e#22778#22783#0" expanded="false" />
-            <element signature="e#22853#22858#0" expanded="false" />
-            <element signature="e#26527#26532#0" expanded="false" />
-            <element signature="e#26602#26607#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/onboardingModal.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="325" column="64" lean-forward="false" selection-start-line="325" selection-start-column="64" selection-end-line="325" selection-end-column="64" />
+        <state relative-caret-position="318">
+          <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/header-node-modal.tpl">
+    <entry file="file://$PROJECT_DIR$/app/scripts/ethFuncs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="12" column="114" lean-forward="false" selection-start-line="12" selection-start-column="114" selection-end-line="12" selection-end-column="114" />
+        <state relative-caret-position="401">
+          <caret line="82" column="27" lean-forward="false" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -737,42 +723,240 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/translations/en.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="318" column="56" lean-forward="false" selection-start-line="318" selection-start-column="56" selection-end-line="318" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/sendTx-content.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation-content.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="73" column="28" lean-forward="false" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+        <state relative-caret-position="1155">
+          <caret line="77" column="16" lean-forward="false" selection-start-line="77" selection-start-column="16" selection-end-line="79" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="85" column="37" lean-forward="true" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
+        <state relative-caret-position="75">
+          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="146" column="64" lean-forward="false" selection-start-line="146" selection-start-column="64" selection-end-line="146" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/footerCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/header-node-modal.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="72" lean-forward="false" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/footer.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding>
+            <element signature="e#213#218#0" expanded="true" />
+            <element signature="n#style#0;n#article#0;n#footer#0;n#!!top" expanded="true" />
+            <element signature="e#657#663#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/help.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="231" column="36" lean-forward="false" selection-start-line="231" selection-start-column="36" selection-end-line="231" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/onboardingModal.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="328" column="60" lean-forward="false" selection-start-line="328" selection-start-column="60" selection-end-line="328" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/footer-disclaimer-modal.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+          <folding>
+            <element signature="e#789#794#0" expanded="true" />
+            <element signature="e#1279#1284#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="627" column="147" lean-forward="false" selection-start-line="627" selection-start-column="147" selection-end-line="627" selection-end-column="147" />
+          <folding>
+            <element signature="e#19112#19117#0" expanded="false" />
+            <element signature="e#19180#19185#0" expanded="false" />
+            <element signature="e#22771#22776#0" expanded="false" />
+            <element signature="e#22839#22844#0" expanded="false" />
+            <element signature="e#26507#26512#0" expanded="false" />
+            <element signature="e#26575#26580#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/translations/en.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="414" column="21" lean-forward="false" selection-start-line="414" selection-start-column="4" selection-end-line="414" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/translations/ru.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="325" column="31" lean-forward="false" selection-start-line="325" selection-start-column="31" selection-end-line="325" selection-end-column="31" />
+        <state relative-caret-position="286">
+          <caret line="217" column="49" lean-forward="false" selection-start-line="217" selection-start-column="49" selection-end-line="217" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/footerEmbedded.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="344" lean-forward="false" selection-start-line="3" selection-start-column="344" selection-end-line="3" selection-end-column="344" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/images/logo-myetherwallet.min.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/signMsg.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/headerEmbedded.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="73" lean-forward="false" selection-start-line="34" selection-start-column="73" selection-end-line="34" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/method-draw-image.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/method-draw-image (1).svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="6" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/layouts/signmsg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/globalService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="63" column="23" lean-forward="false" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/header.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="117" column="62" lean-forward="false" selection-start-line="117" selection-start-column="62" selection-end-line="117" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/translations/zhtw.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="317" column="17" lean-forward="true" selection-start-line="317" selection-start-column="17" selection-end-line="317" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/translations/zhcn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="132" column="51" lean-forward="false" selection-start-line="132" selection-start-column="51" selection-end-line="132" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Airon.io.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/images/logo-myetherwallet.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/images/logo-myetherwallet.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/translations/translate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
           <folding />
         </state>
       </provider>

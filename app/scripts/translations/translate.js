@@ -20,11 +20,12 @@
   var th = require('./th');
   var tr = require('./tr');
   var vi = require('./vi');
+ var ru = require('./ru');
+  */
   var zhcn = require('./zhcn');
   var zhtw = require('./zhtw');
-  */
+
  var en = require('./en');
- var ru = require('./ru');
 
  var translate = function($translateProvider) {
      /*
@@ -48,11 +49,12 @@
   $translateProvider.translations(th.code, translate.marked(th.data));
   $translateProvider.translations(tr.code, translate.marked(tr.data));
   $translateProvider.translations(vi.code, translate.marked(vi.data));
+     $translateProvider.translations(ru.code, translate.marked(ru.data));
+  */
   $translateProvider.translations(zhcn.code, translate.marked(zhcn.data));
   $translateProvider.translations(zhtw.code, translate.marked(zhtw.data));
-  */
+
      $translateProvider.translations(en.code, translate.marked(en.data));
-     $translateProvider.translations(ru.code, translate.marked(ru.data));
   $translateProvider.preferredLanguage('en');
   $translateProvider.fallbackLanguage('en');
   $translateProvider.useSanitizeValueStrategy(null);

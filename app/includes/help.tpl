@@ -104,7 +104,7 @@
   <article class="collapse-container">
     <div ng-click="h2b = !h2b">
       <a class="collapse-button" ><span ng-show="!h2b">+</span><span ng-show="h2b">-</span></a>
-      <h4 translate="HELP_2b_Title"> 2b. How do I safely / offline / cold storage with AironWallet? </h4>
+      <h4 translate="HELP_2b_Title"> 2b. How do I safely / offline / cold storage with Airon.io? </h4>
     </div>
     <div ng-show="h2b">
       <ol>
@@ -136,7 +136,7 @@
         <li translate="HELP_3_Desc_2"> Navigate to the "View Wallet Info" page. </li>
         }
         @@if (site === 'cx' )  {
-        <li translate="HELP_3_Desc_3"> Navigate to the AironWallet.com "View Wallet Info" page. </li>
+        <li translate="HELP_3_Desc_3"> Navigate to the Airon.io "View Wallet Info" page. </li>
         }
         <li translate="HELP_3_Desc_4"> Select your wallet file -or- your private key and unlock your wallet. </li>
         <li translate="HELP_3_Desc_5"> If the wallet is encrypted, a text box will automatically appear. Enter the password. </li>
@@ -180,7 +180,7 @@
   <article class="collapse-container">
     <div ng-click="h4cx = !h4cx">
       <a class="collapse-button" ><span ng-show="!h4cx">+</span><span ng-show="h4cx">-</span></a>
-      <h4 translate="HELP_4CX_Title">4. How do I send Ether using AironWallet CX? </h4>
+      <h4 translate="HELP_4CX_Title">4. How do I send Ether using Airon.io CX? </h4>
     </div>
     <div ng-show="h4cx">
       <p translate="HELP_4CX_Desc_1">First, you need to add a wallet. Once you have done that, you have 2 options: the "QuickSend" functionality from the Chrome Extension icon or the "Send Ether" page.</p>
@@ -220,19 +220,19 @@
   <article class="collapse-container">
     <div  ng-click="h5 = !h5">
       <a class="collapse-button"><span ng-show="!h5">+</span><span ng-show="h5">-</span></a>
-      <h4 translate="HELP_5_Title">5. How do I run AironWallet.com offline/locally? </h4>
+      <h4 translate="HELP_5_Title">5. How do I run Airon.io offline/locally? </h4>
     </div>
     <div ng-show="h5">
-    <p translate="HELP_5_Desc_1"> You can run AironWallet.com on your computer instead of from the GitHub servers. You can generatea a wallet completely offline and send transactions from the "Offline Transaction" page. </p>
+    <p translate="HELP_5_Desc_1"> You can run Airon.io on your computer instead of from the GitHub servers. You can generatea a wallet completely offline and send transactions from the "Offline Transaction" page. </p>
     <ol>
       <li translate="HELP_2b_Desc_1">Go to https://github.com/kvhnuke/etherwallet/releases/latest:</li>
       <li translate="HELP_2b_Desc_2">Click the file below that looks like dist-vX.X.X.zip</li>
       <li translate="HELP_2b_Desc_3">Move zip to an airgapped computer.</li>
       <li translate="HELP_2b_Desc_4">Unzip it and double-click `index.html`.</li>
-      <li translate="HELP_5_Desc_7">AironWallet.com is now running entirely on your computer.</li>
+      <li translate="HELP_5_Desc_7">Airon.io is now running entirely on your computer.</li>
     </ol>
-    <p translate="HELP_5_Desc_8"> In case you are not familiar, you need to keep the entire folder in order to run the website, not just index.html. Don't touch or move anything around in the folder. If you are storing a backup of the AironWallet repo for the future, we recommend just storing the ZIP so you can be sure the folder contents stay intact.</p>
-    <p translate="HELP_5_Desc_9"> As we are constantly updating AironWallet.com, we recommend you periodically update your saved version of the repo. </p>
+    <p translate="HELP_5_Desc_8"> In case you are not familiar, you need to keep the entire folder in order to run the website, not just index.html. Don't touch or move anything around in the folder. If you are storing a backup of the Airon.io repo for the future, we recommend just storing the ZIP so you can be sure the folder contents stay intact.</p>
+    <p translate="HELP_5_Desc_9"> As we are constantly updating Airon.io, we recommend you periodically update your saved version of the repo. </p>
     </div>
   </article>
 }
@@ -269,7 +269,7 @@
       <ul>
         <li> Verify the URL you entered is correct. </li>
         <li> Verify the port you entered is correct. </li>
-        <li> Verify that if you are connecting to an http:// node you are running AironWallet locally (NOT over https://). </li>
+        <li> Verify that if you are connecting to an http:// node you are running Airon.io locally (NOT over https://). </li>
         <li> Verify geth is running with <code>geth --rpc --rpccorsdomain "null" --keystore "dont_put_secret_files_here_ever"</code> or parity is running with <code>parity --rpccorsdomain "*" --keys-path "dont_put_secret_files_here_ever"</code> </li>
         <li> Verify your node is actually up and running. </li>
         <li> Try removing the node and adding it again. </li>
@@ -316,10 +316,10 @@
       <h4 translate="HELP_8_Title">8. What happens if your site goes down? </h4>
     </div>
     <div ng-show="h8">
-      <p translate="HELP_8_Desc_1">AironWallet is not a web wallet. You don't have a login and nothing ever gets saved to our servers. It is simply an interface that allows you interact with the blockchain.</p>
-      <p translate="HELP_8_Desc_2">If AironWallet.com goes down, you would have to find another way (like geth or Ethereum Wallet / Mist) to do what we are doing. But you wouldn't have to "get" your Ether out of AironWallet because it's not in AironWallet. It's in whatever wallet your generated via our site.</p>
+      <p translate="HELP_8_Desc_1">Airon.io is not a web wallet. You don't have a login and nothing ever gets saved to our servers. It is simply an interface that allows you interact with the blockchain.</p>
+      <p translate="HELP_8_Desc_2">If Airon.io goes down, you would have to find another way (like geth or Ethereum Wallet / Mist) to do what we are doing. But you wouldn't have to "get" your Ether out of Airon.io because it's not in Airon.io. It's in whatever wallet your generated via our site.</p>
       <p translate="HELP_8_Desc_3"> You can import your unencrypted private key and your Geth/Mist Format (encrypted) files directly into geth / Ethereum Wallet / Mist very easily now. See question #10 below. </p>
-      <p translate="HELP_8_Desc_4">In addition, the likelihood of us taking AironWallet down is slim to none. It costs us almost nothing to maintain as we aren't storing any information. If we do take the domain down, it still is, and always will be, publicly available at <a href="https://github.com/kvhnuke/etherwallet/tree/gh-pages" target="_blank" rel="noopener noreferrer">https://github.com/kvhnuke/etherwallet</a>. You can download the ZIP there and run it locally. </p>
+      <p translate="HELP_8_Desc_4">In addition, the likelihood of us taking Airon.io down is slim to none. It costs us almost nothing to maintain as we aren't storing any information. If we do take the domain down, it still is, and always will be, publicly available at <a href="https://github.com/kvhnuke/etherwallet/tree/gh-pages" target="_blank" rel="noopener noreferrer">https://github.com/kvhnuke/etherwallet</a>. You can download the ZIP there and run it locally. </p>
     </div>
   </article>
 }
@@ -330,12 +330,12 @@
   <article class="collapse-container">
     <div  ng-click="h8cx = !h8cx">
       <a class="collapse-button"><span ng-show="!h8cx">+</span><span ng-show="h8cx">-</span></a>
-      <h4 translate="HELP_8CX_Title">8. What happens if AironWallet CX disappears? </h4>
+      <h4 translate="HELP_8CX_Title">8. What happens if Airon.io CX disappears? </h4>
     </div>
     <div ng-show="h8cx">
       <p translate="HELP_8CX_Desc_1">First, all data is saved on your computer, not our servers. I know it can be confusing, but when you look at the Chrome Extension, you are NOT looking at stuff saved on our servers somewhere - it's all saved on your own computer.</p>
-      <p translate="HELP_8CX_Desc_2"> That said, it is **very important** that you back up all your information for any new wallets generated with AironWallet CX. That way if anything happens to AironWallet CX or your computer, you still have all the information necessary to access your Ether. See the #2a for how to back up your wallets.</p>
-      <p translate="HELP_8CX_Desc_3"> If for some reason AironWallet CX disappears from the Chrome Store, you can find the source on Github and load it manually. See #5 above.</p>
+      <p translate="HELP_8CX_Desc_2"> That said, it is **very important** that you back up all your information for any new wallets generated with Airon.io CX. That way if anything happens to Airon.io CX or your computer, you still have all the information necessary to access your Ether. See the #2a for how to back up your wallets.</p>
+      <p translate="HELP_8CX_Desc_3"> If for some reason Airon.io CX disappears from the Chrome Store, you can find the source on Github and load it manually. See #5 above.</p>
     </div>
   </article>
 }
@@ -382,10 +382,10 @@
   <article class="collapse-container">
     <div ng-click="h12 = !h12">
       <a class="collapse-button" ><span ng-show="!h12">+</span><span ng-show="h12">-</span></a>
-      <h4 translate="HELP_12_Title">12. How do I import a wallet created with AironWallet into geth / Ethereum Wallet / Mist?</h4>
+      <h4 translate="HELP_12_Title">12. How do I import a wallet created with Airon.io into geth / Ethereum Wallet / Mist?</h4>
     </div>
     <div ng-show="h12">
-      <p class="strong" translate="HELP_12_Desc_1"> Using an Geth/Mist JSON file from AironWallet v2+....</p>
+      <p class="strong" translate="HELP_12_Desc_1"> Using an Geth/Mist JSON file from Airon.io v2+....</p>
       <ol>
         @@if (site === 'mew' ) {
           <li translate="HELP_12_Desc_2"> Go to the "View Wallet Info" page.</li>
@@ -447,10 +447,10 @@
   <article class="collapse-container">
     <div ng-click="h14 = !h14" >
       <a class="collapse-button"><span ng-show="!h14">+</span><span ng-show="h14">-</span></a>
-        <h4 translate="HELP_14_Title"> 14. Some sites randomize (seed) the private key generation via mouse movements. AironWallet.com doesn't do this. Is the random number generation for AironWallet safe?</h4>
+        <h4 translate="HELP_14_Title"> 14. Some sites randomize (seed) the private key generation via mouse movements. Airon.io doesn't do this. Is the random number generation for Airon.io safe?</h4>
       </div>
       <div ng-show="h14">
-        <p translate="HELP_14_Desc_1">While the mouse moving thing is clever and we understand why people like it, the reality is window.crypto ensures more entropy than your mouse movements. The mouse movements aren't unsafe, it's just that we (and tons of other crypto experments) believe in window.crypto. In addition, AironWallet.com can be used on touch devices. Here's a <a href="https://www.reddit.com/r/ethereum/comments/2bilqg/note_there_is_a_paranoid_highsecurity_way_to/cj5sgrm" target="_blank" rel="noopener noreferrer">conversation between an angry redditor and Vitalik Buterin regarding mouse movements v. window.crypto</a> and here is the <a href="https://dvcs.w3.org/hg/webcrypto-api/raw-file/tip/spec/Overview.html#dfn-GlobalCrypto" target="_blank" rel="noopener noreferrer">the window.crypto w3 spec</a>.</p>
+        <p translate="HELP_14_Desc_1">While the mouse moving thing is clever and we understand why people like it, the reality is window.crypto ensures more entropy than your mouse movements. The mouse movements aren't unsafe, it's just that we (and tons of other crypto experments) believe in window.crypto. In addition, Airon.io can be used on touch devices. Here's a <a href="https://www.reddit.com/r/ethereum/comments/2bilqg/note_there_is_a_paranoid_highsecurity_way_to/cj5sgrm" target="_blank" rel="noopener noreferrer">conversation between an angry redditor and Vitalik Buterin regarding mouse movements v. window.crypto</a> and here is the <a href="https://dvcs.w3.org/hg/webcrypto-api/raw-file/tip/spec/Overview.html#dfn-GlobalCrypto" target="_blank" rel="noopener noreferrer">the window.crypto w3 spec</a>.</p>
     </div>
   </article>
 
@@ -556,7 +556,7 @@
   <article class="collapse-container">
     <div ng-click="hSecCX = !hSecCX">
       <a class="collapse-button" ><span ng-show="!hSecCX">+</span><span ng-show="hSecCX">-</span></a>
-      <h4 translate="HELP_SecCX_Title">Security - AironWallet CX </h4>
+      <h4 translate="HELP_SecCX_Title">Security - Airon.io CX </h4>
     </div>
     <div ng-show="hSecCX">
       <h6 translate="HELP_SecCX_Desc_1"> Where is this extension saving my information?</h6>
@@ -565,7 +565,7 @@
       <h6 translate="HELP_SecCX_Desc_3"> What information is saved? </h6>
       <p translate="HELP_SecCX_Desc_4"> The address, nickname, private key is stored in chrome.storage. The private key is encrypted using the password you set when you added the wallet. The nickname and wallet address is not encrypted. </p>
       <h6 translate="HELP_SecCX_Desc_5"> Why aren't the nickname and wallet address encrypted? </h6>
-      <p translate="HELP_SecCX_Desc_6"> If we were to encrypt these items, you would need to enter a password each time you wanted to view your account balance or view the nicknames. If this concerns you, we recommend you use AironWallet.com instead of this Chrome Extension. </p>
+      <p translate="HELP_SecCX_Desc_6"> If we were to encrypt these items, you would need to enter a password each time you wanted to view your account balance or view the nicknames. If this concerns you, we recommend you use Airon.io instead of this Chrome Extension. </p>
     </div>
   </article>
 }

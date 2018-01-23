@@ -1,8 +1,8 @@
 {
-    "name": "AironWallet",
+    "name": "Airon.io",
     "version": "3.11.2.3",
-    "description": "An NPM dist of AironWallet. For easier downloading & updating via CLI.",
-    "author": "AironWallet",
+    "description": "An NPM dist of Airon.io. For easier downloading & updating via CLI.",
+    "author": "Airon.io",
     "license": "ISC",
     "devDependencies": {
         "open": "0.0.5"

@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>AironWallet.com</title>
-<meta property="og:title" content="AironWallet.com: Your Key to Ethereum">
-<meta property="og:site_name" content="AironWallet.com: Your Key to Ethereum">
-<meta name="twitter:title" content="AironWallet.com: Your Key to Ethereum">
-<meta name="apple-mobile-web-app-title" content="AironWallet.com: Your Key to Ethereum">
-<link href="https://www.aironwallet.com" rel="canonical">
-<meta content="https://www.aironwallet.com" property="og:url">
-<meta content="https://www.aironwallet.com" name="twitter:url">
+<title>Airon.io</title>
+<meta property="og:title" content="Airon.io: Your Key to Ethereum">
+<meta property="og:site_name" content="Airon.io: Your Key to Ethereum">
+<meta name="twitter:title" content="Airon.io: Your Key to Ethereum">
+<meta name="apple-mobile-web-app-title" content="Airon.io: Your Key to Ethereum">
+<link href="https://www.airon.io" rel="canonical">
+<meta content="https://www.airon.io" property="og:url">
+<meta content="https://www.airon.cio" name="twitter:url">
 <link rel="stylesheet" href="css/etherwallet-master.min.css">
 <script type="text/javascript" src="js/etherwallet-static.min.js"></script>
 <script type="text/javascript" src="js/etherwallet-master.js"></script>
-<meta name="description" content="AironWallet (AW) is a free, open-source, client-side interface for generating Ethereum wallets & more. Interact with the Ethereum blockchain easily & securely.">
+<meta name="description" content="Airon.io is a free, open-source, client-side interface for generating Ethereum wallets & more. Interact with the Ethereum blockchain easily & securely.">
 <meta property="og:description"  content="Free, open-source, client-side Ethereum wallet. Enabling you to interact with the blockchain easily & securely.">
 <meta name="twitter:description" content="Free, open-source, client-side Ethereum wallet. Enabling you to interact with the blockchain easily & securely.">
 <meta name="robots" content="index,follow">
@@ -26,13 +26,13 @@
 <link href="images/fav/manifest.json" rel="manifest">
 <link href="images/fav/safari-pinned-tab.svg" rel="mask-icon" color="#2f99b0">
 <link href="images/fav/favicon.ico" rel="shortcut icon">
-<meta name="apple-mobile-web-app-title" content="AironWallet &middot; Your Key to Ethereum">
-<meta name="application-name" content="AironWallet">
+<meta name="apple-mobile-web-app-title" content="Airon.io &middot; Your Key to Ethereum">
+<meta name="application-name" content="Airon.io">
 <meta name="msapplication-config" content="images/fav/browserconfig.xml">
 <meta name="theme-color" content="#1d6986">
 <meta name="apple-mobile-web-app-status-bar-style" content="#1d6986">
-<meta property="og:url" content="https://www.aironwallet.com" />
-<meta property="og:title" content="AironWallet.com  &middot; Your Key to Ethereum" />
+<meta property="og:url" content="https://www.airon.io" />
+<meta property="og:title" content="Airon.io  &middot; Your Key to Ethereum" />
 <meta property="og:type" content="website">
 <meta property="og:image" content="/images/myetherwallet-logo-banner.png" />
 <meta property="og:image" content="/images/myetherwallet-logo.png" />
@@ -40,25 +40,25 @@
 <meta property="og:image" content="/images/myetherwallet-banner-fun.jpg" />
 <meta name="twitter:image" content="/images/myetherwallet-logo-twitter.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@AironWallet">
-<meta name="twitter:creator" content="@AironWallet">
+<meta name="twitter:site" content="@Airon.io">
+<meta name="twitter:creator" content="@Airon.io">
 <script type="application/ld+json">
 {
 "@context": "http://schema.org",
 "@type" : "Organization",
-"name" : "AironWallet",
-"legalName" : "AironWallet LLC",
-"url" : "https://www.aironwallet.com/",
+"name" : "Airon.io",
+"legalName" : "Airon.io LLC",
+"url" : "https://www.airon.io/",
 "contactPoint" : [{
   "@type" : "ContactPoint",
-  "email" : "support@aironwallet.com",
-  "url"   : "https://aironwallet.com",
+  "email" : "support@airon.io",
+  "url"   : "https://airon.io",
   "contactType" : "customer service"
 }],
 "logo" : "https://www.myetherwallet.com/images/myetherwallet-logo.png",
-"description": "AironWallet.com is a free, open-source, client-side interface for generating Ethereum wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely.",
+"description": "Airon.io is a free, open-source, client-side interface for generating Ethereum wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely.",
 "sameAs" : [
-  "https://www.aironwallet.com/",
+  "https://www.airon.io/",
   "https://chrome.google.com/webstore/detail/myetherwallet-cx/nlbmnnijcnlegkjjpcfjclmcfggfefdm",
   "https://www.facebook.com/MyEtherWallet/",
   "https://twitter.com/myetherwallet",
@@ -80,7 +80,7 @@
     <div class="container">
       DON'T GET PHISHED, please! 🎣 Thank you! 🤗
       <br />
-      1. BOOKMARK <a href="https://www.aironwallet.com"> AIRONWALLET.COM </a>
+      1. BOOKMARK <a href="https://www.airon.io"> Airon.io </a>
       <span class="hidden-xs">
         &nbsp;&nbsp;&nbsp;&nbsp;
         2. INSTALL <a href="https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn" target="_blank" rel="noopener noreferrer">EAL</a>
@@ -97,13 +97,13 @@
   <section class="container">
     @@if (site === 'mew' ) {
       <a class="brand" href="/" aria-label="Go to homepage">
-        <img src="images/logo-myetherwallet.svg"   height="64px" width="245px" alt="AironWallet" />
+        <img src="images/logo-myetherwallet.svg"   height="64px" width="245px" alt="Airon.io" />
         <p class="small visible-xs">3.11.2.3</p>
       </a>
     }
     @@if (site === 'cx'  ) {
       <a class="brand" href="/cx-wallet.html" aria-label="Go to homepage">
-        <img src="images/logo-myetherwalletcx.svg" height="64px" width="245px" alt="AironWallet" />
+        <img src="images/logo-myetherwalletcx.svg" height="64px" width="245px" alt="Airon.io" />
         <p class="small visible-xs">3.11.2.3</p>
       </a>
     }
@@ -115,7 +115,8 @@
       <a tabindex="0"  aria-haspopup="true" aria-expanded="false" aria-label="change language. current language {{curLang}}" class="dropdown-toggle  btn btn-white" ng-click="dropdown = !dropdown">{{curLang}}<i class="caret"></i></a>
       <ul class="dropdown-menu" ng-show="dropdown">
         <li><a ng-class="{true:'active'}[curLang=='English']"         ng-click="changeLanguage('en','English'        )"> English         </a></li>
-        <li><a ng-class="{true:'active'}[curLang=='Русский']"         ng-click="changeLanguage('ru','Русский'        )"> Русский         </a></li>
+        <li><a ng-class="{true:'active'}[curLang=='简体中文']"         ng-click="changeLanguage('zhcn','简体中文'      )"> 简体中文         </a></li>
+        <li><a ng-class="{true:'active'}[curLang=='繁體中文']"         ng-click="changeLanguage('zhtw','繁體中文'      )"> 繁體中文         </a></li>
         <!--
         <li><a ng-class="{true:'active'}[curLang=='Català']"          ng-click="changeLanguage('ca','Català'         )"> Català          </a></li>
         <li><a ng-class="{true:'active'}[curLang=='Deutsch']"         ng-click="changeLanguage('de','Deutsch'        )"> Deutsch         </a></li>
@@ -136,9 +137,8 @@
         <li><a ng-class="{true:'active'}[curLang=='Português']"       ng-click="changeLanguage('pt','Português'      )"> Português       </a></li>
         <li><a ng-class="{true:'active'}[curLang=='ภาษาไทย']"         ng-click="changeLanguage('th','ภาษาไทย'        )"> ภาษาไทย         </a></li>
         <li><a ng-class="{true:'active'}[curLang=='Türkçe']"          ng-click="changeLanguage('tr','Türkçe'         )"> Türkçe          </a></li>
+        <li><a ng-class="{true:'active'}[curLang=='Русский']"         ng-click="changeLanguage('ru','Русский'        )"> Русский         </a></li>
         <li><a ng-class="{true:'active'}[curLang=='Tiếng Việt']"      ng-click="changeLanguage('vi','Tiếng Việt'     )"> Tiếng Việt      </a></li>
-        <li><a ng-class="{true:'active'}[curLang=='简体中文']"         ng-click="changeLanguage('zhcn','简体中文'      )"> 简体中文         </a></li>
-        <li><a ng-class="{true:'active'}[curLang=='繁體中文']"         ng-click="changeLanguage('zhtw','繁體中文'      )"> 繁體中文         </a></li>
         -->
         <li role="separator" class="divider"></li>
         <li><a data-toggle="modal" data-target="#disclaimerModal" translate="FOOTER_4"> Disclaimer </a></li>

@@ -1,9 +1,10 @@
 'use strict';
-var footerCtrl = function($scope, globalService) {
+var footerCtrl = function($scope,$sce, globalService) {
+    $scope.ajaxReq = ajaxReq
+    $scope.Validator = Validator
     var gasPriceKey = "gasPrice";
     $scope.footerModal = new Modal(document.getElementById('disclaimerModal'));
     $scope.ethBlockNumber = "loading";
-    $scope.etcBlockNumber = "loading";
     $scope.showBlocks = window.location.protocol == "https:";
     $scope.setBlockNumbers = function() {
         if (!$scope.showBlocks) return;
@@ -29,5 +30,9 @@ var footerCtrl = function($scope, globalService) {
     }
     setGasValues();
     $scope.gasChanged();
+
+    $scope.getYear = function() {
+        return new Date().getFullYear()
+    }
 };
 module.exports = footerCtrl;

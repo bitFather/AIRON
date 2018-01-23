@@ -3,9 +3,7 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
     $scope.ajaxReq = ajaxReq
     walletService.wallet = null
     walletService.password = ''
-    $scope.ajaxReq = ajaxReq
     $scope.Validator = Validator
-    $scope.unitReadable = 'reiss1'
 
     $scope.contract = null
     $scope.signedTx = null
@@ -126,6 +124,7 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
                 if (!data.error) {
                     $scope.tx.gasLimit = data.data
                 } else {
+                    $scope.tx.gasLimit = null
                     $scope.notifier.danger(globalFuncs.errorMsgs[40])
                 }
             })

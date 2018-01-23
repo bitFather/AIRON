@@ -10,7 +10,7 @@
         <article class="onboarding__modal" ng-show="showOnboardSlide==1">
           <h3 class="onboarding__title">
             <span translate="ONBOARD_welcome_title">
-              Welcome to AironWallet.com
+              Welcome to Airon.io
             </span>
             <br />
             <small translate="ONBOARD_welcome_content__3">
@@ -31,11 +31,11 @@
                 We cannot recover your funds or freeze your account if you visit a phishing site or lose your private key.
               </p>
               <h5 translate="ONBOARD_welcome_content__4">
-                What is AW?
+                What is Airon.io?
               </h5>
               <ul>
                 <li translate="ONBOARD_welcome_content__5">
-                  AironWallet is a free, open-source, client-side interface.
+                  Airon.io is a free, open-source, client-side interface.
                 </li>
                 <li translate="ONBOARD_welcome_content__6">
                   We allow you to interact directly with the blockchain while remaining in full control of your keys &amp; your funds.
@@ -53,7 +53,7 @@
           <div class="onboarding__buttons text-center">
             <a ng-click="setOnboardStatus(2)" class="btn btn-primary">
               <span translate="ONBOARD_bank_title">
-                AironWallet is not a Bank
+                Airon.io is not a Bank
               </span>
             </a>
           </div>
@@ -62,7 +62,7 @@
 
         <article class="onboarding__modal" ng-show="showOnboardSlide==2">
           <h3 class="onboarding__title" translate="ONBOARD_bank_title">
-            AironWallet is not a Bank
+            Airon.io is not a Bank
           </h3>
           <section class="row row--flex">
             <div class="col-xs-12 col-sm-4 onboarding__image">
@@ -96,7 +96,7 @@
             </a>
             <a ng-click="setOnboardStatus(3)" class="btn btn-primary">
               <span translate="ONBOARD_interface_title">
-                AironWallet is an Interface
+                Airon.io is an Interface
               </span>
             </a>
           </div>
@@ -105,7 +105,7 @@
 
         <article class="onboarding__modal" ng-show="showOnboardSlide==3">
           <h3 class="onboarding__title" translate="ONBOARD_interface_title">
-            AironWallet is an Interface
+            Airon.io is an Interface
           </h3>
           <section class="row row--flex">
             <div class="col-xs-12 col-sm-4 onboarding__image">
@@ -140,7 +140,7 @@
           <div class="onboarding__buttons">
             <a ng-click="setOnboardStatus(2)" class="btn btn-default">
               <span translate="ONBOARD_bank_title__alt">
-                AW isn't a Bank
+                Airon.io isn't a Bank
               </span>
             </a>
             <a ng-click="setOnboardStatus(4)" class="btn btn-primary">
@@ -174,10 +174,10 @@
                   It is stored and maintained by thousands of people (miners) across the globe who have special computers.
                 </li>
                 <li translate="ONBOARD_blockchain_content__4">
-                  It is made up of all the individual transactions sent from AironWallet, MetaMask, Exodus, Mist, Geth, Parity, and everywhere else.
+                  It is made up of all the individual transactions sent from Airon.io, MetaMask, Exodus, Mist, Geth, Parity, and everywhere else.
                 </li>
                 <li translate="ONBOARD_blockchain_content__5">
-                  When you see your balance on AironWallet.com or view your transactions on [etherscan.io](https://etherscan.io), you are seeing data on the blockchain, not in our personal systems.
+                  When you see your balance on Airon.io or view your transactions on [etherscan.io](https://etherscan.io), you are seeing data on the blockchain, not in our personal systems.
                 </li>
                 <li translate="ONBOARD_blockchain_content__6">
                    Again: <strong>we are not a bank</strong>.
@@ -191,7 +191,7 @@
           <div class="onboarding__buttons">
             <a ng-click="setOnboardStatus(3)" class="btn btn-default">
               <span translate="ONBOARD_interface_title__alt">
-                AW is an Interface
+                Airon.io is an Interface
               </span>
             </a>
             <a ng-click="setOnboardStatus(5)" class="btn btn-primary">
@@ -256,7 +256,7 @@
             </a>
             <a ng-click="setOnboardStatus(6)" class="btn btn-primary">
               <span translate="ONBOARD_point_title__alt">
-                What's the Point of AW then?
+                What's the Point of Airon.io then?
               </span>
             </a>
           </div>
@@ -265,7 +265,7 @@
 
         <article class="onboarding__modal" ng-show="showOnboardSlide==6">
           <h3 class="onboarding__title" translate="ONBOARD_whymew_title">
-            If AironWallet can't do those things, what's the point?
+            If Airon.io can't do those things, what's the point?
           </h3>
           <section class="row row--flex">
             <div class="col-xs-12 col-sm-4 onboarding__image">
@@ -289,7 +289,7 @@
                   If you don't like the sound of this, consider using [Coinbase](https://www.coinbase.com/) or [Blockchain.info](https://blockchain.info/wallet/#/signup). They have more familiar accounts with usernames &amp; passwords.
                 </li>
                 <li translate="ONBOARD_whymew_content__6">
-                  If you are scared but want to use AW, [get a hardware wallet](https://myetherwallet.github.io/knowledge-base/hardware-wallets/hardware-wallet-recommendations.html)! These keep your keys secure.
+                  If you are scared but want to use Airon.io, [get a hardware wallet](https://myetherwallet.github.io/knowledge-base/hardware-wallets/hardware-wallet-recommendations.html)! These keep your keys secure.
                 </li>
               </ul>
             </div>
@@ -314,19 +314,19 @@
             How To Protect Yourself from Phishers
           </h3>
           <p translate="ONBOARD_secure_1_content__1">
-            Phishers send you a message with a link to a website that looks just like AironWallet, EtherDelta, Paypal, or your bank, but is not the real website. They steal your information and then steal your money.
+            Phishers send you a message with a link to a website that looks just like Airon.io, EtherDelta, Paypal, or your bank, but is not the real website. They steal your information and then steal your money.
           </p>
           <section class="row row--flex">
             <div class="col-xs-12 col-sm-8 onboarding__content">
               <ul>
                 <li translate="ONBOARD_secure_1_content__2">
-                  Install [EAL](https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn) or [MetaMask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) or [Cryptonite by Metacert](https://chrome.google.com/webstore/detail/cryptonite-by-metacert/keghdcpemohlojlglbiegihkljkgnige) or the [AironWallet Chrome Extension](https://chrome.google.com/webstore/detail/myetherwallet-cx/nlbmnnijcnlegkjjpcfjclmcfggfefdm) to block malicious websites.
+                  Install [EAL](https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn) or [MetaMask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) or [Cryptonite by Metacert](https://chrome.google.com/webstore/detail/cryptonite-by-metacert/keghdcpemohlojlglbiegihkljkgnige) or the [Airon.io Chrome Extension](https://chrome.google.com/webstore/detail/myetherwallet-cx/nlbmnnijcnlegkjjpcfjclmcfggfefdm) to block malicious websites.
                 </li>
                 <li translate="ONBOARD_secure_1_content__3">
-                  Always check the URL: `https://www.aironwallet.com`.
+                  Always check the URL: `https://www.airon.io`.
                 </li>
                 <li translate="ONBOARD_secure_1_content__4">
-                  Always make sure the URL bar has `AIRONWALLET LLC [US]` in green.
+                  Always make sure the URL bar has `AIRON.IO` in green.
                 </li>
                 <li translate="ONBOARD_secure_1_content__5">
                   Do not trust messages or links sent to you randomly via email, Slack, Reddit, Twitter, etc.
@@ -482,7 +482,7 @@
                 <li>
                   <a href="https://myetherwallet.github.io/knowledge-base/offline/running-myetherwallet-locally.html"
                      target="_blank" rel="noopener noreferrer" class="strong" translate="ONBOARD_final_content__4">
-                    How to Run AW Offline / Locally
+                    How to Run Airon.io Offline / Locally
                   </a>
                 </li>
                 <li>

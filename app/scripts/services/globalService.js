@@ -29,61 +29,61 @@ var globalService = function($http, $httpParamSerializerJQLike) {
             mew: false,
             cx: true
         },
-        sendTransaction: {
+        viewWalletInfo: {
             id: 3,
+            name: "NAV_ViewWallet",
+            url: "view-wallet-info",
+            mew: true,
+            cx: false
+        },
+        sendTransaction: {
+            id: 4,
             name: "NAV_SendEther",
             url: "send-transaction",
             mew: true,
             cx: true
         },
         swap: {
-            id: 4,
+            id: 5,
             name: "NAV_Swap",
             url: "swap",
             mew: false,
             cx: false
         },
         offlineTransaction: {
-            id: 5,
+            id: 6,
             name: "NAV_Offline",
             url: "offline-transaction",
             mew: false,
             cx: false
         },
         contracts: {
-            id: 6,
+            id: 7,
             name: "NAV_Contracts",
             url: "contracts",
             mew: false,
             cx: false
         },
         ens: {
-            id: 7,
+            id: 8,
             name: "NAV_ENS",
             url: "ens",
             mew: false,
             cx: false
         },
         domainsale: {
-            id: 8,
+            id: 9,
             name: "NAV_DomainSale",
             url: "domainsale",
             mew: false,
             cx: false
         },
         txStatus: {
-            id: 9,
+            id: 10,
             name: "NAV_CheckTxStatus",
             url: "check-tx-status",
             mew: true,
             cx: true
-        },
-        viewWalletInfo: {
-            id: 10,
-            name: "NAV_ViewWallet",
-            url: "view-wallet-info",
-            mew: true,
-            cx: false
         },
         signMsg: {
             id: 11,

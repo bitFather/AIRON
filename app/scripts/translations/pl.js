@@ -431,7 +431,7 @@ OFFLINE_Desc                : 'Wygenerowanie transakcji może zostać wykonane w
 OFFLLINE_Step1_Title        : 'Krok 1: Wygeneruj Informacje (Komputer Online) ',
 OFFLINE_Step1_Button        : 'Wygeneruj Informacje ',
 OFFLINE_Step1_Label_1       : 'Od Adresu ',
-OFFLINE_Step1_Label_2       : 'Notka: To jest adres NADAWCY, czyli adres Twojego konta, które starasz sie odizolować od internetu. Wyróżnik jest generowany dla tego konta. ',
+OFFLINE_Step1_Label_2       : 'Notka: To jest adres NADAiron.ioCY, czyli adres Twojego konta, które starasz sie odizolować od internetu. Wyróżnik jest generowany dla tego konta. ',
 OFFLINE_Step2_Title         : 'Krok 2: Wygeneruj transakcję (Komputer Offline) ',
 OFFLINE_Step2_Label_1       : 'Do Adresu ',
 OFFLINE_Step2_Label_2       : 'Wartość / Kwota do Wysłania ',
