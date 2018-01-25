@@ -60,8 +60,6 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
             $scope.wallet.setTokens()
             $scope.tx.nonce = 0
             let current = $scope.getFromLS('curNode', '').key
-            console.log(current)
-            console.log(nodes.nodeList[current])
             $scope.web3 = new window.Web3(new window.Web3.providers.HttpProvider(nodes.nodeList[current].lib.SERVERURL))
             $scope.contract = new $scope.web3.eth.Contract(nodes.token.abi)
         },
@@ -77,6 +75,9 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
             }
             if (!$scope.token.decimals) {
                 throw globalFuncs.errorMsgs[43]
+            }
+            if (!$scope.tx.gasLimit) {
+                throw globalFuncs.errorMsgs[40]
             }
 
             $scope.sendTxModal.open()
@@ -116,10 +117,9 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
                 .encodeABI()
             let data = {
                 from: $scope.wallet.getAddressString(),
-                value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(etherUnits.toWei(0, $scope.tx.unit))),
+                value: '0x0',
                 data: ethFuncs.sanitizeHex('0x' + $scope.tx.data),
             }
-            console.log(data)
             ethFuncs.estimateGas(data, function(data) {
                 if (!data.error) {
                     $scope.tx.gasLimit = data.data

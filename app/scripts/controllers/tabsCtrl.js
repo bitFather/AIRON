@@ -185,7 +185,6 @@ var tabsCtrl = function($scope, globalService, $translate, $sce) {
     }
 
     $scope.setTab = function(hval) {
-        console.log("asdasd" + hval + " " + globalService.currentTab)
         if (hval != '') {
             hval = hval.replace('#', '');
             for (var key in $scope.tabNames) {
