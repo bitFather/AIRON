@@ -315,7 +315,7 @@ en.data = {
     ERROR_39: '(error_40) Bid must be more than the specified minimum',
     ERROR_40: '(error_41) Can not estimate fee. Try to change node and refresh the page.',
     ERROR_41: '(error_42) Name of the asset should contain 3-4 Latin letters.',
-    ERROR_42: '(error_43) Total tokens is not defined',
+    ERROR_42: '(error_43) Total tokens is not defined or has more than 15 digits',
     ERROR_43: '(error_44) Decimal varies from 0 to 18.',
 
     GETH_Balance: '(geth-01) Insufficient balance. Your gas limit * gas price + amount to send exceeds your current balance. Send more ETH to your account or use the "Send Entire Balance" button. If you believe this is in error, try pressing generate again. Required (d+) and got: (d+). [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html)',

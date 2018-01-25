@@ -70,7 +70,7 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
             if (!$scope.token.name) {
                 throw globalFuncs.errorMsgs[41]
             }
-            if (!$scope.token.totalCount) {
+            if (!$scope.token.totalCount || $scope.token.totalCount > 999999999999999) {
                 throw globalFuncs.errorMsgs[42]
             }
             if (!$scope.token.decimals) {
@@ -88,6 +88,9 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
 
     $scope.canGenerateToken = () => {
         if (!$scope.token.name || !$scope.token.totalCount || !$scope.token.decimals) {
+            return false
+        }
+        if($scope.token.totalCount > 999999999999999){
             return false
         }
         return true
@@ -163,7 +166,7 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
                 .encodeABI()
             let data = {
                 from: $scope.wallet.getAddressString(),
-                value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(etherUnits.toWei(0, $scope.tx.unit))),
+                value: '0x0',
                 data: ethFuncs.sanitizeHex('0x' + $scope.tx.data),
             }
             ethFuncs.estimateGas(data, fee => {

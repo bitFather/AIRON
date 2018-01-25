@@ -40,7 +40,7 @@
             <label translate="CREATETOKEN_totalTokens">
                 Total tokens
             </label>
-            <input class="form-control" type="number" ng-model="token.totalCount"/>
+            <input class="form-control" type="number" ng-model="token.totalCount" min="0"/>
         </section>
     </article>
 

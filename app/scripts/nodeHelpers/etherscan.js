@@ -83,8 +83,6 @@ etherscan.sendRawTx = function(rawTx, callback) {
     });
 }
 etherscan.getEstimatedGas = function(txobj, callback) {
-    console.log('txobj')
-    console.log(txobj)
     this.post({
         module: 'proxy',
         action: 'eth_estimateGas',
@@ -93,8 +91,6 @@ etherscan.getEstimatedGas = function(txobj, callback) {
         data: txobj.data,
         from: txobj.from
     }, function(data) {
-        console.log('data')
-        console.log(data)
         if (data.error) callback({ error: true, msg: data.error.message, data: '' });
         else callback({ error: false, msg: '', data: data.result });
     });
