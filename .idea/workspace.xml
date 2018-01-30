@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9ecc9755-455e-4a90-8732-9dd35fdcb01a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html" afterPath="$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/abiDefinitions/tokenAbi.json" afterPath="$PROJECT_DIR$/app/scripts/abiDefinitions/tokenAbi.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/bytecode/tokenBytecode" afterPath="$PROJECT_DIR$/app/scripts/bytecode/tokenBytecode" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/contracts/DetailedERC20.sol" afterPath="$PROJECT_DIR$/app/scripts/contracts/DetailedERC20.sol" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/sendTxCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/sendTxCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/js/etherwallet-master.js" afterPath="$PROJECT_DIR$/chrome-extension/js/etherwallet-master.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/etherwallet-master.js" afterPath="$PROJECT_DIR$/dist/js/etherwallet-master.js" />
     </list>
@@ -18,106 +22,155 @@
     <splitter split-orientation="horizontal" split-proportion="0.5019724">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="tokenCreation.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="tokenCreation.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1140">
-                  <caret line="76" column="47" lean-forward="false" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
+                <state relative-caret-position="1734">
+                  <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="en.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/translations/en.js">
+          <file leaf-file-name="tokenBytecode" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/bytecode/tokenBytecode">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4755">
-                  <caret line="317" column="80" lean-forward="false" selection-start-line="317" selection-start-column="80" selection-end-line="317" selection-end-column="80" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="9316" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="9316" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tokenCreation-content.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation-content.tpl">
+          <file leaf-file-name="uiFuncs.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/uiFuncs.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
-                  <caret line="42" column="82" lean-forward="false" selection-start-line="42" selection-start-column="82" selection-end-line="42" selection-end-column="82" />
+                <state relative-caret-position="1192">
+                  <caret line="126" column="43" lean-forward="false" selection-start-line="126" selection-start-column="43" selection-end-line="126" selection-end-column="43" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DetailedERC20.sol" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/contracts/DetailedERC20.sol">
+          <file leaf-file-name="globalFuncs.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/globalFuncs.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="383">
-                  <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="tokenCreation.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/tokenCreation.tpl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="56" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="generateWallet.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/generateWallet.tpl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="723">
-                  <caret line="335" column="37" lean-forward="false" selection-start-line="335" selection-start-column="37" selection-end-line="335" selection-end-column="37" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sk.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/translations/sk.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="303">
-                  <caret line="342" column="14" lean-forward="false" selection-start-line="342" selection-start-column="0" selection-end-line="342" selection-end-column="14" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="walletDecryptDrtv.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="538">
-                  <caret line="147" column="25" lean-forward="true" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="etherscan.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/nodeHelpers/etherscan.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1350">
-                  <caret line="90" column="25" lean-forward="false" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="footer.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/footer.tpl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+                <state relative-caret-position="452">
+                  <caret line="77" column="33" lean-forward="false" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
                   <folding>
-                    <element signature="e#213#218#0" expanded="true" />
-                    <element signature="n#style#0;n#article#0;n#footer#0;n#!!top" expanded="true" />
-                    <element signature="e#657#663#0" expanded="true" />
+                    <marker date="1517308257508" expanded="true" signature="1996:2010" ph="..." />
+                    <marker date="1517308257508" expanded="true" signature="2082:2117" ph="..." />
+                    <marker date="1517308257508" expanded="true" signature="2522:2540" ph="..." />
+                    <marker date="1517308257508" expanded="true" signature="2868:2886" ph="..." />
+                    <marker date="1517308257508" expanded="true" signature="3952:7640" ph="[...]" />
+                    <marker date="1517308257508" expanded="true" signature="7718:7957" ph="[...]" />
+                    <marker date="1517308257508" expanded="true" signature="8034:10171" ph="{&quot;(geth-06) Invalid sender\\.&quot;: 'GETH_InvalidSender'...}" />
+                    <marker date="1517308257508" expanded="true" signature="10246:10440" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="10280:10422" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="10361:10416" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="10519:13498" ph="{&quot;A (parity-01) A transaction with the same hash was already imported. It was probably already broadcast. To avoid duplicate transactions, check your address on [etherscan.io](https://etherscan.io) &amp; wait 10 minutes before attempting to send again. [Learn More](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html)\\. This means it was already broadcast. Please check your address on etherscan.io &amp; wait 10 minutes before attempting to send again to avoid duplicate transactions. &lt;a target='_blank' rel='noopener noreferrer' href='https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html'&gt;Learn more&lt;/a&gt;&quot;: &quot;PARITY_AlreadyImported&quot;...}" />
+                    <marker date="1517308257508" expanded="true" signature="13575:13997" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="13616:13979" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="13669:13973" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="13740:13965" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="13837:13954" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="14039:14086" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="14130:14278" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="14301:14316" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="14567:14619" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="14657:14856" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="14896:15081" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="15011:15063" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="15130:15329" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="15377:15412" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="15453:15576" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="15503:15563" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="15623:15666" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="15711:15758" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="15795:16082" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="15914:15951" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="15986:16013" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="16023:16080" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="16172:18526" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="16251:16522" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="16969:17046" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="17161:17757" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="17428:17509" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="17626:17751" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="17763:17948" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="17839:17942" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="17972:18263" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="18273:18324" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="18337:18524" ph="{&quot;defaultTokens&quot;: defaultTokens...}" />
+                    <marker date="1517308257508" expanded="true" signature="18598:18826" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="18655:18756" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="18762:18824" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="18896:19104" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="18953:19044" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="19050:19102" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="19182:19317" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="19408:19813" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="19487:19796" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="19767:19792" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="19878:22254" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="19888:22151" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="20522:20859" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="20650:20849" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="20978:21326" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="21120:21316" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="21574:21710" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="21738:21999" ph="{&quot;contractAddress&quot;: localToken.contractAdd...}" />
+                    <marker date="1517308257508" expanded="true" signature="22108:22142" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="22162:22252" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="22181:22244" ph="{&quot;msg&quot;: e.message...}" />
+                    <marker date="1517308257508" expanded="true" signature="22318:23032" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="22641:22710" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="22965:23030" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="23063:23789" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="23097:23314" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="23111:23224" ph="//..." />
+                    <marker date="1517308257508" expanded="true" signature="23354:23572" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="23392:23457" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="23463:23562" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="23618:23783" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="23656:23721" ph="{...}" />
+                    <marker date="1517308257508" expanded="true" signature="23727:23773" ph="{...}" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ethFuncs.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/ethFuncs.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                  <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="nodes.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/nodes.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="466">
+                  <caret line="33" column="2" lean-forward="false" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
+                  <folding>
+                    <marker date="1517308257529" expanded="true" signature="649:882" ph="{&quot;name&quot;: 'CUS'...}" />
+                    <marker date="1517308257529" expanded="true" signature="9070:9076" ph="{&quot;name&quot;: 'ELLA'...}" />
+                    <marker date="1517308257529" expanded="true" signature="9070:9078" ph="{...}" />
+                    <marker date="1517308257529" expanded="true" signature="9149:9206" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tabsCtrl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tabsCtrl.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="420">
+                  <caret line="136" column="96" lean-forward="false" selection-start-line="136" selection-start-column="96" selection-end-line="136" selection-end-column="96" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -129,18 +182,18 @@
           <file leaf-file-name="header.tpl" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/includes/header.tpl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2940">
-                  <caret line="196" column="12" lean-forward="false" selection-start-line="222" selection-start-column="46" selection-end-line="222" selection-end-column="52" />
+                <state relative-caret-position="255">
+                  <caret line="212" column="30" lean-forward="false" selection-start-line="212" selection-start-column="30" selection-end-line="212" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="contractsCtrl.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="contractsCtrl.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/scripts/controllers/contractsCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="127" column="21" lean-forward="false" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
+                <state relative-caret-position="402">
+                  <caret line="112" column="34" lean-forward="false" selection-start-line="112" selection-start-column="34" selection-end-line="112" selection-end-column="34" />
                   <folding>
                     <marker date="1516688429676" expanded="true" signature="3529:3560" ph="{...}" />
                   </folding>
@@ -151,8 +204,28 @@
           <file leaf-file-name="customNode.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/scripts/nodeHelpers/customNode.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1170">
+                <state relative-caret-position="15">
                   <caret line="78" column="21" lean-forward="false" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="offlineTxCtrl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/offlineTxCtrl.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="476">
+                  <caret line="119" column="26" lean-forward="false" selection-start-line="119" selection-start-column="26" selection-end-line="119" selection-end-column="69" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sendTxCtrl.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/sendTxCtrl.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="401">
+                  <caret line="228" column="33" lean-forward="false" selection-start-line="228" selection-start-column="27" selection-end-line="228" selection-end-column="33" />
                   <folding />
                 </state>
               </provider>
@@ -173,7 +246,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tabsCtrl</find>
       <find>mye</find>
       <find>svg</find>
       <find>MEW</find>
@@ -203,6 +275,7 @@
       <find>wallet-decrypt</find>
       <find>How would you</find>
       <find>decrypt_Access</find>
+      <find>contractAddr</find>
     </findStrings>
     <replaceStrings>
       <replace>AironWallet</replace>
@@ -269,8 +342,8 @@
         <option value="$PROJECT_DIR$/app/scripts/globalFuncs.js" />
         <option value="$PROJECT_DIR$/app/scripts/translations/en.js" />
         <option value="$PROJECT_DIR$/app/includes/tokenCreation-content.tpl" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" />
         <option value="$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js" />
       </list>
     </option>
   </component>
@@ -327,12 +400,6 @@
               <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
               <item name="mew-client" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="includes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -346,7 +413,7 @@
               <item name="mew-client" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts" type="462c0819:PsiDirectoryNode" />
+              <item name="bytecode" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
@@ -361,29 +428,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="translations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
-              <item name="json_relay_node" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -441,10 +485,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90880000" />
+    <option name="totallyTimeSpent" value="91175000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="-1921" y="23" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12901527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -458,11 +502,21 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22896698" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12901527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,13 +530,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/json_relay_node/runLocalServer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -499,8 +546,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/nodes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        <state relative-caret-position="466">
+          <caret line="33" column="2" lean-forward="false" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
+          <folding>
+            <marker date="1517308257529" expanded="true" signature="649:882" ph="{&quot;name&quot;: 'CUS'...}" />
+            <marker date="1517308257529" expanded="true" signature="9070:9076" ph="{&quot;name&quot;: 'ELLA'...}" />
+            <marker date="1517308257529" expanded="true" signature="9070:9078" ph="{...}" />
+            <marker date="1517308257529" expanded="true" signature="9149:9206" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -595,7 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -685,22 +737,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/ethFuncs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="82" column="27" lean-forward="false" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="27" />
+        <state relative-caret-position="30">
+          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/includes/header.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2940">
-          <caret line="196" column="12" lean-forward="false" selection-start-line="222" selection-start-column="46" selection-end-line="222" selection-end-column="52" />
+        <state relative-caret-position="255">
+          <caret line="212" column="30" lean-forward="false" selection-start-line="212" selection-start-column="30" selection-end-line="212" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/nodeHelpers/customNode.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
+        <state relative-caret-position="15">
           <caret line="78" column="21" lean-forward="false" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
           <folding />
         </state>
@@ -708,8 +761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/sendTxCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="140" column="39" lean-forward="false" selection-start-line="140" selection-start-column="23" selection-end-line="140" selection-end-column="39" />
+        <state relative-caret-position="401">
+          <caret line="228" column="33" lean-forward="false" selection-start-line="228" selection-start-column="27" selection-end-line="228" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -718,14 +771,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tabsCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="186" column="36" lean-forward="false" selection-start-line="186" selection-start-column="36" selection-end-line="186" selection-end-column="36" />
+        <state relative-caret-position="420">
+          <caret line="136" column="96" lean-forward="false" selection-start-line="136" selection-start-column="96" selection-end-line="136" selection-end-column="96" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -734,9 +787,9 @@
         <state relative-caret-position="45">
           <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
           <folding>
-            <element signature="e#213#218#0" expanded="true" />
-            <element signature="n#style#0;n#article#0;n#footer#0;n#!!top" expanded="true" />
-            <element signature="e#657#663#0" expanded="true" />
+            <element signature="e#213#218#0" expanded="false" />
+            <element signature="n#style#0;n#article#0;n#footer#0;n#!!top" expanded="false" />
+            <element signature="e#657#663#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -745,7 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="90" column="25" lean-forward="false" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -758,8 +810,87 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/globalFuncs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="77" column="33" lean-forward="true" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
+        <state relative-caret-position="452">
+          <caret line="77" column="33" lean-forward="false" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
+          <folding>
+            <marker date="1517308257508" expanded="true" signature="1996:2010" ph="..." />
+            <marker date="1517308257508" expanded="true" signature="2082:2117" ph="..." />
+            <marker date="1517308257508" expanded="true" signature="2522:2540" ph="..." />
+            <marker date="1517308257508" expanded="true" signature="2868:2886" ph="..." />
+            <marker date="1517308257508" expanded="true" signature="3952:7640" ph="[...]" />
+            <marker date="1517308257508" expanded="true" signature="7718:7957" ph="[...]" />
+            <marker date="1517308257508" expanded="true" signature="8034:10171" ph="{&quot;(geth-06) Invalid sender\\.&quot;: 'GETH_InvalidSender'...}" />
+            <marker date="1517308257508" expanded="true" signature="10246:10440" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="10280:10422" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="10361:10416" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="10519:13498" ph="{&quot;A (parity-01) A transaction with the same hash was already imported. It was probably already broadcast. To avoid duplicate transactions, check your address on [etherscan.io](https://etherscan.io) &amp; wait 10 minutes before attempting to send again. [Learn More](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html)\\. This means it was already broadcast. Please check your address on etherscan.io &amp; wait 10 minutes before attempting to send again to avoid duplicate transactions. &lt;a target='_blank' rel='noopener noreferrer' href='https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html'&gt;Learn more&lt;/a&gt;&quot;: &quot;PARITY_AlreadyImported&quot;...}" />
+            <marker date="1517308257508" expanded="true" signature="13575:13997" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="13616:13979" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="13669:13973" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="13740:13965" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="13837:13954" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="14039:14086" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="14130:14278" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="14301:14316" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="14567:14619" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="14657:14856" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="14896:15081" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="15011:15063" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="15130:15329" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="15377:15412" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="15453:15576" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="15503:15563" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="15623:15666" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="15711:15758" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="15795:16082" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="15914:15951" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="15986:16013" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="16023:16080" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="16172:18526" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="16251:16522" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="16969:17046" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="17161:17757" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="17428:17509" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="17626:17751" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="17763:17948" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="17839:17942" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="17972:18263" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="18273:18324" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="18337:18524" ph="{&quot;defaultTokens&quot;: defaultTokens...}" />
+            <marker date="1517308257508" expanded="true" signature="18598:18826" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="18655:18756" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="18762:18824" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="18896:19104" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="18953:19044" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="19050:19102" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="19182:19317" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="19408:19813" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="19487:19796" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="19767:19792" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="19878:22254" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="19888:22151" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="20522:20859" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="20650:20849" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="20978:21326" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="21120:21316" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="21574:21710" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="21738:21999" ph="{&quot;contractAddress&quot;: localToken.contractAdd...}" />
+            <marker date="1517308257508" expanded="true" signature="22108:22142" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="22162:22252" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="22181:22244" ph="{&quot;msg&quot;: e.message...}" />
+            <marker date="1517308257508" expanded="true" signature="22318:23032" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="22641:22710" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="22965:23030" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="23063:23789" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="23097:23314" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="23111:23224" ph="//..." />
+            <marker date="1517308257508" expanded="true" signature="23354:23572" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="23392:23457" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="23463:23562" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="23618:23783" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="23656:23721" ph="{...}" />
+            <marker date="1517308257508" expanded="true" signature="23727:23773" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -767,7 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4755">
           <caret line="317" column="80" lean-forward="false" selection-start-line="317" selection-start-column="80" selection-end-line="317" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -775,22 +905,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="82" lean-forward="false" selection-start-line="42" selection-start-column="82" selection-end-line="42" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" column="47" lean-forward="false" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/contractsCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="127" column="21" lean-forward="false" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
+        <state relative-caret-position="402">
+          <caret line="112" column="34" lean-forward="false" selection-start-line="112" selection-start-column="34" selection-end-line="112" selection-end-column="34" />
           <folding>
             <marker date="1516688429676" expanded="true" signature="3529:3560" ph="{...}" />
           </folding>
@@ -801,7 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
           <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -809,7 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -817,7 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="723">
           <caret line="335" column="37" lean-forward="false" selection-start-line="335" selection-start-column="37" selection-end-line="335" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -825,7 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="342" column="14" lean-forward="false" selection-start-line="342" selection-start-column="0" selection-end-line="342" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -833,6 +950,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
           <caret line="147" column="25" lean-forward="true" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/bytecode/tokenBytecode">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9316" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="9316" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
           <folding />
         </state>
       </provider>
