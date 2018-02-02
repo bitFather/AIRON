@@ -8,99 +8,105 @@ var globalService = function($http, $httpParamSerializerJQLike) {
     ajaxReq.getRates = nodes.ethPrice.getRates
 
     var tabs = {
-        generateWallet: {
-            id: 0,
-            name: "NAV_GenerateWallet_alt",
-            url: "generate-wallet",
+        commonWalletInfo: {
+            type: 'container',
+            name: 'NAV_Container_ViewWallet',
             mew: true,
-            cx: false
-        },
-        myWallet: {
-            id: 1,
-            name: "NAV_MyWallets",
-            url: "my-wallet",
-            mew: false,
-            cx: true
-        },
-        addWallet: {
-            id: 2,
-            name: "NAV_AddWallet",
-            url: "add-wallet",
-            mew: false,
-            cx: true
-        },
-        viewWalletInfo: {
-            id: 3,
-            name: "NAV_ViewWallet",
-            url: "view-wallet-info",
-            mew: true,
-            cx: false
+            cx: false,
+            Items: {
+                generateWallet: {
+                    type: 'tab',
+                    id: 0,
+                    name: "NAV_GenerateWallet_alt",
+                    url: "generate-wallet",
+                    mew: true,
+                    cx: false
+                },
+                viewWalletInfo: {
+                    type: 'tab',
+                    id: 1,
+                    name: "NAV_ViewWallet",
+                    url: "view-wallet-info",
+                    mew: true,
+                    cx: false
+                },
+            }
         },
         sendTransaction: {
-            id: 4,
+            type: 'tab',
+            id: 2,
             name: "NAV_SendEther",
             url: "send-transaction",
             mew: true,
             cx: true
         },
         swap: {
-            id: 5,
+            type: 'tab',
+            id: 3,
             name: "NAV_Swap",
             url: "swap",
             mew: false,
             cx: false
         },
         offlineTransaction: {
-            id: 6,
+            type: 'tab',
+            id: 4,
             name: "NAV_Offline",
             url: "offline-transaction",
             mew: false,
             cx: false
         },
         contracts: {
-            id: 7,
+            type: 'tab',
+            id: 5,
             name: "NAV_Contracts",
             url: "contracts",
             mew: false,
             cx: false
         },
         ens: {
-            id: 8,
+            type: 'tab',
+            id: 6,
             name: "NAV_ENS",
             url: "ens",
             mew: false,
             cx: false
         },
         domainsale: {
-            id: 9,
+            type: 'tab',
+            id: 7,
             name: "NAV_DomainSale",
             url: "domainsale",
             mew: false,
             cx: false
         },
         txStatus: {
-            id: 10,
+            type: 'tab',
+            id: 8,
             name: "NAV_CheckTxStatus",
             url: "check-tx-status",
             mew: true,
             cx: true
         },
         signMsg: {
-            id: 11,
+            type: 'tab',
+            id: 9,
             name: "NAV_SignMsg",
             url: "sign-message",
             mew: false,
             cx: false
         },
         bulkGenerate: {
-            id: 12,
+            type: 'tab',
+            id: 10,
             name: "NAV_BulkGenerate",
             url: "bulk-generate",
             mew: false,
             cx: false
         },
         tokenCreation: {
-            id: 13,
+            type: 'tab',
+            id: 11,
             name: "NAV_TokenCreation",
             url: "token-creation",
             mew: true,

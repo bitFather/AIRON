@@ -1,4 +1,4 @@
-<main class="tab-pane active" ng-if="globalService.currentTab==globalService.tabs.viewWalletInfo.id" ng-controller='viewWalletCtrl' ng-cloak>
+<main class="tab-pane active" ng-if="globalService.currentTab==globalService.tabs.commonWalletInfo.Items.viewWalletInfo.id" ng-controller='viewWalletCtrl' ng-cloak>
 
   <article class="collapse-container">
 
