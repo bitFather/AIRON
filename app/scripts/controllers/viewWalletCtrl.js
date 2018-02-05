@@ -12,7 +12,7 @@ var viewWalletCtrl = function($scope, walletService) {
     $scope.tokenVisibility = "hidden";
     $scope.pkeyVisible = false;
 
-    $scope.addresses = []
+    $scope.addresses = globalFuncs.localStorage.getItem("localAddress", null) != null ?JSON.parse(globalFuncs.localStorage.getItem("localAddress", null)).map(x=>{return x.address}) : []
 
     $scope.showAddAddress = false
 
@@ -31,6 +31,17 @@ var viewWalletCtrl = function($scope, walletService) {
         walletService.password = '';
         $scope.blob = $scope.blobEnc = $scope.password = "";
     }
+
+    $scope.$watch(
+        function() {
+            if (walletService.wallet == null && $scope.addresses.length > 0) return null
+            return walletService.wallet.getAddressString()
+        },
+        function() {
+            if (walletService.wallet == null) $scope.updateViewWallet(0)
+
+        },
+    )
 
     $scope.updateViewWallet = (index) => {
         if ($scope.Validator.isValidAddress($scope.addresses[index]) && $scope.addresses.length > index) {
@@ -60,6 +71,7 @@ var viewWalletCtrl = function($scope, walletService) {
         if($scope.newAddress ){
           if(!$scope.addresses.find(x => x==$scope.newAddress)){
                 $scope.addresses.push($scope.newAddress)
+                globalFuncs.safeAddressToLocal($scope.newAddress,()=>{})
                 $scope.updateViewWallet($scope.addresses.length - 1)
           } else {
               //notify
@@ -72,6 +84,7 @@ var viewWalletCtrl = function($scope, walletService) {
         if($scope.addresses.length > 0 && $scope.wallet) {
             let index = $scope.addresses.indexOf($scope.wallet.getAddressString())
             $scope.addresses.splice(index, 1)
+            globalFuncs.removeAddressFromLocal($scope.newAddress,()=>{})
             if($scope.addresses.length > 0) {
                 $scope.updateViewWallet($scope.addresses.length - 1)
             } else {

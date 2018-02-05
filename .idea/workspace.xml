@@ -5,7 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/includes/viewWalletInfo-content.tpl" afterPath="$PROJECT_DIR$/app/includes/viewWalletInfo-content.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/viewWalletCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/viewWalletCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/translations/en.js" afterPath="$PROJECT_DIR$/app/scripts/translations/en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/globalFuncs.js" afterPath="$PROJECT_DIR$/app/scripts/globalFuncs.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/cx-wallet.html" afterPath="$PROJECT_DIR$/chrome-extension/cx-wallet.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/embedded.html" afterPath="$PROJECT_DIR$/chrome-extension/embedded.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome-extension/index.html" afterPath="$PROJECT_DIR$/chrome-extension/index.html" />
@@ -69,11 +69,21 @@
           <file leaf-file-name="viewWalletInfo-content.tpl" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/includes/viewWalletInfo-content.tpl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="810">
-                  <caret line="54" column="39" lean-forward="true" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+                <state relative-caret-position="279">
+                  <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
                   <folding>
-                    <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#article#0;n#section#0;n#article#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#section#1;n#article#0;n#div#0;n#!!top" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="etherwallet-new.less" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/styles/etherwallet-new.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="277">
+                  <caret line="284" column="10" lean-forward="false" selection-start-line="284" selection-start-column="5" selection-end-line="284" selection-end-column="10" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -85,29 +95,31 @@
           <file leaf-file-name="viewWalletCtrl.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/scripts/controllers/viewWalletCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="915">
-                  <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+                <state relative-caret-position="183">
+                  <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="walletDecryptDrtv.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.js">
+          <file leaf-file-name="tokenCreation.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="-1846">
+                  <caret line="49" column="4" lean-forward="true" selection-start-line="49" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="walletDecryptDrtv.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html">
+          <file leaf-file-name="sendTx-content.tpl" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/includes/sendTx-content.tpl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="603">
-                  <caret line="471" column="34" lean-forward="false" selection-start-line="471" selection-start-column="21" selection-end-line="471" selection-end-column="34" />
-                  <folding />
+                <state relative-caret-position="415">
+                  <caret line="75" column="10" lean-forward="false" selection-start-line="75" selection-start-column="10" selection-end-line="81" selection-end-column="0" />
+                  <folding>
+                    <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#section#0;n#article#1;n#div#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -115,33 +127,33 @@
           <file leaf-file-name="addWalletCtrl.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/scripts/controllers/CX/addWalletCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="46">
-                  <caret line="168" column="31" lean-forward="false" selection-start-line="168" selection-start-column="16" selection-end-line="168" selection-end-column="31" />
+                <state relative-caret-position="286">
+                  <caret line="124" column="46" lean-forward="false" selection-start-line="124" selection-start-column="46" selection-end-line="124" selection-end-column="46" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="globalFuncs.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="globalFuncs.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/scripts/globalFuncs.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="379">
-                  <caret line="367" column="2" lean-forward="true" selection-start-line="367" selection-start-column="2" selection-end-line="367" selection-end-column="2" />
+                <state relative-caret-position="635">
+                  <caret line="387" column="0" lean-forward="false" selection-start-line="387" selection-start-column="0" selection-end-line="387" selection-end-column="0" />
                   <folding>
-                    <marker date="1517308257508" expanded="true" signature="1996:2010" ph="..." />
-                    <marker date="1517308257508" expanded="true" signature="2082:2117" ph="..." />
-                    <marker date="1517308257508" expanded="true" signature="2522:2540" ph="..." />
-                    <marker date="1517308257508" expanded="true" signature="2868:2886" ph="..." />
+                    <marker date="1517834100577" expanded="true" signature="1996:2010" ph="..." />
+                    <marker date="1517834100577" expanded="true" signature="2082:2117" ph="..." />
+                    <marker date="1517834100577" expanded="true" signature="2522:2540" ph="..." />
+                    <marker date="1517834100577" expanded="true" signature="2868:2886" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cxFuncs.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/cxFuncs.js">
+          <file leaf-file-name="walletBalanceCtrl.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/walletBalanceCtrl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="23" />
+                <state relative-caret-position="476">
+                  <caret line="76" column="8" lean-forward="false" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
@@ -152,38 +164,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="433">
                   <caret line="580" column="35" lean-forward="false" selection-start-line="580" selection-start-column="4" selection-end-line="580" selection-end-column="35" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sendTx-content.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/sendTx-content.tpl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="310">
-                  <caret line="79" column="15" lean-forward="false" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="36" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="offlineTx-2.tpl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/includes/offlineTx-2.tpl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="691">
-                  <caret line="109" column="8" lean-forward="true" selection-start-line="109" selection-start-column="8" selection-end-line="111" selection-end-column="14" />
-                  <folding>
-                    <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#section#0;n#article#3;n#article#0;n#!!top" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="walletBalanceCtrl.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/walletBalanceCtrl.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="56" />
                   <folding />
                 </state>
               </provider>
@@ -205,36 +185,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>labelTranslated</find>
-      <find>addressOnly</find>
-      <find>wallet</find>
-      <find>addressFieldDrtv</find>
-      <find>dropdownTab</find>
-      <find>&amp;&amp;</find>
-      <find>ng-mode</find>
-      <find>address-field</find>
-      <find>addressDrtv</find>
-      <find>newAdd</find>
-      <find>customTokenField</find>
-      <find>Nav_Container</find>
       <find>view</find>
       <find>VIEWWALLET_HidePrivKey</find>
       <find>VIEWWALLET_Header_addFirst</find>
       <find>+</find>
-      <find>-</find>
       <find>col-xs</find>
-      <find>trans</find>
-      <find>addresses</find>
       <find>openFileDialog</find>
-      <find>keys</find>
       <find>chrome</find>
       <find>decryptWallet</find>
       <find>cxFuncs.storage</find>
       <find>cxFuncs.addWatchOnlyAddress</find>
-      <find>getAllNickNames</find>
       <find>storage</find>
-      <find>setNickNames</find>
       <find>globalFuncs.localStorage</find>
+      <find>localToken</find>
+      <find>globalFuncs.saveTokenToLocal</find>
+      <find>keys</find>
+      <find>defaultTokensAndNetworkType</find>
+      <find>localAddress</find>
+      <find>setNickNames</find>
+      <find>getItem</find>
+      <find>globalFuncs</find>
+      <find>getAllNickNames</find>
+      <find>safe</find>
+      <find>globalFuncs.removeTokenFromLocal</find>
+      <find>safeAddressToLocal</find>
+      <find>addresses</find>
+      <find>-</find>
+      <find>form-control</find>
+      <find>form-</find>
+      <find>trans</find>
+      <find>input</find>
     </findStrings>
     <replaceStrings>
       <replace>AironWallet</replace>
@@ -304,9 +284,9 @@
         <option value="$PROJECT_DIR$/app/scripts/directives/balanceDrtv.html" />
         <option value="$PROJECT_DIR$/app/scripts/services/globalService.js" />
         <option value="$PROJECT_DIR$/app/scripts/translations/en.js" />
-        <option value="$PROJECT_DIR$/app/includes/viewWalletInfo-content.tpl" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/viewWalletCtrl.js" />
         <option value="$PROJECT_DIR$/app/scripts/globalFuncs.js" />
+        <option value="$PROJECT_DIR$/app/includes/viewWalletInfo-content.tpl" />
       </list>
     </option>
   </component>
@@ -369,6 +349,13 @@
               <item name="mew-client" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mew-client" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mew-client" type="b2602c69:ProjectViewProjectNode" />
@@ -439,12 +426,12 @@
       <workItem from="1517394233833" duration="576000" />
       <workItem from="1517426446868" duration="37917000" />
       <workItem from="1517818242945" duration="2000" />
-      <workItem from="1517818267102" duration="7349000" />
+      <workItem from="1517818267102" duration="11307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139179000" />
+    <option name="totallyTimeSpent" value="143137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="23" width="1920" height="1057" extended-state="0" />
@@ -479,20 +466,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/tests/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/bin/startMEW.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -642,14 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tabsCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/offlineTxCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="830">
@@ -661,14 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="622">
           <caret line="42" column="82" lean-forward="false" selection-start-line="42" selection-start-column="82" selection-end-line="42" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/viewWalletInfo.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -695,22 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/header.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/sendTx.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/includes/offlineTx-1.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -731,14 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/walletBalanceCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/directives/balanceDrtv.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -755,10 +688,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/globalService.js">
+    <entry file="file://$PROJECT_DIR$/app/includes/offlineTx-2.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="43" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="43" />
+        <state relative-caret-position="691">
+          <caret line="109" column="8" lean-forward="true" selection-start-line="109" selection-start-column="8" selection-end-line="111" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#section#0;n#article#3;n#article#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/cxFuncs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="471" column="34" lean-forward="false" selection-start-line="471" selection-start-column="21" selection-end-line="471" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/viewWalletCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/CX/addWalletCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="124" column="46" lean-forward="false" selection-start-line="124" selection-start-column="46" selection-end-line="124" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/walletBalanceCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="76" column="8" lean-forward="false" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tokenCreation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1846">
+          <caret line="49" column="4" lean-forward="true" selection-start-line="49" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/globalFuncs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="387" column="0" lean-forward="false" selection-start-line="387" selection-start-column="0" selection-end-line="387" selection-end-column="0" />
+          <folding>
+            <marker date="1517834100577" expanded="true" signature="1996:2010" ph="..." />
+            <marker date="1517834100577" expanded="true" signature="2082:2117" ph="..." />
+            <marker date="1517834100577" expanded="true" signature="2522:2540" ph="..." />
+            <marker date="1517834100577" expanded="true" signature="2868:2886" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/sendTx.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -773,41 +785,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/includes/sendTx-content.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="79" column="15" lean-forward="false" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/offlineTx-2.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="109" column="8" lean-forward="true" selection-start-line="109" selection-start-column="8" selection-end-line="111" selection-end-column="14" />
+        <state relative-caret-position="415">
+          <caret line="75" column="10" lean-forward="false" selection-start-line="75" selection-start-column="10" selection-end-line="81" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#section#0;n#article#3;n#article#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#section#0;n#article#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/includes/viewWalletInfo-content.tpl">
+    <entry file="file://$PROJECT_DIR$/app/styles/etherwallet-new.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="39" lean-forward="true" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#article#0;n#section#0;n#article#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/viewWalletCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+        <state relative-caret-position="277">
+          <caret line="284" column="10" lean-forward="false" selection-start-line="284" selection-start-column="5" selection-end-line="284" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/globalService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="43" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/includes/header.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -815,39 +817,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/directives/walletDecryptDrtv.html">
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tabsCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="471" column="34" lean-forward="false" selection-start-line="471" selection-start-column="21" selection-end-line="471" selection-end-column="34" />
+        <state relative-caret-position="450">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/cxFuncs.js">
+    <entry file="file://$PROJECT_DIR$/app/includes/viewWalletInfo.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="23" />
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/CX/addWalletCtrl.js">
+    <entry file="file://$PROJECT_DIR$/app/includes/viewWalletInfo-content.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="168" column="31" lean-forward="false" selection-start-line="168" selection-start-column="16" selection-end-line="168" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/globalFuncs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="367" column="2" lean-forward="true" selection-start-line="367" selection-start-column="2" selection-end-line="367" selection-end-column="2" />
+        <state relative-caret-position="279">
+          <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
           <folding>
-            <marker date="1517308257508" expanded="true" signature="1996:2010" ph="..." />
-            <marker date="1517308257508" expanded="true" signature="2082:2117" ph="..." />
-            <marker date="1517308257508" expanded="true" signature="2522:2540" ph="..." />
-            <marker date="1517308257508" expanded="true" signature="2868:2886" ph="..." />
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#section#1;n#article#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

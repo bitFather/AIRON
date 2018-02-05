@@ -1,7 +1,6 @@
-<article class="col-sm-8 view-wallet-content">
+<div class="col-sm-8">
 
-  <section class="block">
-
+  <article class="block">
 
     <section class="col-xs-11">
       <div class="account-help-icon">
@@ -19,9 +18,10 @@
     </section>
 
 
-    <article class="clearfix">
-      <div class="col-xs-11" ng-show="addresses.length != 0">
-        <div class="input-group" >
+    <section class="row form-group">
+      <div class="col-sm-11" ng-show="addresses.length != 0">
+
+        <div class="input-group">
           <div class="form-control">
             <a ng-click="dropdownAddress = !dropdownAddress"
                aria-expanded="false">
@@ -30,6 +30,7 @@
                 <i class="caret" ng-show="addresses.length > 1"></i>
               </strong>
             </a>
+
             <ul class="dropdown-menu"
                 ng-show="dropdownAddress && addresses.length > 1">
               <li ng-repeat="address in addresses track by $index">
@@ -41,12 +42,14 @@
               </li>
             </ul>
           </div>
-          <div class="input-group-btn">
-            <button style="min-width: 140px" ng-show='addresses.length != 0' class="btn btn-default" translate="VIEWWALLET_Header_removeAddress" ng-click="removeAddress()"> Remove </button>
+          <div class="input-group-btn" >
+            <a class="btn btn-default dropdown-toggle" class="dropdown-toggle" style="min-width: 120px" ng-show='addresses.length != 0' translate="VIEWWALLET_Header_removeAddress" ng-click="removeAddress()">
+              <strong>Remove</strong>
+            </a>
           </div>
         </div>
       </div>
-    </article>
+    </section>
 
     <br ng-show="addresses.length != 0"/>
 
@@ -73,8 +76,9 @@
       </a>
     </section>
 
-  </section>
-</article>
+  </article>
+</div>
+
 
 <article class="col-sm-4">
   <wallet-balance-drtv></wallet-balance-drtv>

@@ -367,6 +367,40 @@ globalFuncs.removeTokenFromLocal = function(symbol, tokenObj) {
         }
 };
 
+globalFuncs.safeAddressToLocal = (address) => {
+    try {
+        var storedAddresses = globalFuncs.localStorage.getItem("localAddress", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localAddress")) : [];
+
+
+        // catch if  ADDRESS is already in storedAddresses
+        for (var i = 0; i < storedAddresses.length; i++){
+            if (storedAddresses[i].toLowerCase().replace(/ /g, '') === address.toLowerCase().replace(/ /g, '')) {
+                throw Error('Unable to add custom address. It has the same address')
+            }
+        }
+
+        storedAddresses.push({
+            address: address,
+            network: globalFuncs.getDefaultTokensAndNetworkType().networkType
+        });
+
+        globalFuncs.localStorage.setItem("localAddress", JSON.stringify(storedAddresses));
+
+    } catch (e) {
+    }
+}
+
+globalFuncs.removeAddressFromLocal = function(address) {
+    let storedAddresses = globalFuncs.localStorage.getItem("localAddress", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localAddress", null)) : [];
+    // remove from localstorage so it doesn't show up on refresh
+    for (let i = 0; i < storedAddresses.length; i++)
+        if (storedTokens[i].address === address) {
+            storedTokens.splice(i, 1);
+            break;
+        }
+    globalFuncs.localStorage.setItem("localAddress", JSON.stringify(storedAddresses));
+};
+
 
 globalFuncs.localStorage = {
         isAvailable: function() {
