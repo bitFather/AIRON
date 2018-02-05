@@ -410,6 +410,7 @@ en.data = {
     MYWAL_Viewing: 'Viewing Wallet',
     MYWAL_WatchOnly: 'Your Watch-Only Accounts',
 
+    NAV_Container_ViewWallet: 'View wallet',
     NAV_AddWallet: 'Add Wallet',
     NAV_BulkGenerate: 'Bulk Generate',
     NAV_CheckTxStatus: 'Check Status',
@@ -571,6 +572,13 @@ en.data = {
     VIEWWALLET_Subtitle: 'This allows you to download different versions of private keys and re-print your paper wallet. You may want to do this in order to [import your account into Geth/Mist](http://ethereum.stackexchange.com/questions/465/how-to-import-a-plain-private-key-into-geth/). If you want to check your balance, we recommend using a blockchain explorer like [etherscan.io](https://etherscan.io/).',
     VIEWWALLET_Subtitle_Short: 'This allows you to download different versions of private keys and re-print your paper wallet.',
     VIEWWALLET_SuccessMsg: 'Success! Here are your wallet details.',
+    VIEWWALLET_Header_addFirst: 'Add address for view',
+    VIEWWALLET_Header_chooseAddress: 'Choose address for view',
+    VIEWWALLET_Header_openAddNew: '+Show: Add address',
+    VIEWWALLET_Header_closeAddNew: '-Hide: Add address',
+    VIEWWALLET_Header_addNewAddress: 'Input new address',
+    VIEWWALLET_Header_buttonAdd: 'Add new view address',
+    VIEWWALLET_Header_removeAddress: 'Remove',
 
     WARN_Send_Link: 'You arrived via a link that has the address, value, gas, data fields, or transaction type (send mode) filled in for you. You can change any information before sending. Unlock your wallet to get started.',
 

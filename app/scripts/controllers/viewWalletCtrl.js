@@ -56,7 +56,6 @@ var viewWalletCtrl = function($scope, walletService) {
     }
 
     $scope.addAddress = () => {
-        console.log($scope.newAddress)
         console.log($scope.addresses)
         if($scope.newAddress ){
           if(!$scope.addresses.find(x => x==$scope.newAddress)){
@@ -67,6 +66,18 @@ var viewWalletCtrl = function($scope, walletService) {
           }
         }
         $scope.addressDrtv.ensAddressField = ""
+    }
+
+    $scope.removeAddress = () => {
+        if($scope.addresses.length > 0 && $scope.wallet) {
+            let index = $scope.addresses.indexOf($scope.wallet.getAddressString())
+            $scope.addresses.splice(index, 1)
+            if($scope.addresses.length > 0) {
+                $scope.updateViewWallet($scope.addresses.length - 1)
+            } else {
+                $scope.wallet = null
+            }
+        }
     }
 };
 module.exports = viewWalletCtrl;
