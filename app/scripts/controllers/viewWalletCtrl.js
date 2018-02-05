@@ -1,5 +1,9 @@
 'use strict';
 var viewWalletCtrl = function($scope, walletService) {
+    $scope.Validator = Validator;
+    walletService.wallet = null;
+    walletService.password = '';
+
     $scope.usdBalance = "loading";
     $scope.gbpBalance = "loading";
     $scope.eurBalance = "loading";
@@ -8,28 +12,12 @@ var viewWalletCtrl = function($scope, walletService) {
     $scope.tokenVisibility = "hidden";
     $scope.pkeyVisible = false;
 
-    walletService.wallet = null;
-    walletService.password = '';
+    $scope.addresses = []
+
+    $scope.showAddAddress = false
+
     $scope.ajaxReq = ajaxReq;
-    $scope.$watch(function() {
-        if (walletService.wallet == null) return null;
-        return walletService.wallet.getAddressString();
-    }, function() {
-        if (walletService.wallet == null) return;
-        $scope.wallet = walletService.wallet;
-        $scope.wd = true;
-        $scope.showEnc = walletService.password != '';
-        if (walletService.wallet.type == "default") $scope.blob = globalFuncs.getBlob("text/json;charset=UTF-8", $scope.wallet.toJSON());
-        if (walletService.password != '') {
-            $scope.blobEnc = globalFuncs.getBlob("text/json;charset=UTF-8", $scope.wallet.toV3(walletService.password, {
-                kdf: globalFuncs.kdf,
-                n: globalFuncs.scrypt.n
-            }));
-            $scope.encFileName = $scope.wallet.getV3Filename();
-        }
-        $scope.wallet.setBalance();
-        $scope.wallet.setTokens();
-    });
+
     $scope.$watch('ajaxReq.key', function() {
         if ($scope.wallet) {
             $scope.wallet.setBalance();
@@ -37,21 +25,48 @@ var viewWalletCtrl = function($scope, walletService) {
         }
     });
 
-    $scope.printQRCode = function() {
-        globalFuncs.printPaperWallets(JSON.stringify([{
-            address: $scope.wallet.getChecksumAddressString(),
-            private: $scope.wallet.getPrivateKeyString()
-        }]));
-    }
-
-    $scope.showHidePkey = function() {
-        $scope.pkeyVisible = !$scope.pkeyVisible;
-    }
     $scope.resetWallet = function() {
         $scope.wallet = null;
         walletService.wallet = null;
         walletService.password = '';
         $scope.blob = $scope.blobEnc = $scope.password = "";
+    }
+
+    $scope.updateViewWallet = (index) => {
+        if ($scope.Validator.isValidAddress($scope.addresses[index]) && $scope.addresses.length > index) {
+            var tempWallet = new Wallet();
+            $scope.wallet = {
+                type: "addressOnly",
+                address: $scope.addresses[index],
+                getAddressString: function() {
+                    return this.address;
+                },
+                getChecksumAddressString: function() {
+                    return ethUtil.toChecksumAddress(this.getAddressString());
+                },
+                setBalance: tempWallet.setBalance,
+                setTokens: tempWallet.setTokens
+            }
+            $scope.wd = true;
+
+            $scope.wallet.setBalance();
+            $scope.wallet.setTokens();
+            $scope.dropdownAddress = false
+        }
+    }
+
+    $scope.addAddress = () => {
+        console.log($scope.newAddress)
+        console.log($scope.addresses)
+        if($scope.newAddress ){
+          if(!$scope.addresses.find(x => x==$scope.newAddress)){
+                $scope.addresses.push($scope.newAddress)
+                $scope.updateViewWallet($scope.addresses.length - 1)
+          } else {
+              //notify
+          }
+        }
+        $scope.addressDrtv.ensAddressField = ""
     }
 };
 module.exports = viewWalletCtrl;
