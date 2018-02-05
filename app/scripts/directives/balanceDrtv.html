@@ -27,12 +27,78 @@
       </ul>
     </div>
     <h5 translate="sidebar_AccountBal">Account Balance</h5>
-    <ul class="account-info point">
-      <li>
-        <span class="mono wrap">{{wallet.balance}}</span> {{ajaxReq.type}}
-      </li>
-    </ul>
-    <h5 translate="sidebar_TransHistory"> Transaction History</h5>
+
+    <table class="account-info point">
+      <tr>
+        <td class="mono wrap">{{wallet.balance}}</td>
+        <td>{{ajaxReq.type}}</td>
+      </tr>
+    </table>
+
+    <table class="account-info">
+      <tr ng-class="token.type!=='default' ? 'custom-token' : ''"
+          ng-repeat="token in wallet.tokenObjs track by $index"
+          ng-hide="(token.balance==0 || token.balance=='Click to Load') && showAllTokens==false">
+        <td class="mono wrap point">
+          <img src="images/icon-remove.svg"
+               class="token-remove"
+               title="Remove Token"
+               ng-click="removeTokenFromLocal(token.symbol)"
+               ng-show="token.type!=='default'" />
+          <span ng-click="setAndVerifyBalance(token)">
+            {{ token.getBalance() }}
+          </span>
+        </td>
+        <td>
+          {{ token.getSymbol() }}
+        </td>
+      </tr>
+    </table>
+
+    <br />
+    <br />
+
+    <!-- Buttons -->
+    <a class="btn btn-warning btn-xs" ng-click="showAllTokens=true" ng-show="showAllTokens==false">
+      Show All Tokens
+    </a>
+    <a class="btn btn-warning btn-xs" ng-click="showAllTokens=false" ng-show="showAllTokens==true">
+      Only Show Balances
+    </a>
+    <a class="btn btn-default btn-xs" ng-click="customTokenField=!customTokenField">
+      <span translate="SEND_custom">Add Custom Token</span>
+    </a>
+
+    <br ng-show="customTokenField" />
+
+    <!-- Add Custom Token -->
+    <div class="custom-token-fields" ng-show="customTokenField">
+      <div class="row">
+        <address-field
+                placeholder="{{ ajaxReq.type=='ETH' ? 'mewsupport.eth' : '0x7cB57B5A97eAbe94205C07890BE4c1aD31E486A8' }}"
+                var-name="localToken.contractAdd"
+                labelTranslated="TOKEN_Addr">
+        </address-field>
+      </div>
+
+      <label translate="TOKEN_Symbol"> Token Symbol: </label>
+      <input class="form-control input-sm"
+             type="text"
+             ng-model="localToken.symbol"
+             ng-class="localToken.symbol!='' ? 'is-valid' : 'is-invalid'" />
+
+      <label translate="TOKEN_Dec"> Decimals: </label>
+      <input class="form-control input-sm"
+             type="text"
+             ng-model="localToken.decimals"
+             ng-class="Validator.isPositiveNumber(localToken.decimals) ? 'is-valid' : 'is-invalid'" />
+
+      <button class="btn btn-primary btn-xs" ng-click="saveTokenToLocal()" translate="x_Save">Save</button>
+    </div>
+
+  </div>
+
+  <h5 translate="sidebar_TransHistory"> Transaction History</h5>
     <ul class="account-info">
       <li ng-show="ajaxReq.type != 'CUS'">
         <a href="{{ajaxReq.blockExplorerAddr.replace('[[address]]', wallet.getAddressString())}}" target="_blank" rel="noopener noreferrer">
@@ -161,70 +227,6 @@
         </a>
       </span>
     </p>
-
-    <!-- Buttons -->
-    <a class="btn btn-warning btn-xs" ng-click="showAllTokens=true" ng-show="showAllTokens==false">
-      Show All Tokens
-    </a>
-    <a class="btn btn-warning btn-xs" ng-click="showAllTokens=false" ng-show="showAllTokens==true">
-      Only Show Balances
-    </a>
-    <a class="btn btn-default btn-xs" ng-click="customTokenField=!customTokenField">
-      <span translate="SEND_custom">Add Custom Token</span>
-    </a>
-
-    <br ng-show="customTokenField" />
-
-    <!-- Add Custom Token -->
-    <div class="custom-token-fields" ng-show="customTokenField">
-      <div class="row">
-        <address-field
-          placeholder="{{ ajaxReq.type=='ETH' ? 'mewsupport.eth' : '0x7cB57B5A97eAbe94205C07890BE4c1aD31E486A8' }}"
-          var-name="localToken.contractAdd"
-          labelTranslated="TOKEN_Addr">
-        </address-field>
-      </div>
-
-      <label translate="TOKEN_Symbol"> Token Symbol: </label>
-      <input class="form-control input-sm"
-             type="text"
-             ng-model="localToken.symbol"
-             ng-class="localToken.symbol!='' ? 'is-valid' : 'is-invalid'" />
-
-      <label translate="TOKEN_Dec"> Decimals: </label>
-      <input class="form-control input-sm"
-             type="text"
-             ng-model="localToken.decimals"
-             ng-class="Validator.isPositiveNumber(localToken.decimals) ? 'is-valid' : 'is-invalid'" />
-
-      <button class="btn btn-primary btn-xs" ng-click="saveTokenToLocal()" translate="x_Save">Save</button>
-    </div>
-
-    <br />
-    <br />
-
-    <!-- Balances -->
-    <table class="account-info">
-      <tr ng-class="token.type!=='default' ? 'custom-token' : ''"
-          ng-repeat="token in wallet.tokenObjs track by $index"
-          ng-hide="(token.balance==0 || token.balance=='Click to Load') && showAllTokens==false">
-        <td class="mono wrap point">
-          <img src="images/icon-remove.svg"
-               class="token-remove"
-               title="Remove Token"
-               ng-click="removeTokenFromLocal(token.symbol)"
-               ng-show="token.type!=='default'" />
-          <span ng-click="setAndVerifyBalance(token)">
-            {{ token.getBalance() }}
-          </span>
-        </td>
-        <td>
-          {{ token.getSymbol() }}
-        </td>
-      </tr>
-    </table>
-
-  </div>
 
 
 
