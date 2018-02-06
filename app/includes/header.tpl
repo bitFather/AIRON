@@ -214,7 +214,12 @@
             class="nav-item {{tab.name}}" \
             ng-show="tab.mew">
 
-          <a tabindex="0" ng-if="tab.type == 'tab'" ng-class="{active: tab.id==activeTab}" aria-label="nav item: {{tab.name | translate}}" translate="{{tab.name}}" ng-click="tabClick(tab.id); dropdownTab = false;"></a>
+          <a tabindex="0"
+             ng-if="tab.type == 'tab'"
+             ng-class="{active: tab.id==activeTab}"
+             aria-label="nav item: {{tab.name | translate}}"
+             translate="{{tab.name}}"
+             ng-click="tabClick(tab.id)"></a>
 
           <span class="dropdown dropdown-lang"
                 ng-if="tab.type == 'container'"
@@ -222,13 +227,13 @@
               <a tabindex="0"
                  aria-haspopup="true"
                  aria-label="nav item: {{tab.name | translate}}"
-                 ng-click="dropdownTab = !dropdownTab;">
+                 ng-click="$parent.$parent.dropdownTab = !$parent.$parent.dropdownTab;">
                 <span translate="{{tab.name}}">View Wallet</span>
               </a>
-              <ul class="dropdown-menu" ng-show="dropdownTab">
+              <ul class="dropdown-menu" ng-show="$parent.$parent.dropdownTab">
                 <li ng-repeat="(key, value) in tab.Items"
                     ng-show="value.mew"
-                    ng-click="tabClick(value.id); $parent.dropdownTab = false;">
+                    ng-click="tabClick(value.id)">
                   <a translate="{{value.name}}" >
                   </a>
                 </li>

@@ -42,9 +42,6 @@ var tabsCtrl = function($scope, globalService, $translate, $sce) {
     $scope.$watch('ajaxReq.service', function() {
         $scope.nodeService = $scope.ajaxReq.service
     })
-    $scope.$watch('dropdownTab', function() {
-        console.log('Tab update')
-    })
     $scope.setArrowVisibility = function() {
         setTimeout(function() {
             if (document.querySelectorAll('.nav-inner')[0] && document.querySelectorAll('.nav-scroll')[0]) {
@@ -266,6 +263,7 @@ var tabsCtrl = function($scope, globalService, $translate, $sce) {
                 location.hash = $scope.tabNames[key].url
             }
         }
+        $scope.dropdownTab = false
     }
 
     $scope.includeTab = (tabObjArray,tabId) => {
