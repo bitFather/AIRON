@@ -73,6 +73,7 @@
             <a class="btn btn-primary btn-block"
                type="submit"
                ng-click="tryOpenModal()"
+               ng-show="!isGenerate"
                translate="CREATETOKEN_generate">
                 Generate
             </a>

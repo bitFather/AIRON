@@ -757,7 +757,7 @@
     </div>
 
     <!-- Button -->
-    <section class="col-xs-12 clearfix" ng-show="showAddAddress || addresses.length == 0">
+    <section class="col-xs-11" ng-show="showAddAddress || addresses.length == 0">
       <a class="btn btn-info" ng-click="addAddress();" translate="VIEWWALLET_Header_buttonAdd">
         Add address
       </a>
@@ -868,7 +868,7 @@
     </div>
 
     <!-- Button -->
-    <section class="col-xs-12 clearfix" ng-show="showAddAddress || addresses.length == 0">
+    <section class="col-xs-11" ng-show="showAddAddress || addresses.length == 0">
       <a class="btn btn-info" ng-click="addAddress();" translate="VIEWWALLET_Header_buttonAdd">
         Add address
       </a>
@@ -1541,6 +1541,7 @@
             <a class="btn btn-primary btn-block"
                type="submit"
                ng-click="tryOpenModal()"
+               ng-show="!isGenerate"
                translate="CREATETOKEN_generate">
                 Generate
             </a>
