@@ -1,7 +1,7 @@
 'use strict'
 var tabsCtrl = function($scope, globalService, $translate, $sce) {
     $scope.gService = globalService
-    $scope.gService.currentTab = 3
+    $scope.gService.currentTab = 1
     $scope.tabs = $scope.gService.tabs
     $scope.tabNames = (tabs => {
         let result = {}

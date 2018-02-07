@@ -116,7 +116,7 @@ var globalService = function($http, $httpParamSerializerJQLike) {
 
     var currentTab = 3
     if (typeof chrome != 'undefined')
-        currentTab = chrome.windows === undefined ? 0 : 3
+        currentTab = chrome.windows === undefined ? 0 : 1
     return {
         tabs: tabs,
         currentTab: currentTab

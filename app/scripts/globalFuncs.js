@@ -394,8 +394,8 @@ globalFuncs.removeAddressFromLocal = function(address) {
     let storedAddresses = globalFuncs.localStorage.getItem("localAddress", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localAddress", null)) : [];
     // remove from localstorage so it doesn't show up on refresh
     for (let i = 0; i < storedAddresses.length; i++)
-        if (storedTokens[i].address === address) {
-            storedTokens.splice(i, 1);
+        if (storedAddresses[i].address === address) {
+            storedAddresses.splice(i, 1);
             break;
         }
     globalFuncs.localStorage.setItem("localAddress", JSON.stringify(storedAddresses));

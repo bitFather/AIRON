@@ -34,11 +34,11 @@ var viewWalletCtrl = function($scope, walletService) {
 
     $scope.$watch(
         function() {
-            if (walletService.wallet === null && $scope.addresses.length > 0) return null
+            if (walletService.wallet == null || $scope.addresses.length > 0) return null
             return walletService.wallet.getAddressString()
         },
         function() {
-            if (walletService.wallet === null) $scope.updateViewWallet(0)
+            if (walletService.wallet == null) $scope.updateViewWallet(0)
 
         },
     )
@@ -68,7 +68,7 @@ var viewWalletCtrl = function($scope, walletService) {
 
     $scope.addAddress = () => {
         if($scope.newAddress ){
-          if(!$scope.addresses.find(x => x===$scope.newAddress)){
+          if(!$scope.addresses.find(x => x==$scope.newAddress)){
                 $scope.addresses.push($scope.newAddress)
                 globalFuncs.safeAddressToLocal($scope.newAddress,()=>{})
                 $scope.updateViewWallet($scope.addresses.length - 1)
