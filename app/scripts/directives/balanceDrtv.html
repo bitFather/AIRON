@@ -35,28 +35,6 @@
       </tr>
     </table>
 
-    <table class="account-info">
-      <tr ng-class="token.type!=='default' ? 'custom-token' : ''"
-          ng-repeat="token in wallet.tokenObjs track by $index"
-          ng-hide="(token.balance==0 || token.balance=='Click to Load') && showAllTokens==false">
-        <td class="mono wrap point">
-          <img src="images/icon-remove.svg"
-               class="token-remove"
-               title="Remove Token"
-               ng-click="removeTokenFromLocal(token.symbol)"
-               ng-show="token.type!=='default'" />
-          <span ng-click="setAndVerifyBalance(token)">
-            {{ token.getBalance() }}
-          </span>
-        </td>
-        <td>
-          {{ token.getSymbol() }}
-        </td>
-      </tr>
-    </table>
-
-    <br />
-    <br />
 
     <!-- Buttons -->
     <a class="btn btn-warning btn-xs" ng-click="showAllTokens=true" ng-show="showAllTokens==false">
@@ -96,6 +74,28 @@
       <button class="btn btn-primary btn-xs" ng-click="saveTokenToLocal()" translate="x_Save">Save</button>
     </div>
 
+    <table class="account-info">
+      <tr ng-class="token.type!=='default' ? 'custom-token' : ''"
+          ng-repeat="token in wallet.tokenObjs track by $index"
+          ng-hide="(token.balance==0 || token.balance=='Click to Load') && showAllTokens==false">
+        <td class="mono wrap point">
+          <img src="images/icon-remove.svg"
+               class="token-remove"
+               title="Remove Token"
+               ng-click="removeTokenFromLocal(token.symbol)"
+               ng-show="token.type!=='default'" />
+          <span ng-click="setAndVerifyBalance(token)">
+            {{ token.getBalance() }}
+          </span>
+        </td>
+        <td>
+          {{ token.getSymbol() }}
+        </td>
+      </tr>
+    </table>
+
+    <br />
+    <br />
   </div>
 
   <h5 translate="sidebar_TransHistory"> Transaction History</h5>

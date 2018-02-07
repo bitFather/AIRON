@@ -370,11 +370,9 @@ globalFuncs.removeTokenFromLocal = function(symbol, tokenObj) {
 globalFuncs.safeAddressToLocal = (address) => {
     try {
         var storedAddresses = globalFuncs.localStorage.getItem("localAddress", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localAddress")) : [];
-
-
         // catch if  ADDRESS is already in storedAddresses
         for (var i = 0; i < storedAddresses.length; i++){
-            if (storedAddresses[i].toLowerCase().replace(/ /g, '') === address.toLowerCase().replace(/ /g, '')) {
+            if (storedAddresses[i].address.toLowerCase().replace(/ /g, '') === address.toLowerCase().replace(/ /g, '')) {
                 throw Error('Unable to add custom address. It has the same address')
             }
         }
