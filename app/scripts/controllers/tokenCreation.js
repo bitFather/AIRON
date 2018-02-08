@@ -1,11 +1,17 @@
 'use strict'
 var tokenCreationCtrl = function($scope, $sce, walletService) {
     $scope.ajaxReq = ajaxReq
+    $scope.visibility = 'createTokenView'
     walletService.wallet = null
     walletService.password = ''
     $scope.Validator = Validator
 
-    $scope.contract = null
+
+    $scope.tokenFactory = {
+        address: null,
+        abi: nodes.tokenFactory.abi,
+        functions: [],
+    }
     $scope.signedTx = null
     $scope.sendTxModal = new Modal(document.getElementById('deployToken'))
 
@@ -13,10 +19,9 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
 
     $scope.isGenerate = false
 
-    $scope.web3
-    $scope.tokenBytecode =
-        '606060405234156200001057600080fd5b604051620012323803806200123283398101604052808051820191906020018051820191906020018051820191906020018051906020019091908051906020019091905050336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600660008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508060058190555084600190805190602001906200011992919062000172565b5083600290805190602001906200013292919062000172565b5081600360006101000a81548160ff021916908360ff16021790555082600490805190602001906200016692919062000172565b50505050505062000221565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10620001b557805160ff1916838001178555620001e6565b82800160010185558215620001e6579182015b82811115620001e5578251825591602001919060010190620001c8565b5b509050620001f59190620001f9565b5090565b6200021e91905b808211156200021a57600081600090555060010162000200565b5090565b90565b61100180620002316000396000f3006060604052600436106100af576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde03146100b457806318160ddd1461014257806323b872dd1461016b578063313ce567146101e4578063426a84931461021357806370a08231146102765780637284e416146102c35780638da5cb5b1461035157806395d89b41146103a6578063a9059cbb14610434578063dd62ed3e1461048e575b600080fd5b34156100bf57600080fd5b6100c76104fa565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101075780820151818401526020810190506100ec565b50505050905090810190601f1680156101345780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b341561014d57600080fd5b610155610598565b6040518082815260200191505060405180910390f35b341561017657600080fd5b6101ca600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919080359060200190919050506105a2565b604051808215151515815260200191505060405180910390f35b34156101ef57600080fd5b6101f761093d565b604051808260ff1660ff16815260200191505060405180910390f35b341561021e57600080fd5b61025c600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091908035906020019091905050610950565b604051808215151515815260200191505060405180910390f35b341561028157600080fd5b6102ad600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610ae7565b6040518082815260200191505060405180910390f35b34156102ce57600080fd5b6102d6610b96565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156103165780820151818401526020810190506102fb565b50505050905090810190601f1680156103435780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b341561035c57600080fd5b610364610c34565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156103b157600080fd5b6103b9610c59565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156103f95780820151818401526020810190506103de565b50505050905090810190601f1680156104265780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b341561043f57600080fd5b610474600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610cf7565b604051808215151515815260200191505060405180910390f35b341561049957600080fd5b6104e4600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610efa565b6040518082815260200191505060405180910390f35b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105905780601f1061056557610100808354040283529160200191610590565b820191906000526020600020905b81548152906001019060200180831161057357829003601f168201915b505050505081565b6000600554905090565b60006040600481016000369050101515156105b957fe5b82600660008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410158015610684575082600760008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410155b15610930576106db83600660008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610f8190919063ffffffff16565b600660008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055506107ad83600760008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610f8190919063ffffffff16565b600760008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555061087f83600660008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610f9a90919063ffffffff16565b600660008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508373ffffffffffffffffffffffffffffffffffffffff168573ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef856040518082815260200191505060405180910390a360019150610935565b600091505b509392505050565b600360009054906101000a900460ff1681565b600060406004810160003690501015151561096757fe5b600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054841415610ada5782600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508473ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925856040518082815260200191505060405180910390a360019150610adf565b600091505b509392505050565b6000808273ffffffffffffffffffffffffffffffffffffffff161415610b4e57600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050610b91565b600660008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205490505b919050565b60048054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610c2c5780601f10610c0157610100808354040283529160200191610c2c565b820191906000526020600020905b815481529060010190602001808311610c0f57829003601f168201915b505050505081565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60028054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610cef5780601f10610cc457610100808354040283529160200191610cef565b820191906000526020600020905b815481529060010190602001808311610cd257829003601f168201915b505050505081565b6000604060048101600036905010151515610d0e57fe5b82600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054101515610eee57610da883600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610f8190919063ffffffff16565b600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550610e3d83600660008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610f9a90919063ffffffff16565b600660008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508373ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef856040518082815260200191505060405180910390a360019150610ef3565b600091505b5092915050565b6000600760008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905092915050565b6000818310151515610f8f57fe5b818303905092915050565b6000817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff038311151515610fca57fe5b8183019050929150505600a165627a7a723058202a5e5107acae7fbf13e6736f0b73310e92b94bf30a8d3cfee5a0f227188960240029'
+    $scope.currentNodeIndex
 
+    $scope.web3
     $scope.token = {
         name: '',
         description: '',
@@ -30,11 +35,29 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
         to: '',
         nonce: null,
         gasPrice: null,
-        unit: 'ether',
-        value: 0,
+        unit: 'wei',
+        value: null,
     }
 
-    var applyScope = function() {
+    $scope.txStatus = {
+        found: 0,
+        notFound: 1,
+        mined: 2,
+        unknown:3,
+    }
+
+    $scope.txResult = {
+        hash: '',
+        status: -1,
+        tokenAddress: null,
+    }
+
+    $scope.$watch('txResult.hash', () => {
+        $scope.txResult.status = -1
+        $scope.txResult.tokenAddress = null
+    });
+
+    var applyScope = () => {
         if (!$scope.$$phase) $scope.$apply()
     }
 
@@ -61,14 +84,42 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
             $scope.wallet.setBalance(applyScope)
             $scope.wallet.setTokens()
             $scope.tx.nonce = 0
-            let current = $scope.getFromLS('curNode', '').key
-            $scope.web3 = new window.Web3(new window.Web3.providers.HttpProvider(nodes.nodeList[current].lib.SERVERURL))
-            $scope.contract = new $scope.web3.eth.Contract(nodes.token.abi)
+            $scope.currentNodeIndex = $scope.getFromLS('curNode', '').key
+            $scope.tokenFactory.address = nodes.nodeList[$scope.currentNodeIndex].tokenFactoryAddress
+            $scope.tokenFactory.functions = {};
+
+            let tAbi = $scope.tokenFactory.abi;
+            for (let i in tAbi)
+                if (tAbi[i].type == "function") {
+                    tAbi[i].inputs.map(function(i) { i.value = ''; });
+                    $scope.tokenFactory.functions[tAbi[i].name] = tAbi[i];
+                }
+
+            if (!$scope.tokenFactory.address || $scope.tokenFactory.address == '0x0') {
+                $scope.notifier.danger(globalFuncs.errorMsgs[44])
+            }
+        },
+    )
+    //Node update
+    $scope.$watch(
+        function() {
+            $scope.currentNodeIndex = $scope.getFromLS('curNode', '').key
+            return $scope.currentNodeIndex
+        },
+        function() {
+            $scope.currentNodeIndex = $scope.getFromLS('curNode', '').key
+            $scope.tokenFactory.address = nodes.nodeList[$scope.currentNodeIndex].tokenFactoryAddress
+            if (!$scope.tokenFactory.address || $scope.tokenFactory.address == '0x0') {
+                $scope.notifier.danger(globalFuncs.errorMsgs[44])
+            }
         },
     )
 
     $scope.tryOpenModal = function() {
         try {
+            if (!$scope.tokenFactory.address || $scope.tokenFactory.address == '0x0') {
+                throw globalFuncs.errorMsgs[44]
+            }
             if (!$scope.token.name) {
                 throw globalFuncs.errorMsgs[41]
             }
@@ -89,10 +140,15 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
     }
 
     $scope.canGenerateToken = () => {
-        if (!$scope.token.name || !$scope.token.totalCount || !$scope.token.decimals) {
+        if (
+            !$scope.token.name ||
+            !$scope.token.totalCount ||
+            !$scope.token.decimals ||
+            (!$scope.tokenFactory || $scope.tokenFactory == '0x0')
+        ) {
             return false
         }
-        if($scope.token.totalCount > 999999999999999){
+        if ($scope.token.totalCount > 999999999999999) {
             return false
         }
         return true
@@ -115,41 +171,40 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
             let calculatedTotalCount = new BigNumber($scope.token.totalCount).mul(
                 new BigNumber(10).pow($scope.token.decimals),
             )
-            $scope.tx.data = $scope.contract
-                .deploy({
-                    data: $scope.tokenBytecode,
-                    arguments: [
-                        $scope.token.name,
-                        $scope.token.name,
-                        $scope.token.description,
-                        $scope.token.decimals,
-                        calculatedTotalCount,
-                    ],
-                })
-                .encodeABI()
-            let data = {
-                from: $scope.wallet.getAddressString(),
-                value: '0x0',
-                data: ethFuncs.sanitizeHex('0x' + $scope.tx.data),
-            }
-            ethFuncs.estimateGas(data, function(data) {
-                if (!data.error) {
-                    $scope.tx.gasLimit = data.data
-                } else {
-                    $scope.tx.gasLimit = null
-                    $scope.notifier.danger(globalFuncs.errorMsgs[40])
+            $scope.tx.data = $scope.createERC20Data([
+                $scope.token.name,
+                $scope.token.name,
+                $scope.token.description,
+                $scope.token.decimals,
+                calculatedTotalCount,
+            ])
+            $scope.getAddictionFee((decFee) => {
+                let data = {
+                    from: $scope.wallet.getAddressString(),
+                    to: nodes.nodeList[$scope.currentNodeIndex].tokenFactoryAddress,
+                    value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(decFee)),
+                    data: ethFuncs.sanitizeHex($scope.tx.data),
                 }
+                $scope.tx.value = ethFuncs.sanitizeHex(ethFuncs.decimalToHex(decFee))
+                ethFuncs.estimateGas(data, function (data) {
+                    if (!data.error) {
+                        $scope.tx.gasLimit = data.data
+                    } else {
+                        $scope.tx.gasLimit = null
+                        $scope.notifier.danger(globalFuncs.errorMsgs[40])
+                    }
+                })
             })
         },
         true,
     )
 
     $scope.calculateFee = () => {
-        if (!$scope.tx.gasLimit || !$scope.ethFuncs.gasAdjustment) {
+        if (!$scope.tx.gasLimit || !$scope.tx.value || !$scope.ethFuncs.gasAdjustment) {
             return 0
         }
         let gasPrice = ethUtil.solidityUtils.toWei($scope.ethFuncs.gasAdjustment, 'Gwei')
-        return ethUtil.solidityUtils.fromWei(new BigNumber($scope.tx.gasLimit).mul(gasPrice), 'ether')
+        return ethUtil.solidityUtils.fromWei(new BigNumber($scope.tx.gasLimit).mul(gasPrice).plus($scope.tx.value), 'ether')
     }
 
     $scope.createAndSendRawContract = () => {
@@ -162,52 +217,47 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
             let calculatedTotalCount = new BigNumber($scope.token.totalCount).mul(
                 new BigNumber(10).pow($scope.token.decimals),
             )
-            $scope.tx.data = $scope.contract
-                .deploy({
-                    data: $scope.tokenBytecode,
-                    arguments: [
-                        $scope.token.name,
-                        $scope.token.name,
-                        $scope.token.description,
-                        $scope.token.decimals,
-                        calculatedTotalCount,
-                    ],
-                })
-                .encodeABI()
-            let data = {
-                from: $scope.wallet.getAddressString(),
-                value: '0x0',
-                data: ethFuncs.sanitizeHex('0x' + $scope.tx.data),
-            }
-            ethFuncs.estimateGas(data, fee => {
-                if (!fee.error) {
-                    if (fee.data == '-1') throw globalFuncs.errorMsgs[21]
-                    $scope.tx.gasLimit = fee.data
-                } else throw fee.msg
-                if ($scope.wallet == null) throw globalFuncs.errorMsgs[3]
-                else if (!ethFuncs.validateHexString($scope.tx.data)) throw globalFuncs.errorMsgs[9]
-                else if (!globalFuncs.isNumeric($scope.tx.gasLimit) || parseFloat($scope.tx.gasLimit) <= 0)
-                    throw globalFuncs.errorMsgs[8]
-                $scope.tx.data = ethFuncs.sanitizeHex($scope.tx.data)
-                ajaxReq.getTransactionData($scope.wallet.getAddressString(), function(data) {
-                    if (data.error) $scope.notifier.danger(data.msg)
-                    data = data.data
-                    $scope.tx.to = '0xCONTRACT'
-                    $scope.tx.contractAddr = ethFuncs.getDeteministicContractAddress(
-                        $scope.wallet.getAddressString(),
-                        data.nonce,
-                    )
-                    var txData = uiFuncs.getTxData($scope)
-                    uiFuncs.generateTx(txData, function(rawTx) {
-                        if (!rawTx.isError) {
-                            $scope.rawTx = rawTx.rawTx
-                            $scope.signedTx = rawTx.signedTx
-                            $scope.sendTx()
-                        } else {
-                            $scope.notifier.danger(rawTx.error)
-                            $scope.isGenerate = false
-                        }
-                        if (!$scope.$$phase) $scope.$apply()
+            $scope.tx.data = $scope.createERC20Data([
+                    $scope.token.name,
+                    $scope.token.name,
+                    $scope.token.description,
+                    $scope.token.decimals,
+                    calculatedTotalCount,
+                ])
+            $scope.getAddictionFee((decFee) => {
+                let data = {
+                    from: $scope.wallet.getAddressString(),
+                    to: nodes.nodeList[$scope.currentNodeIndex].tokenFactoryAddress,
+                    value: ethFuncs.sanitizeHex(ethFuncs.decimalToHex(decFee)),
+                    data: ethFuncs.sanitizeHex($scope.tx.data),
+                }
+                $scope.tx.value = ethFuncs.sanitizeHex(ethFuncs.decimalToHex(decFee))
+                ethFuncs.estimateGas(data, fee => {
+                    if (!fee.error) {
+                        if (fee.data == '-1') throw globalFuncs.errorMsgs[21]
+                        $scope.tx.gasLimit = fee.data
+                    } else throw fee.msg
+                    if ($scope.wallet == null) throw globalFuncs.errorMsgs[3]
+                    else if (!ethFuncs.validateHexString($scope.tx.data)) throw globalFuncs.errorMsgs[9]
+                    else if (!globalFuncs.isNumeric($scope.tx.gasLimit) || parseFloat($scope.tx.gasLimit) <= 0)
+                        throw globalFuncs.errorMsgs[8]
+                    $scope.tx.data = ethFuncs.sanitizeHex($scope.tx.data)
+                    ajaxReq.getTransactionData($scope.wallet.getAddressString(), function (data) {
+                        if (data.error) $scope.notifier.danger(data.msg)
+                        data = data.data
+                        $scope.tx.to = nodes.nodeList[$scope.currentNodeIndex].tokenFactoryAddress
+                        let txData = uiFuncs.getTxData($scope)
+                        uiFuncs.generateTx(txData, function (rawTx) {
+                            if (!rawTx.isError) {
+                                $scope.rawTx = rawTx.rawTx
+                                $scope.signedTx = rawTx.signedTx
+                                $scope.sendTx()
+                            } else {
+                                $scope.notifier.danger(rawTx.error)
+                                $scope.isGenerate = false
+                            }
+                            if (!$scope.$$phase) $scope.$apply()
+                        })
                     })
                 })
             })
@@ -217,17 +267,17 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
         }
     }
 
-    $scope.sendTx = function() {
+    $scope.sendTx = () => {
         $scope.sendTxModal.close()
         uiFuncs.sendTx($scope.signedTx, function(resp) {
             if (!resp.isError) {
-                var bExStr =
+                let bExStr =
                     $scope.ajaxReq.type != nodes.nodeTypes.Custom
                         ? "<a href='" +
                           $scope.ajaxReq.blockExplorerTX.replace('[[txHash]]', resp.data) +
                           "' target='_blank' rel='noopener'> View your transaction </a>"
                         : ''
-                var contractAddr =
+                let contractAddr =
                     $scope.tx.contractAddr != ''
                         ? " & Contract Address <a href='" +
                           ajaxReq.blockExplorerAddr.replace('[[address]]', $scope.tx.contractAddr) +
@@ -235,16 +285,120 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
                           $scope.tx.contractAddr +
                           '</a>'
                         : ''
-                $scope.notifier.success(
-                    globalFuncs.successMsgs[2] + '<br />' + resp.data + '<br />' + bExStr + contractAddr,
-                )
-                $scope.clearInputs()
-                $scope.isGenerate = false
+                //Await for event
+                $scope.txResult.hash = resp.data
+                $scope.startVerifyTokenTxStatus()
             } else {
                 $scope.notifier.danger(resp.error)
                 $scope.isGenerate = false
             }
         })
+    }
+
+    $scope.startVerifyTokenTxStatus = () => {
+        if ($scope.waitForMined) {
+            clearInterval($scope.waitForMined)
+        }
+        if(Validator.isValidTxHash($scope.txResult.hash)) {
+            $scope.waitForMined = setInterval(() => {
+                $scope.getTxStatus()
+            }, 500)
+        }
+    }
+
+    $scope.getTxStatus = () => {
+        ajaxReq.getTransaction($scope.txResult.hash, txInfo => {
+            if (txInfo.error) {
+                $scope.notifier.danger(txInfo.msg)
+            } else {
+                if (txInfo.data) {
+                    if (txInfo.data.blockNumber) {
+                        ajaxReq.getTransactionReceipt($scope.txResult.hash, receipt => {
+                            if (receipt.data) {
+                                if (receipt.data.blockNumber) {
+                                    try {
+                                        let tokenAddress = receipt.data.logs[0].topics[2]
+                                        while (tokenAddress[0] == '0' || tokenAddress[0] == 'x') {
+                                            tokenAddress = tokenAddress.slice(1)
+                                        }
+                                        $scope.txResult.tokenAddress = '0x' + tokenAddress
+                                        $scope.txResult.status = $scope.txStatus.mined
+                                    } catch(e) {
+                                        $scope.txResult.status = $scope.txStatus.unknown
+                                    }
+
+                                    $scope.isGenerate = false
+
+                                    $scope.clearInputs()
+
+                                    if ($scope.waitForMined) {
+                                        clearInterval($scope.waitForMined)
+                                    }
+                                } else {
+                                    $scope.txResult.status = $scope.txStatus.found
+                                }
+                            } else {
+                                $scope.txResult.status = $scope.txStatus.notFound
+                                if ($scope.waitForMined) {
+                                    clearInterval($scope.waitForMined)
+                                }
+                            }
+                        })
+                    } else {
+                        $scope.txResult.status = $scope.txStatus.found
+                    }
+                } else {
+                    $scope.txResult.status = $scope.txStatus.notFound
+                }
+            }
+        })
+    }
+
+
+
+    $scope.clearPage = () => {
+        $scope.txResult.hash = ''
+        $scope.txResult.status = -1
+        $scope.txResult.tokenAddress = null
+
+        $scope.isGenerate = false
+
+        $scope.clearInputs()
+
+        if ($scope.waitForMined) {
+            clearInterval($scope.waitForMined)
+        }
+    }
+
+    $scope.getAddictionFee = (callback) => {
+        let curFunc = $scope.tokenFactory.functions['minFeeWei'];
+        let fullFuncName = ethUtil.solidityUtils.transformToFullName(curFunc);
+        let funcSig = '0x' + ethFuncs.getFunctionSignature(fullFuncName);
+        ajaxReq.getEthCall({ to: $scope.tokenFactory.address, data: funcSig }, function(res) {
+            if (!res.error) {
+                let outTypes = curFunc.outputs.map(function(i) {
+                    return i.type;
+                });
+                let decoded = ethUtil.solidityCoder.decodeParams(outTypes, res.data.replace('0x', ''));
+                callback(decoded[0])
+            } else throw res.msg;
+
+        });
+    }
+    
+    $scope.createERC20Data = (inputs) => {
+        let curFunc = $scope.tokenFactory.functions['createERC20'];
+        let fullFuncName = ethUtil.solidityUtils.transformToFullName(curFunc);
+        let funcSig = ethFuncs.getFunctionSignature(fullFuncName);
+        let typeName = ethUtil.solidityUtils.extractTypeName(fullFuncName);
+        let types = typeName.split(',');
+        types = types[0] == "" ? [] : types;
+        return '0x' + funcSig + ethUtil.solidityCoder.encodeParams(types, inputs);
+    }
+
+    $scope.setVisibility = function(str) {
+        $scope.visibility = str
+        $scope.clearPage()
     }
 }
 module.exports = tokenCreationCtrl

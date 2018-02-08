@@ -29,7 +29,7 @@ ethFuncs.trimHexZero = function(hex) {
     return '0x' + hex;
 }
 ethFuncs.padLeftEven = function(hex) {
-    hex = hex.length % 2 != 0 ? '0' + hex : hex;
+    hex = hex.length % 2 != 0 ? hex : hex;
     return hex;
 }
 ethFuncs.addTinyMoreToGas = function(hex) {
