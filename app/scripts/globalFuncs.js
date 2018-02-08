@@ -75,7 +75,8 @@ globalFuncs.errorMsgs = [
     'Can not estimate fee. Try to change node and refresh the page.' ,    //40
     'Name of the asset should contain 3-4 Latin letters.', // 41
     'Total tokens is not defined or has more than 15 digits', // 42
-    'Decimals from 0 to 18' // 43
+    'Decimals from 0 to 18', // 43,
+    'Can not connect to token factory contract. Try to change node and refresh the page.' // 44
 ];
 
 // These are translated in the translation files

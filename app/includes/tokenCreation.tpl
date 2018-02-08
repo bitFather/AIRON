@@ -1,4 +1,4 @@
-<main class="tab-pane active"
+<main class="tab-pane tokenCreation active"
       ng-if="globalService.currentTab==globalService.tabs.tokenCreation.id"
       ng-controller='tokenCreationCtrl'
       ng-cloak>
@@ -10,26 +10,34 @@
         </p>
     </div>
 
+    <!-- Title -->
+    <div class="block text-center">
+        <h1>
+            <a translate="NAV_TokenCreation"
+               ng-class="{'isActive': visibility=='createTokenView'}"
+               ng-click="setVisibility('createTokenView')">
+                Create token
+            </a>
+            or
+            <a translate="NAV_VerifyTokenTx"
+               ng-class="{'isActive': visibility=='verifyTokenTxView'}"
+               ng-click="setVisibility('verifyTokenTxView')">
+                Verify token transaction
+            </a>
+        </h1>
+    </div>
+    <!-- / Title -->
 
     <!-- Unlock Wallet -->
     <article class="collapse-container">
-        <div ng-click="wd = !wd">
-            <a class="collapse-button"><span ng-show="wd">+</span><span ng-show="!wd">-</span></a>
-            <h1 translate="NAV_TokenCreation">
-                Create token
-            </h1>
-        </div>
-        <div ng-show="!wd">
+        <div ng-show="!wallet&&visibility=='createTokenView'">
             @@if (site === 'cx' )  {  <cx-wallet-decrypt-drtv></cx-wallet-decrypt-drtv>   }
             @@if (site === 'mew' ) {  <wallet-decrypt-drtv></wallet-decrypt-drtv>         }
         </div>
     </article>
 
-
-    <!-- Send Tx Content -->
-    <article class="row" ng-show="wallet!=null">
         @@if (site === 'mew' ) { @@include( './tokenCreation-content.tpl', { "site": "mew" } ) }
-    </article>
+
 
 
 </main>
