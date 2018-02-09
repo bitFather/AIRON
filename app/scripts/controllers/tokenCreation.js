@@ -53,6 +53,9 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
     }
 
     $scope.$watch('txResult.hash', () => {
+        if ($scope.waitForMined) {
+            clearInterval($scope.waitForMined)
+        }
         $scope.txResult.status = -1
         $scope.txResult.tokenAddress = null
     });

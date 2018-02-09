@@ -42,7 +42,7 @@ nodes.nodeList = {
         'chainId': 1,
         'tokenList': require('./tokens/ethTokens.json'),
         'abiList': require('./abiDefinitions/ethAbi.json'),
-        'service': 'MyEtherWallet',
+        'service': 'Main Network',
         'lib': new nodes.customNode('https://api.myetherapi.com/eth', ''),
         'tokenFactoryAddress': '0x0'
     },
