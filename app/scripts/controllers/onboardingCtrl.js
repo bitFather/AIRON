@@ -4,7 +4,7 @@ var onboardingCtrl = function($scope, globalService, $translate, $sce) {
     $scope.onboardModal     = document.getElementById('onboardingModal') ? new Modal(document.getElementById('onboardingModal')) : null
 
     // if there is onboardStatus in localStorage....
-    if ( globalFuncs.localStorage.getItem("onboardStatus", null) != null ) {
+    if ( globalFuncs.localStorage.getItem("onboardStatus", null) == null ) {
         $scope.onboardModal.open()
     }
 
