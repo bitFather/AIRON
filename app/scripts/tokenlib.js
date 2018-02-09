@@ -9,6 +9,8 @@ var Token = function(contractAddress, userAddress, symbol, decimal, type) {
 };
 Token.balanceHex = "0x70a08231";
 Token.transferHex = "0xa9059cbb";
+Token.symbolHex = '0x95d89b41'
+Token.decimalsHex = '0x313ce567'
 Token.popTokens = [];
 Token.prototype.getContractAddress = function() {
     return this.contractAddress;
@@ -45,6 +47,36 @@ Token.prototype.setBalance = function(callback) {
         } catch (e) {
             parentObj.balance = globalFuncs.errorMsgs[20];
             parentObj.balanceBN = '0';
+        }
+    });
+};
+
+Token.prototype.setSymbol = function(callback) {
+    let symbolCall = ethFuncs.getDataObj(this.contractAddress, Token.symbolHex, []);
+    let parentObj = this;
+    ajaxReq.getEthCall(symbolCall, function(data) {
+        try {
+            if (!data.error) {
+                let decoded = ethUtil.solidityCoder.decodeParam("string", data.data.replace('0x', ''));
+                parentObj.symbol = decoded
+                if(callback) callback();
+            }
+        } catch (e) {
+        }
+    });
+};
+
+Token.prototype.setDecimals = function(callback) {
+    let decimalsCall = ethFuncs.getDataObj(this.contractAddress, Token.decimalsHex, []);
+    let parentObj = this;
+    ajaxReq.getEthCall(decimalsCall, function(data) {
+        try {
+            if (!data.error) {
+                let decoded = ethUtil.solidityCoder.decodeParam("uint8", data.data.replace('0x', ''));
+                parentObj.decimal = decoded
+                if(callback) callback();
+            }
+        } catch (e) {
         }
     });
 };

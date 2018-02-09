@@ -14,6 +14,24 @@ var walletBalanceCtrl = function($scope, $sce, $rootScope) {
 
     $scope.customTokenField = false;
 
+    $scope.$watch('localToken.contractAdd', () => {
+        if(!$scope.wallet)
+            return
+        let token = new Token(
+            $scope.localToken.contractAdd,
+            $scope.wallet.getAddressString(),
+            $scope.localToken.symbol,
+            $scope.localToken.decimals,
+            $scope.localToken.type
+        )
+        token.setSymbol(()=>{
+            $scope.localToken.symbol = token.getSymbol()
+        })
+        token.setDecimals(()=>{
+            $scope.localToken.decimals = token.getDecimal()
+        })
+    });
+
     $scope.saveTokenToLocal = function() {
         globalFuncs.saveTokenToLocal($scope.localToken, function(data) {
             if (!data.error) {
