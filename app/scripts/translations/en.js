@@ -111,15 +111,15 @@ en.data = {
     EOS_10: 'Select `claimAll`.',
 
     /* Onboarding */
-    ONBOARD_welcome_title: 'What is Airon',
-    ONBOARD_welcome_description: 'Airon is a free, open-source, comfortable client-side interface You can create your new custom ERC20 token You and only you are responsible for your security. Multisign wallet*',
+    ONBOARD_welcome_title: 'What is Airon?',
+    ONBOARD_welcome_description: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Airon is a free, open-source, comfortable client-side interface&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can create your new custom ERC20 token&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You and only you are responsible for your security. Multisign wallet*',
     ONBOARD_welcome_header: '*coming after march 2018',
     ONBOARD_welcome_content__1: 'If you send your public key (address) to someone, they can send you ETH or tokens.',
     ONBOARD_welcome_content__2: 'If you send your private key to someone, they now have full control of your account.',
     ONBOARD_welcome_content__3: 'If you lose your public and private key then you lose your tokens',
     ONBOARD_welcome_content__4: 'We never transmit, receive or store your private key, password, or other account information.',
     ONBOARD_welcome_content__5: 'We cannot recover your funds or freeze your account if you visit a phishing site or lose your private key.',
-    ONBOARD_welcome_button: 'Start',
+    ONBOARD_welcome_button: `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`,
 
     /* Old */
     ADD_DigitalBitbox_0a: 'Re-open Airon.io on a secure (SSL) connection',
