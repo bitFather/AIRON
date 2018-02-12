@@ -84,7 +84,7 @@
       }
       @@if (site === 'cx'  ) {
       <a class="brand" href="/cx-wallet.html" aria-label="Go to homepage">
-        <img src="images/logo-myetherwalletcx.svg" height="64px" width="200px" alt="Airon.io" />
+        <img src="images/logo-myetherwalletcx.svg" height="64px" width="245px" alt="Airon.io" />
       </a>
       }
       <div class="tagline">
