@@ -75,20 +75,15 @@
 
 <header class="{{curNode.name}} {{curNode.service}} {{curNode.service}} nav-index-{{gService.currentTab}}" aria-label="header" ng-controller='tabsCtrl' >
 
-  
-
   <section class="bg-gradient header-branding">
     <section class="container">
       
       
       <a class="brand" href="/cx-wallet.html" aria-label="Go to homepage">
-        <img src="images/logo-myetherwalletcx.svg" height="64px" width="245px" alt="Airon.io" />
-        <p class="small visible-xs">3.11.2.3</p>
+        <img src="images/logo-myetherwalletcx.svg" height="64px" width="200px" alt="Airon.io" />
       </a>
       
       <div class="tagline">
-
-        <span class="hidden-xs">3.11.2.3</span>
 
         <span class="dropdown dropdown-lang" ng-cloak>
       <a tabindex="0"  aria-haspopup="true" aria-expanded="false" aria-label="change language. current language {{curLang}}" class="dropdown-toggle  btn btn-white" ng-click="dropdown = !dropdown">{{curLang}}<i class="caret"></i></a>
@@ -1398,7 +1393,6 @@
   <!-- Unlock Wallet -->
   <article class="collapse-container">
     <div ng-click="wd = !wd">
-      <a class="collapse-button"><span ng-show="wd">+</span><span ng-show="!wd">-</span></a>
       <h1 translate="NAV_SendEther">
         Send Ether &amp; Tokens
       </h1>
@@ -2809,10 +2803,23 @@
           <h3 class="onboarding__title" translate="ONBOARD_welcome_title">
             What is Airon
           </h3>
-          <p translate="ONBOARD_welcome_description">
-            Airon is a free, open-source, comfortable client-side interface You can create your new custom ERC20 token You and only you are responsible for your security. Multisign wallet*</p>
+            <p  translate="ONBOARD_welcome_description_1">
+              - Airon is a free, open-source, comfortable client-side interface
+            </p>
+            <p  translate="ONBOARD_welcome_description_2">
+              - You can create your new custom ERC20 token
+            </p>
+            <p  translate="ONBOARD_welcome_description_3">
+              - You and only you are responsible for your security
+            </p>
+            <p  translate="ONBOARD_welcome_description_4">
+              - Multisign wallet*
+            </p>
           <section class="row row--flex">
             <div class="col-xs-12 onboarding__content">
+              <h5 translate="ONBOARD_welcome_description_title">
+                Remember
+              </h5>
               <ul>
                 <li translate="ONBOARD_welcome_content__1">
                   If you send your public key (address) to someone, they can send you ETH or tokens.</li>

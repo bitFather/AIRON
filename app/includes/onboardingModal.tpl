@@ -7,10 +7,23 @@
           <h3 class="onboarding__title" translate="ONBOARD_welcome_title">
             What is Airon
           </h3>
-          <p translate="ONBOARD_welcome_description">
-            Airon is a free, open-source, comfortable client-side interface You can create your new custom ERC20 token You and only you are responsible for your security. Multisign wallet*</p>
+            <p  translate="ONBOARD_welcome_description_1">
+              - Airon is a free, open-source, comfortable client-side interface
+            </p>
+            <p  translate="ONBOARD_welcome_description_2">
+              - You can create your new custom ERC20 token
+            </p>
+            <p  translate="ONBOARD_welcome_description_3">
+              - You and only you are responsible for your security
+            </p>
+            <p  translate="ONBOARD_welcome_description_4">
+              - Multisign wallet*
+            </p>
           <section class="row row--flex">
             <div class="col-xs-12 onboarding__content">
+              <h5 translate="ONBOARD_welcome_description_title">
+                Remember
+              </h5>
               <ul>
                 <li translate="ONBOARD_welcome_content__1">
                   If you send your public key (address) to someone, they can send you ETH or tokens.</li>

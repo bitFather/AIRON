@@ -112,7 +112,11 @@ en.data = {
 
     /* Onboarding */
     ONBOARD_welcome_title: 'What is Airon?',
-    ONBOARD_welcome_description: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Airon is a free, open-source, comfortable client-side interface&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can create your new custom ERC20 token&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You and only you are responsible for your security. Multisign wallet*',
+    ONBOARD_welcome_description_title: 'Remember',
+    ONBOARD_welcome_description_1: '&ndash; Airon is a free, open-source, comfortable client-side interface',
+    ONBOARD_welcome_description_2: '&ndash; You can create your new custom ERC20 token',
+    ONBOARD_welcome_description_3: '&ndash; You and only you are responsible for your security',
+    ONBOARD_welcome_description_4: '&ndash; Multisign wallet*',
     ONBOARD_welcome_header: '*coming after march 2018',
     ONBOARD_welcome_content__1: 'If you send your public key (address) to someone, they can send you ETH or tokens.',
     ONBOARD_welcome_content__2: 'If you send your private key to someone, they now have full control of your account.',
@@ -325,7 +329,7 @@ en.data = {
     MYWAL_Viewing: 'Viewing Wallet',
     MYWAL_WatchOnly: 'Your Watch-Only Accounts',
 
-    NAV_Container_ViewWallet: 'View wallet',
+    NAV_Container_ViewWallet: 'View Wallet',
     NAV_AddWallet: 'Add Wallet',
     NAV_BulkGenerate: 'Bulk Generate',
     NAV_CheckTxStatus: 'Check Status',
@@ -333,8 +337,8 @@ en.data = {
     NAV_Contracts: 'Contracts',
     NAV_DeployContract: 'Deploy Contract',
     NAV_DomainSale: 'DomainSale',
-    NAV_TokenCreation: 'Create token',
-    NAV_VerifyTokenTx: 'Verify token transaction',
+    NAV_TokenCreation: 'Create Token',
+    NAV_VerifyTokenTx: 'Verify Token Transaction',
     NAV_ENS: 'ENS',
     NAV_GenerateWallet: 'Create New Wallet',
     NAV_GenerateWallet_alt: 'New Wallet',

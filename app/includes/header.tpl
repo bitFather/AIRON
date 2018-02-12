@@ -75,31 +75,19 @@
 
 <header class="{{curNode.name}} {{curNode.service}} {{curNode.service}} nav-index-{{gService.currentTab}}" aria-label="header" ng-controller='tabsCtrl' >
 
-  @@if (site === 'mew' ) {
-  <div class="small announcement annoucement-danger">
-    <div class="container">
-      DON'T GET PHISHED, please! 🎣 Thank you! 🤗 BOOKMARK <a href="https://www.airon.io"> Airon.io </a>
-    </div>
-  </div>
-  }
-
   <section class="bg-gradient header-branding">
     <section class="container">
       @@if (site === 'mew' ) {
       <a class="brand" href="/" aria-label="Go to homepage">
         <img src="images/logo-myetherwallet.svg"   height="64px" width="245px" alt="Airon.io" />
-        <p class="small visible-xs">3.11.2.3</p>
       </a>
       }
       @@if (site === 'cx'  ) {
       <a class="brand" href="/cx-wallet.html" aria-label="Go to homepage">
-        <img src="images/logo-myetherwalletcx.svg" height="64px" width="245px" alt="Airon.io" />
-        <p class="small visible-xs">3.11.2.3</p>
+        <img src="images/logo-myetherwalletcx.svg" height="64px" width="200px" alt="Airon.io" />
       </a>
       }
       <div class="tagline">
-
-        <span class="hidden-xs">3.11.2.3</span>
 
         <span class="dropdown dropdown-lang" ng-cloak>
       <a tabindex="0"  aria-haspopup="true" aria-expanded="false" aria-label="change language. current language {{curLang}}" class="dropdown-toggle  btn btn-white" ng-click="dropdown = !dropdown">{{curLang}}<i class="caret"></i></a>
