@@ -47,6 +47,7 @@ var walletGenCtrl = function($scope) {
     }
     $scope.getAddress = function(){
         $scope.showPaperWallet = false;
+        $scope.$$childTail.addAddress($scope.wallet.getAddressString())
         $scope.wallet = null;
         $scope.showGetAddress = true;
     }

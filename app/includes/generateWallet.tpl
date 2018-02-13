@@ -325,20 +325,12 @@
 
   <article class="text-left" ng-show="showGetAddress">
     <div class="clearfix collapse-container">
-
-      <div ng-click="wd = !wd">
-        <a class="collapse-button"><span ng-show="wd">+</span><span ng-show="!wd">-</span></a>
-        <h1 traslate="GEN_Unlock">Unlock your wallet to see your address</h1>
-        <p translate="x_AddessDesc"></p>
-      </div>
-
-      <div ng-show="!wd">
-          @@if (site === 'mew' ) {  <wallet-decrypt-drtv></wallet-decrypt-drtv>         }
-          @@if (site === 'cx' )  {  <cx-wallet-decrypt-drtv></cx-wallet-decrypt-drtv>   }
+      <div >
+        <h1 traslate="GEN_Unlock">Your address successfully added into view wallets list</h1>
       </div>
     </div>
 
-    <div class="row" ng-show="wallet!=null" ng-controller='viewWalletCtrl'>
+    <div class="row" ng-controller='viewWalletCtrl'>
       @@if (site === 'cx' ) {  @@include( './viewWalletInfo-content.tpl', { "site": "cx" } )    }
       @@if (site === 'mew') {  @@include( './viewWalletInfo-content.tpl', { "site": "mew" } )   }
     </div>

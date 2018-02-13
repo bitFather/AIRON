@@ -294,7 +294,7 @@ en.data = {
     GEN_Label_5: 'Save Your `Private Key`.',
     GEN_Placeholder_1: 'Do NOT forget to save this!',
     GEN_SuccessMsg: 'Success! Your wallet has been generated.',
-    GEN_Unlock: 'Unlock your wallet to see your address',
+    GEN_Unlock: 'Your address successfully added into view wallets list',
     GET_ConfButton: 'I understand. Continue.',
 
     MEW_Tagline: 'Open Source JavaScript Client-Side Ether Wallet',

@@ -38,7 +38,7 @@ var viewWalletCtrl = function($scope, walletService) {
             return walletService.wallet.getAddressString()
         },
         function() {
-            if (walletService.wallet == null) $scope.updateViewWallet(0)
+            if (walletService.wallet == null) $scope.updateViewWallet($scope.addresses.length - 1)
 
         },
     )
@@ -66,11 +66,11 @@ var viewWalletCtrl = function($scope, walletService) {
         }
     }
 
-    $scope.addAddress = () => {
-        if($scope.newAddress ){
-          if(!$scope.addresses.find(x => x==$scope.newAddress)){
-                $scope.addresses.push($scope.newAddress)
-                globalFuncs.safeAddressToLocal($scope.newAddress,()=>{})
+    $scope.addAddress = (address) => {
+        if(address){
+          if(!$scope.addresses.find(x => {return x == address})){
+                $scope.addresses.push(address)
+                globalFuncs.safeAddressToLocal(address,()=>{})
                 $scope.updateViewWallet($scope.addresses.length - 1)
           } else {
               //notify
@@ -79,9 +79,9 @@ var viewWalletCtrl = function($scope, walletService) {
         $scope.addressDrtv.ensAddressField = ""
     }
 
-    $scope.removeAddress = () => {
-        if($scope.addresses.length > 0 && $scope.wallet) {
-            let index = $scope.addresses.indexOf($scope.wallet.getAddressString())
+    $scope.removeAddress = (address) => {
+        if($scope.addresses.length > 0 && address) {
+            let index = $scope.addresses.indexOf(address)
             globalFuncs.removeAddressFromLocal($scope.addresses[index],()=>{})
             $scope.addresses.splice(index, 1)
             if($scope.addresses.length > 0) {

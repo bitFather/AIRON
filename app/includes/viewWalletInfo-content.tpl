@@ -1,4 +1,4 @@
-<div class="col-sm-8">
+<div class="{{addresses.length != 0?'col-sm-8':'col-xs-12'}}">
 
   <article class="block">
 
@@ -43,7 +43,7 @@
             </ul>
           </div>
           <div class="input-group-btn" >
-            <a class="btn btn-default dropdown-toggle" class="dropdown-toggle" style="min-width: 120px" ng-show='addresses.length != 0' translate="VIEWWALLET_Header_removeAddress" ng-click="removeAddress()">
+            <a class="btn btn-default dropdown-toggle" class="dropdown-toggle" style="min-width: 120px" ng-show='addresses.length != 0' translate="VIEWWALLET_Header_removeAddress" ng-click="removeAddress(wallet.getAddressString())">
               <strong>Remove</strong>
             </a>
           </div>
@@ -71,7 +71,7 @@
 
     <!-- Button -->
     <section class="col-xs-11" ng-show="showAddAddress || addresses.length == 0">
-      <a class="btn btn-info" ng-click="addAddress();" translate="VIEWWALLET_Header_buttonAdd">
+      <a class="btn btn-info" ng-click="addAddress(newAddress);" translate="VIEWWALLET_Header_buttonAdd">
         Add address
       </a>
     </section>
@@ -80,6 +80,6 @@
 </div>
 
 
-<article class="col-sm-4">
+<article class="col-sm-4" ng-show="addresses.length != 0">
   <wallet-balance-drtv></wallet-balance-drtv>
 </article>
