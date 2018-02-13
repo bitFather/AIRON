@@ -115,6 +115,36 @@
   position: relative;
   //overflow-y: hidden;
 
+  .mobile-menu {
+    display: none;
+    @media screen and (max-width: @screen-sm) {
+      display: block;
+      span {
+        position: relative;
+        border-bottom: 2px solid #FFFFFF;
+        width: 20px;
+        height: 1px;
+        display: block;
+
+        &:before, &:after {
+          position: absolute;
+          content: '';
+          width: 20px;
+          height: 2px;
+          background: #FFFFFF;
+          left: 0;
+          right: 0;
+        }
+        &:before {
+          top: -5px
+        }
+        &:after {
+          bottom: -7px;
+        }
+      }
+    }
+  }
+
   .nav-scroll {
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
@@ -124,18 +154,32 @@
     white-space: nowrap;
     @media screen and (max-width: @screen-sm) {
       margin: 0 -5% -20px;
+      display: none;
+      &.opened {
+        display: block;
+      }
     }
     .nav-inner {
       border-bottom: 2px solid white;
-      display: inline-block;
       font-size: 0;
       margin-bottom: 20px;
       min-width: 100%;
       padding: 5px 0 0;
       vertical-align: middle;
+      // this for now
+      //      display: inline-block;
+
+      @media screen and (max-width: @screen-sm) {
+        display: flex;
+        flex-direction: column;
+      }
       .nav-item {
         display: inline-block;
         font-size: 0;
+
+        @media screen and (max-width: @screen-sm) {
+          text-align: center;
+        }
         &.NAV_Swap a:before {
           content:"";
           display: inline-block;

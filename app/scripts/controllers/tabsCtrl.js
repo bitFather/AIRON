@@ -1,5 +1,6 @@
 'use strict'
 var tabsCtrl = function($scope, globalService, $translate, $sce) {
+    $scope.mobileMenuIsOpen = false;
     $scope.gService = globalService
     $scope.gService.currentTab = 1
     $scope.tabs = $scope.gService.tabs

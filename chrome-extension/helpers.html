@@ -191,8 +191,11 @@
   </section>
 
   <nav role="navigation" aria-label="main navigation" class="container nav-container overflowing" >
+  <button ng-click="mobileMenuIsOpen = !mobileMenuIsOpen" class="btn btn-default mobile-menu">
+    <span></span>
+  </button>
     <a aria-hidden="true" ng-show="showLeftArrow" class="nav-arrow-left" ng-click="scrollLeft(100);" ng-mouseover="scrollHoverIn(true,2);" ng-mouseleave="scrollHoverOut()">&#171;</a>
-    <div class="nav-scroll">
+    <div class="nav-scroll" ng-class="{opened: mobileMenuIsOpen}">
       <ul class="nav-inner">
         
         <li ng-repeat="(key1, tab) in tabs" \
