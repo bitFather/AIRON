@@ -2,25 +2,25 @@
 .header-branding {
   color: white;
   padding: 0;
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: @screen-sm) {
     text-align: center;
   }
   .container {
     display: flex;
     align-items: center;
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: @screen-sm) {
       padding-left: @cont-padding;
       padding-right: @cont-padding;
       flex-direction: row;
     }
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: @screen-sm) {
       display: block;
     }
   }
   .brand {
     img {
       padding: @space-xs 0;
-      @media screen and (max-width: 900px) {
+      @media screen and (max-width: @screen-sm) {
         max-width: 10rem;
       }
     }
@@ -62,7 +62,7 @@
   .dropdown {
     padding: .2rem;
   }
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: @screen-sm) {
     .dropdown {
       padding: .2rem 0;
       white-space: nowrap;
@@ -75,22 +75,6 @@
   .dropdown-toggle {
     font-size: 14px;
     padding: .3em .6rem;
-  }
-  .dropdown-gas {
-    display: block;
-    .dropdown-toggle {
-      min-width: 200px;
-    }
-    .dropdown-menu{
-      min-width: 100%;
-      padding: .5rem;
-      margin: 0;
-      left: 0;
-      right: 0;
-      p {
-        padding: 0;
-      }
-    }
   }
 }
 
@@ -106,13 +90,16 @@
   }
 }
 .gas-menu{
-  min-width: 100%;
-  padding: .5rem;
   margin: 0;
-  left: 0;
-  right: 0;
+  padding: .5rem;
+
   p {
     padding: 0;
+  }
+  @media screen and (min-width: @screen-sm) {
+    min-width: 100%;
+    left: 0;
+    right: 0;
   }
 }
 .navigate-menu{

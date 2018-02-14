@@ -451,12 +451,16 @@ label small {
 
 .dropdown-gas {
   padding-bottom: 1rem;
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: @screen-sm) {
     padding-bottom: 2rem;
+      &.opened {
+        min-height: 70px;
+      }
   }
 }
 
 .dropdown-gas__msg {
+  bottom: -15px;
   font-size: 12px;
   font-weight:300;
   left: -100%;
@@ -464,9 +468,10 @@ label small {
   position: absolute;
   right: -100%;
   white-space:normal;
-  @media screen and (max-width: 900px) {
-    left: -25%;
+  @media screen and (max-width: @screen-sm) {
+    left: 0;
     right: 0;
+    bottom: auto;
   }
 
 }
@@ -543,6 +548,21 @@ label small {
 @brand-tomo: #6a488d;
 @brand-ella: #046111;
 @brand-cust: #b50085;
+
+.dropdown-node{
+  @media screen and (max-width: @screen-sm) {
+    margin: auto;
+    display: block;
+  }
+}
+
+.dropdown-lang{
+  @media screen and (max-width: @screen-sm) {
+    margin: auto;
+    display: block;
+    text-align: center;
+  }
+}
 
 .dropdown-node .dropdown-menu {
   li {

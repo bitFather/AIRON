@@ -126,12 +126,12 @@
       </li>
     </span>
 
-        <span class="dropdown dropdown-gas" ng-cloak>
+        <span class="dropdown dropdown-gas" ng-class="{opened: gasPriceMsg && ajaxReq.type=='ETH'}" ng-cloak>
       <li tabindex="0" aria-haspopup="true" aria-label="adjust gas price" class="dropdown-toggle  btn btn-white" ng-click="dropdownGasPrice = !dropdownGasPrice">
         <span translate="OFFLINE_Step2_Label_3">Gas Price</span>:
           {{gas.value}} Gwei
           <i class="caret"></i>
-      <ul class="dropdown-menu gas-menu" ng-show="dropdownGasPrice">
+      <ul class="dropdown-menu gas-menu"  ng-show="dropdownGasPrice">
         <div class="header--gas">
           <span translate="OFFLINE_Step2_Label_3">Gas Price</span>:
           {{gas.value}} Gwei
@@ -154,6 +154,7 @@
              rel="noopener noreferrer"></a>
         </div>
       </ul>
+      </li>
       <p class="dropdown-gas__msg"
          ng-show="gasPriceMsg"
          ng-hide="ajaxReq.type!='ETH'">
@@ -162,16 +163,15 @@
            target="_blank" rel="noopener noreferrer">Eth Gas Station</a>
         for gas price to use.
       </p>
-      </li>
     </span>
 
         <!-- Warning: The separators you see on the frontend are in styles/etherwallet-custom.less. If you add / change a node, you have to adjust these. Ping tayvano if you're not a CSS wizard -->
         <span class="dropdown dropdown-node" ng-cloak>
       <li tabindex="0"
-         aria-haspopup="true"
-         aria-label="change node. current node {{curNode.name}} node by {{curNode.service}}"
-         class="dropdown-toggle  btn btn-white"
-         ng-click="dropdownNode = !dropdownNode">
+          aria-haspopup="true"
+          aria-label="change node. current node {{curNode.name}} node by {{curNode.service}}"
+          class="dropdown-toggle  btn btn-white"
+          ng-click="dropdownNode = !dropdownNode">
            <span translate="X_Network">Network:</span>
            {{curNode.name}}
            <small>({{curNode.service}})</small>
@@ -197,25 +197,25 @@
   </section>
 
   <section class="nav-section">
-  <nav role="navigation" aria-label="main navigation" class="container nav-container overflowing" >
-    <a aria-hidden="true" ng-show="showLeftArrow" class="nav-arrow-left" ng-click="scrollLeft(100);" ng-mouseover="scrollHoverIn(true,2);" ng-mouseleave="scrollHoverOut()">&#171;</a>
-    <div class="nav-scroll" ng-class="{opened: true}">
-      <ul class="nav-inner">
-        @@if (site === 'mew' ) {
-        <li ng-repeat="(key1, tab) in tabs" \
-            class="nav-item {{tab.name}}" \
-            ng-show="tab.mew">
+    <nav role="navigation" aria-label="main navigation" class="container nav-container overflowing" >
+      <a aria-hidden="true" ng-show="showLeftArrow" class="nav-arrow-left" ng-click="scrollLeft(100);" ng-mouseover="scrollHoverIn(true,2);" ng-mouseleave="scrollHoverOut()">&#171;</a>
+      <div class="nav-scroll" ng-class="{opened: true}">
+        <ul class="nav-inner">
+          @@if (site === 'mew' ) {
+          <li ng-repeat="(key1, tab) in tabs" \
+              class="nav-item {{tab.name}}" \
+              ng-show="tab.mew">
 
-          <a tabindex="0"
-             ng-if="tab.type == 'tab'"
-             ng-class="{active: tab.id==activeTab}"
-             aria-label="nav item: {{tab.name | translate}}"
-             translate="{{tab.name}}"
-             ng-click="tabClick(tab.id)"></a>
+            <a tabindex="0"
+               ng-if="tab.type == 'tab'"
+               ng-class="{active: tab.id==activeTab}"
+               aria-label="nav item: {{tab.name | translate}}"
+               translate="{{tab.name}}"
+               ng-click="tabClick(tab.id)"></a>
 
-          <span class="dropdown dropdown-lang"
-                ng-if="tab.type == 'container'"
-                ng-cloak>
+            <span class="dropdown dropdown-lang"
+                  ng-if="tab.type == 'container'"
+                  ng-cloak>
               <a tabindex="0"
                  aria-haspopup="true"
                  aria-label="nav item: {{tab.name | translate}}"
@@ -232,35 +232,35 @@
               </ul>
             </span>
 
-        </li>
-        }
-        @@if (site === 'cx' ) {
-        <li ng-repeat="tab in tabs track by $index" \
-            class="nav-item {{tab.name}}" \
-            ng-class="{active: $index==gService.currentTab}"
-            ng-show="tab.cx"
-            ng-click="tabClick($index)">
-          <a tabindex="0" aria-label="nav item: {{tab.name | translate}}" translate="{{tab.name}}"></a>
-        </li>
-        }
-        <!--
-        <li class="nav-item help">
-          <a href="https://myetherwallet.github.io/knowledge-base/" target="_blank" rel="noopener noreferrer">
-            <span translate="яNAV_Help">
-              Help
-            </span>
-          </a>
-        </li>
-        -->
-      </ul>
-    </div>
-    <a aria-hidden="true"
-       ng-show="showRightArrow"
-       class="nav-arrow-right"
-       ng-click="scrollRight(100);"
-       ng-mouseover="scrollHoverIn(false,2);"
-       ng-mouseleave="scrollHoverOut()">&#187;</a>
-  </nav>
+          </li>
+          }
+          @@if (site === 'cx' ) {
+          <li ng-repeat="tab in tabs track by $index" \
+              class="nav-item {{tab.name}}" \
+              ng-class="{active: $index==gService.currentTab}"
+              ng-show="tab.cx"
+              ng-click="tabClick($index)">
+            <a tabindex="0" aria-label="nav item: {{tab.name | translate}}" translate="{{tab.name}}"></a>
+          </li>
+          }
+          <!--
+          <li class="nav-item help">
+            <a href="https://myetherwallet.github.io/knowledge-base/" target="_blank" rel="noopener noreferrer">
+              <span translate="яNAV_Help">
+                Help
+              </span>
+            </a>
+          </li>
+          -->
+        </ul>
+      </div>
+      <a aria-hidden="true"
+         ng-show="showRightArrow"
+         class="nav-arrow-right"
+         ng-click="scrollRight(100);"
+         ng-mouseover="scrollHoverIn(false,2);"
+         ng-mouseleave="scrollHoverOut()">&#187;</a>
+    </nav>
   </section>
 
   @@if (site === 'mew' ) { @@include( './header-node-modal.tpl', { "site": "mew" } ) }
