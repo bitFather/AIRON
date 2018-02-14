@@ -259,12 +259,14 @@ var tabsCtrl = function($scope, globalService, $translate, $sce) {
     $scope.tabClick = function(id) {
         globalService.tokensLoaded = false
         $scope.activeTab = globalService.currentTab = id
-        for (var key in $scope.tabNames) {
+        for (let key in $scope.tabNames) {
             if ($scope.tabNames[key].id == id) {
                 location.hash = $scope.tabNames[key].url
             }
         }
-        $scope.dropdownTab = false
+        for(let key in $scope.dropdownTab){
+            $scope.dropdownTab[key] = false
+        }
     }
 
     $scope.includeTab = (tabObjArray,tabId) => {

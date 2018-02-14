@@ -17,6 +17,36 @@
   @media screen and (max-width: @screen-lg) {
     padding: 0 3%;
   }
+  .mobile-menu {
+    display: none;
+    margin: auto;
+    @media screen and (max-width: @screen-sm) {
+      display: block;
+      span {
+        position: relative;
+        border-bottom: 2px solid #FFFFFF;
+        width: 20px;
+        height: 1px;
+        display: block;
+
+        &:before, &:after {
+          position: absolute;
+          content: '';
+          width: 20px;
+          height: 2px;
+          background: #FFFFFF;
+          left: 0;
+          right: 0;
+        }
+        &:before {
+          top: -5px
+        }
+        &:after {
+          bottom: -7px;
+        }
+      }
+    }
+  }
 }
 
 
