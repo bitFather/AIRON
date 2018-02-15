@@ -12,9 +12,8 @@
       padding-left: @cont-padding;
       padding-right: @cont-padding;
       flex-direction: row;
-    }
-    @media screen and (max-width: @screen-sm) {
       display: block;
+      text-align: justify;
     }
   }
   .brand {
@@ -23,6 +22,9 @@
       @media screen and (max-width: @screen-sm) {
         max-width: 10rem;
       }
+    }
+    @media screen and (max-width: @screen-sm) {
+      display: inline-block;
     }
   }
   .tagline {
@@ -121,36 +123,6 @@
   .nav-container {
     position: absolute;
     overflow-y: hidden;
-
-    .mobile-menu {
-      display: none;
-      @media screen and (max-width: @screen-sm) {
-        display: block;
-        span {
-          position: relative;
-          border-bottom: 2px solid #FFFFFF;
-          width: 20px;
-          height: 1px;
-          display: block;
-
-          &:before, &:after {
-            position: absolute;
-            content: '';
-            width: 20px;
-            height: 2px;
-            background: #FFFFFF;
-            left: 0;
-            right: 0;
-          }
-          &:before {
-            top: -5px
-          }
-          &:after {
-            bottom: -7px;
-          }
-        }
-      }
-    }
 
     .nav-scroll {
       -ms-overflow-style: -ms-autohiding-scrollbar;
