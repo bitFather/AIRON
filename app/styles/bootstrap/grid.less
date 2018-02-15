@@ -20,31 +20,37 @@
   .mobile-menu {
     display: none;
     margin: auto;
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+    padding: .75rem .5rem;
     @media screen and (max-width: @screen-sm) {
       display: inline-block;
       margin: 10px 5px auto auto;
       float: right;
+      &:hover{
+
+      }
       span {
         position: relative;
-        border-bottom: 2px solid #FFFFFF;
-        width: 20px;
-        height: 1px;
+        border-bottom: 3px solid #FFFFFF;
+        width: 30px;
+        height: 3px;
         display: block;
 
         &:before, &:after {
           position: absolute;
           content: '';
-          width: 20px;
-          height: 2px;
+          width: 30px;
+          height: 3px;
           background: #FFFFFF;
           left: 0;
           right: 0;
         }
         &:before {
-          top: -5px
+          top: -8px
         }
         &:after {
-          bottom: -7px;
+          bottom: -11px;
         }
       }
     }

@@ -87,7 +87,7 @@
         <img src="images/logo-myetherwalletcx.svg" height="64px" width="245px" alt="Airon.io" />
       </a>
       }
-      <button ng-click="mobileMenuIsOpen = !mobileMenuIsOpen" class="btn btn-default mobile-menu">
+      <button ng-click="mobileMenuIsOpen = !mobileMenuIsOpen" class="mobile-menu">
         <span></span>
       </button>
       <div class="tagline" ng-class="{opened: mobileMenuIsOpen}">
