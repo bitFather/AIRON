@@ -445,10 +445,15 @@ en.data = {
     SWAP_your_rate: "Your rate ",
 
     TOKEN_Addr: 'Token Contract Address',
+    TOKEN_Name: "Token Name",
     TOKEN_Dec: 'Decimals',
     TOKEN_hide: 'Hide Tokens',
     TOKEN_show: 'Show All Tokens',
     TOKEN_Symbol: 'Token Symbol',
+    Token_search: "Search Token:",
+    Token_search_short: "Address\\Name\\Symbol",
+    Token_totalSearched: "Total searched:",
+    Token_noResults: "No results",
 
     TRANS_advanced: '+Advanced: Add Data',
     TRANS_data: 'Data',

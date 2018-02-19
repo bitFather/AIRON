@@ -43,7 +43,9 @@ nodes.nodeList = {
         'tokenList': require('./tokens/ethTokens.json'),
         'abiList': require('./abiDefinitions/ethAbi.json'),
         'service': 'Main Network',
-        'lib': new nodes.customNode('https://api.myetherapi.com/eth', ''),
+        'lib': new nodes.customNode('https://api.myetherapi.com/eth', 'https://ethplorer.io/service/service.php?search=',data => {
+            return {result:data.results,total:data.total}
+        }, ''),
         'tokenFactoryAddress': '0x0'
     },
     'eth_ethscan': {
@@ -69,7 +71,9 @@ nodes.nodeList = {
         'tokenList': require('./tokens/ethTokens.json'),
         'abiList': require('./abiDefinitions/ethAbi.json'),
         'service': 'infura.io',
-        'lib': new nodes.infuraNode('https://mainnet.infura.io/mew'),
+        'lib': new nodes.infuraNode('https://mainnet.infura.io/mew','https://ethplorer.io/service/service.php?search=',data => {
+            return {result:data.results,total:data.total}
+        }),
         'tokenFactoryAddress': '0x0'
     },
     'eth_giveth': {
@@ -82,7 +86,9 @@ nodes.nodeList = {
         'tokenList': require('./tokens/ethTokens.json'),
         'abiList': require('./abiDefinitions/ethAbi.json'),
         'service': 'Giveth.io',
-        'lib': new nodes.customNode('https://mew.giveth.io', ''),
+        'lib': new nodes.customNode('https://mew.giveth.io','https://ethplorer.io/service/service.php?search=',data => {
+            return {result:data.results,total:data.total}
+        }, ''),
         'tokenFactoryAddress': '0x0'
     },
     'rin_ethscan': {
@@ -108,7 +114,25 @@ nodes.nodeList = {
         'tokenList': require('./tokens/rinkebyTokens.json'),
         'abiList': require('./abiDefinitions/rinkebyAbi.json'),
         'service': 'infura.io',
-        'lib': new nodes.infuraNode('https://rinkeby.infura.io/mew'),
+        'lib': new nodes.infuraNode('https://rinkeby.infura.io/mew','https://rinkeby.etherscan.io/searchHandler?t=t&term=',data => {
+                let result = []
+                let index = 0
+                for (let elem of data) {
+                    if (index > 5) {
+                        break
+                    }
+                    let resElem = []
+                    resElem.length = 3
+                    let symbol = elem.match(/\([^\s]*\)/g)
+                    resElem[1] = symbol[symbol.length - 1]
+                    resElem[0] = elem.slice(0, elem.lastIndexOf(resElem[1]))
+                    resElem[1] = resElem[1].slice(1, resElem[1].length - 1)
+                    resElem[2] = elem.split('\t')[1]
+                    result.push(resElem)
+                    index++
+                }
+                return {result: result, total: data.length}
+            }),
         'tokenFactoryAddress': '0xe1435ea38bcfca50aa9e99399c3fab732c1b0514'
     },
 };

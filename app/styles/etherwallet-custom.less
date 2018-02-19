@@ -564,6 +564,43 @@ label small {
   }
 }
 
+.dropdown-tokens{
+  display: inline-block;
+  position: relative;
+  @media screen and (max-width: @screen-sm) {
+    margin: auto;
+    display: block;
+  }
+  input{
+    display: inline-block;
+  }
+}
+
+.dropdown-tokens .dropdown-menu{
+  li {
+    position: relative;
+    a {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+}
+
+.input-dropdown ul {
+  background: #fff;
+  border: 1px solid #000;
+}
+
+.input-dropdown ul > li {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.input-dropdown ul > li.active {
+  background: #608AEB;
+}
+
 .dropdown-node .dropdown-menu {
   li {
     border-left: 2px solid @brand-cust;

@@ -102,6 +102,7 @@ var QRCodeDrtv               = require('./directives/QRCodeDrtv');
 var walletDecryptDrtv        = require('./directives/walletDecryptDrtv');
 var cxWalletDecryptDrtv      = require('./directives/cxWalletDecryptDrtv');
 var fileReaderDrtv           = require('./directives/fileReaderDrtv');
+var ngClickOutDrtv           = require('./directives/ngClickOutDrtv');
 var balanceDrtv              = require('./directives/balanceDrtv');
 if (IS_CX) {
   var addWalletCtrl          = require('./controllers/CX/addWalletCtrl');
@@ -127,6 +128,7 @@ app.directive('blockieAddress', blockiesDrtv);
 app.directive('addressField', ['$compile', addressFieldDrtv]);
 app.directive('qrCode', QRCodeDrtv);
 app.directive('onReadFile', fileReaderDrtv);
+app.directive('ngClickOut',ngClickOutDrtv);
 app.directive('walletBalanceDrtv', balanceDrtv);
 app.directive('walletDecryptDrtv', walletDecryptDrtv);
 app.directive('cxWalletDecryptDrtv', cxWalletDecryptDrtv);

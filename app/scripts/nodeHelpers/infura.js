@@ -1,7 +1,7 @@
 'use strict';
 var customNode = require('./customNode');
-var infura = function(srvrUrl, port, httpBasicAuthentication) {
-    var _temp = new customNode(srvrUrl, port, httpBasicAuthentication);
+var infura = function(srvrUrl, searchUrl, port, httpBasicAuthentication) {
+    var _temp = new customNode(srvrUrl, searchUrl, port, httpBasicAuthentication);
     for (var attr in _temp) {
         this[attr] = _temp[attr];
     }
