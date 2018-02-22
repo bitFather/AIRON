@@ -48,7 +48,7 @@
                     </span>
                 <div class="input-group-btn">
                     <a class="btn btn-default"
-                       style="min-width: 120px"
+                       style="min-width: 70px;padding-left: 0.5rem;padding-right: 0.5rem;"
                        translate="VIEWWALLET_Header_viewInfo"
                        ng-click="addAddress(newAddress)">
                         <strong>View info</strong>
