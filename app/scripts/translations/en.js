@@ -503,7 +503,7 @@ en.data = {
     VIEWWALLET_Header_closeAddNew: '-Hide: Add address',
     VIEWWALLET_Header_addNewAddress: 'Input new address',
     VIEWWALLET_Header_buttonAdd: 'Add new view address',
-    VIEWWALLET_Header_removeAddress: 'Remove',
+    VIEWWALLET_Header_viewInfo: 'View info',
 
     WARN_Send_Link: 'You arrived via a link that has the address, value, gas, data fields, or transaction type (send mode) filled in for you. You can change any information before sending. Unlock your wallet to get started.',
 

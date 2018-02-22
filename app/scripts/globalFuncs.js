@@ -131,14 +131,14 @@ globalFuncs.getParityMsg = function(str) {
     for (var reg in this.parityErrors) {
         if (this.parityErrors.hasOwnProperty(reg)) {
             let args = str.match("^" + reg + "$");
-        if (args) {
+            if (args) {
                 let key = this.parityErrors[reg];
-            if (key in this.parityErrorMsgs) {
-                args[0] = this.parityErrorMsgs[key];
-                return format.apply(this, args);
+                if (key in this.parityErrorMsgs) {
+                    args[0] = this.parityErrorMsgs[key];
+                    return format.apply(this, args);
+                }
             }
-         }
-      }
+        }
     }
     return str;
 };
@@ -227,7 +227,7 @@ globalFuncs.getDefaultTokensAndNetworkType =  function getDefaultTokensAndNetwor
     var customNodeNetworkType = currentNodeKey.split('_')[1];
 
     var isCustomNode = !!customLocalNodes.find(function (currentLocalCustomNode) {
-      return currentLocalCustomNode.options === customNodeNetworkType
+        return currentLocalCustomNode.options === customNodeNetworkType
     });
 
     var defaultNode;
@@ -235,70 +235,70 @@ globalFuncs.getDefaultTokensAndNetworkType =  function getDefaultTokensAndNetwor
     var defaultTokens;
 
     if (isCustomNode) {
-      // NOTE: Different curNode value structure for default nodes and custom nodes. This will work because we are checking to make sure we are a custom node first.
+        // NOTE: Different curNode value structure for default nodes and custom nodes. This will work because we are checking to make sure we are a custom node first.
 
-      firstCustomNodeWithMatchingNetwork = customLocalNodes.find(function (currentLocalCustomNode) {
-        return currentLocalCustomNode.options === customNodeNetworkType
-      });
+        firstCustomNodeWithMatchingNetwork = customLocalNodes.find(function (currentLocalCustomNode) {
+            return currentLocalCustomNode.options === customNodeNetworkType
+        });
 
-      // if the reference the custom local node is invalid, throw
-      if (!firstCustomNodeWithMatchingNetwork) {
-        throw Error("Custom Local Node does not exist. Please clear local storage, and re-input your custom node.")
-      }
+        // if the reference the custom local node is invalid, throw
+        if (!firstCustomNodeWithMatchingNetwork) {
+            throw Error("Custom Local Node does not exist. Please clear local storage, and re-input your custom node.")
+        }
     } else {
-      defaultNode = defaultNodes[currentNodeKey];
-      if (!defaultNode) {
-        throw Error("Default Node does not exist. Please clear local storage and try again.")
-      }
+        defaultNode = defaultNodes[currentNodeKey];
+        if (!defaultNode) {
+            throw Error("Default Node does not exist. Please clear local storage and try again.")
+        }
     }
 
     if (isCustomNode) {
-      // tokenMappings maps localStorage custom node key to corresponding default tokens of network. If we are unable to retrieve the default tokens of the custom network, we return an empty array.
-      defaultTokens = tokenMappings[firstCustomNodeWithMatchingNetwork.options] || []
+        // tokenMappings maps localStorage custom node key to corresponding default tokens of network. If we are unable to retrieve the default tokens of the custom network, we return an empty array.
+        defaultTokens = tokenMappings[firstCustomNodeWithMatchingNetwork.options] || []
     }
     else {
-      defaultTokens = defaultNode.tokenList
+        defaultTokens = defaultNode.tokenList
     }
 
     return {
-      defaultTokens: defaultTokens,
-      networkType: isCustomNode ? firstCustomNodeWithMatchingNetwork.options : defaultNode.name.toLowerCase(),
-      isCustomNode: isCustomNode
+        defaultTokens: defaultTokens,
+        networkType: isCustomNode ? firstCustomNodeWithMatchingNetwork.options : defaultNode.name.toLowerCase(),
+        isCustomNode: isCustomNode
     }
 };
 
 function isDuplicateTokenAddress(tokenOne, tokenTwo, currentNetwork) {
-  var hasNetwork = tokenTwo.network;
-  if (hasNetwork) {
-    return tokenTwo.network === currentNetwork && tokenTwo.contractAddress === tokenOne.address
-  } else {
-    return tokenTwo.contractAddress === tokenOne.address
-  }
+    var hasNetwork = tokenTwo.network;
+    if (hasNetwork) {
+        return tokenTwo.network === currentNetwork && tokenTwo.contractAddress === tokenOne.address
+    } else {
+        return tokenTwo.contractAddress === tokenOne.address
+    }
 }
 
 function isDuplicateTokenSymbol(tokenOne, tokenTwo, currentNetwork) {
-  var hasNetwork = tokenTwo.network;
-  if (hasNetwork) {
-    return tokenTwo.network === currentNetwork && tokenTwo.symbol === tokenOne.symbol
-  } else {
-    return tokenTwo.symbol === tokenOne.symbol
-  }
+    var hasNetwork = tokenTwo.network;
+    if (hasNetwork) {
+        return tokenTwo.network === currentNetwork && tokenTwo.symbol === tokenOne.symbol
+    } else {
+        return tokenTwo.symbol === tokenOne.symbol
+    }
 }
 
 globalFuncs.isDuplicateToken = function(tokenOne, tokenTwo, currentNetwork) {
-  return isDuplicateTokenSymbol(tokenOne, tokenTwo, currentNetwork) || isDuplicateTokenAddress(tokenOne, tokenTwo, currentNetwork);
+    return isDuplicateTokenSymbol(tokenOne, tokenTwo, currentNetwork) || isDuplicateTokenAddress(tokenOne, tokenTwo, currentNetwork);
 }
 
 globalFuncs.doesTokenExistInDefaultTokens = function(token, defaultTokensAndNetworkType) {
-  for (var i = 0; i < defaultTokensAndNetworkType.defaultTokens.length; i++) {
-    var currentDefaultToken = defaultTokensAndNetworkType.defaultTokens[i];
-    var isDuplicateToken = globalFuncs.isDuplicateToken(currentDefaultToken, token, defaultTokensAndNetworkType.networkType);
-    // do not simplify to return isDuplicateToken
-    if (isDuplicateToken) {
-      return true
+    for (var i = 0; i < defaultTokensAndNetworkType.defaultTokens.length; i++) {
+        var currentDefaultToken = defaultTokensAndNetworkType.defaultTokens[i];
+        var isDuplicateToken = globalFuncs.isDuplicateToken(currentDefaultToken, token, defaultTokensAndNetworkType.networkType);
+        // do not simplify to return isDuplicateToken
+        if (isDuplicateToken) {
+            return true
+        }
     }
-  }
-  return false
+    return false
 };
 
 globalFuncs.saveTokenToLocal = function(localToken, callback) {
@@ -311,14 +311,14 @@ globalFuncs.saveTokenToLocal = function(localToken, callback) {
         // catch if TOKEN SYMBOL is already in storedTokens
         for (var i = 0; i < storedTokens.length; i++){
             if (storedTokens[i].symbol.toLowerCase().replace(/ /g, '') === localToken.symbol.toLowerCase().replace(/ /g, '')) {
-              throw Error('Unable to add a custom token with the same symbol as an existing custom token. Try clicking the "Load Tokens" button, or choosing a different token symbol')
+                throw Error('Unable to add a custom token with the same symbol as an existing custom token. Try clicking the "Load Tokens" button, or choosing a different token symbol')
             }
         }
 
         // catch if CONTRACT ADDRESS is already in storedTokens
         for (var i = 0; i < storedTokens.length; i++){
             if (storedTokens[i].contractAddress.toLowerCase().replace(/ /g, '') === localToken.contractAdd.toLowerCase().replace(/ /g, '')) {
-              throw Error('Unable to add custom token. It has the same address as custom token ' + storedTokens[i].symbol + '. Try clicking the "Load Tokens" button to see it. :)')
+                throw Error('Unable to add custom token. It has the same address as custom token ' + storedTokens[i].symbol + '. Try clicking the "Load Tokens" button to see it. :)')
             }
         }
 
@@ -326,7 +326,7 @@ globalFuncs.saveTokenToLocal = function(localToken, callback) {
 
         // catch if TOKEN SYMBOL is already in defaultTokens
         if (globalFuncs.doesTokenExistInDefaultTokens(localToken, defaultTokensAndNetworkType)) {
-          throw Error('This token is already added as a default token. Try clicking the "Load Tokens" button to see it. :)')
+            throw Error('This token is already added as a default token. Try clicking the "Load Tokens" button to see it. :)')
         }
 
         storedTokens.push({
@@ -340,7 +340,7 @@ globalFuncs.saveTokenToLocal = function(localToken, callback) {
         globalFuncs.localStorage.setItem("localTokens", JSON.stringify(storedTokens));
 
         callback({
-          error: false
+            error: false
         });
 
     } catch (e) {
@@ -370,9 +370,9 @@ globalFuncs.removeTokenFromLocal = function(symbol, tokenObj) {
 
 globalFuncs.safeAddressToLocal = (address) => {
     try {
-        var storedAddresses = globalFuncs.localStorage.getItem("localAddress", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localAddress")) : [];
+        let storedAddresses = globalFuncs.localStorage.getItem("localAddress", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localAddress")) : [];
         // catch if  ADDRESS is already in storedAddresses
-        for (var i = 0; i < storedAddresses.length; i++){
+        for (let i = 0; i < storedAddresses.length; i++){
             if (storedAddresses[i].address.toLowerCase().replace(/ /g, '') === address.toLowerCase().replace(/ /g, '')) {
                 throw Error('Unable to add custom address. It has the same address')
             }
@@ -382,6 +382,10 @@ globalFuncs.safeAddressToLocal = (address) => {
             address: address,
             network: globalFuncs.getDefaultTokensAndNetworkType().networkType
         });
+
+        if(storedAddresses.length > 10){
+            storedAddresses.splice( 0, 1)
+        }
 
         globalFuncs.localStorage.setItem("localAddress", JSON.stringify(storedAddresses));
 
@@ -393,7 +397,7 @@ globalFuncs.removeAddressFromLocal = function(address) {
     let storedAddresses = globalFuncs.localStorage.getItem("localAddress", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localAddress", null)) : [];
     // remove from localstorage so it doesn't show up on refresh
     for (let i = 0; i < storedAddresses.length; i++)
-        if (storedAddresses[i].address === address) {
+        if (storedAddresses[i].address.toLowerCase() === address.toLowerCase()) {
             storedAddresses.splice(i, 1);
             break;
         }
@@ -402,27 +406,27 @@ globalFuncs.removeAddressFromLocal = function(address) {
 
 
 globalFuncs.localStorage = {
-        isAvailable: function() {
-            // return typeof localStorage != "undefined";
-            // return globalFuncs.storageAvailable('localStorage');
+    isAvailable: function() {
+        // return typeof localStorage != "undefined";
+        // return globalFuncs.storageAvailable('localStorage');
 
-            // Polyfilled if not available/accessible
-            return true;
-        },
-        setItem: function(key, value) {
-            if (this.isAvailable()) {
-                localStorage.setItem(key, value);
-            } else {
-                // console.log("localStorage is available? " + this.isAvailable());
-            }
-        },
-        getItem: function(key, dValue = "") {
-            if (this.isAvailable()) {
-                return localStorage.getItem(key);
-            } else {
-                return dValue;
-            }
+        // Polyfilled if not available/accessible
+        return true;
+    },
+    setItem: function(key, value) {
+        if (this.isAvailable()) {
+            localStorage.setItem(key, value);
+        } else {
+            // console.log("localStorage is available? " + this.isAvailable());
+        }
+    },
+    getItem: function(key, dValue = "") {
+        if (this.isAvailable()) {
+            return localStorage.getItem(key);
+        } else {
+            return dValue;
         }
     }
+}
 
 module.exports = globalFuncs;
