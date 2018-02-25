@@ -1,4 +1,4 @@
-<div class="{{addresses.length != 0?'col-sm-8':'col-xs-12'}}">
+<div class="{{wallet?'col-sm-8':'col-xs-12'}}">
 
     <article class="block">
 
