@@ -20,21 +20,12 @@ var viewWalletCtrl = function($scope, walletService) {
 
     $scope.ajaxReq = ajaxReq;
 
-    $scope.infoAddressDropdown = angular.element(document.getElementById('infoAddressDropdown'))[0]
-    $scope.addressList = angular.element(document.getElementById('addressList'))[0]
-
     $scope.$watch('ajaxReq.key', function() {
         if ($scope.wallet) {
             $scope.wallet.setBalance();
             $scope.wallet.setTokens();
         }
     });
-
-    $scope.resizeWindow = function() {
-        if ($scope.infoAddressDropdown &&$scope.addressList) {
-            angular.element($scope.addressList).css("width", `${$scope.infoAddressDropdown.clientWidth}px`)
-        }
-    };
 
     $scope.resetWallet = function() {
         $scope.wallet = null;
@@ -71,7 +62,6 @@ var viewWalletCtrl = function($scope, walletService) {
             }
         }
         if (!$scope.$$phase) $scope.$apply();
-        $scope.resizeWindow()
     }
 
     $scope.updateViewWallet = (index) => {

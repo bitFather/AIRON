@@ -11,6 +11,7 @@ var ngResize = function($window,$parse) {
                 });
             };
             angular.element($window).on('resize', docResizeHandler);
+            angular.element(element).bind('resize', docResizeHandler);
         }
     }
 };
