@@ -485,11 +485,11 @@
 
         <section class="block__form">
                     <span class="dropdown dropdown-view-address" ng-cloak>
-            <div class="input-group" ng-click-out="closeDrop()">
+            <div class="input-group">
                         <input ng-model="newAddress"
                                id="infoAddressDropdown"
                                ng-resize="resizeWindow()"
-                               ng-click="dropdownAddress = true; resizeWindow();"
+                               ng-click="resizeWindow()"
                                class="form-control"
                                placeholder="0x7cB57B5A97eAbe94205C07890BE4c1aD31E486A8"
                                ng-class="Validator.isValidAddress(newAddress) ? 'is-valid' : 'is-invalid'" />
@@ -505,7 +505,7 @@
             </div>
                         <ul class="dropdown-menu view-address-menu"
                             id="addressList"
-                            ng-show="dropdownAddress && foundAddress.length > 0">
+                            ng-show="foundAddress.length > 0">
                             <li ng-repeat="address in foundAddress track by $index" ng-show=" address!=newAddress">
                                 <a  ng-click="updateViewWallet($index)">
                                     {{address}}

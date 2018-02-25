@@ -67,10 +67,11 @@ var viewWalletCtrl = function($scope, walletService) {
             if(term.slice(0,2) == "0x"){
                 $scope.foundAddress =  $scope.addresses.filter(x=>{return x.indexOf(term) != -1})
             } else {
-                $scope.foundAddress = []
+                $scope.foundAddress = $scope.addresses
             }
         }
         if (!$scope.$$phase) $scope.$apply();
+        $scope.resizeWindow()
     }
 
     $scope.updateViewWallet = (index) => {
@@ -92,7 +93,6 @@ var viewWalletCtrl = function($scope, walletService) {
 
             $scope.wallet.setBalance();
             $scope.wallet.setTokens();
-            $scope.dropdownAddress = false
             $scope.newAddress = $scope.foundAddress[index]
         }
     }
@@ -136,10 +136,6 @@ var viewWalletCtrl = function($scope, walletService) {
             }
         }
         $scope.updateFoundList()
-    }
-
-    $scope.closeDrop = () => {
-        $scope.dropdownAddress = false
     }
 };
 module.exports = viewWalletCtrl;
