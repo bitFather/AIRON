@@ -44,7 +44,7 @@
                         <ul class="dropdown-menu view-address-menu"
                             id="addressList"
                             ng-show="foundAddress.length > 0">
-                            <li ng-repeat="address in foundAddress track by $index" ng-show=" address!=newAddress">
+                            <li ng-repeat="address in foundAddress track by $index">
                                 <a  ng-click="updateViewWallet($index)">
                                     {{address}}
                                 </a>
