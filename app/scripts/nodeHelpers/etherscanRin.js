@@ -5,4 +5,24 @@ for (var attr in _ethscan) {
     rinkeby[attr] = _ethscan[attr];
 }
 rinkeby.SERVERURL = 'https://rinkeby.etherscan.io/api';
+rinkeby.SearchURL = 'https://rinkeby.etherscan.io/searchHandler?t=t&term=';
+rinkeby.searchResultParser = data => {
+    let result = []
+    let index = 0
+    for(let elem of data){
+        if(index > 5){
+            break
+        }
+        let resElem = []
+        resElem.length = 3
+        let symbol = elem.match(/\([^\s]*\)/g)
+        resElem[1] = symbol[symbol.length - 1]
+        resElem[0] = elem.slice(0, elem.lastIndexOf(resElem[1]))
+        resElem[1] = resElem[1].slice(1,resElem[1].length - 1)
+        resElem[2] = elem.split('\t')[1]
+        result.push(resElem)
+        index++
+    }
+    return {result:result,total:data.length}
+}
 module.exports = rinkeby;

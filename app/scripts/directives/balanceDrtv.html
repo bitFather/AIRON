@@ -50,29 +50,73 @@
 
     <br ng-show="customTokenField" />
 
+    <!-- Search panel-->
+
     <!-- Add Custom Token -->
-    <div class="custom-token-fields" ng-show="customTokenField">
-      <div class="row">
-        <address-field
-                placeholder="{{ ajaxReq.type=='ETH' ? 'mewsupport.eth' : '0x7cB57B5A97eAbe94205C07890BE4c1aD31E486A8' }}"
-                var-name="localToken.contractAdd"
-                labelTranslated="TOKEN_Addr">
-        </address-field>
+    <div class="custom-token-fields"  ng-show="customTokenField">
+      <span class="dropdown dropdown-tokens" ng-cloak>
+      <label translate="Token_search"> Search Token: </label>
+        <div ng-click-out="closeDrop()">
+      <input class="form-control input-sm"
+             type="text"
+             placeholder="{{'Token_search_short' | translate }}"
+             ng-model="searchTerm"
+             ng-click="tokenDropDown = true"
+      />
+      <ul class="dropdown-menu tokens-menu" ng-show="searchTerm && tokenDropDown" >
+        <li ng-repeat="(key, value) in searchedDataArray" ng-click="loadTokenInfo(value)">
+          <a >
+            {{value[0]}} ({{value[1]}})
+            <br/>
+            {{value[2]}}
+          </a>
+        </li>
+        <li ng-show="totalSearched > searchedDataArray.length" readonly="true">
+          <a>
+            {{'Token_totalSearched' | translate }}
+            <br/>
+            {{totalSearched}}
+          </a>
+        </li>
+        <li ng-show="searchedDataArray.length == 0" readonly="true">
+          <a>
+            {{'Token_noResults' | translate }}
+          </a>
+        </li>
+      </ul>
+    </div>
+      </span>
+      <div ng-show="localToken.contractAdd">
+        <label translate="TOKEN_Addr"> Token address: </label>
+        <input class="form-control input-sm"
+               type="text"
+               placeholder="{{ ajaxReq.type=='ETH' ? 'mewsupport.eth' : '0x7cB57B5A97eAbe94205C07890BE4c1aD31E486A8' }}"
+               ng-model="localToken.contractAdd"
+               readonly="true"/>
+
+        <label translate="TOKEN_Name"> Token Name: </label>
+        <input class="form-control input-sm"
+               type="text"
+               ng-model="localToken.name"
+               readonly="true"
+               ng-class="localToken.name!='' ? 'is-valid' : 'is-invalid'" />
+
+        <label translate="TOKEN_Symbol"> Token Symbol: </label>
+        <input class="form-control input-sm"
+               type="text"
+               ng-model="localToken.symbol"
+               readonly="true"
+               ng-class="localToken.symbol!='' ? 'is-valid' : 'is-invalid'" />
+
+        <label translate="TOKEN_Dec"> Decimals: </label>
+        <input class="form-control input-sm"
+               type="text"
+               readonly="true"
+               ng-model="localToken.decimals"
+               ng-class="Validator.isPositiveNumber(localToken.decimals) ? 'is-valid' : 'is-invalid'" />
+
+        <button class="btn btn-primary btn-xs" ng-click="saveTokenToLocal()" translate="x_Save">Save</button>
       </div>
-
-      <label translate="TOKEN_Symbol"> Token Symbol: </label>
-      <input class="form-control input-sm"
-             type="text"
-             ng-model="localToken.symbol"
-             ng-class="localToken.symbol!='' ? 'is-valid' : 'is-invalid'" />
-
-      <label translate="TOKEN_Dec"> Decimals: </label>
-      <input class="form-control input-sm"
-             type="text"
-             ng-model="localToken.decimals"
-             ng-class="Validator.isPositiveNumber(localToken.decimals) ? 'is-valid' : 'is-invalid'" />
-
-      <button class="btn btn-primary btn-xs" ng-click="saveTokenToLocal()" translate="x_Save">Save</button>
     </div>
 
     <table class="account-info">
@@ -100,18 +144,18 @@
   </div>
 
   <h5 translate="sidebar_TransHistory"> Transaction History</h5>
-    <ul class="account-info">
-      <li ng-show="ajaxReq.type != 'CUS'">
-        <a href="{{ajaxReq.blockExplorerAddr.replace('[[address]]', wallet.getAddressString())}}" target="_blank" rel="noopener noreferrer">
-          {{ajaxReq.type}} ({{ajaxReq.blockExplorerTX.replace('/tx/[[txHash]]', '')}})
-        </a>
-      </li>
-      <li ng-show="ajaxReq.type == 'ETH'">
-        <a href="https://ethplorer.io/address/{{wallet.getAddressString()}}" target="_blank" rel="noopener noreferrer">
-          Tokens (Ethplorer.io)
-        </a>
-      </li>
-    </ul>
+  <ul class="account-info">
+    <li ng-show="ajaxReq.type != 'CUS'">
+      <a href="{{ajaxReq.blockExplorerAddr.replace('[[address]]', wallet.getAddressString())}}" target="_blank" rel="noopener noreferrer">
+        {{ajaxReq.type}} ({{ajaxReq.blockExplorerTX.replace('/tx/[[txHash]]', '')}})
+      </a>
+    </li>
+    <li ng-show="ajaxReq.type == 'ETH'">
+      <a href="https://ethplorer.io/address/{{wallet.getAddressString()}}" target="_blank" rel="noopener noreferrer">
+        Tokens (Ethplorer.io)
+      </a>
+    </li>
+  </ul>
   </div>
 
   <!-- Token Balances -->
@@ -134,7 +178,7 @@
       <a href="https://myetherwallet.github.io/knowledge-base/send/adding-new-token-and-sending-custom-tokens.html"
          rel="noopener noreferrer"
          target="_blank">
-         How to See Your Tokens
+        How to See Your Tokens
       </a>
     </h5>
 
@@ -144,7 +188,7 @@
          href="{{ajaxReq.blockExplorerAddr.replace('[[address]]', wallet.getAddressString())}}"
          target="_blank"
          rel="noopener noreferrer">
-          {{ajaxReq.blockExplorerTX.replace('/tx/[[txHash]]', '')}}
+        {{ajaxReq.blockExplorerTX.replace('/tx/[[txHash]]', '')}}
       </a>
       <span ng-show="ajaxReq.type == 'ETH'"> or
         <a href="https://ethplorer.io/address/{{wallet.getAddressString()}}"
@@ -157,22 +201,22 @@
 
 
 
-  <!-- Equivalent Balances -->
-  <div class="block" ng-show="ajaxReq.type=='ETH'">
-    <h5 translate="sidebar_Equiv">Equivalent Values:</h5>
-    <div class="row">
-      <ul class="account-info col-xs-6">
-        <li>BTC: <span class="mono wrap">{{wallet.btcBalance | number}}</span></li>
-        <li>USD: <span class="mono wrap">{{wallet.usdBalance | currency:"$"}}</span></li>
-        <li>CHF: <span class="mono wrap">{{wallet.chfBalance | currency:" "}}</span></li>
-      </ul>
-      <ul class="account-info col-xs-6">
-        <li>REP: <span class="mono wrap">{{wallet.repBalance | number}}</span></li>
-        <li>EUR: <span class="mono wrap">{{wallet.eurBalance | currency:"€"}}</span></li>
-        <li>GBP: <span class="mono wrap">{{wallet.gbpBalance | currency:"£"}}</span></li>
-      </ul>
+    <!-- Equivalent Balances -->
+    <div class="block" ng-show="ajaxReq.type=='ETH'">
+      <h5 translate="sidebar_Equiv">Equivalent Values:</h5>
+      <div class="row">
+        <ul class="account-info col-xs-6">
+          <li>BTC: <span class="mono wrap">{{wallet.btcBalance | number}}</span></li>
+          <li>USD: <span class="mono wrap">{{wallet.usdBalance | currency:"$"}}</span></li>
+          <li>CHF: <span class="mono wrap">{{wallet.chfBalance | currency:" "}}</span></li>
+        </ul>
+        <ul class="account-info col-xs-6">
+          <li>REP: <span class="mono wrap">{{wallet.repBalance | number}}</span></li>
+          <li>EUR: <span class="mono wrap">{{wallet.eurBalance | currency:"€"}}</span></li>
+          <li>GBP: <span class="mono wrap">{{wallet.gbpBalance | currency:"£"}}</span></li>
+        </ul>
+      </div>
+      <p><small> These are only the equivalent values for ETH, not tokens. Sorry! </small></p>
     </div>
-    <p><small> These are only the equivalent values for ETH, not tokens. Sorry! </small></p>
-  </div>
 
 </aside>

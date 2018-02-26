@@ -5,32 +5,56 @@ var walletBalanceCtrl = function($scope, $sce, $rootScope) {
     $scope.showAllTokens = false;
     $scope.localToken = {
         contractAdd: "",
+        name: "",
         symbol: "",
         decimals: "",
         type: "custom",
     };
 
+    $scope.searchTerm
+
+    $scope.false
+
     $scope.slide = 2;
 
     $scope.customTokenField = false;
 
-    $scope.$watch('localToken.contractAdd', () => {
-        if(!$scope.wallet)
+    $scope.searchedDataArray = []
+    $scope.totalSearched = 0
+
+    $scope.$watch('searchTerm', () => {
+        if(!$scope.wallet || !$scope.searchTerm) {
+            $scope.searchedDataArray = []
+            $scope.totalSearched = 0
             return
-        let token = new Token(
-            $scope.localToken.contractAdd,
-            $scope.wallet.getAddressString(),
-            $scope.localToken.symbol,
-            $scope.localToken.decimals,
-            $scope.localToken.type
-        )
-        token.setSymbol(()=>{
-            $scope.localToken.symbol = token.getSymbol()
+        }
+        ajaxReq.getTokensList($scope.searchTerm,data => {
+            $scope.searchedDataArray = data.result
+            $scope.totalSearched = data.total
         })
+
+    });
+
+    $scope.loadTokenInfo = value => {
+        let token = new Token(
+            value[2],
+            $scope.wallet.getAddressString(),
+            value[1],
+            $scope.localToken.decimals,
+            "custom"
+        )
+        $scope.localToken.contractAdd = value[2]
+        $scope.localToken.symbol = value[1]
+        $scope.localToken.name = value[0]
         token.setDecimals(()=>{
             $scope.localToken.decimals = token.getDecimal()
         })
-    });
+        $scope.tokenDropDown = false
+    }
+
+    $scope.closeDrop = () => {
+        $scope.tokenDropDown = false
+    }
 
     $scope.saveTokenToLocal = function() {
         globalFuncs.saveTokenToLocal($scope.localToken, function(data) {

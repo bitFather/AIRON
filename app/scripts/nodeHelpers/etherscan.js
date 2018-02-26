@@ -1,6 +1,10 @@
 'use strict';
 var etherscan = function() {}
 etherscan.SERVERURL = "https://api.etherscan.io/api";
+etherscan.SearchURL = "https://ethplorer.io/service/service.php?search=";
+etherscan.searchResultParser = data => {
+    return {result:data.results,total:data.total}
+}
 etherscan.pendingPosts = [];
 etherscan.config = {
     headers: {
@@ -127,6 +131,13 @@ etherscan.queuePost = function() {
         if (parentObj.pendingPosts.length > 0) parentObj.queuePost();
     }, function(data) {
         callback({ error: true, msg: "connection error", data: "" });
+    });
+}
+etherscan.getTokensList = function(term, callback) {
+    ajaxReq.http.post(this.SearchURL + term).then(function (data) {
+        callback(this.searchResultParser(data.data));
+    }.bind(this), function (data) {
+        callback({error: true, msg: "connection error", data: ""});
     });
 }
 etherscan.post = function(data, callback) {

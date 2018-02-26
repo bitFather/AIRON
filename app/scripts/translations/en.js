@@ -445,10 +445,15 @@ en.data = {
     SWAP_your_rate: "Your rate ",
 
     TOKEN_Addr: 'Token Contract Address',
+    TOKEN_Name: "Token Name",
     TOKEN_Dec: 'Decimals',
     TOKEN_hide: 'Hide Tokens',
     TOKEN_show: 'Show All Tokens',
     TOKEN_Symbol: 'Token Symbol',
+    Token_search: "Search Token:",
+    Token_search_short: "Address\\Name\\Symbol",
+    Token_totalSearched: "Total searched:",
+    Token_noResults: "No results",
 
     TRANS_advanced: '+Advanced: Add Data',
     TRANS_data: 'Data',
@@ -498,7 +503,7 @@ en.data = {
     VIEWWALLET_Header_closeAddNew: '-Hide: Add address',
     VIEWWALLET_Header_addNewAddress: 'Input new address',
     VIEWWALLET_Header_buttonAdd: 'Add new view address',
-    VIEWWALLET_Header_removeAddress: 'Remove',
+    VIEWWALLET_Header_viewInfo: 'View info',
 
     WARN_Send_Link: 'You arrived via a link that has the address, value, gas, data fields, or transaction type (send mode) filled in for you. You can change any information before sending. Unlock your wallet to get started.',
 
