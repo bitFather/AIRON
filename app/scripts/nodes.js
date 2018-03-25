@@ -46,7 +46,7 @@ nodes.nodeList = {
         'lib': new nodes.customNode('https://api.myetherapi.com/eth', 'https://ethplorer.io/service/service.php?search=',data => {
             return {result:data.results,total:data.total}
         }, ''),
-        'tokenFactoryAddress': '0x0'
+        'tokenFactoryAddress': '0xD70094b67Afa81Dc41Cf4448fD077Ed938AB9669'
     },
     'eth_ethscan': {
         'name': 'ETH',
@@ -59,7 +59,7 @@ nodes.nodeList = {
         'abiList': require('./abiDefinitions/ethAbi.json'),
         'service': 'Etherscan.io',
         'lib': require('./nodeHelpers/etherscan'),
-        'tokenFactoryAddress': '0x0'
+        'tokenFactoryAddress': '0xD70094b67Afa81Dc41Cf4448fD077Ed938AB9669'
     },
     'eth_infura': {
         'name': 'ETH',
@@ -74,7 +74,7 @@ nodes.nodeList = {
         'lib': new nodes.infuraNode('https://mainnet.infura.io/mew','https://ethplorer.io/service/service.php?search=',data => {
             return {result:data.results,total:data.total}
         }),
-        'tokenFactoryAddress': '0x0'
+        'tokenFactoryAddress': '0xD70094b67Afa81Dc41Cf4448fD077Ed938AB9669'
     },
     'eth_giveth': {
         'name': 'ETH',
@@ -89,7 +89,7 @@ nodes.nodeList = {
         'lib': new nodes.customNode('https://mew.giveth.io','https://ethplorer.io/service/service.php?search=',data => {
             return {result:data.results,total:data.total}
         }, ''),
-        'tokenFactoryAddress': '0x0'
+        'tokenFactoryAddress': '0xD70094b67Afa81Dc41Cf4448fD077Ed938AB9669'
     },
     'rin_ethscan': {
         'name': 'Rinkeby',
