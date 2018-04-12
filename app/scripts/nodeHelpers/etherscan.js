@@ -2,8 +2,23 @@
 var etherscan = function() {}
 etherscan.SERVERURL = "https://api.etherscan.io/api";
 etherscan.SearchURL = "https://ethplorer.io/service/service.php?search=";
+etherscan.tokenInfoUrl = 'https://api.ethplorer.io/getAddressInfo/[[address]]?apiKey=freekey'
 etherscan.searchResultParser = data => {
     return {result:data.results,total:data.total}
+}
+etherscan.tokenInfoParser = data => {
+    return {
+        balance: data.ETH.balance,
+        tokensInfo: data.tokens ? data.tokens.map(x => {
+                return {
+                    address: x.tokenInfo.address,
+                    symbol: x.tokenInfo.symbol,
+                    balance: x.balance,
+                    decimals: x.tokenInfo.decimals,
+                }
+            }
+        ) : []
+    }
 }
 etherscan.pendingPosts = [];
 etherscan.config = {
@@ -136,6 +151,13 @@ etherscan.queuePost = function() {
 etherscan.getTokensList = function(term, callback) {
     ajaxReq.http.post(this.SearchURL + term).then(function (data) {
         callback(this.searchResultParser(data.data));
+    }.bind(this), function (data) {
+        callback({error: true, msg: "connection error", data: ""});
+    });
+}
+etherscan.getAddressTokenBalance = function(address, callback) {
+    ajaxReq.http.post(this.tokenInfoUrl.replace('[[address]]',address)).then(function (data) {
+        callback(this.tokenInfoParser(data.data));
     }.bind(this), function (data) {
         callback({error: true, msg: "connection error", data: ""});
     });

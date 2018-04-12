@@ -3,129 +3,145 @@ var viewWalletCtrl = function($scope, walletService) {
     $scope.Validator = Validator;
     walletService.wallet = null;
     walletService.password = '';
+    $scope.ajaxReq = ajaxReq
 
-    $scope.usdBalance = "loading";
-    $scope.gbpBalance = "loading";
-    $scope.eurBalance = "loading";
-    $scope.btcBalance = "loading";
-    $scope.etherBalance = "loading";
-    $scope.tokenVisibility = "hidden";
-    $scope.pkeyVisible = false;
+    $scope.data = []
 
-    $scope.addresses = globalFuncs.localStorage.getItem("localAddress", null) !== null ?JSON.parse(globalFuncs.localStorage.getItem("localAddress", null)).map(x=>{return x.address.toLowerCase()}) : []
-
-    $scope.foundAddress = $scope.addresses
-
-    $scope.showAddAddress = false
-
-    $scope.ajaxReq = ajaxReq;
-
-    $scope.$watch('ajaxReq.key', function() {
-        if ($scope.wallet) {
-            $scope.wallet.setBalance();
-            $scope.wallet.setTokens();
+    $scope.loadWalletFromCash = () => {
+        if(globalFuncs.localStorage.getItem("localWallet", null) === null){
+            return []
         }
-    });
+        const items = JSON.parse(globalFuncs.localStorage.getItem("localWallet", null)).filter(x => x.network === globalFuncs.getDefaultTokensAndNetworkType().networkType)
 
-    $scope.resetWallet = function() {
-        $scope.wallet = null;
-        walletService.wallet = null;
-        walletService.password = '';
-        $scope.blob = $scope.blobEnc = $scope.password = "";
+        for(let item of items){
+            const obj = {
+                address: item.address,
+                name: item.name,
+                ethBalance: item.ethBalance,
+                onlyFavour: item.onlyFavour,
+                date: item.date,
+            }
+            //Нужна кнопка обновления по требованию?
+            ajaxReq.getAddressTokenBalance(item.address, data => {
+                obj.tokenList = data.tokensInfo.map(x => {
+                    const oldTokenInfo = item.tokenList.find(y => y.address === x.address)
+                    return {
+                        address: x.address,
+                        name: x.symbol,
+                        amount: x.decimals > 0 ? new BigNumber(x.balance).div(10 ** x.decimals).toString() : x.balance,
+                        isFavour: oldTokenInfo ? oldTokenInfo.isFavour : false
+                    }
+                })
+                $scope.data.push(obj)
+            })
+        }
+    }
+    $scope.loadWalletFromCash()
+
+
+    //Проверки!!!
+    $scope.addWallet = (name, address)  => {
+        if(!$scope.Validator.isValidAddress(address)||$scope.isExistAddress(address)){
+            $scope.notifier.danger(globalFuncs.errorMsgs[45])
+            return
+        }
+        if(!$scope.Validator.isAlphaNumericSpace(name)||$scope.isExistName(name)){
+            $scope.notifier.danger(globalFuncs.errorMsgs[46])
+            return
+        }
+        ajaxReq.getAddressTokenBalance(address, data => {
+            const tokenList = data.tokensInfo.map(x => {
+                return {
+                    address: x.address,
+                    name: x.symbol,
+                    amount: x.decimals > 0 ? new BigNumber(x.balance).div(10 ** x.decimals).toString() : x.balance,
+                    isFavour: false,
+                }
+            })
+            $scope.data.push({
+                address: address,
+                name: name,
+                ethBalance: data.balance,
+                onlyFavour: false,
+                date: Date.now(),
+                tokenList: tokenList,
+            })
+            globalFuncs.safeWalletToLocal($scope.data[$scope.data.length - 1])
+            if (!$scope.$$phase) $scope.$apply();
+        })
+        $scope.isAdd = false
+        $scope.newWalletName = ''; $scope.newWalletAddress = '';
     }
 
-    $scope.$watch(
-        function() {
-            if (walletService.wallet == null || $scope.addresses.length > 0) return null
-            return walletService.wallet.getAddressString()
-        },
-        function() {
-            if (walletService.wallet == null) $scope.updateViewWallet($scope.addresses.length - 1)
-        },
-    )
-
-    $scope.$watch("newAddress", () => {
-        $scope.updateFoundList()
-    })
-
-    $scope.updateFoundList = () => {
-        let term = $scope.newAddress.toLowerCase()
-        let index = $scope.addresses.indexOf(term)
-        if(index != -1 || !term){
-            $scope.foundAddress = $scope.addresses
-        } else {
-            $scope.resetWallet()
-            if(term.slice(0,2) == "0x"){
-                $scope.foundAddress =  $scope.addresses.filter(x=>{return x.indexOf(term) != -1})
-            } else {
-                $scope.foundAddress = $scope.addresses
-            }
+    $scope.updateWalletName = (name, address)  => {
+        if(!$scope.Validator.isAlphaNumericSpace(name)||$scope.isExistName(name)){
+            $scope.notifier.danger(globalFuncs.errorMsgs[46])
+            return
         }
+        const index = $scope.data.findIndex(x => x.address === address)
+        $scope.data[index].name = name
+
+        globalFuncs.updateWalletToLocal(address, {
+            name: 'name',
+            value:  name
+        })
+
+        if (!$scope.$$phase) $scope.$apply();
+
+        $scope.data[index].isEdit = false
+    }
+
+    $scope.updateWalletOnlyFavour = (address)  => {
+        const index = $scope.data.findIndex(x => x.address === address)
+
+        globalFuncs.updateWalletToLocal(address,{
+            name: 'onlyFavour',
+            value: $scope.data[index].onlyFavour
+        })
+
         if (!$scope.$$phase) $scope.$apply();
     }
 
-    $scope.updateViewWallet = (index) => {
-        if ($scope.Validator.isValidAddress($scope.foundAddress[index]) && $scope.foundAddress.length > index) {
-            let tempWallet = new Wallet();
-            $scope.wallet = {
-                type: "addressOnly",
-                address: $scope.foundAddress[index],
-                getAddressString: function() {
-                    return this.address;
-                },
-                getChecksumAddressString: function() {
-                    return ethUtil.toChecksumAddress(this.getAddressString());
-                },
-                setBalance: tempWallet.setBalance,
-                setTokens: tempWallet.setTokens
-            }
-            $scope.wd = true;
+    $scope.updateTokenIsFavour = (address, tokenAddress)  => {
+        const index = $scope.data.findIndex(x => x.address === address)
+        const indexToken = $scope.data[index].tokenList.findIndex(x => x.address === tokenAddress)
 
-            $scope.wallet.setBalance();
-            $scope.wallet.setTokens();
-            $scope.newAddress = $scope.foundAddress[index]
-        }
+        globalFuncs.updateWalletToLocalTokens(address, $scope.data[index].tokenList[indexToken].address, {
+            name: 'isFavour',
+            value:  $scope.data[index].tokenList[indexToken].isFavour
+        })
+
+        if (!$scope.$$phase) $scope.$apply();
     }
 
-    $scope.addAddress = (addressAny) => {
-        let address = addressAny.toLowerCase()
-        if(address){
-            if($scope.Validator.isValidAddress(address))
-            {
-                let index = $scope.addresses.indexOf(address)
-                if (index == -1) {
-                    $scope.addresses.push(address)
-                    if($scope.addresses.length > 10) {
-                        $scope.addresses.splice(0, 1)
-                    }
-                    $scope.updateFoundList()
-                    globalFuncs.safeAddressToLocal(address, () => {
-                    })
-                    let indexFound = $scope.foundAddress.indexOf(address)
-                    $scope.updateViewWallet(indexFound)
-                } else {
-                    let indexFound = $scope.foundAddress.indexOf(address)
-                    $scope.updateViewWallet(indexFound)
-                }
-            } else {
+    $scope.removeWallet = address => {
+        const index = $scope.data.findIndex(x => x.address === address)
+        $scope.data.splice(index, 1)
 
-            }
-        }
+        globalFuncs.removeWalletFromLocal(address)
+
+        if (!$scope.$$phase) $scope.$apply();
     }
 
-    $scope.removeAddress = (addressAny) => {
-        let address = addressAny.toLowerCase()
-        if($scope.addresses.length > 0 && address) {
-            let index = $scope.addresses.indexOf(address)
-            globalFuncs.removeAddressFromLocal($scope.addresses[index],()=>{})
-            $scope.addresses.splice(index, 1)
-            if($scope.addresses.length > 0) {
-                $scope.updateViewWallet($scope.addresses.length - 1)
-            } else {
-                $scope.wallet = null
-            }
+    $scope.getTokens = (tokenList, isFavour) => {
+        if(!tokenList){
+            return []
         }
-        $scope.updateFoundList()
+        return isFavour ? tokenList.filter(x => x.isFavour) : tokenList
+    }
+
+    $scope.sortByDate = () => {
+        return $scope.data.sort((a, b) => {
+            return a.date < b.date
+        })
+    }
+
+    $scope.isExistName = (name) => {
+        return $scope.data.findIndex(x => x.name === name) !== -1
+    }
+
+    $scope.isExistAddress = (address) => {
+        return $scope.data.findIndex(x => x.address === address) !== -1
     }
 };
 module.exports = viewWalletCtrl;

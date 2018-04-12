@@ -76,7 +76,9 @@ globalFuncs.errorMsgs = [
     'Name of the asset should contain 3-4 Latin letters.', // 41
     'Total tokens is not defined or has more than 15 digits', // 42
     'Decimals from 0 to 18', // 43,
-    'Can not connect to token factory contract. Try to change node and refresh the page.' // 44
+    'Can not connect to token factory contract. Try to change node and refresh the page.', // 44
+    'Wallet with this address already exist.',
+    'Wallet with this name already exist.',
 ];
 
 // These are translated in the translation files
@@ -373,7 +375,7 @@ globalFuncs.safeAddressToLocal = (address) => {
         let storedAddresses = globalFuncs.localStorage.getItem("localAddress", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localAddress")) : [];
         // catch if  ADDRESS is already in storedAddresses
         for (let i = 0; i < storedAddresses.length; i++){
-            if (storedAddresses[i].address.toLowerCase().replace(/ /g, '') === address.toLowerCase().replace(/ /g, '')) {
+            if (storedAddresses[i].address.toLowerCase().replace(/ /g, '') === address.toLowerCase().replace(/ /g, '')&&storedAddresses[i].network === globalFuncs.getDefaultTokensAndNetworkType().networkType) {
                 throw Error('Unable to add custom address. It has the same address')
             }
         }
@@ -392,6 +394,82 @@ globalFuncs.safeAddressToLocal = (address) => {
     } catch (e) {
     }
 }
+
+globalFuncs.safeWalletToLocal = ({address, name, ethBalance, onlyFavour, tokenList, date}) => {
+    try {
+        let storedAddresses = globalFuncs.localStorage.getItem("localWallet", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localWallet")) : [];
+        // catch if  ADDRESS is already in storedAddresses
+        for (let i = 0; i < storedAddresses.length; i++){
+            if (storedAddresses[i].address.toLowerCase().replace(/ /g, '') === address.toLowerCase().replace(/ /g, '')&&storedAddresses[i].network === globalFuncs.getDefaultTokensAndNetworkType().networkType) {
+                throw Error('Unable to add custom address. It has the same address')
+            }
+        }
+
+        storedAddresses.push({
+            address: address.toLowerCase().replace(/ /g, ''),
+            name,
+            ethBalance,
+            onlyFavour,
+            tokenList,
+            date,
+            network: globalFuncs.getDefaultTokensAndNetworkType().networkType
+        });
+
+        if(storedAddresses.length > 10){
+            storedAddresses.splice( 0, 1)
+        }
+
+        globalFuncs.localStorage.setItem("localWallet", JSON.stringify(storedAddresses));
+
+    } catch (e) {
+    }
+}
+
+globalFuncs.updateWalletToLocal = (address, param) => {
+    try {
+        let storedAddresses = globalFuncs.localStorage.getItem("localWallet", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localWallet")) : [];
+        // catch if  ADDRESS is already in storedAddresses
+
+        const foundIndex = storedAddresses.findIndex(x => x.address.toLowerCase().replace(/ /g, '') === address.toLowerCase().replace(/ /g, '')&&x.network === globalFuncs.getDefaultTokensAndNetworkType().networkType)
+        if(foundIndex === -1){
+            return
+        }
+        storedAddresses[foundIndex][param.name] = param.value
+
+        globalFuncs.localStorage.setItem("localWallet", JSON.stringify(storedAddresses));
+    } catch (e) {
+    }
+}
+
+globalFuncs.updateWalletToLocalTokens = (address, tokenAddress, param) => {
+    try {
+        let storedAddresses = globalFuncs.localStorage.getItem("localWallet", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localWallet")) : [];
+
+        const foundIndex = storedAddresses.findIndex(x => x.address.toLowerCase().replace(/ /g, '') === address.toLowerCase().replace(/ /g, '')&&x.network === globalFuncs.getDefaultTokensAndNetworkType().networkType)
+        if(foundIndex === -1){
+            return
+        }
+        const foundTokenIndex = storedAddresses[foundIndex].tokenList.findIndex(x => x.address === tokenAddress)
+        if(foundTokenIndex === -1){
+            return
+        }
+        storedAddresses[foundIndex].tokenList[foundTokenIndex][param.name] = param.value
+
+        globalFuncs.localStorage.setItem("localWallet", JSON.stringify(storedAddresses));
+    } catch (e) {
+    }
+}
+
+globalFuncs.removeWalletFromLocal = function(address) {
+    let storedAddresses = globalFuncs.localStorage.getItem("localWallet", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localWallet", null)) : [];
+    // remove from localstorage so it doesn't show up on refresh
+    for (let i = 0; i < storedAddresses.length; i++)
+        if (storedAddresses[i].address.toLowerCase() === address.toLowerCase()) {
+            storedAddresses.splice(i, 1);
+            break;
+        }
+    globalFuncs.localStorage.setItem("localWallet", JSON.stringify(storedAddresses));
+};
 
 globalFuncs.removeAddressFromLocal = function(address) {
     let storedAddresses = globalFuncs.localStorage.getItem("localAddress", null) != null ? JSON.parse(globalFuncs.localStorage.getItem("localAddress", null)) : [];

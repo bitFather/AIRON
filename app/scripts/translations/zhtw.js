@@ -586,6 +586,15 @@ ERROR_34                    : 'The name you are attempting to reveal does not ma
 ERROR_35                    : 'Input address is not checksummed. <a href="https://airon.github.io/knowledge-base/addresses/not-checksummed-shows-when-i-enter-an-address.html" target="_blank" rel="noopener noreferrer"> More info</a>', // 35
 ERROR_36                    : 'Enter valid TX hash', // 36
 ERROR_37                    : 'Enter valid hex string (0-9, a-f)', // 37
+    ERROR_38: 'Offer must have either price or reserve set to more than 0',
+    ERROR_39: 'Bid must be more than the specified minimum',
+    ERROR_40: 'Can not estimate fee. Try to change node and refresh the page.',
+    ERROR_41: 'Name of the asset should contain 3-4 Latin letters.',
+    ERROR_42: 'Total tokens is not defined or has more than 15 digits',
+    ERROR_43: 'Decimal varies from 0 to 18.',
+    ERROR_44: 'Can not connect to token factory contract. Try to change node and refresh the page.',
+    ERROR_45: 'Wallet with this address already exist.',
+    ERROR_46: 'Wallet with this name already exist.',
 
 SUCCESS_1                   : '有效的地址 ',
 SUCCESS_2                   : '成功解密錢包 ',

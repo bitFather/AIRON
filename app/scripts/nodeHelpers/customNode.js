@@ -1,8 +1,10 @@
 'use strict';
-var customNode = function(srvrUrl,searchUrl,searchParser, port, httpBasicAuthentication) {
+var customNode = function(srvrUrl, searchUrl,searchParser, tokenInfoUrl, tokenInfoParser, port, httpBasicAuthentication) {
     this.SERVERURL = port ? srvrUrl + ':' + port : srvrUrl;
     this.SearchURL = searchUrl
+    this.tokenInfoUrl = tokenInfoUrl
     this.searchResultParser = searchParser
+    this.tokenInfoParser = tokenInfoParser
     if (httpBasicAuthentication) {
         var authorization = 'Basic ' + btoa(httpBasicAuthentication.user + ":" + httpBasicAuthentication.password);
         this.config.headers['Authorization'] = authorization;
@@ -137,6 +139,16 @@ customNode.prototype.getTokensList = function(term, callback) {
         callback({ error: true, msg: "connection error", data: "" });
     });
 }
+
+customNode.prototype.getAddressTokenBalance = function(address, callback) {
+    ajaxReq.http.post(this.tokenInfoUrl.replace('[[address]]',address)).then(function(data) {
+        console.log(data.data);
+        callback(this.tokenInfoParser(data.data));
+    }.bind(this), function(data) {
+        callback({ error: true, msg: "connection error", data: "" });
+    });
+}
+
 customNode.prototype.rawPost = function(data, callback) {
     ajaxReq.http.post(this.SERVERURL, JSON.stringify(data), this.config).then(function(data) {
         callback(data.data);

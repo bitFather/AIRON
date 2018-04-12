@@ -1,0 +1,228 @@
+.accordion {
+  #wrapper {
+    min-height: 0;
+    display: block;
+    position: relative;
+    left: 50%;
+    margin: 20px 0;
+    transform: translate(-50%, 0);
+    width: 100%;
+    @media screen and (max-width: @screen-sm) {
+      box-sizing: border-box;
+      transform: translate(0, 0);
+      max-width: 100%;
+      min-height: 100%;
+      left: 0;
+    }
+  }
+
+  .header {
+    color: #000000;
+    h2 {
+      font-weight: 300;
+      letter-spacing: 1px;
+      display: block;
+      margin:10px 0 10px 0;
+      cursor: pointer;
+      line-height:20px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      b {
+        font-size: 20px;
+        padding-left: 40px;
+      }
+      span {
+        font-size: 16px;
+        padding-left: 40px;
+      }
+    }
+    .border-line{
+       border-bottom: 1px solid #000000;
+       margin-left: 10px;
+       margin-right: 10px;
+    }
+  }
+
+  .accordion-inner {
+    color: rgba(48, 69, 92, 0.8);
+    font-size: 17px;
+    line-height: 26px;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    opacity: 1;
+    transform: translate(0, 0);
+    z-index: 2;
+    transition: all 500ms ease;
+  }
+  .accordion-inner, ul li i:before, ul li i:after {
+    transition: all 0.25s ease-in-out;
+  }
+  .table-container {
+    margin-left: 10px;
+    margin-right: 10px;
+    table.tokens-info {
+      border-collapse: collapse;
+      width: 100%;
+      border-bottom: 0;
+      table-layout: fixed;
+      td {
+        padding: .3rem;
+        line-height: 1;
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      td:first-child {
+        text-align: left;
+        word-wrap: break-word;
+        padding-left: 1em;
+
+      }
+      td:last-child {
+        text-align: right;
+        word-wrap: break-word;
+        padding-left: 1em;
+        padding-right: 0;
+      }
+      tr:first-child {
+        border-bottom: 0px solid #000000;
+        td {
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+      }
+      tr {
+        border-bottom: 1px solid #000000;
+      }
+      tr:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .update-wallet{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+  }
+
+  .new-wallet {
+    display: flex;
+    justify-content: space-between;
+    a{
+      text-align: right;
+      margin-top: 0;
+    }
+    @media screen and (max-width: @screen-xs) {
+      align-items: flex-end;
+      flex-direction: column;
+      text-align: -webkit-center;
+      display: block;
+    }
+  }
+
+  .add-wallet {
+    margin: 5% 5% 0% 5%;
+    padding-bottom: 1%;
+  }
+
+  .container-buttons {
+    display: flex;
+    justify-content: space-around;
+    @media screen and (max-width: @screen-sm) {
+      align-items: flex-end;
+      flex-direction: column;
+      text-align: -webkit-center;
+      display: block;
+    }
+    a{
+      width: 25%;
+      min-width: 200px;
+    }
+  }
+  
+  .pencil-button{
+    content: "";
+    width: 40px;
+    height: 40px;
+    margin-left: 6px;
+    margin-right: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../images/icon-edit.svg");
+    background-size: 100%;
+  }
+
+  .edit-wallet-name{
+    width: 100%;
+    input{
+      margin: 10px 5px 5px 10px;
+    }
+  }
+
+  .favour-button {
+    content: "";
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    div {
+      height: 100%;
+      width: 100%;
+      background: url("../images/icon-star-white.svg");
+      background-size: 100%;
+    }
+  }
+
+  .border{
+    border: 1px solid #000000;
+    background-color: #00b3ee;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    & li {
+      outline: 1px solid #000;
+      position: relative;
+      padding: 0;
+      margin-bottom: 10px;
+      border-top: 1px dotted #dce7eb;
+      & input[type=checkbox] {
+        position: absolute;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        &:checked ~ .accordion-inner {
+          margin-top: 0;
+          max-height: 0;
+          opacity: 0;
+          transform: translate(0, 50%);
+        }
+        &:checked ~ .header {
+          .border-line {
+            border-bottom: 0px solid #000000;
+          }
+        }
+        &:checked ~ .favour-button {
+          div {
+            background: url("../images/icon-star-black.svg");
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
