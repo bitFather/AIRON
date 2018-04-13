@@ -175,6 +175,9 @@ nodes.nodeList = {
                     tokensInfo: []
                 }
                 const reg = /<ul id="balancelist"[\s\S]*<\/ul>/
+                if(!data.match(reg)){
+                    return result
+                }
                 const ul = data.match(reg)[0]
                 const parser = new DOMParser()
                 const listItems=parser.parseFromString(ul, "text/html").body.children[0].children;
