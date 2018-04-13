@@ -28,15 +28,33 @@ rinkeby.searchResultParser = data => {
 }
 
 rinkeby.tokenInfoParser = data => {
-    const reg = /<ul id="balancelist"[\s\S]*<\/ul>/
-    const ul = data.match(reg)[0]
-    const parser = new DOMParser()
-    const listItems=parser.parseFromString(ul, "text/html").body.children;
-
-    return {
+    const result = {
         balance: 0,
         tokensInfo: []
     }
+    const reg = /<ul id="balancelist"[\s\S]*<\/ul>/
+    const ul = data.match(reg)[0]
+    const parser = new DOMParser()
+    const listItems=parser.parseFromString(ul, "text/html").body.children[0].children;
+
+    for(let i = 1; i < listItems.length; i++){
+        const regIsToken = /<a href="\/token\/0x/
+        if(listItems[i].innerHTML.match(regIsToken)){
+            const values = [...listItems[i].children].find(x => x.localName === 'a').innerText
+            const array = values.split('\n')
+            const symbol = array[1].split(' ')[1]
+            const balance = array[1].split(' ')[0].split(',').join('')
+            if(balance !== '0'){
+                const address = array[0].slice(0, array[0].indexOf(symbol))
+                result.tokensInfo.push({
+                    address: address,
+                    symbol: symbol,
+                    balance:balance
+                })
+            }
+        }
+    }
+    return result
 }
 
 module.exports = rinkeby;

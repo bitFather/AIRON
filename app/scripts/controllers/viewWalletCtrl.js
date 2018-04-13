@@ -32,7 +32,11 @@ var viewWalletCtrl = function($scope, walletService) {
                         isFavour: oldTokenInfo ? oldTokenInfo.isFavour : false
                     }
                 })
-                $scope.data.push(obj)
+
+                ajaxReq.getBalance(item.address, data => {
+                    obj.ethBalance = etherUnits.toEther(data.data.balance, 'wei')
+                    $scope.data.push(obj)
+                })
             })
         }
     }
@@ -54,20 +58,23 @@ var viewWalletCtrl = function($scope, walletService) {
                 return {
                     address: x.address,
                     name: x.symbol,
-                    amount: x.decimals > 0 ? new BigNumber(x.balance).div(10 ** x.decimals).toString() : x.balance,
+                    amount: x.balance,
                     isFavour: false,
                 }
             })
-            $scope.data.push({
-                address: address,
-                name: name,
-                ethBalance: data.balance,
-                onlyFavour: false,
-                date: Date.now(),
-                tokenList: tokenList,
+
+            ajaxReq.getBalance(address, data => {
+                $scope.data.push({
+                    address: address,
+                    name: name,
+                    ethBalance: etherUnits.toEther(data.data.balance, 'wei'),
+                    onlyFavour: false,
+                    date: Date.now(),
+                    tokenList: tokenList,
+                })
+                globalFuncs.safeWalletToLocal($scope.data[$scope.data.length - 1])
+                if (!$scope.$$phase) $scope.$apply();
             })
-            globalFuncs.safeWalletToLocal($scope.data[$scope.data.length - 1])
-            if (!$scope.$$phase) $scope.$apply();
         })
         $scope.isAdd = false
         $scope.newWalletName = ''; $scope.newWalletAddress = '';

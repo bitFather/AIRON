@@ -13,8 +13,7 @@ etherscan.tokenInfoParser = data => {
                 return {
                     address: x.tokenInfo.address,
                     symbol: x.tokenInfo.symbol,
-                    balance: x.balance,
-                    decimals: x.tokenInfo.decimals,
+                    balance: x.tokenInfo.decimals > 0 ? new BigNumber(x.balance).div(10 ** x.tokenInfo.decimals).toString() : x.balance,
                 }
             }
         ) : []
