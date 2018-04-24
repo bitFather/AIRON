@@ -236,8 +236,8 @@ en.data = {
     ERROR_42: '(error_43) Total tokens is not defined or has more than 15 digits',
     ERROR_43: '(error_44) Decimal varies from 0 to 18.',
     ERROR_44: '(error_45) Can not connect to token factory contract. Try to change node and refresh the page.',
-    ERROR_45: '(error_46) Wallet with this address already exist.',
-    ERROR_46: '(error_47) Wallet with this name already exist.',
+    ERROR_45: '(error_46) Wallet with this address already exist or address is not correct.',
+    ERROR_46: '(error_47) Wallet with this name already exist or name is not correct.',
 
     GETH_Balance: '(geth-01) Insufficient balance. Your gas limit * gas price + amount to send exceeds your current balance. Send more ETH to your account or use the "Send Entire Balance" button. If you believe this is in error, try pressing generate again. Required (d+) and got: (d+). [Learn More.](https://myetherwallet.github.io/knowledge-base/transactions/transactions-not-showing-or-pending.html)',
     GETH_Cheap: '(geth-02) Gas price too low for acceptance. Try raising the gas price to 21 GWEI via the dropdown in top-right.',
