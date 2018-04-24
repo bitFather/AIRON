@@ -21,11 +21,12 @@
 
     </section>
     <section class="footer--cent">
-
-      <p>
-        If you have any questions please contact <a href="support@airon.io">support@airon.io</a>
-      </p>
-
+        <p>
+          If you have any questions please contact <a href="mailto:support@airon.io">support@airon.io</a>
+        </p>
+        <p>
+          Our telegram channel <a href="tg://t.me/airon_official">@airon_official</a>
+        </p>
     </section>
   </article>
 
