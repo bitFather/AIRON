@@ -1,4 +1,4 @@
-pragma solidity ^0.4.15;
+pragma solidity ^0.4.23;
 
 contract ERC20 {
     function totalSupply() external constant returns (uint256 _totalSupply);
@@ -9,9 +9,6 @@ contract ERC20 {
     function allowance(address _owner, address _spender) external constant returns (uint256 remaining);
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
-
-    function ERC20() internal {
-    }
 }
 
 library SafeMath {
@@ -53,7 +50,7 @@ contract DetailedERC20 is ERC20 {
     mapping(address => uint256)                      private   accounts;
     mapping(address => mapping (address => uint256)) private   allowed;
 
-    function DetailedERC20(address _owner, string _name, string _symbol,string _description, uint8 _decimals, uint256 _startTokens) public {
+    constructor (address _owner, string _name, string _symbol,string _description, uint8 _decimals, uint256 _startTokens) public {
         owner = _owner;
 
         accounts[owner]  = _startTokens;
@@ -62,6 +59,7 @@ contract DetailedERC20 is ERC20 {
         symbol = _symbol;
         decimals = _decimals;
         description = _description;
+        emit Transfer(msg.sender, _to, _value);
     }
 
     modifier onlyPayloadSize(uint size) {
@@ -70,36 +68,27 @@ contract DetailedERC20 is ERC20 {
     }
 
     function transfer(address _to, uint256 _value) onlyPayloadSize(64) external returns (bool success) {
-        if (accounts[msg.sender] >= _value) {
-            accounts[msg.sender] = accounts[msg.sender].safeSub(_value);
-            accounts[_to] = accounts[_to].safeAdd(_value);
-            Transfer(msg.sender, _to, _value);
-            return true;
-        } else {
-            return false;
-        }
+        require(accounts[msg.sender] >= _value);
+        accounts[msg.sender] = accounts[msg.sender].safeSub(_value);
+        accounts[_to] = accounts[_to].safeAdd(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
     }
 
     function transferFrom(address _from, address _to, uint256 _value) onlyPayloadSize(64) external returns (bool success) {
-        if ((accounts[_from] >= _value) && (allowed[_from][msg.sender] >= _value)) {
+        require ((accounts[_from] >= _value) && (allowed[_from][msg.sender] >= _value));
             accounts[_from] = accounts[_from].safeSub(_value);
             allowed[_from][msg.sender] = allowed[_from][msg.sender].safeSub(_value);
             accounts[_to] = accounts[_to].safeAdd(_value);
-            Transfer(_from, _to, _value);
+            emit Transfer(_from, _to, _value);
             return true;
-        } else {
-            return false;
-        }
     }
 
     function approve(address _spender, uint256 _old, uint256 _new) onlyPayloadSize(64) external returns (bool success) {
-        if (_old == allowed[msg.sender][_spender]) {
+        require (_old == allowed[msg.sender][_spender]);
             allowed[msg.sender][_spender] = _new;
             Approval(msg.sender, _spender, _new);
             return true;
-        } else {
-            return false;
-        }
     }
 
     function allowance(address _owner, address _spender) external constant returns (uint256 remaining) {
@@ -126,7 +115,7 @@ contract Factory{
 
     event newTokenCreated(address indexed _tokenOwner, address indexed _tokenAddress);
 
-    function Factory(address _feeRecipient, uint256 _minFeeWei) public{
+    constructor (address _feeRecipient, uint256 _minFeeWei) public{
         owner = msg.sender;
         feeRecipient = _feeRecipient;
         minFeeWei = _minFeeWei;

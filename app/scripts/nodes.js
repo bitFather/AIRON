@@ -58,7 +58,7 @@ nodes.nodeList = {
                 ) : []
             }
         }),
-        'tokenFactoryAddress': '0xD70094b67Afa81Dc41Cf4448fD077Ed938AB9669'
+        'tokenFactoryAddress': '0xf79475e2d60a46979bcf00687c58e731cb4162ce'
     },
     'eth_ethscan': {
         'name': 'ETH',
@@ -71,7 +71,7 @@ nodes.nodeList = {
         'abiList': require('./abiDefinitions/ethAbi.json'),
         'service': 'Etherscan.io',
         'lib': require('./nodeHelpers/etherscan'),
-        'tokenFactoryAddress': '0xD70094b67Afa81Dc41Cf4448fD077Ed938AB9669'
+        'tokenFactoryAddress': '0xf79475e2d60a46979bcf00687c58e731cb4162ce'
     },
     'eth_infura': {
         'name': 'ETH',
@@ -98,7 +98,7 @@ nodes.nodeList = {
                 ) : []
             }
         }),
-        'tokenFactoryAddress': '0xD70094b67Afa81Dc41Cf4448fD077Ed938AB9669'
+        'tokenFactoryAddress': '0xf79475e2d60a46979bcf00687c58e731cb4162ce'
     },
     'eth_giveth': {
         'name': 'ETH',
@@ -125,7 +125,7 @@ nodes.nodeList = {
                 ) : []
             }
         }),
-        'tokenFactoryAddress': '0xD70094b67Afa81Dc41Cf4448fD077Ed938AB9669'
+        'tokenFactoryAddress': '0xf79475e2d60a46979bcf00687c58e731cb4162ce'
     },
     'rin_ethscan': {
         'name': 'Rinkeby',
@@ -138,7 +138,7 @@ nodes.nodeList = {
         'abiList': require('./abiDefinitions/rinkebyAbi.json'),
         'service': 'Etherscan.io',
         'lib': require('./nodeHelpers/etherscanRin'),
-        'tokenFactoryAddress': '0xe1435ea38bcfca50aa9e99399c3fab732c1b0514'
+        'tokenFactoryAddress': '0x105d97ef2e723f1cfb24519bc6ff15a6d091a3f1'
     },
     'rin_infura': {
         'name': 'Rinkeby',
@@ -202,7 +202,7 @@ nodes.nodeList = {
                 return result
             }
         ),
-        'tokenFactoryAddress': '0xe1435ea38bcfca50aa9e99399c3fab732c1b0514'
+        'tokenFactoryAddress': '0x105d97ef2e723f1cfb24519bc6ff15a6d091a3f1'
     },
 };
 

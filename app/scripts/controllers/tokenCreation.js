@@ -317,7 +317,7 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
                             if (receipt.data) {
                                 if (receipt.data.blockNumber) {
                                     try {
-                                        let tokenAddress = receipt.data.logs[0].topics[2]
+                                        let tokenAddress = receipt.data.logs[1].topics[2]
                                         while (tokenAddress[0] == '0' || tokenAddress[0] == 'x') {
                                             tokenAddress = tokenAddress.slice(1)
                                         }
