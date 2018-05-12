@@ -49,7 +49,7 @@
                                         <b>{{'  ETH'}}</b>
                                     </td>
                                     <td>
-                                        <input type="checkbox" ng-click= "updateWalletOnlyFavour(tab.address)" ng-model="tab.onlyFavour" ng-checked="tab.onlyFavour">
+                                        <input type="checkbox" ng-click= "updateWalletOnlyFavour(tab.address, tab.onlyFavour)" ng-model="tab.onlyFavour" ng-checked="tab.onlyFavour">
                                         <span class="favour-button border">
                                             <div></div>
                                         </span>
@@ -65,7 +65,7 @@
                                         {{ token.name }}
                                     </td>
                                     <td>
-                                        <input type="checkbox" ng-click= "updateTokenIsFavour(tab.address,token.address)" ng-model="token.isFavour" ng-checked="token.isFavour">
+                                        <input type="checkbox" ng-click= "updateTokenIsFavour(tab.address,token.address, token.isFavour)" ng-model="token.isFavour" ng-checked="token.isFavour">
                                         <span class="favour-button">
                                             <div></div>
                                         </span>

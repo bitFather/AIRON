@@ -98,24 +98,24 @@ var viewWalletCtrl = function($scope, walletService) {
         $scope.data[index].isEdit = false
     }
 
-    $scope.updateWalletOnlyFavour = (address)  => {
+    $scope.updateWalletOnlyFavour = (address,onlyFavour)  => {
         const index = $scope.data.findIndex(x => x.address === address)
 
         globalFuncs.updateWalletToLocal(address,{
             name: 'onlyFavour',
-            value: $scope.data[index].onlyFavour
+            value: onlyFavour
         })
 
         if (!$scope.$$phase) $scope.$apply();
     }
 
-    $scope.updateTokenIsFavour = (address, tokenAddress)  => {
+    $scope.updateTokenIsFavour = (address, tokenAddress, isFavour)  => {
         const index = $scope.data.findIndex(x => x.address === address)
         const indexToken = $scope.data[index].tokenList.findIndex(x => x.address === tokenAddress)
 
         globalFuncs.updateWalletToLocalTokens(address, $scope.data[index].tokenList[indexToken].address, {
             name: 'isFavour',
-            value:  $scope.data[index].tokenList[indexToken].isFavour
+            value:  isFavour
         })
 
         if (!$scope.$$phase) $scope.$apply();
