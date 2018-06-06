@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <div ng-click="wd = !wd">
-                    <h1 translate="NAV_ViewWallet">
-                        View Wallet Details
+                    <h1 translate="x_Wallet">
+                        Wallet
                     </h1>
                 </div>
             </div>
@@ -19,5 +19,8 @@
         @@if (site === 'mew') {  @@include( './viewWalletInfo-content.tpl', { "site": "mew" } )   }
 
     </article>
+
+<a class="btn btn-primary ng-scope ng-binding" ng-click="toWalletGeneration()">Generate Wallet
+</a>
 
 </main>

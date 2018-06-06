@@ -150,5 +150,9 @@ var viewWalletCtrl = function($scope, walletService) {
     $scope.isExistAddress = (address) => {
         return $scope.data.findIndex(x => x.address === address) !== -1
     }
+
+    $scope.toWalletGeneration = () => {
+      globalFuncs.changeHash('generate-wallet')
+    }
 };
 module.exports = viewWalletCtrl;

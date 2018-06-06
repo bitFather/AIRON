@@ -20,7 +20,7 @@ var globalService = function($http, $httpParamSerializerJQLike) {
        viewWalletInfo: {
           type: 'tab',
           id: 1,
-          name: "NAV_ViewWallet",
+          name: "x_Wallet",
           url: "view-wallet-info",
           mew: true,
           cx: false
