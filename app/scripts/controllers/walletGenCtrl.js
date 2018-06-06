@@ -46,10 +46,7 @@ var walletGenCtrl = function($scope) {
         $scope.showPaperWallet = true;
     }
     $scope.getAddress = function(){
-        $scope.showPaperWallet = false;
-        $scope.$$childTail.addAddress($scope.wallet.getAddressString())
-        $scope.wallet = null;
-        $scope.showGetAddress = true;
+        globalFuncs.changeHash('send-transaction');
     }
 };
 module.exports = walletGenCtrl;
