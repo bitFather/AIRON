@@ -1,5 +1,5 @@
 <main class="tab-pane block--container active"
-      ng-if="globalService.currentTab==globalService.tabs.commonWalletInfo.Items.generateWallet.id"
+      ng-if="globalService.currentTab==globalService.tabs.generateWallet.id"
       ng-controller='walletGenCtrl'
       role="main"
       ng-cloak>

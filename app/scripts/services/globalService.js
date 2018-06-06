@@ -8,30 +8,23 @@ var globalService = function($http, $httpParamSerializerJQLike) {
     ajaxReq.getRates = nodes.ethPrice.getRates
 
     var tabs = {
-        commonWalletInfo: {
-            type: 'container',
-            name: 'NAV_Container_ViewWallet',
-            mew: true,
-            cx: false,
-            Items: {
-                generateWallet: {
-                    type: 'tab',
-                    id: 0,
-                    name: "NAV_GenerateWallet_alt",
-                    url: "generate-wallet",
-                    mew: true,
-                    cx: false
-                },
-                viewWalletInfo: {
-                    type: 'tab',
-                    id: 1,
-                    name: "NAV_ViewWallet",
-                    url: "view-wallet-info",
-                    mew: true,
-                    cx: false
-                },
-            }
-        },
+      generateWallet: {
+          type: 'tab',
+          id: 0,
+          name: "NAV_GenerateWallet_alt",
+          url: "generate-wallet",
+          hidden: true,
+          mew: true,
+          cx: false
+      },
+       viewWalletInfo: {
+          type: 'tab',
+          id: 1,
+          name: "NAV_ViewWallet",
+          url: "view-wallet-info",
+          mew: true,
+          cx: false
+      },
         sendTransaction: {
             type: 'tab',
             id: 2,

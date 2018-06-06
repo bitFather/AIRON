@@ -203,7 +203,7 @@
           @@if (site === 'mew' ) {
           <li ng-repeat="(key1, tab) in tabs" \
               class="nav-item {{tab.name}}" \
-              ng-show="tab.mew">
+              ng-show="tab.mew && !tab.hidden">
 
             <a tabindex="0"
                ng-if="tab.type == 'tab'"
@@ -237,7 +237,7 @@
           <li ng-repeat="tab in tabs track by $index" \
               class="nav-item {{tab.name}}" \
               ng-class="{active: $index==gService.currentTab}"
-              ng-show="tab.cx"
+              ng-show="tab.cx && !tab.hidden"
               ng-click="tabClick($index)">
             <a tabindex="0" aria-label="nav item: {{tab.name | translate}}" translate="{{tab.name}}"></a>
           </li>
