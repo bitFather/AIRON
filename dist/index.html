@@ -677,12 +677,6 @@
       
         <article class="row block">
     <section class="accordion">
-        <div class="new-wallet">
-            <h5 translate="VIEWWALLET_Header_chooseAddress">
-                Choose address for view:
-            </h5>
-            <a class="btn btn-primary ng-scope" ng-click="isAdd = true">{{'VIEWWALLET_New' | translate}}</a>
-        </div>
         <div id="wrapper">
             <ul>
                 <li ng-show="isAdd">
@@ -765,6 +759,12 @@
                     </div>
                 </li>
             </ul>
+        </div>
+        <div class="new-wallet">
+            <h5 translate="VIEWWALLET_Header_chooseAddress">
+                Choose address for view:
+            </h5>
+            <a class="btn btn-primary ng-scope" ng-click="isAdd = true">{{'VIEWWALLET_Add' | translate}}</a>
         </div>
     </section>
 </article>   
@@ -777,30 +777,11 @@
 
     <main class="tab-pane active" ng-if="globalService.currentTab==globalService.tabs.viewWalletInfo.id" ng-controller='viewWalletCtrl' ng-cloak>
 
-    <article class="collapse-container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div ng-click="wd = !wd">
-                    <h1 translate="x_Wallet">
-                        Wallet
-                    </h1>
-                </div>
-            </div>
-        </div>
-
-    </article>
-
     <article class="row">
 
         
           <article class="row block">
     <section class="accordion">
-        <div class="new-wallet">
-            <h5 translate="VIEWWALLET_Header_chooseAddress">
-                Choose address for view:
-            </h5>
-            <a class="btn btn-primary ng-scope" ng-click="isAdd = true">{{'VIEWWALLET_New' | translate}}</a>
-        </div>
         <div id="wrapper">
             <ul>
                 <li ng-show="isAdd">
@@ -884,13 +865,31 @@
                 </li>
             </ul>
         </div>
+        <div class="new-wallet">
+            <h5 translate="VIEWWALLET_Header_chooseAddress">
+                Choose address for view:
+            </h5>
+            <a class="btn btn-primary ng-scope" ng-click="isAdd = true">{{'VIEWWALLET_Add' | translate}}</a>
+        </div>
     </section>
 </article>   
 
     </article>
 
-<a class="btn btn-primary ng-scope ng-binding" ng-click="toWalletGeneration()">Generate Wallet
-</a>
+<article class="row">
+    <article class="row block">
+        <section class="accordion">
+            <div class="new-wallet">
+                <h5 translate="VIEWWALLET_Header_createNewWallet">
+                    Create a new wallet
+                </h5>
+                <a class="btn btn-primary ng-scope ng-binding" ng-click="toWalletGeneration()">
+                    Generate Wallet
+                </a>
+            </div>
+        </section>
+    </article>
+</article>
 
 </main>
 

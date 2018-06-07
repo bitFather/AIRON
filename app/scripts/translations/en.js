@@ -501,6 +501,7 @@ en.data = {
     VIEWWALLET_SuccessMsg: 'Success! Here are your wallet details.',
     VIEWWALLET_Header_addFirst: 'Add address for view',
     VIEWWALLET_Header_chooseAddress: 'Choose address for view',
+    VIEWWALLET_Header_createNewWallet: 'Create a new wallet',
     VIEWWALLET_Header_openAddNew: '+Show: Add address',
     VIEWWALLET_Header_closeAddNew: '-Hide: Add address',
     VIEWWALLET_Header_addNewAddress: 'Input new address',
@@ -510,6 +511,7 @@ en.data = {
     VIEWWALLET_Back: 'Back',
     VIEWWALLET_Delete: "Delete Wallet",
     VIEWWALLET_New: "New Wallet",
+    VIEWWALLET_Add: "Add Wallet",
 
     WARN_Send_Link: 'You arrived via a link that has the address, value, gas, data fields, or transaction type (send mode) filled in for you. You can change any information before sending. Unlock your wallet to get started.',
 

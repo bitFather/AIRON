@@ -1,18 +1,5 @@
 <main class="tab-pane active" ng-if="globalService.currentTab==globalService.tabs.viewWalletInfo.id" ng-controller='viewWalletCtrl' ng-cloak>
 
-    <article class="collapse-container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div ng-click="wd = !wd">
-                    <h1 translate="x_Wallet">
-                        Wallet
-                    </h1>
-                </div>
-            </div>
-        </div>
-
-    </article>
-
     <article class="row">
 
         @@if (site === 'cx' ) {  @@include( './viewWalletInfo-content.tpl', { "site": "cx" } )    }
@@ -20,7 +7,19 @@
 
     </article>
 
-<a class="btn btn-primary ng-scope ng-binding" ng-click="toWalletGeneration()">Generate Wallet
-</a>
+<article class="row">
+    <article class="row block">
+        <section class="accordion">
+            <div class="new-wallet">
+                <h5 translate="VIEWWALLET_Header_createNewWallet">
+                    Create a new wallet
+                </h5>
+                <a class="btn btn-primary ng-scope ng-binding" ng-click="toWalletGeneration()">
+                    Generate Wallet
+                </a>
+            </div>
+        </section>
+    </article>
+</article>
 
 </main>
