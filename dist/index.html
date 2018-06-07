@@ -200,7 +200,7 @@
           
           <li ng-repeat="(key1, tab) in tabs" \
               class="nav-item {{tab.name}}" \
-              ng-show="tab.mew">
+              ng-show="tab.mew && !tab.hidden">
 
             <a tabindex="0"
                ng-if="tab.type == 'tab'"
@@ -342,7 +342,7 @@
   <div class="tab-content" >
 
     <main class="tab-pane block--container active"
-      ng-if="globalService.currentTab==globalService.tabs.commonWalletInfo.Items.generateWallet.id"
+      ng-if="globalService.currentTab==globalService.tabs.generateWallet.id"
       ng-controller='walletGenCtrl'
       role="main"
       ng-cloak>
@@ -775,14 +775,14 @@
 </main>
 
 
-    <main class="tab-pane active" ng-if="globalService.currentTab==globalService.tabs.commonWalletInfo.Items.viewWalletInfo.id" ng-controller='viewWalletCtrl' ng-cloak>
+    <main class="tab-pane active" ng-if="globalService.currentTab==globalService.tabs.viewWalletInfo.id" ng-controller='viewWalletCtrl' ng-cloak>
 
     <article class="collapse-container">
         <div class="row">
             <div class="col-xs-12">
                 <div ng-click="wd = !wd">
-                    <h1 translate="NAV_ViewWallet">
-                        View Wallet Details
+                    <h1 translate="x_Wallet">
+                        Wallet
                     </h1>
                 </div>
             </div>
@@ -888,6 +888,9 @@
 </article>   
 
     </article>
+
+<a class="btn btn-primary ng-scope ng-binding" ng-click="toWalletGeneration()">Generate Wallet
+</a>
 
 </main>
 

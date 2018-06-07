@@ -200,7 +200,7 @@
           
           <li ng-repeat="(key1, tab) in tabs" \
               class="nav-item {{tab.name}}" \
-              ng-show="tab.mew">
+              ng-show="tab.mew && !tab.hidden">
 
             <a tabindex="0"
                ng-if="tab.type == 'tab'"
