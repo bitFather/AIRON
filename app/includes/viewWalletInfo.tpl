@@ -14,8 +14,8 @@
                 <h5 translate="VIEWWALLET_Header_createNewWallet">
                     Create a new wallet
                 </h5>
-                <a class="btn btn-primary ng-scope ng-binding" ng-click="toWalletGeneration()">
-                    Generate Wallet
+                <a class="btn btn-primary ng-scope ng-binding" translate="VIEWWALLET_New" ng-click="toWalletGeneration()">
+                    New Wallet
                 </a>
             </div>
         </section>
