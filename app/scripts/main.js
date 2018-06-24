@@ -66,12 +66,16 @@ if (IS_CX) {
     var trezorConnect        = require('./staticJS/trezorConnect');
     var digitalBitboxUsb     = require('./staticJS/digitalBitboxUsb');
     var digitalBitboxEth     = require('./staticJS/digitalBitboxEth');
+    var googleAuth           = require('./staticJS/googleAuth');
     window.u2f               = u2f;
     window.Ledger3           = ledger3;
     window.ledgerEth         = ledgerEth;
     window.TrezorConnect     = trezorConnect.TrezorConnect;
     window.DigitalBitboxUsb  = digitalBitboxUsb;
     window.DigitalBitboxEth  = digitalBitboxEth;
+    window.googleAuth        = googleAuth;
+    window.onSignIn          = googleAuth.onSignIn;
+    window.signOut           = googleAuth.signOut;
 }
 var CustomGasMessages        = require('./customGas.js')
 window.CustomGasMessages     = CustomGasMessages;
@@ -96,6 +100,7 @@ var helpersCtrl              = require('./controllers/helpersCtrl');
 var tokenCreationCtrl        = require('./controllers/tokenCreation')
 var globalService            = require('./services/globalService');
 var walletService            = require('./services/walletService');
+var userService              = require('./services/userService');
 var blockiesDrtv             = require('./directives/blockiesDrtv');
 var addressFieldDrtv         = require('./directives/addressFieldDrtv');
 var QRCodeDrtv               = require('./directives/QRCodeDrtv');
@@ -125,6 +130,7 @@ app.config(['$animateProvider', function($animateProvider) {
 }]);
 app.factory('globalService', ['$http', '$httpParamSerializerJQLike', globalService]);
 app.factory('walletService', walletService);
+app.factory('userService', userService);
 app.directive('blockieAddress', blockiesDrtv);
 app.directive('addressField', ['$compile', addressFieldDrtv]);
 app.directive('qrCode', QRCodeDrtv);
@@ -134,7 +140,7 @@ app.directive('ngResize',ngResizeDrtv);
 app.directive('walletBalanceDrtv', balanceDrtv);
 app.directive('walletDecryptDrtv', walletDecryptDrtv);
 app.directive('cxWalletDecryptDrtv', cxWalletDecryptDrtv);
-app.controller('tabsCtrl', ['$scope', 'globalService', '$translate', '$sce', tabsCtrl]);
+app.controller('tabsCtrl', ['$scope', 'globalService', 'userService', '$translate', '$sce', tabsCtrl]);
 app.controller('viewCtrl', ['$scope', 'globalService', '$sce', viewCtrl]);
 app.controller('walletGenCtrl', ['$scope', walletGenCtrl]);
 app.controller('bulkGenCtrl', ['$scope', bulkGenCtrl]);

@@ -24,7 +24,7 @@ var globalService = function($http, $httpParamSerializerJQLike) {
           url: "view-wallet-info",
           mew: true,
           cx: false
-      },
+      },/*
         sendTransaction: {
             type: 'tab',
             id: 2,
@@ -96,7 +96,7 @@ var globalService = function($http, $httpParamSerializerJQLike) {
             url: "bulk-generate",
             mew: false,
             cx: false
-        },
+        },*/
         tokenCreation: {
             type: 'tab',
             id: 11,

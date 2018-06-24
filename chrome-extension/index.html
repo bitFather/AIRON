@@ -13,6 +13,7 @@
   <meta content="https://www.airon.io" property="og:url">
   <meta content="https://www.airon.cio" name="twitter:url">
   <link rel="stylesheet" href="css/etherwallet-master.min.css">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script type="text/javascript" src="js/etherwallet-static.min.js"></script>
   <script type="text/javascript" src="js/etherwallet-master.js"></script>
   <meta name="description" content="Airon.io is a free, open-source, client-side interface for generating Ethereum wallets & more. Interact with the Ethereum blockchain easily & securely.">
@@ -21,6 +22,7 @@
   <meta name="robots" content="index,follow">
   <meta name="googlebot" content="index,follow">
   <meta name="google-site-verification" content="IpChQ00NYUQuNs_7Xs6xlnSdzalOlTUYbBsr8f7OpvM" />
+  <meta name="google-signin-client_id" content="947632009316-j0dfr2h3fef2ea35g7060dp8sos9ddpn.apps.googleusercontent.com">
   <link href="images/fav/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
   <link href="images/fav/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32">
   <link href="images/fav/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16">
@@ -43,6 +45,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@Airon.io">
   <meta name="twitter:creator" content="@Airon.io">
+  <script>
+    /*gapi.load('auth2', function () {
+        this.googleAuth = gapi.auth2.init({
+          client_id: CLIENT_ID,
+        });
+      }.bind(this));*/
+  </script>
   <script type="application/ld+json">
 {
 "@context": "http://schema.org",
@@ -240,6 +249,12 @@
             </a>
           </li>
           -->
+          <li class="nav-item nav-item-float-right" ng-click="signOut()">
+            <a>
+              <span class = "icon-exit"></span>
+              <span class = "btn-new-style">logOut</span>
+            <a>
+          </li>
         </ul>
       </div>
       <a aria-hidden="true"
@@ -776,11 +791,10 @@
 
 
     <main class="tab-pane active" ng-if="globalService.currentTab==globalService.tabs.viewWalletInfo.id" ng-controller='viewWalletCtrl' ng-cloak>
-
-    <article class="row">
-
-        
-          <article class="row block">
+    <!--div ng-if="userService.user"-->
+    <!--article class="row">
+    
+      <article class="row block">
     <section class="accordion">
         <div id="wrapper">
             <ul>
@@ -873,26 +887,71 @@
         </div>
     </section>
 </article>   
-
-    </article>
-
+</article-->
 <article class="row">
-    <article class="row block">
+    <article class="row block bordered">
         <section class="accordion">
             <div class="new-wallet">
-                <h5 translate="VIEWWALLET_Header_createNewWallet">
-                    Create a new wallet
+                <a class="btn btn-primary ng-scope ng-binding btn-create" translate="VIEWWALLET_Header_createNewWalletShort" ng-click="toWalletGeneration()">
+                    Create
+                </a>
+                <!--h5 translate="VIEWWALLET_Header_createNewWallet">
+                Create a new wallet
                 </h5>
                 <a class="btn btn-primary ng-scope ng-binding" translate="VIEWWALLET_New" ng-click="toWalletGeneration()">
                     New Wallet
-                </a>
+                </a-->
             </div>
-        </section>
+            <div class = 'wallets-wrapper'>
+                <!--Choose Address for view-->
+                <div class="wallet-wrapper" ng-repeat="i in [1, 2, 3, 4, 5, 6, 7, 8, 9]">
+                    <div class="wallet-row">
+                        <div>Platinum Airon Wallet</div>
+                        <div class = 'icon-arrow-down'></div>
+                    </div>
+                    <div class="wallet-row">
+                        <div>
+                            0x2837593572039452739485720398462039602398
+                        </div>
+                    </div>
+                    <div class="wallet-row">
+                        <div class = "token-info">
+                            <div>
+                                29845726938456293845729835
+                            </div>
+                            <div>
+                                ETH
+                            </div>
+                        </div>
+                        <div class = 'icon-star'></div>
+                    </div>
+                    <div class="wallet-row">
+                        <div class = "token-info">
+                            <div>
+                                2.3453456345
+                            </div>
+                            <div>
+                                Gag
+                            </div>
+                        </div>
+                        <div class = 'icon-star'></div>
+                    </div>
+                </div>
+            </section>
+        </article>
     </article>
-</article>
-
+    <!--/div-->
+    <!--div class = "row" ng-if="!userService.user">
+    <article class="row">
+        <article class="row block">
+            <section class="accordion">
+                <div class="g-signin2">
+                    <a id ="signoutHref" href="#" onclick="signOut();">Sign out</a>
+                </section>
+            </article>
+        </article>
+    </div-->
 </main>
-
 
     <main class="tab-pane active"
       ng-if="globalService.currentTab==globalService.tabs.sendTransaction.id"

@@ -1,3 +1,131 @@
+.btn-new-style {
+  color: #0398C6;
+  font-size: 16px;
+}
+
+.icon-star{
+    content: "";
+    width: 30px;
+    height: 30px;
+    margin-left: 6px;
+    margin-right: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../images/icon-star.svg");
+    background-size: 100%;
+  }
+
+.icon-exit{
+    content: "";
+    width: 30px;
+    height: 30px;
+    margin-left: 6px;
+    margin-right: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../images/icon-exit.svg");
+    background-size: 100%;
+  }
+
+.icon-arrow-down{
+    content: "";
+    width: 30px;
+    height: 30px;
+    margin-left: 6px;
+    margin-right: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../images/icon-arrow-down.svg");
+    background-size: 100%;
+  }
+
+.btn-create {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.nav-item-float-right {
+  float: right;
+}
+
+.nav-section {
+  width: 100%;
+}
+
+nav.nav-container {
+  padding: 0 64px;
+}
+
+@media screen and (max-width: 80rem) {
+  nav.nav-container {
+    padding: 0 3%;
+    .nav-scroll {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+  }
+}
+
+@media screen and (max-width: 36rem) {
+  nav.nav-container {
+    padding: 0;
+    .nav-scroll {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.new-wallet>a {
+  margin-left: 10px;
+}
+
+.wallets-wrapper {
+  /*border: solid #D4D4D4 1px;*/
+  margin-top: 20px;
+  padding: 0 10px;
+  min-height: calc(~"100vh - 266px");
+  max-height: 100vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  &::-webkit-scrollbar-button {
+    display:none;
+  }
+  &::-webkit-scrollbar {
+   width:3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #D2D2D2;
+  }
+  .wallet-wrapper {
+    justify-content: space-between;
+    border: solid #D4D4D4 1px;
+    padding:5px;
+    &:not(:first-child) {
+      margin-top:20px;
+    }
+    .wallet-row {
+      justify-content: space-between;
+      display: flex;
+      flex-direction: row;
+      .token-info{
+        justify-content: space-between;
+        display: flex;
+        width:300px;
+      }
+    }
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;

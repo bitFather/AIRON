@@ -502,6 +502,7 @@ en.data = {
     VIEWWALLET_Header_addFirst: 'Add address for view',
     VIEWWALLET_Header_chooseAddress: 'Choose address for view',
     VIEWWALLET_Header_createNewWallet: 'Create a new wallet',
+    VIEWWALLET_Header_createNewWalletShort: '&#43; Create',
     VIEWWALLET_Header_openAddNew: '+Show: Add address',
     VIEWWALLET_Header_closeAddNew: '-Hide: Add address',
     VIEWWALLET_Header_addNewAddress: 'Input new address',

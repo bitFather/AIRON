@@ -12,6 +12,7 @@
   <meta content="https://www.airon.io" property="og:url">
   <meta content="https://www.airon.cio" name="twitter:url">
   <link rel="stylesheet" href="css/etherwallet-master.min.css">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script type="text/javascript" src="js/etherwallet-static.min.js"></script>
   <script type="text/javascript" src="js/etherwallet-master.js"></script>
   <meta name="description" content="Airon.io is a free, open-source, client-side interface for generating Ethereum wallets & more. Interact with the Ethereum blockchain easily & securely.">
@@ -20,6 +21,7 @@
   <meta name="robots" content="index,follow">
   <meta name="googlebot" content="index,follow">
   <meta name="google-site-verification" content="IpChQ00NYUQuNs_7Xs6xlnSdzalOlTUYbBsr8f7OpvM" />
+  <meta name="google-signin-client_id" content="947632009316-j0dfr2h3fef2ea35g7060dp8sos9ddpn.apps.googleusercontent.com">
   <link href="images/fav/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
   <link href="images/fav/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32">
   <link href="images/fav/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16">
@@ -42,6 +44,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@Airon.io">
   <meta name="twitter:creator" content="@Airon.io">
+  <script>
+    /*gapi.load('auth2', function () {
+        this.googleAuth = gapi.auth2.init({
+          client_id: CLIENT_ID,
+        });
+      }.bind(this));*/
+  </script>
   <script type="application/ld+json">
 {
 "@context": "http://schema.org",
@@ -251,6 +260,12 @@
             </a>
           </li>
           -->
+          <li class="nav-item nav-item-float-right" ng-click="signOut()">
+            <a>
+              <span class = "icon-exit"></span>
+              <span class = "btn-new-style">logOut</span>
+            <a>
+          </li>
         </ul>
       </div>
       <a aria-hidden="true"
