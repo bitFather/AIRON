@@ -345,7 +345,7 @@ var tabsCtrl = function($scope, globalService, $translate, $sce) {
     $scope.setHash = function(hash) {
         location.hash = hash
         $scope.setTab(hash)
-        $scope.$apply()
+        $scope.$applyAsync()
     }
 
     $scope.scrollHoverIn = function(isLeft, val) {

@@ -1,11 +1,5 @@
 <article class="row block">
     <section class="accordion">
-        <div class="new-wallet">
-            <h5 translate="VIEWWALLET_Header_chooseAddress">
-                Choose address for view:
-            </h5>
-            <a class="btn btn-primary ng-scope" ng-click="isAdd = true">{{'VIEWWALLET_New' | translate}}</a>
-        </div>
         <div id="wrapper">
             <ul>
                 <li ng-show="isAdd">
@@ -88,6 +82,12 @@
                     </div>
                 </li>
             </ul>
+        </div>
+        <div class="new-wallet">
+            <h5 translate="VIEWWALLET_Header_chooseAddress">
+                Choose address for view:
+            </h5>
+            <a class="btn btn-primary ng-scope" ng-click="isAdd = true">{{'VIEWWALLET_Add' | translate}}</a>
         </div>
     </section>
 </article>

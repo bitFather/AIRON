@@ -200,7 +200,7 @@
           
           <li ng-repeat="(key1, tab) in tabs" \
               class="nav-item {{tab.name}}" \
-              ng-show="tab.mew">
+              ng-show="tab.mew && !tab.hidden">
 
             <a tabindex="0"
                ng-if="tab.type == 'tab'"
@@ -342,7 +342,7 @@
   <div class="tab-content" >
 
     <main class="tab-pane block--container active"
-      ng-if="globalService.currentTab==globalService.tabs.commonWalletInfo.Items.generateWallet.id"
+      ng-if="globalService.currentTab==globalService.tabs.generateWallet.id"
       ng-controller='walletGenCtrl'
       role="main"
       ng-cloak>
@@ -677,12 +677,6 @@
       
         <article class="row block">
     <section class="accordion">
-        <div class="new-wallet">
-            <h5 translate="VIEWWALLET_Header_chooseAddress">
-                Choose address for view:
-            </h5>
-            <a class="btn btn-primary ng-scope" ng-click="isAdd = true">{{'VIEWWALLET_New' | translate}}</a>
-        </div>
         <div id="wrapper">
             <ul>
                 <li ng-show="isAdd">
@@ -765,6 +759,12 @@
                     </div>
                 </li>
             </ul>
+        </div>
+        <div class="new-wallet">
+            <h5 translate="VIEWWALLET_Header_chooseAddress">
+                Choose address for view:
+            </h5>
+            <a class="btn btn-primary ng-scope" ng-click="isAdd = true">{{'VIEWWALLET_Add' | translate}}</a>
         </div>
     </section>
 </article>   
@@ -775,32 +775,13 @@
 </main>
 
 
-    <main class="tab-pane active" ng-if="globalService.currentTab==globalService.tabs.commonWalletInfo.Items.viewWalletInfo.id" ng-controller='viewWalletCtrl' ng-cloak>
-
-    <article class="collapse-container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div ng-click="wd = !wd">
-                    <h1 translate="NAV_ViewWallet">
-                        View Wallet Details
-                    </h1>
-                </div>
-            </div>
-        </div>
-
-    </article>
+    <main class="tab-pane active" ng-if="globalService.currentTab==globalService.tabs.viewWalletInfo.id" ng-controller='viewWalletCtrl' ng-cloak>
 
     <article class="row">
 
         
           <article class="row block">
     <section class="accordion">
-        <div class="new-wallet">
-            <h5 translate="VIEWWALLET_Header_chooseAddress">
-                Choose address for view:
-            </h5>
-            <a class="btn btn-primary ng-scope" ng-click="isAdd = true">{{'VIEWWALLET_New' | translate}}</a>
-        </div>
         <div id="wrapper">
             <ul>
                 <li ng-show="isAdd">
@@ -884,10 +865,31 @@
                 </li>
             </ul>
         </div>
+        <div class="new-wallet">
+            <h5 translate="VIEWWALLET_Header_chooseAddress">
+                Choose address for view:
+            </h5>
+            <a class="btn btn-primary ng-scope" ng-click="isAdd = true">{{'VIEWWALLET_Add' | translate}}</a>
+        </div>
     </section>
 </article>   
 
     </article>
+
+<article class="row">
+    <article class="row block">
+        <section class="accordion">
+            <div class="new-wallet">
+                <h5 translate="VIEWWALLET_Header_createNewWallet">
+                    Create a new wallet
+                </h5>
+                <a class="btn btn-primary ng-scope ng-binding" translate="VIEWWALLET_New" ng-click="toWalletGeneration()">
+                    New Wallet
+                </a>
+            </div>
+        </section>
+    </article>
+</article>
 
 </main>
 
