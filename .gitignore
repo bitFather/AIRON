@@ -15,3 +15,6 @@ _ens/
 cert.pem
 key.pem
 /.idea
+/.vscode
+dist/
+chrome-extension/
