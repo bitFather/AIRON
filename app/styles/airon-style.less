@@ -57,3 +57,65 @@ nav.nav-bar {
         flex: 1;
     }
 }
+
+/** BLOCK STYLE **/
+
+.wallet-block {
+    position: relative;
+    margin: .5rem 0 1rem 0;
+    background-color: #fff;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+
+    span {
+        display: block;
+    }
+
+    .wallet {
+        &-group {
+            display: flex;
+            flex-direction: row;
+            width: 200px;
+        }
+
+        &-space {
+            flex: 1;
+        }
+
+        &-arrow {
+            cursor: pointer;
+        }
+
+        &-name {
+            text-align: left;
+            width: 10px;
+        }
+
+        &-addres {
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+
+        &-content {
+            
+        }
+    
+        &-title {
+            font-size: 24px;
+        }
+    
+        &-eth {
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+}
+
+.wallet-scroll {
+    overflow-y: scroll;
+    padding-right: 19px;
+}

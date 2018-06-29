@@ -19,17 +19,17 @@ var metamask = function() {
         payload.params = payload.params || []
       })
 
-      window.web3.currentProvider.sendAsync(req, function(err, res) {
-        // console.log(`${ids} =>`, err || res)
-        // move error onto json rpc response
-        if (err) {
-          res = {
-            id: req.id,
-            error: err,
-          }
-        }
-        callback(res)
-      })
+      // window.web3.currentProvider.sendAsync(req, function(err, res) {
+      //   // console.log(`${ids} =>`, err || res)
+      //   // move error onto json rpc response
+      //   if (err) {
+      //     res = {
+      //       id: req.id,
+      //       error: err,
+      //     }
+      //   }
+      //   callback(res)
+      // })
     }
 }
 module.exports = metamask;

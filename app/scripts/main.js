@@ -11,9 +11,9 @@ var bip39                    = require('bip39');
 var HDKey                    = require('hdkey');
 window.hd                    = { bip39: bip39, HDKey: HDKey };
 var BigNumber                = require('bignumber.js');
-var Web3                     = require('web3');
+// var Web3                     = require('web3');
 window.BigNumber             = BigNumber;
-window.Web3                  = Web3;
+// window.Web3                  = Web3;
 var marked                   = require('./staticJS/customMarked');
 window.marked                = marked;
 var ethUtil                  = require('ethereumjs-util');
@@ -105,6 +105,7 @@ var fileReaderDrtv           = require('./directives/fileReaderDrtv');
 var ngClickOutDrtv           = require('./directives/ngClickOutDrtv');
 var ngResizeDrtv           = require('./directives/ngResizeDrtv');
 var balanceDrtv              = require('./directives/balanceDrtv');
+
 if (IS_CX) {
   var addWalletCtrl          = require('./controllers/CX/addWalletCtrl');
   var cxDecryptWalletCtrl    = require('./controllers/CX/cxDecryptWalletCtrl');
@@ -112,6 +113,11 @@ if (IS_CX) {
   var mainPopCtrl            = require('./controllers/CX/mainPopCtrl');
   var quickSendCtrl          = require('./controllers/CX/quickSendCtrl');
 }
+
+// AIRON Imports
+var walletLoadedAironDrtv    = require('./directives/Airon/walletLoadedAironDrtv');
+var viewWalletAironCtrl    = require('./controllers/Airon/viewWalletAironCtrl');
+
 var app = angular.module('mewApp', ['pascalprecht.translate', 'ngSanitize','ngAnimate']);
 app.config(['$compileProvider', function($compileProvider) {
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(|blob|https|mailto):/);
@@ -125,6 +131,10 @@ app.config(['$animateProvider', function($animateProvider) {
 }]);
 app.factory('globalService', ['$http', '$httpParamSerializerJQLike', globalService]);
 app.factory('walletService', walletService);
+
+// AIRON directive
+app.directive('walletLoadedAiron', walletLoadedAironDrtv);
+
 app.directive('blockieAddress', blockiesDrtv);
 app.directive('addressField', ['$compile', addressFieldDrtv]);
 app.directive('qrCode', QRCodeDrtv);
@@ -153,6 +163,7 @@ app.controller('offlineTxCtrl', ['$scope', '$sce', 'walletService', offlineTxCtr
 app.controller('walletBalanceCtrl', ['$scope', '$sce', '$rootScope', walletBalanceCtrl]);
 app.controller('helpersCtrl', ['$scope', helpersCtrl]);
 app.controller('tokenCreationCtrl', ['$scope', '$sce', 'walletService', tokenCreationCtrl]);
+
 if (IS_CX) {
   app.controller('addWalletCtrl', ['$scope', '$sce', addWalletCtrl]);
   app.controller('myWalletsCtrl', ['$scope', '$sce','walletService', myWalletsCtrl]);
@@ -160,3 +171,6 @@ if (IS_CX) {
   app.controller('quickSendCtrl', ['$scope', '$sce', quickSendCtrl]);
   app.controller('cxDecryptWalletCtrl', ['$scope', '$sce', 'walletService', cxDecryptWalletCtrl]);
 }
+
+// AIRON controller
+app.controller('viewWalletAironCtrl', ['$scope', viewWalletAironCtrl]);
