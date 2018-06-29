@@ -21,7 +21,7 @@ var tokenCreationCtrl = function($scope, $sce, walletService) {
 
     $scope.currentNodeIndex
 
-    // $scope.web3
+    $scope.web3
     $scope.token = {
         name: '',
         description: '',

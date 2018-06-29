@@ -36,7 +36,7 @@
 
 /// required to define ETH_BIGNUMBER_ROUNDING_MODE
 var BigNumber = require('bignumber.js');
-// var Web3 = require('web3');
+var Web3 = require('web3');
 
 var ETH_UNITS = [
     'wei',

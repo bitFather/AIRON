@@ -37,7 +37,7 @@
 var BigNumber = require('bignumber.js');
 var sha3 = require('ethereumjs-util').sha3;
 var utf8 = require('utf8');
-// var Web3 = require('web3');
+var Web3 = require('web3');
 
 var unitMap = {
     'noether':      '0',    

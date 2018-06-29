@@ -212,15 +212,15 @@ uiFuncs.sendTx = function(signedTx, callback) {
   // check for web3 late signed tx
     if (signedTx.slice(0,2) !== '0x') {
       var txParams = JSON.parse(signedTx)
-    //   window.web3.eth.sendTransaction(txParams, function(err, txHash){
-    //     if (err) {
-    //       return callback({
-    //         isError: true,
-    //         error: err.stack,
-    //       })
-    //     }
-    //     callback({ data: txHash })
-    //   });
+      window.web3.eth.sendTransaction(txParams, function(err, txHash){
+        if (err) {
+          return callback({
+            isError: true,
+            error: err.stack,
+          })
+        }
+        callback({ data: txHash })
+      });
       return
     }
 
