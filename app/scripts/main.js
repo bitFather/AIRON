@@ -117,6 +117,7 @@ if (IS_CX) {
 // AIRON Imports
 var walletLoadedAironDrtv    = require('./directives/Airon/walletLoadedAironDrtv');
 var viewWalletAironCtrl    = require('./controllers/Airon/viewWalletAironCtrl');
+var decryptWalletAironCtrl    = require('./controllers/Airon/decryptWalletAironCtrl');
 
 var app = angular.module('mewApp', ['pascalprecht.translate', 'ngSanitize','ngAnimate']);
 app.config(['$compileProvider', function($compileProvider) {
@@ -174,3 +175,4 @@ if (IS_CX) {
 
 // AIRON controller
 app.controller('viewWalletAironCtrl', ['$scope', viewWalletAironCtrl]);
+app.controller('decryptWalletAironCtrl', ['$scope', '$sce', 'walletService', decryptWalletAironCtrl]);

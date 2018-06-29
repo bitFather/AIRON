@@ -44,6 +44,10 @@
     font-size: 1.07rem;
 }
 
+.btn-cursor {
+    cursor: pointer;
+}
+
 .btn-shadown {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
@@ -56,6 +60,27 @@ nav.nav-bar {
     .space {
         flex: 1;
     }
+}
+
+.clearfix {
+    clear: both;
+}
+
+.airon-fix-marge {
+    margin-left: 2px !important;
+}
+
+.airon-modal-bot {
+    padding: 12px;
+}
+
+.airon-fix-btn-100 {
+    width: 100%;
+}
+
+.modal-airon {
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
 }
 
 /** BLOCK STYLE **/
@@ -79,6 +104,15 @@ nav.nav-bar {
         &-group {
             display: flex;
             flex-direction: row;
+            padding: 6px;
+
+            &:hover {
+                background-color: lighten(#0398C6, 40%);
+                cursor: pointer;
+            }
+        }
+
+        &-count {
             width: 200px;
         }
 
@@ -88,6 +122,7 @@ nav.nav-bar {
 
         &-arrow {
             cursor: pointer;
+            flex: 0;
         }
 
         &-name {
@@ -101,7 +136,7 @@ nav.nav-bar {
         }
 
         &-content {
-            
+            flex: 1;
         }
     
         &-title {

@@ -5,6 +5,8 @@ var viewWalletAironCtrl = function ($scope) {
         wallet.hide = !wallet.hide;
     };
 
+    $scope.showDecryptModal = new Modal(document.getElementById('decryptModal'));
+
     $scope.wallets = [
         {
             name: "Gold Wallet",

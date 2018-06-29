@@ -59,6 +59,7 @@ function notifyFunc(msg) {
 // HTML / TPL Pages
 let htmlFiles = app + 'layouts/*.html';
 let tplFiles = app + 'includes/*.tpl';
+let htmlTplFiles = app + 'includes/*.html';
 
 gulp.task('html', function(done) {
     return gulp.src(htmlFiles)
@@ -389,6 +390,7 @@ gulp.task('watchJSProd',  function() { gulp.watch(js_watchFolder,   ['js-product
 gulp.task('watchLess',    function() { gulp.watch(less_watchFolder, ['styles']        ) })
 gulp.task('watchPAGES',   function() { gulp.watch(htmlFiles,        ['html']          ) })
 gulp.task('watchTPL',     function() { gulp.watch(tplFiles,         ['html']          ) })
+gulp.task('watchHTMLTPL', function () { gulp.watch(htmlTplFiles,         ['html']          ) })
 gulp.task('watchCX',      function() { gulp.watch(cxSrcFiles,       ['copy']          ) })
 
 gulp.task('bump',          function() { return bumpFunc( 'patch' ) });
@@ -405,7 +407,7 @@ gulp.task('zipit',  function(cb) { runSequence('clean', 'zip', cb);             
 
 gulp.task('commit', function(cb) { runSequence('add', 'commitV', 'tag', cb);                   });
 
-gulp.task('watch',     ['watchJS',     'watchLess', 'watchPAGES', 'watchTPL', 'watchCX'])
+gulp.task('watch', ['watchJS', 'watchLess', 'watchPAGES', 'watchHTMLTPL', 'watchTPL', 'watchCX'])
 gulp.task('watchProd', ['watchJSProd', 'watchLess', 'watchPAGES', 'watchTPL', 'watchCX'])
 
 gulp.task('build', ['js', 'html', 'styles', 'copy']);
