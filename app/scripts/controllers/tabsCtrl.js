@@ -1,5 +1,7 @@
 'use strict'
-var tabsCtrl = function($scope, globalService, $translate, $sce) {
+var tabsCtrl = function ($scope, globalService, $translate, $sce, authService) {
+    $scope.auth = authService;
+
     $scope.mobileMenuIsOpen = false;
     $scope.gService = globalService
     $scope.gService.currentTab = 1
@@ -377,6 +379,8 @@ var tabsCtrl = function($scope, globalService, $translate, $sce) {
         var ele = document.querySelectorAll('.nav-scroll')[0]
         ele.scrollLeft += val
     }
+
+
 
     angular.element(document.querySelectorAll('.nav-scroll')[0]).bind('scroll', $scope.setOnScrollArrows)
     globalFuncs.changeHash = $scope.setHash

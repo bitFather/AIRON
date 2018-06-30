@@ -9,9 +9,7 @@
                         <i class="material-icons left">add</i> Create
                     </div>
 
-                    <div class="dropdown-back" ng-show="dropdownWalletMenu" ng-click="dropdownWalletMenu = false">
-
-                    </div>
+                    <div class="dropdown-back" ng-show="dropdownWalletMenu" ng-click="dropdownWalletMenu = false"></div>
 
                     <div class="airon-dropdown">
                         <div class="dropdown-menu dropdown-menu-left airon-dropdown-block" ng-show="dropdownWalletMenu">
@@ -34,7 +32,7 @@
 
                     <div class="space"></div>
 
-                    <div class="airon-icon">
+                    <div class="airon-icon" ng-click="decryptModalOpen()">
                         <i class="material-icons dp48">payment</i>
                         <span>Payment</span>
                     </div>
@@ -99,7 +97,7 @@
                             </div>
                         </div>
 
-                        <i class="wallet-arrow material-icons" ng-click="toggleWallet(wallet)">arrow_drop_down</i>
+                        <i class="wallet-arrow material-icons" ng-click="toggleWallet(wallet)">{{wallet.hide ? 'arrow_drop_down' : 'arrow_drop_up'}}</i>
                     </div>
                 </div>
             </section>

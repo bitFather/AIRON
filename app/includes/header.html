@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Airon.io</title>
+  <base href="/">
   <meta property="og:title" content="Airon.io: Your Key to Ethereum">
   <meta property="og:site_name" content="Airon.io: Your Key to Ethereum">
   <meta name="twitter:title" content="Airon.io: Your Key to Ethereum">
@@ -202,8 +203,9 @@
       <a aria-hidden="true" ng-show="showLeftArrow" class="nav-arrow-left" ng-click="scrollLeft(100);" ng-mouseover="scrollHoverIn(true,2);" ng-mouseleave="scrollHoverOut()">&#171;</a>
       <div class="nav-scroll" ng-class="{opened: true}">
         <ul class="nav-inner">
-          @@if (site === 'mew' ) {
-          <li ng-repeat="(key1, tab) in tabs" \
+
+
+          <!-- <li ng-repeat="(key1, tab) in tabs" \
               class="nav-item {{tab.name}}" \
               ng-show="tab.mew && !tab.hidden">
 
@@ -233,21 +235,30 @@
               </ul>
             </span>
 
-          </li>
-          }
-          @@if (site === 'cx' ) {
-          <li ng-repeat="tab in tabs track by $index" \
-              class="nav-item {{tab.name}}" \
-              ng-class="{active: $index==gService.currentTab}"
-              ng-show="tab.cx && !tab.hidden"
-              ng-click="tabClick($index)">
-            <a tabindex="0" aria-label="nav item: {{tab.name | translate}}" translate="{{tab.name}}"></a>
-          </li>
-          }
+          </li> -->
 
-          <li class="nav-item help navbar-right">
-            <a class="btn-airon-menu">    
+          <li class="nav-item">
+            <a class="btn-airon-menu" ui-sref-active="active" ui-sref="wallet">
+              Wallet
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="btn-airon-menu" ui-sref-active="active" ui-sref="generate-wallet">
+              Create Token
+            </a>
+          </li>
+          
+
+          <li class="nav-item help navbar-right" ng-if="auth.isAuthenticated()">
+            <a class="btn-airon-menu" ng-click="auth.logout()">    
                 Logout <i class="material-icons">exit_to_app</i>
+            </a>
+          </li>
+
+          <li class="nav-item help navbar-right" ng-if="!auth.isAuthenticated()">
+            <a class="btn-airon-menu" ng-click="auth.login()">
+              Login
             </a>
           </li>
 

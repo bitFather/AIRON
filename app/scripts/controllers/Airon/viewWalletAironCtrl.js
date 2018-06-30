@@ -1,5 +1,7 @@
 'use strict';
-var viewWalletAironCtrl = function ($scope) {
+var viewWalletAironCtrl = function ($scope, authService) {
+
+    $scope.auth = authService;
 
     $scope.toggleWallet = function(wallet) {
         wallet.hide = !wallet.hide;
@@ -12,6 +14,12 @@ var viewWalletAironCtrl = function ($scope) {
     $scope.toWalletGeneration = () => {
         globalFuncs.changeHash('generate-wallet')
     };
+
+    $scope.decryptModalOpen = function() {
+        if ($scope.selectId !== null) {
+            $scope.showDecryptModal.open();
+        }
+    }
 
     $scope.selectId = null;
     $scope.deselectCascad = function() {

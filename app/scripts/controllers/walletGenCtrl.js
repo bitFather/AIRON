@@ -49,4 +49,5 @@ var walletGenCtrl = function($scope) {
         globalFuncs.changeHash('send-transaction');
     }
 };
+
 module.exports = walletGenCtrl;

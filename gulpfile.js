@@ -61,7 +61,7 @@ let htmlFiles = app + 'layouts/*.html';
 let tplFiles = app + 'includes/*.tpl';
 let htmlTplFiles = app + 'includes/*.html';
 
-gulp.task('html', function(done) {
+gulp.task('html', ['js'], function(done) {
     return gulp.src(htmlFiles)
         .pipe(plumber({ errorHandler: onError }))
         .pipe(fileinclude({ prefix: '@@', basepath: '@file' }))
