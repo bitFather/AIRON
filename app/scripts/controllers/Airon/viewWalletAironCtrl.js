@@ -39,6 +39,48 @@ var viewWalletAironCtrl = function ($scope, authService) {
     $scope.dropdownWalletMenu = false;
 
     $scope.showDecryptModal = new Modal(document.getElementById('decryptModal'));
+    $scope.addWalletModal = new Modal(document.getElementById('addWallet'));
+
+    $scope.Validator = Validator;
+
+    //Проверки!!!
+    $scope.addWallet = (name, address) => {
+        if (!$scope.Validator.isValidAddress(address) || $scope.isExistAddress(address)) {
+            $scope.notifier.danger(globalFuncs.errorMsgs[45])
+            return
+        }
+        if (!$scope.Validator.isAlphaNumericSpace(name) || $scope.isExistName(name)) {
+            $scope.notifier.danger(globalFuncs.errorMsgs[46])
+            return
+        }
+
+        // ajaxReq.getAddressTokenBalance(address, data => {
+        //     const tokenList = data.tokensInfo.map(x => {
+        //         return {
+        //             address: x.address,
+        //             name: x.symbol,
+        //             amount: x.balance,
+        //             isFavour: false,
+        //         }
+        //     })
+
+        //     // ajaxReq.getBalance(address, data => {
+        //     //     $scope.data.push({
+        //     //         address: address,
+        //     //         name: name,
+        //     //         ethBalance: etherUnits.toEther(data.data.balance, 'wei'),
+        //     //         onlyFavour: false,
+        //     //         date: Date.now(),
+        //     //         tokenList: tokenList,
+        //     //     })
+        //     //     globalFuncs.safeWalletToLocal($scope.data[$scope.data.length - 1])
+        //     //     if (!$scope.$$phase) $scope.$apply();
+        //     // })
+        // })
+   
+        $scope.newWalletName = '';
+        $scope.newWalletAddress = '';
+    }
 
     $scope.wallets = [
         {

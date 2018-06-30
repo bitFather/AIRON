@@ -11,7 +11,7 @@
     
                     <div class="airon-dropdown">
                         <div class="dropdown-menu dropdown-menu-left airon-dropdown-block" ng-show="dropdownWalletMenu">
-                            <div class="airon-dropdown-icon-b">
+                            <div class="airon-dropdown-icon-b" ng-click="addWalletModal.open()">
                                 <div class="airon-dropdown-icon">
                                     <i class="material-icons">add_circle_outline</i>
                                     <i class="material-icons">account_balance_wallet</i>
@@ -103,6 +103,7 @@
     </article>
 </main>
 
+<!-- Modal Tx -->
 <article class="modal fade" id="decryptModal" tabindex="-1">
     <section class="modal-dialog">
         <section class="modal-content">
@@ -675,6 +676,30 @@
                     </div>
                     <!-- /View Only -->
                 </section>
+            </div>
+
+        </section>
+    </section>
+</article>
+
+<!-- Modal Add Wallet -->
+<article class="modal fade" id="addWallet" tabindex="-1">
+    <section class="modal-dialog">
+        <section class="modal-content">
+
+            <div class="modal-body">
+                <h3>Add Wallet</h3>
+                <div class="add-wallet">
+                    <input class="form-control" placeholder="New Wallet Name" ng-model="newWalletName" type="text" ng-class="Validator.isAlphaNumericSpace(newWalletName) && !isExistName(newWalletName) ? 'is-valid' : 'is-invalid'">
+                    <input class="form-control" placeholder="0x3f0efedfe0a0cd611f2465fac9a3699f92d6a06613bc3ead4f786856f5c73e9c" ng-model="newWalletAddress"
+                        type="text" ng-class="Validator.isValidAddress(newWalletAddress) && !isExistAddress(newWalletAddress)? 'is-valid' : 'is-invalid'">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="addWallet(newWalletName,newWalletAddress)">
+                    Save
+                </button>
             </div>
 
         </section>
