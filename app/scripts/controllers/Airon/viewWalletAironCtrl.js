@@ -11,7 +11,22 @@ var viewWalletAironCtrl = function ($scope) {
 
     $scope.toWalletGeneration = () => {
         globalFuncs.changeHash('generate-wallet')
+    };
+
+    $scope.selectId = null;
+    $scope.deselectCascad = function() {
+        $scope.wallets.forEach(function(e) {
+            e.select = false;
+            e.tokens.forEach(function (e) {
+                e.select = false;
+            });
+        });
     }
+    $scope.selectMoney = function(c) {
+        $scope.selectId = c.id;
+        $scope.deselectCascad();
+        c.select = true;
+    };
 
     $scope.dropdownWalletMenu = false;
 
@@ -24,15 +39,21 @@ var viewWalletAironCtrl = function ($scope) {
             addres: "0xasfsdglsngskjdgnsdkglasd3wwe",
             eth: 8.88888888,
             star: true,
+            select: false,
+            id: 0,
             tokens: [
                 {
                     name: "xxx",
                     count: 12.5448454,
+                    select: false,
+                    id: 1,
                     star: true
                 },
                 {
                     name: "cec",
                     count: 135232.5448454,
+                    select: false,
+                    id: 2,
                     star: false
                 }
             ],
@@ -44,15 +65,21 @@ var viewWalletAironCtrl = function ($scope) {
             addres: "0xasdfsdgsdfskjdgnsdkglasd3xwe",
             eth: 8.88888888,
             star: false,
+            select: false,
+            id: 3,
             tokens: [
                 {
                     name: "xxx",
                     count: 12.5448454,
+                    select: false,
+                    id: 4,
                     star: false
                 },
                 {
                     name: "cec",
                     count: 135232.5448454,
+                    select: false,
+                    id: 5,
                     star: false
                 }
             ],
