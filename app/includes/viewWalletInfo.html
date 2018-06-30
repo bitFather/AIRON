@@ -5,8 +5,31 @@
         <article class="row block">
             <section class="accordion">
                 <nav class="nav-bar">
-                    <div class="btn-airon btn-circle btn-shadown" style="margin-top: 14px">
+                    <div class="btn-airon btn-circle btn-shadown" style="margin-top: 14px" ng-click="dropdownWalletMenu = !dropdownWalletMenu">
                         <i class="material-icons left">add</i> Create
+                    </div>
+
+                    <div class="dropdown-back" ng-show="dropdownWalletMenu" ng-click="dropdownWalletMenu = false">
+
+                    </div>
+
+                    <div class="airon-dropdown">
+                        <div class="dropdown-menu dropdown-menu-left airon-dropdown-block" ng-show="dropdownWalletMenu">
+                            <div class="airon-dropdown-icon-b">
+                                <div class="airon-dropdown-icon">
+                                    <i class="material-icons">add_circle_outline</i>
+                                    <i class="material-icons">account_balance_wallet</i>
+                                </div>
+                                <span>Add Wallet for View</span>
+                            </div>
+                            <div class="airon-dropdown-icon-b">
+                                <div class="airon-dropdown-icon">
+                                    <i class="material-icons">fiber_new</i>
+                                    <i class="material-icons">account_balance_wallet</i>
+                                </div>
+                                <span>Create a New Wallet</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="space"></div>

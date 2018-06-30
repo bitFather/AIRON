@@ -83,6 +83,47 @@ nav.nav-bar {
     padding-right: 1.3rem;
 }
 
+.airon-dropdown {
+    position: absolute;
+    top: 50px;
+
+    &-icon {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        &-b {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+
+            i {
+                margin-bottom: 8px;
+            }
+
+            text-align: center;
+            padding: 10px;
+            width: 100px;
+        }
+    }
+
+    &-block {
+        display: flex;
+        flex-direction: row;
+        padding: 18px;
+    }
+}
+
+.dropdown-back {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.12);
+    z-index: 100;
+}
+
 /** BLOCK STYLE **/
 
 .wallet-block {

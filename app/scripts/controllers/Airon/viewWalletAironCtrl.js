@@ -9,6 +9,8 @@ var viewWalletAironCtrl = function ($scope) {
         c.star = !c.star;
     };
 
+    $scope.dropdownWalletMenu = false;
+
     $scope.showDecryptModal = new Modal(document.getElementById('decryptModal'));
 
     $scope.wallets = [
