@@ -48,18 +48,29 @@
                             <span class="wallet-title">{{ wallet.name }}</span>
                             <span class="wallet-addres">{{ wallet.addres }}</span>
 
-                            <span class="wallet-group wallet-eth" ng-click="showDecryptModal.open()">
-                                <span class="wallet-count">{{ wallet.eth }}</span>
-                                <span class="wallet-name">ETH</span>
-                                <span class="wallet-space"></span>
+                            <span class="wallet-group wallet-eth">
+                                <span class="wallet-count" ng-click="showDecryptModal.open()">{{ wallet.eth }}</span>
+                                <span class="wallet-name" ng-click="showDecryptModal.open()">ETH</span>
+                                <span class="wallet-space" ng-click="showDecryptModal.open()"></span>
+                                <i class="material-icons" ng-click="toggleStar(wallet)">{{ wallet.star ? 'star' : 'star_border' }}</i>
                             </span>
 
+                            <div class="wallet-token" ng-repeat="token in wallet.tokens" ng-if="token.star">
+                                <span class="wallet-group">
+                                    <span class="wallet-count" ng-click="showDecryptModal.open()">{{ token.count }}</span>
+                                    <span class="wallet-name" ng-click="showDecryptModal.open()">{{ token.name }}</span>
+                                    <span class="wallet-space" ng-click="showDecryptModal.open()"></span>
+                                    <i class="material-icons" ng-click="toggleStar(token)">{{ token.star ? 'star' : 'star_border' }}</i>
+                                </span>
+                            </div>
+
                             <div ng-if="!wallet.hide">
-                                <div class="wallet-token" ng-repeat="token in wallet.tokens">
+                                <div class="wallet-token" ng-repeat="token in wallet.tokens" ng-if="!token.star">
                                     <span class="wallet-group">
-                                        <span class="wallet-count">{{ token.count }}</span>
-                                        <span class="wallet-name">{{ token.name }}</span>
-                                        <span class="wallet-space"></span>
+                                        <span class="wallet-count" ng-click="showDecryptModal.open()">{{ token.count }}</span>
+                                        <span class="wallet-name" ng-click="showDecryptModal.open()">{{ token.name }}</span>
+                                        <span class="wallet-space" ng-click="showDecryptModal.open()"></span>
+                                        <i class="material-icons" ng-click="toggleStar(token)">{{ token.star ? 'star' : 'star_border' }}</i>
                                     </span>
                                 </div>
                             </div>
