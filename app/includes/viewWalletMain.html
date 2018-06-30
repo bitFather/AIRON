@@ -501,9 +501,7 @@
                                 <input id="aria6" class="form-control" ng-attr-type="{{ hidePK ? 'password' : 'text' }}" ng-change="onPrivKeyChange()" ng-class="Validator.isValidPrivKey($parent.$parent.manualprivkey.length) ? 'is-valid' : 'is-invalid'"
                                     ng-keyup="$event.keyCode == 13 && decryptWallet()" ng-model="$parent.$parent.manualprivkey"
                                     placeholder="{{ 'x_PrivKey2' | translate }}"></input>
-                                <div ng-click="hidePK = !hidePK" class="btn-cursor input-group-addon">
-                                    <i class="material-icons">{{ hidePK ? 'link_off' : 'link' }}</i>
-                                </div>
+                                <span role="button" class="input-group-addon eye" ng-click="hidePK = !hidePK"></span>
                             </div>
                         </div>
                         <div class="form-group" ng-if="requirePPass">
@@ -514,6 +512,7 @@
                                 ng-keyup="$event.keyCode == 13 && decryptWallet()" ng-model="$parent.$parent.privPassword" placeholder="{{ 'x_Password' | translate }}"
                                 type="password" />
                         </div>
+
                         <div class="form-group">
                             <a tabindex="0" role="button" class="btn btn-primary airon-fix-btn-100" ng-show="showFDecrypt||showPDecrypt||showMDecrypt||showParityDecrypt"
                                 ng-click="decryptWallet()" translate="ADD_Label_6_short">

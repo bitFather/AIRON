@@ -163,6 +163,11 @@ app.config(['$stateProvider', function ($stateProvider) {
       controller: 'walletGenCtrl',
       template: require('../includes/generateWallet.html')
     })
+    .state('token-creation', {
+      url: '/token-creation',
+      controller: 'tokenCreationCtrl',
+      template: require('../includes/tokenCreation.html')
+    })
     .state('callback', {
       url: '/callback',
       controller: 'callbackCtrl',
