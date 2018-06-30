@@ -9,6 +9,10 @@ var viewWalletAironCtrl = function ($scope) {
         c.star = !c.star;
     };
 
+    $scope.toWalletGeneration = () => {
+        globalFuncs.changeHash('generate-wallet')
+    }
+
     $scope.dropdownWalletMenu = false;
 
     $scope.showDecryptModal = new Modal(document.getElementById('decryptModal'));
