@@ -1,6 +1,6 @@
 'use strict'
-var tabsCtrl = function ($scope, globalService, $translate, $sce, authService) {
-    $scope.auth = authService;
+var tabsCtrl = function ($scope, globalService, $translate, $sce, gapiAuth2) {
+    $scope.auth = gapiAuth2;
 
     $scope.mobileMenuIsOpen = false;
     $scope.gService = globalService

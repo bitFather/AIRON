@@ -187,6 +187,15 @@ app.config(['$locationProvider', function ($locationProvider) {
   $locationProvider.html5Mode(true);
 }]);
 
+app.run(function ($rootScope, gapiAuth2) {
+  $rootScope.isLogin = false;
+  $rootScope.$on('google:oauth2:signed-in', function (e, val) {
+    gapiAuth2.getAuthInstance().then(function (res) {
+      $rootScope.isLogin = res.instance.isSignedIn.get();
+    });
+  });
+})
+
 app.factory('globalService', ['$http', '$httpParamSerializerJQLike', globalService]);
 app.factory('walletService', walletService);
 
@@ -252,7 +261,7 @@ app.directive('ngResize',ngResizeDrtv);
 app.directive('walletBalanceDrtv', balanceDrtv);
 app.directive('walletDecryptDrtv', walletDecryptDrtv);
 app.directive('cxWalletDecryptDrtv', cxWalletDecryptDrtv);
-app.controller('tabsCtrl', ['$scope', 'globalService', '$translate', '$sce', 'authService', tabsCtrl]);
+app.controller('tabsCtrl', ['$scope', 'globalService', '$translate', '$sce', 'gapiAuth2', tabsCtrl]);
 app.controller('viewCtrl', ['$scope', 'globalService', '$sce', viewCtrl]);
 app.controller('walletGenCtrl', ['$scope', walletGenCtrl]);
 app.controller('bulkGenCtrl', ['$scope', bulkGenCtrl]);

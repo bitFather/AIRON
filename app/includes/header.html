@@ -251,9 +251,14 @@
           </li>
           
           
-          <li class="nav-item help navbar-right">
+          <li class="nav-item help navbar-right" ng-if="!isLogin">
             <google-sign-in width="250" height="50" longtitle="true" theme="light"></google-sign-in>
+          </li>
 
+          <li class="nav-item help navbar-right" ng-if="isLogin">
+            <a class="btn-airon-menu" ng-click="auth.logout()">
+              logout
+            </a>
           </li>
 
           <!-- <li class="nav-item help navbar-right" ng-if="auth.isAuthenticated()">

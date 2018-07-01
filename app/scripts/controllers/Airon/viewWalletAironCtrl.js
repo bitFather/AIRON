@@ -1,16 +1,6 @@
 'use strict';
 var viewWalletAironCtrl = function ($rootScope, $scope, gapiAuth2) {
 
-    $scope.isLogin = false;
-
-    $rootScope.$on('google:oauth2:signed-in', function (e, val) {
-        gapiAuth2.getAuthInstance().then(function (res) {
-            $scope.isLogin = res.instance.isSignedIn.get();
-
-            console.log($scope.isLogin);
-        });
-    });
-
     $scope.ajaxReq = ajaxReq;
 
     $scope.backStage = function () {
