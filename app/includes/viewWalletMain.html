@@ -3,11 +3,11 @@
         <article class="row block">
             <section class="accordion">
                 <nav class="nav-bar">
-                    <div class="btn-airon btn-circle btn-shadown" style="margin-top: 14px" ng-click="dropdownWalletMenu = !dropdownWalletMenu">
+                    <div class="btn-airon btn-circle btn-shadown" style="margin-top: 14px" ng-click="showAddMenu()">
                         <i class="material-icons left">add</i> Create
                     </div>
 
-                    <div class="dropdown-back" ng-show="dropdownWalletMenu || dropdownOptionsMenu" ng-click="dropdownWalletMenu = false; dropdownOptionsMenu = false"></div>
+                    <div class="dropdown-back" ng-show="dropdownWalletMenu || dropdownOptionsMenu" ng-click="hideMenu()"></div>
 
                     <div class="airon-dropdown">
                         <div class="dropdown-menu dropdown-menu-left airon-dropdown-block" ng-show="dropdownWalletMenu">

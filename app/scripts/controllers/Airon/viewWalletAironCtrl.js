@@ -11,7 +11,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope) {
 
     $scope.selectWallet = null;
 
-    $scope.goEx = function() {
+    $scope.goEx = function () {
         if ($scope.selectWallet !== null) {
             window.location = "https://etherscan.io/address/" + $scope.selectWallet.addres;
         }
@@ -194,10 +194,11 @@ var viewWalletAironCtrl = function ($rootScope, $scope) {
     }
     // end
 
+
     $scope.txState = 0;
 
     $scope.toggleWallet = function (wallet) {
-        wallet.hide = !wallet.hide;   
+        wallet.hide = !wallet.hide;
     };
 
     $scope.toggleStar = function (c) {
@@ -240,6 +241,14 @@ var viewWalletAironCtrl = function ($rootScope, $scope) {
 
     $scope.Validator = Validator;
 
+    $scope.isExistAddress = function (address) {
+        return false;
+    }
+
+    $scope.isExistName = function (name) {
+        return false;
+    }
+
     $scope.addWallet = (name, address) => {
         if (!$scope.Validator.isValidAddress(address) || $scope.isExistAddress(address)) {
             $scope.notifier.danger(globalFuncs.errorMsgs[45])
@@ -249,6 +258,21 @@ var viewWalletAironCtrl = function ($rootScope, $scope) {
             $scope.notifier.danger(globalFuncs.errorMsgs[46])
             return
         }
+
+        $scope.wallets.push({
+            name: name,
+            filename: "test.airon-wallet",
+            addres: address,
+            eth: 0,
+            star: false,
+            select: false,
+            id: 0,
+            tokens: [],
+            hide: false
+        });
+
+        $scope.dropdownWalletMenu = false;
+        $scope.addWalletModal.close();
 
         // ajaxReq.getAddressTokenBalance(address, data => {
         //     const tokenList = data.tokensInfo.map(x => {
@@ -278,7 +302,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope) {
         $scope.newWalletAddress = '';
     }
 
-    $scope.renameWallet = function() {
+    $scope.renameWallet = function () {
         if ($scope.selectWallet !== null) {
             $scope.selectWallet.name = $scope.rename.newWalletName;
 
@@ -287,14 +311,22 @@ var viewWalletAironCtrl = function ($rootScope, $scope) {
         }
     }
 
-    $scope.showOption = function() {
+    $scope.showOption = function () {
         $scope.dropdownOptionsMenu = true;
+    }
+    $scope.showAddMenu = function () {
+        $scope.dropdownWalletMenu = true;
+    }
+    $scope.hideMenu = function () {
+        $scope.dropdownOptionsMenu = false;
+        $scope.dropdownWalletMenu = false;
     }
 
     $scope.dropdownOptionsMenu = false;
+    $scope.dropdownWalletMenu = false;
 
 
-    $scope.delWallet = function() {
+    $scope.delWallet = function () {
         if ($scope.selectWallet !== null) {
             $scope.wallets.forEach(function (item, i) {
                 $scope.wallets.splice(i, 1);
