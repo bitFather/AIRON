@@ -1,8 +1,10 @@
 'use strict';
 var callbackCtrl = function (authService) {
-    authService.handleAuthentication();
+    // authService.handleAuthentication();
 
-    window.location = '/'
+    // debugger;
+
+    // window.location = '/'
 }
 
 module.exports = callbackCtrl;

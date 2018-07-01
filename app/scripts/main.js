@@ -9,10 +9,11 @@ var angularSanitize          = require('angular-sanitize');
 var angularAnimate           = require('angular-animate');
 var angularRouter = require('@uirouter/angularjs/release/angular-ui-router');
 
-var Auth0 = require('auth0-js');
-var angularAuth0 = require('angular-auth0');
-var angularLock = require('angular-lock');
-var angularJwt = require('angular-jwt');
+// var Auth0 = require('auth0-js');
+// var angularAuth0 = require('angular-auth0');
+// var angularLock = require('angular-lock');
+// var angularJwt = require('angular-jwt');
+var angularOAuth2 = require('angular-google-oauth2');
 
 var bip39                    = require('bip39');
 var HDKey                    = require('hdkey');
@@ -128,10 +129,13 @@ var decryptWalletAironCtrl    = require('./controllers/Airon/decryptWalletAironC
 var loginAironCtrl = require('./controllers/Airon/loginAironCtrl');
 var callbackCtrl = require('./controllers/Airon/callbackCtrl');
 
-var app = angular.module('mewApp', ['pascalprecht.translate', 'ngSanitize', 'ngAnimate', 'ui.router', 'auth0.auth0']);
+var app = angular.module('mewApp', ['googleOAuth2', 'pascalprecht.translate', 'ngSanitize', 'ngAnimate', 'ui.router']);
 app.config(['$compileProvider', function($compileProvider) {
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(|blob|https|mailto):/);
 }]);
+app.config(function (gapiAuth2CredentialsProvider) {
+  gapiAuth2CredentialsProvider.client_id = '1032421929628-0coe3od5hl8699s9klm64htda1nk1b0f.apps.googleusercontent.com';
+});
 app.config(['$translateProvider', function($translateProvider) {
   $translateProvider.useMissingTranslationHandlerLog();
   new translate($translateProvider);
@@ -141,16 +145,16 @@ app.config(['$animateProvider', function($animateProvider) {
 }]);
 
 // AIRON provader
-app.config(['angularAuth0Provider', function (angularAuth0Provider) {
-  angularAuth0Provider.init({
-    clientID: 'siGcQsetCMTcjyjOoBtLPPRko2IeRZwK',
-    domain: 'farwydi.eu.auth0.com',
-    responseType: 'token id_token',
-    audience: 'https://farwydi.eu.auth0.com/userinfo',
-    redirectUri: 'http://localhost:3000/callback',
-    scope: 'openid'
-  });
-}]);
+// app.config(['angularAuth0Provider', function (angularAuth0Provider) {
+//   angularAuth0Provider.init({
+//     clientID: 'siGcQsetCMTcjyjOoBtLPPRko2IeRZwK',
+//     domain: 'farwydi.eu.auth0.com',
+//     responseType: 'token id_token',
+//     audience: 'https://farwydi.eu.auth0.com/userinfo',
+//     redirectUri: 'http://localhost:3000/callback',
+//     scope: 'openid'
+//   });
+// }]);
 app.config(['$stateProvider', function ($stateProvider) {
   $stateProvider
     .state('wallet', {
@@ -188,46 +192,46 @@ app.factory('walletService', walletService);
 // AIRON directive
 app.directive('walletLoadedAiron', walletLoadedAironDrtv);
 
-app.service('authService', function ($state, angularAuth0, $timeout) {
+app.service('authService', function ($state, $timeout) {
 
   function login() {
-    angularAuth0.authorize();
+    // angularAuth0.authorize();
   }
 
   function handleAuthentication() {
-    angularAuth0.parseHash(function (err, authResult) {
-      if (authResult && authResult.accessToken && authResult.idToken) {
-        setSession(authResult);
-        $state.go('home');
-      } else if (err) {
-        $timeout(function () {
-          $state.go('home');
-        });
-        console.log(err);
-      }
-    });
+    // angularAuth0.parseHash(function (err, authResult) {
+    //   if (authResult && authResult.accessToken && authResult.idToken) {
+    //     setSession(authResult);
+    //     $state.go('home');
+    //   } else if (err) {
+    //     $timeout(function () {
+    //       $state.go('home');
+    //     });
+    //     console.log(err);
+    //   }
+    // });
   }
 
   function setSession(authResult) {
-    // Set the time that the Access Token will expire at
-    let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-    localStorage.setItem('access_token', authResult.accessToken);
-    localStorage.setItem('id_token', authResult.idToken);
-    localStorage.setItem('expires_at', expiresAt);
+    // // Set the time that the Access Token will expire at
+    // let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+    // localStorage.setItem('access_token', authResult.accessToken);
+    // localStorage.setItem('id_token', authResult.idToken);
+    // localStorage.setItem('expires_at', expiresAt);
   }
 
   function logout() {
-    // Remove tokens and expiry time from localStorage
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('id_token');
-    localStorage.removeItem('expires_at');
+    // // Remove tokens and expiry time from localStorage
+    // localStorage.removeItem('access_token');
+    // localStorage.removeItem('id_token');
+    // localStorage.removeItem('expires_at');
   }
 
   function isAuthenticated() {
-    // Check whether the current time is past the 
-    // Access Token's expiry time
-    let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
-    return new Date().getTime() < expiresAt;
+    // // Check whether the current time is past the 
+    // // Access Token's expiry time
+    // let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
+    // return new Date().getTime() < expiresAt;
   }
 
   return {
@@ -236,7 +240,7 @@ app.service('authService', function ($state, angularAuth0, $timeout) {
     logout: logout,
     isAuthenticated: isAuthenticated
   }
-}, '$state', 'angularAuth0', '$timeout');
+}, '$state', '$timeout');
 
 app.directive('blockieAddress', blockiesDrtv);
 app.directive('addressField', ['$compile', addressFieldDrtv]);

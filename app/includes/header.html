@@ -45,6 +45,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@Airon.io">
   <meta name="twitter:creator" content="@Airon.io">
+  <script src="https://apis.google.com/js/platform.js"></script>
   <script type="application/ld+json">
 {
 "@context": "http://schema.org",
@@ -249,8 +250,13 @@
             </a>
           </li>
           
+          
+          <li class="nav-item help navbar-right">
+            <google-sign-in width="250" height="50" longtitle="true" theme="light"></google-sign-in>
 
-          <li class="nav-item help navbar-right" ng-if="auth.isAuthenticated()">
+          </li>
+
+          <!-- <li class="nav-item help navbar-right" ng-if="auth.isAuthenticated()">
             <a class="btn-airon-menu" ng-click="auth.logout()">    
                 Logout <i class="material-icons">exit_to_app</i>
             </a>
@@ -260,7 +266,7 @@
             <a class="btn-airon-menu" ng-click="auth.login()">
               Login
             </a>
-          </li>
+          </li> -->
 
           <!--
           <li class="nav-item help">
