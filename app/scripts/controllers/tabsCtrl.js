@@ -2,6 +2,11 @@
 var tabsCtrl = function ($scope, globalService, $translate, $sce, gapiAuth2) {
     $scope.auth = gapiAuth2;
 
+    // $scope.authorize = function () {
+    //     debugger;
+    //     GAPI.init();
+    // }
+
     $scope.mobileMenuIsOpen = false;
     $scope.gService = globalService
     $scope.gService.currentTab = 1

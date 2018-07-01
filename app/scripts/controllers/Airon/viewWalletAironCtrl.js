@@ -1,10 +1,20 @@
 'use strict';
-var viewWalletAironCtrl = function ($rootScope, $scope, gapiAuth2) {
-
+var viewWalletAironCtrl = function ($rootScope, $scope) {
     $scope.ajaxReq = ajaxReq;
+
+    // debugger;
+    // $scope.list = Drive.listFiles();
 
     $scope.backStage = function () {
         $scope.txState = $scope.txState - 1;
+    }
+
+    $scope.selectWallet = null;
+
+    $scope.goEx = function() {
+        if ($scope.selectWallet !== null) {
+            window.location = "https://etherscan.io/address/" + $scope.selectWallet.addres;
+        }
     }
 
     $scope.walletType = 'pasteprivkey';
@@ -167,7 +177,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, gapiAuth2) {
     $scope.txState = 0;
 
     $scope.toggleWallet = function (wallet) {
-        wallet.hide = !wallet.hide;
+        wallet.hide = !wallet.hide;   
     };
 
     $scope.toggleStar = function (c) {
@@ -193,16 +203,20 @@ var viewWalletAironCtrl = function ($rootScope, $scope, gapiAuth2) {
             });
         });
     }
-    $scope.selectMoney = function (c) {
+    $scope.selectMoney = function (c, s) {
         $scope.selectId = c.id;
         $scope.deselectCascad();
         c.select = true;
+
+        $scope.selectWallet = s;
+        $scope.rename.newWalletName = s.name;
     };
 
     $scope.dropdownWalletMenu = false;
 
     $scope.showDecryptModal = new Modal(document.getElementById('decryptModal'));
     $scope.addWalletModal = new Modal(document.getElementById('addWallet'));
+    $scope.renameWalletModal = new Modal(document.getElementById('renameWallet'));
 
     $scope.Validator = Validator;
 
@@ -244,11 +258,41 @@ var viewWalletAironCtrl = function ($rootScope, $scope, gapiAuth2) {
         $scope.newWalletAddress = '';
     }
 
+    $scope.renameWallet = function() {
+        if ($scope.selectWallet !== null) {
+            $scope.selectWallet.name = $scope.rename.newWalletName;
+
+            $scope.dropdownOptionsMenu = false;
+            $scope.renameWalletModal.close();
+        }
+    }
+
+    $scope.showOption = function() {
+        $scope.dropdownOptionsMenu = true;
+    }
+
+    $scope.dropdownOptionsMenu = false;
+
+
+    $scope.delWallet = function() {
+        if ($scope.selectWallet !== null) {
+            $scope.wallets.forEach(function (item, i) {
+                $scope.wallets.splice(i, 1);
+            });
+
+            $scope.dropdownOptionsMenu = false;
+        }
+    }
+
+    $scope.rename = {
+        newWalletName: ''
+    };
+
     $scope.wallets = [
         {
             name: "Gold Wallet",
             filename: "test.airon-wallet",
-            addres: "0xasfsdglsngskjdgnsdkglasd3wwe",
+            addres: "0x8d12A197cB00D4747a1fe03395095ce2A5CC6819",
             eth: 8.88888888,
             star: true,
             select: false,
@@ -274,7 +318,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, gapiAuth2) {
         {
             name: "Prem Wallet",
             filename: "test.airon-wallet",
-            addres: "0xasdfsdgsdfskjdgnsdkglasd3xwe",
+            addres: "0x5dcaa1d8d8132e5bf9cf12deccfc0cecf26a780d",
             eth: 8.88888888,
             star: false,
             select: false,

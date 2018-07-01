@@ -47,6 +47,10 @@
   <meta name="twitter:site" content="@Airon.io">
   <meta name="twitter:creator" content="@Airon.io">
   <script src="https://apis.google.com/js/platform.js"></script>
+  <!-- <script src="https://apis.google.com/js/client.js"></script> -->
+
+  <!-- <script src="/bower_components/ngGAPI/gapi.js"></script> -->
+
   <script type="application/ld+json">
 {
 "@context": "http://schema.org",
@@ -250,6 +254,8 @@
           
           <li class="nav-item help navbar-right" ng-if="!isLogin">
             <google-sign-in width="250" height="50" longtitle="true" theme="light"></google-sign-in>
+          <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+          <!-- <button type="button" class="btn btn-primary" ng-click="authorize()">Connect to GAPI</button> -->
           </li>
 
           <li class="nav-item help navbar-right" ng-if="isLogin">

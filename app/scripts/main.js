@@ -14,6 +14,7 @@ var angularRouter = require('@uirouter/angularjs/release/angular-ui-router');
 // var angularLock = require('angular-lock');
 // var angularJwt = require('angular-jwt');
 var angularOAuth2 = require('angular-google-oauth2');
+// var angularGApi = require('./staticJS/gapi');
 
 var bip39                    = require('bip39');
 var HDKey                    = require('hdkey');
@@ -133,10 +134,6 @@ var app = angular.module('mewApp', ['googleOAuth2', 'pascalprecht.translate', 'n
 app.config(['$compileProvider', function($compileProvider) {
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(|blob|https|mailto):/);
 }]);
-app.config(function (gapiAuth2CredentialsProvider) {
-  gapiAuth2CredentialsProvider.client_id = '1032421929628-0coe3od5hl8699s9klm64htda1nk1b0f.apps.googleusercontent.com';
-  gapiAuth2CredentialsProvider.redirect_uri = 'callback';
-});
 app.config(['$translateProvider', function($translateProvider) {
   $translateProvider.useMissingTranslationHandlerLog();
   new translate($translateProvider);
@@ -146,6 +143,9 @@ app.config(['$animateProvider', function($animateProvider) {
 }]);
 
 // AIRON provader
+app.config(function (gapiAuth2CredentialsProvider) {
+  gapiAuth2CredentialsProvider.client_id = '1032421929628-0coe3od5hl8699s9klm64htda1nk1b0f.apps.googleusercontent.com';
+});
 // app.config(['angularAuth0Provider', function (angularAuth0Provider) {
 //   angularAuth0Provider.init({
 //     clientID: 'siGcQsetCMTcjyjOoBtLPPRko2IeRZwK',
@@ -187,6 +187,18 @@ app.config(['$locationProvider', function ($locationProvider) {
   $locationProvider.html5Mode(true);
 }]);
 
+// app.value('GoogleApp', {
+//   apiKey: '61pkQLB2WDbEjRkoAQidEjAo',
+//   clientId: '1032421929628-0coe3od5hl8699s9klm64htda1nk1b0f.apps.googleusercontent.com',
+//   scopes: [
+//     // whatever scopes you need for your app, for example:
+//     'https://www.googleapis.com/auth/drive',
+//     'https://www.googleapis.com/auth/userinfo.profile'
+//     // ...
+//   ],
+//   prompt: 'none'
+// })
+
 app.run(function ($rootScope, gapiAuth2) {
   $rootScope.isLogin = false;
   $rootScope.$on('google:oauth2:signed-in', function (e, val) {
@@ -195,6 +207,8 @@ app.run(function ($rootScope, gapiAuth2) {
     });
   });
 })
+
+
 
 app.factory('globalService', ['$http', '$httpParamSerializerJQLike', globalService]);
 app.factory('walletService', walletService);
@@ -290,7 +304,7 @@ if (IS_CX) {
 }
 
 // AIRON controller
-app.controller('viewWalletAironCtrl', ['$rootScope', '$scope', 'gapiAuth2', viewWalletAironCtrl]);
+app.controller('viewWalletAironCtrl', ['$rootScope', '$scope', viewWalletAironCtrl]);
 app.controller('decryptWalletAironCtrl', ['$scope', '$sce', 'walletService', decryptWalletAironCtrl]);
 app.controller('loginAironCtrl', ['$scope', loginAironCtrl]);
 app.controller('callbackCtrl', ['authService', callbackCtrl]);
