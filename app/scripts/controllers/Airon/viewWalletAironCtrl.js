@@ -174,7 +174,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope) {
     }
 
     $scope.sendTx = function () {
-        $scope.sendTxModal.close();
+        $scope.showDecryptModal.close();
         uiFuncs.sendTx($scope.signedTx, function (resp) {
             if (!resp.isError) {
                 var checkTxLink = "https://www.airon.io?txHash=" + resp.data + "#check-tx-status";
