@@ -1,22 +1,23 @@
 'use strict';
-var viewWalletAironCtrl = function ($scope, authService) {
+var viewWalletAironCtrl = function ($rootScope, $scope, gapiAuth2) {
 
-    $scope.auth = authService;
+    $scope.isLogin = false;
+
+    $rootScope.$on('google:oauth2:signed-in', function (e, val) {
+        gapiAuth2.getAuthInstance().then(function (res) {
+            $scope.isLogin = res.instance.isSignedIn.get();
+
+            console.log($scope.isLogin);
+        });
+    });
+
     $scope.ajaxReq = ajaxReq;
-    
+
     $scope.backStage = function () {
         $scope.txState = $scope.txState - 1;
     }
 
     $scope.walletType = 'pasteprivkey';
-    // $scope.wallet = {
-    //     getAddressString: function () {
-    //         return $scope.wallets[$scope.selectId].addres;
-    //     },
-    //     getPath: function () {
-    //         return '';
-    //     }
-    // };
 
     // Decript wallet func
     // $scope.showPDecrypt = false;

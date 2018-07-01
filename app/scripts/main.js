@@ -135,6 +135,7 @@ app.config(['$compileProvider', function($compileProvider) {
 }]);
 app.config(function (gapiAuth2CredentialsProvider) {
   gapiAuth2CredentialsProvider.client_id = '1032421929628-0coe3od5hl8699s9klm64htda1nk1b0f.apps.googleusercontent.com';
+  gapiAuth2CredentialsProvider.redirect_uri = 'callback';
 });
 app.config(['$translateProvider', function($translateProvider) {
   $translateProvider.useMissingTranslationHandlerLog();
@@ -280,7 +281,7 @@ if (IS_CX) {
 }
 
 // AIRON controller
-app.controller('viewWalletAironCtrl', ['$scope', 'authService', viewWalletAironCtrl]);
+app.controller('viewWalletAironCtrl', ['$rootScope', '$scope', 'gapiAuth2', viewWalletAironCtrl]);
 app.controller('decryptWalletAironCtrl', ['$scope', '$sce', 'walletService', decryptWalletAironCtrl]);
 app.controller('loginAironCtrl', ['$scope', loginAironCtrl]);
 app.controller('callbackCtrl', ['authService', callbackCtrl]);
