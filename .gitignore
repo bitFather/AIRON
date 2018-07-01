@@ -15,3 +15,4 @@ _ens/
 cert.pem
 key.pem
 /.idea
+app/includes/generateWallet 2.tpl
