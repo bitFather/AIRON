@@ -1,6 +1,16 @@
 'use strict'
-var tabsCtrl = function ($scope, globalService, $translate, $sce, gapiAuth2) {
-    $scope.auth = gapiAuth2;
+// var tabsCtrl = function ($scope, globalService, $translate, $sce, gapiAuth2) {
+var tabsCtrl = function ($rootScope, $scope, globalService, $translate, $sce, ) {
+    // $scope.auth = gapiAuth2;
+    $scope.auth = $rootScope.isLogin;
+
+    // $scope.login = function() {
+
+    // }
+
+    // $scope.logout = function () {
+
+    // }
 
     // $scope.authorize = function () {
     //     debugger;

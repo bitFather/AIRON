@@ -2,150 +2,151 @@
 require('./localStoragePolyfill');
 var IS_CX = false;
 if (typeof chrome != 'undefined') IS_CX = chrome.windows === undefined ? false : true;
-var angular                  = require('angular');
-var angularTranslate         = require('angular-translate');
+var angular = require('angular');
+var angularTranslate = require('angular-translate');
 var angularTranslateErrorLog = require('angular-translate-handler-log');
-var angularSanitize          = require('angular-sanitize');
-var angularAnimate           = require('angular-animate');
+var angularSanitize = require('angular-sanitize');
+var angularAnimate = require('angular-animate');
 var angularRouter = require('@uirouter/angularjs/release/angular-ui-router');
 
 // var Auth0 = require('auth0-js');
 // var angularAuth0 = require('angular-auth0');
 // var angularLock = require('angular-lock');
 // var angularJwt = require('angular-jwt');
-var angularOAuth2 = require('angular-google-oauth2');
+// var angularOAuth2 = require('angular-google-oauth2');
 // var angularGApi = require('./staticJS/gapi');
 
-var bip39                    = require('bip39');
-var HDKey                    = require('hdkey');
-window.hd                    = { bip39: bip39, HDKey: HDKey };
-var BigNumber                = require('bignumber.js');
-var Web3                     = require('web3');
-window.BigNumber             = BigNumber;
-window.Web3                  = Web3;
-var marked                   = require('./staticJS/customMarked');
-window.marked                = marked;
-var ethUtil                  = require('ethereumjs-util');
-ethUtil.crypto               = require('crypto');
-ethUtil.Tx                   = require('ethereumjs-tx');
-ethUtil.scrypt               = require('scryptsy');
-ethUtil.uuid                 = require('uuid');
-ethUtil.solidityCoder        = require('./solidity/coder');
-ethUtil.solidityUtils        = require('./solidity/utils');
-ethUtil.WAValidator          = require('wallet-address-validator');
-window.ethUtil               = ethUtil;
-var format                   = require('string-format');
-window.format                = format;
-var browser                  = require('detect-browser');
-window.browser               = browser;
-var Wallet                   = require('./myetherwallet');
-window.Wallet                = Wallet;
-var Web3Wallet               = require('./web3Wallet');
-window.Web3Wallet            = Web3Wallet;
-var Token                    = require('./tokenlib');
-window.Token                 = Token;
-var globalFuncs              = require('./globalFuncs');
-window.globalFuncs           = globalFuncs;
-var uiFuncs                  = require('./uiFuncs');
-window.uiFuncs               = uiFuncs;
-var etherUnits               = require('./etherUnits');
-window.etherUnits            = etherUnits;
-var ajaxReq                  = require('./ajaxReq');
-window.ajaxReq               = ajaxReq;
-var nodes                    = require('./nodes');
-window.nodes                 = nodes;
-var ethFuncs                 = require('./ethFuncs');
-window.ethFuncs              = ethFuncs;
-var Validator                = require('./validator');
-window.Validator             = Validator;
-var bity                     = require('./bity');
-window.bity                  = bity;
-var ens                      = require('./ens');
-window.ens                   = ens;
-var domainsale               = require('./domainsale');
-window.domainsale            = domainsale;
-var translate                = require('./translations/translate.js');
+var bip39 = require('bip39');
+var HDKey = require('hdkey');
+window.hd = { bip39: bip39, HDKey: HDKey };
+var BigNumber = require('bignumber.js');
+var Web3 = require('web3');
+window.BigNumber = BigNumber;
+window.Web3 = Web3;
+var marked = require('./staticJS/customMarked');
+window.marked = marked;
+var ethUtil = require('ethereumjs-util');
+ethUtil.crypto = require('crypto');
+ethUtil.Tx = require('ethereumjs-tx');
+ethUtil.scrypt = require('scryptsy');
+ethUtil.uuid = require('uuid');
+ethUtil.solidityCoder = require('./solidity/coder');
+ethUtil.solidityUtils = require('./solidity/utils');
+ethUtil.WAValidator = require('wallet-address-validator');
+window.ethUtil = ethUtil;
+var format = require('string-format');
+window.format = format;
+var browser = require('detect-browser');
+window.browser = browser;
+var Wallet = require('./myetherwallet');
+window.Wallet = Wallet;
+var Web3Wallet = require('./web3Wallet');
+window.Web3Wallet = Web3Wallet;
+var Token = require('./tokenlib');
+window.Token = Token;
+var globalFuncs = require('./globalFuncs');
+window.globalFuncs = globalFuncs;
+var uiFuncs = require('./uiFuncs');
+window.uiFuncs = uiFuncs;
+var etherUnits = require('./etherUnits');
+window.etherUnits = etherUnits;
+var ajaxReq = require('./ajaxReq');
+window.ajaxReq = ajaxReq;
+var nodes = require('./nodes');
+window.nodes = nodes;
+var ethFuncs = require('./ethFuncs');
+window.ethFuncs = ethFuncs;
+var Validator = require('./validator');
+window.Validator = Validator;
+var bity = require('./bity');
+window.bity = bity;
+var ens = require('./ens');
+window.ens = ens;
+var domainsale = require('./domainsale');
+window.domainsale = domainsale;
+var translate = require('./translations/translate.js');
 if (IS_CX) {
-  var cxFuncs                = require('./cxFuncs');
-  window.cxFuncs             = cxFuncs;
+  var cxFuncs = require('./cxFuncs');
+  window.cxFuncs = cxFuncs;
 } else {
-    var u2f                  = require('./staticJS/u2f-api');
-    var ledger3              = require('./staticJS/ledger3');
-    var ledgerEth            = require('./staticJS/ledger-eth');
-    var trezorConnect        = require('./staticJS/trezorConnect');
-    var digitalBitboxUsb     = require('./staticJS/digitalBitboxUsb');
-    var digitalBitboxEth     = require('./staticJS/digitalBitboxEth');
-    window.u2f               = u2f;
-    window.Ledger3           = ledger3;
-    window.ledgerEth         = ledgerEth;
-    window.TrezorConnect     = trezorConnect.TrezorConnect;
-    window.DigitalBitboxUsb  = digitalBitboxUsb;
-    window.DigitalBitboxEth  = digitalBitboxEth;
+  var u2f = require('./staticJS/u2f-api');
+  var ledger3 = require('./staticJS/ledger3');
+  var ledgerEth = require('./staticJS/ledger-eth');
+  var trezorConnect = require('./staticJS/trezorConnect');
+  var digitalBitboxUsb = require('./staticJS/digitalBitboxUsb');
+  var digitalBitboxEth = require('./staticJS/digitalBitboxEth');
+  window.u2f = u2f;
+  window.Ledger3 = ledger3;
+  window.ledgerEth = ledgerEth;
+  window.TrezorConnect = trezorConnect.TrezorConnect;
+  window.DigitalBitboxUsb = digitalBitboxUsb;
+  window.DigitalBitboxEth = digitalBitboxEth;
 }
-var CustomGasMessages        = require('./customGas.js')
-window.CustomGasMessages     = CustomGasMessages;
-var tabsCtrl                 = require('./controllers/tabsCtrl');
-var viewCtrl                 = require('./controllers/viewCtrl');
-var walletGenCtrl            = require('./controllers/walletGenCtrl');
-var onboardingCtrl            = require('./controllers/onboardingCtrl');
-var bulkGenCtrl              = require('./controllers/bulkGenCtrl');
-var decryptWalletCtrl        = require('./controllers/decryptWalletCtrl');
-var viewWalletCtrl           = require('./controllers/viewWalletCtrl');
-var txStatusCtrl              = require('./controllers/txStatusCtrl');
-var sendTxCtrl               = require('./controllers/sendTxCtrl');
-var swapCtrl                 = require('./controllers/swapCtrl');
-var signMsgCtrl              = require('./controllers/signMsgCtrl');
-var contractsCtrl            = require('./controllers/contractsCtrl');
-var ensCtrl                  = require('./controllers/ensCtrl');
-var domainsaleCtrl           = require('./controllers/domainsaleCtrl');
-var footerCtrl               = require('./controllers/footerCtrl');
-var offlineTxCtrl            = require('./controllers/offlineTxCtrl');
-var walletBalanceCtrl        = require('./controllers/walletBalanceCtrl');
-var helpersCtrl              = require('./controllers/helpersCtrl');
-var tokenCreationCtrl        = require('./controllers/tokenCreation')
-var globalService            = require('./services/globalService');
-var walletService            = require('./services/walletService');
-var blockiesDrtv             = require('./directives/blockiesDrtv');
-var addressFieldDrtv         = require('./directives/addressFieldDrtv');
-var QRCodeDrtv               = require('./directives/QRCodeDrtv');
-var walletDecryptDrtv        = require('./directives/walletDecryptDrtv');
-var cxWalletDecryptDrtv      = require('./directives/cxWalletDecryptDrtv');
-var fileReaderDrtv           = require('./directives/fileReaderDrtv');
-var ngClickOutDrtv           = require('./directives/ngClickOutDrtv');
-var ngResizeDrtv           = require('./directives/ngResizeDrtv');
-var balanceDrtv              = require('./directives/balanceDrtv');
+var CustomGasMessages = require('./customGas.js')
+window.CustomGasMessages = CustomGasMessages;
+var tabsCtrl = require('./controllers/tabsCtrl');
+var viewCtrl = require('./controllers/viewCtrl');
+var walletGenCtrl = require('./controllers/walletGenCtrl');
+var onboardingCtrl = require('./controllers/onboardingCtrl');
+var bulkGenCtrl = require('./controllers/bulkGenCtrl');
+var decryptWalletCtrl = require('./controllers/decryptWalletCtrl');
+var viewWalletCtrl = require('./controllers/viewWalletCtrl');
+var txStatusCtrl = require('./controllers/txStatusCtrl');
+var sendTxCtrl = require('./controllers/sendTxCtrl');
+var swapCtrl = require('./controllers/swapCtrl');
+var signMsgCtrl = require('./controllers/signMsgCtrl');
+var contractsCtrl = require('./controllers/contractsCtrl');
+var ensCtrl = require('./controllers/ensCtrl');
+var domainsaleCtrl = require('./controllers/domainsaleCtrl');
+var footerCtrl = require('./controllers/footerCtrl');
+var offlineTxCtrl = require('./controllers/offlineTxCtrl');
+var walletBalanceCtrl = require('./controllers/walletBalanceCtrl');
+var helpersCtrl = require('./controllers/helpersCtrl');
+var tokenCreationCtrl = require('./controllers/tokenCreation')
+var globalService = require('./services/globalService');
+var walletService = require('./services/walletService');
+var blockiesDrtv = require('./directives/blockiesDrtv');
+var addressFieldDrtv = require('./directives/addressFieldDrtv');
+var QRCodeDrtv = require('./directives/QRCodeDrtv');
+var walletDecryptDrtv = require('./directives/walletDecryptDrtv');
+var cxWalletDecryptDrtv = require('./directives/cxWalletDecryptDrtv');
+var fileReaderDrtv = require('./directives/fileReaderDrtv');
+var ngClickOutDrtv = require('./directives/ngClickOutDrtv');
+var ngResizeDrtv = require('./directives/ngResizeDrtv');
+var balanceDrtv = require('./directives/balanceDrtv');
 
 if (IS_CX) {
-  var addWalletCtrl          = require('./controllers/CX/addWalletCtrl');
-  var cxDecryptWalletCtrl    = require('./controllers/CX/cxDecryptWalletCtrl');
-  var myWalletsCtrl          = require('./controllers/CX/myWalletsCtrl');
-  var mainPopCtrl            = require('./controllers/CX/mainPopCtrl');
-  var quickSendCtrl          = require('./controllers/CX/quickSendCtrl');
+  var addWalletCtrl = require('./controllers/CX/addWalletCtrl');
+  var cxDecryptWalletCtrl = require('./controllers/CX/cxDecryptWalletCtrl');
+  var myWalletsCtrl = require('./controllers/CX/myWalletsCtrl');
+  var mainPopCtrl = require('./controllers/CX/mainPopCtrl');
+  var quickSendCtrl = require('./controllers/CX/quickSendCtrl');
 }
 
 // AIRON Imports
-var walletLoadedAironDrtv    = require('./directives/Airon/walletLoadedAironDrtv');
-var viewWalletAironCtrl    = require('./controllers/Airon/viewWalletAironCtrl');
-var decryptWalletAironCtrl    = require('./controllers/Airon/decryptWalletAironCtrl');
+var walletLoadedAironDrtv = require('./directives/Airon/walletLoadedAironDrtv');
+var viewWalletAironCtrl = require('./controllers/Airon/viewWalletAironCtrl');
+var decryptWalletAironCtrl = require('./controllers/Airon/decryptWalletAironCtrl');
 var loginAironCtrl = require('./controllers/Airon/loginAironCtrl');
 var callbackCtrl = require('./controllers/Airon/callbackCtrl');
 
-var app = angular.module('mewApp', ['googleOAuth2', 'pascalprecht.translate', 'ngSanitize', 'ngAnimate', 'ui.router']);
-app.config(['$compileProvider', function($compileProvider) {
+// var app = angular.module('mewApp', ['googleOAuth2', 'pascalprecht.translate', 'ngSanitize', 'ngAnimate', 'ui.router']);
+var app = angular.module('mewApp', ['pascalprecht.translate', 'ngSanitize', 'ngAnimate', 'ui.router']);
+app.config(['$compileProvider', function ($compileProvider) {
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(|blob|https|mailto):/);
 }]);
-app.config(['$translateProvider', function($translateProvider) {
+app.config(['$translateProvider', function ($translateProvider) {
   $translateProvider.useMissingTranslationHandlerLog();
   new translate($translateProvider);
 }]);
-app.config(['$animateProvider', function($animateProvider) {
-    $animateProvider.classNameFilter(/^no-animate$/);
+app.config(['$animateProvider', function ($animateProvider) {
+  $animateProvider.classNameFilter(/^no-animate$/);
 }]);
 
 // AIRON provader
-app.config(function (gapiAuth2CredentialsProvider) {
-  gapiAuth2CredentialsProvider.client_id = '1032421929628-0coe3od5hl8699s9klm64htda1nk1b0f.apps.googleusercontent.com';
-});
+// app.config(function (gapiAuth2CredentialsProvider) {
+//   gapiAuth2CredentialsProvider.client_id = '1032421929628-0coe3od5hl8699s9klm64htda1nk1b0f.apps.googleusercontent.com';
+// });
 // app.config(['angularAuth0Provider', function (angularAuth0Provider) {
 //   angularAuth0Provider.init({
 //     clientID: 'siGcQsetCMTcjyjOoBtLPPRko2IeRZwK',
@@ -199,13 +200,146 @@ app.config(['$locationProvider', function ($locationProvider) {
 //   prompt: 'none'
 // })
 
-app.run(function ($rootScope, gapiAuth2) {
+app.service('GAPIService', function ($window) {
+  const filename = 'setting.json';
+
+  return {
+    read: function () {
+      return gapi.client.drive.files
+        .list({
+          q: 'name="' + filename + '"',
+          spaces: 'appDataFolder',
+          fields: 'files(id)'
+        })
+        .then(function (response) {
+          // Проверка на наличие файла
+          if (response.result.files && response.result.files.length > 0) {
+            // Возврощает индификатор файла
+            return response.result.files[0].id;
+          }
+
+          // Если файла нет создаём его
+          return gapi.client.drive.files
+            .create({
+              fields: 'id',
+              resource: { name: filename, parents: ['appDataFolder'] }
+            })
+            .then(function (response) {
+              return response.result.id;
+            });
+
+        }).then(function (id) {
+          // Получаем контент по ид
+          return gapi.client.drive.files
+            .get({ fileId: id, alt: 'media' })
+            .then(function (response) {
+              return response.body;
+            });
+        });
+    },
+    save: function (data) {
+      return gapi.client.drive.files
+        .list({
+          q: 'name="' + filename + '"',
+          spaces: 'appDataFolder',
+          fields: 'files(id)'
+        })
+        .then(function (response) {
+          // Проверка на наличие файла
+          if (response.result.files && response.result.files, length > 0) {
+            // Возврощает индификатор файла
+            return response.result.files[0].id;
+          }
+
+          // Если файла нет создаём его
+          return gapi.client.drive.files
+            .create({
+              fields: 'id',
+              resource: { name: file, parents: ['appDataFolder'] }
+            })
+            .then(function (response) {
+              return result.id;
+            });
+
+        }).then(function (id) {
+          // Запись в файл
+          return gapi.client
+            .request({
+              path: '/upload/drive/v3/files/' + id,
+              method: 'PATCH',
+              params: { uploadType: 'media' },
+              body: JSON.stringify(data)
+            });
+        });
+    },
+    signIn: function () {
+      $window.gapi.auth2.getAuthInstance().signIn();
+    },
+    signOut: function () {
+      $window.gapi.auth2.getAuthInstance().signOut();
+    }
+  };
+});
+// app.run(function ($rootScope, gapiAuth2) {
+app.run(function ($rootScope, $window, GAPIService) {
   $rootScope.isLogin = false;
-  $rootScope.$on('google:oauth2:signed-in', function (e, val) {
-    gapiAuth2.getAuthInstance().then(function (res) {
-      $rootScope.isLogin = res.instance.isSignedIn.get();
+
+  var authorizeButton = document.getElementById('authorize-button');
+  var signoutButton = document.getElementById('signout-button');
+
+  $window.gapi.load('client:auth2', () => {
+    var auth2 = gapi.auth2.init({
+      client_id: '1032421929628-0coe3od5hl8699s9klm64htda1nk1b0f.apps.googleusercontent.com',
+      scope: 'https://www.googleapis.com/auth/drive.appdata'
+    }).then(function () {
+
+      authorizeButton.onclick = function(e) {
+        $window.gapi.auth2.getAuthInstance().signIn()
+      };
+
+      signoutButton.onclick = function (e) {
+        $window.gapi.auth2.getAuthInstance().signOut()
+      };
+
+      var updateSate = function (state) {
+        $rootScope.isLogin = state;
+
+        // localStorage.setItem("setting", GAPIService.read());
+      }
+
+      updateSate(gapi.auth2.getAuthInstance().isSignedIn.get());
+
+      $window.gapi.auth2.getAuthInstance().isSignedIn.listen(updateSate);
     });
+
+
+
+    // var firstCheck = true;
+    // auth2.currentUser.listen((user) => {
+    //   if (!user.isSignedIn()) {
+    //     return firstCheck && $rootScope.$broadcast('google:oauth2:signed-in', false), firstCheck = false;
+    //   }
+    //   var profile = user.getBasicProfile();
+    //   if (!profile) return console.error('profile is undefinded');
+
+    //   var userPic = profile.getImageUrl();
+    //   var name = profile.getName();
+    //   var id = profile.getId();
+    //   var email = profile.getEmail();
+    //   $rootScope.$broadcast('google:oauth2:profile', { id, email, name, userPic });
+    // });
   });
+
+  // debugger;
+  // gapi.auth2.getAuthInstance().isSignedIn.listen(function (isSignedIn) {
+  //   debugger;
+  //   $rootScope.isLogin = isSignedIn;
+  // });
+  // $rootScope.$on('google:oauth2:signed-in', function (e, val) {
+  //   gapiAuth2.getAuthInstance().then(function (res) {
+  //     $rootScope.isLogin = res.instance.isSignedIn.get();
+  //   });
+  // });
 })
 
 
@@ -270,12 +404,13 @@ app.directive('blockieAddress', blockiesDrtv);
 app.directive('addressField', ['$compile', addressFieldDrtv]);
 app.directive('qrCode', QRCodeDrtv);
 app.directive('onReadFile', fileReaderDrtv);
-app.directive('ngClickOut',ngClickOutDrtv);
-app.directive('ngResize',ngResizeDrtv);
+app.directive('ngClickOut', ngClickOutDrtv);
+app.directive('ngResize', ngResizeDrtv);
 app.directive('walletBalanceDrtv', balanceDrtv);
 app.directive('walletDecryptDrtv', walletDecryptDrtv);
 app.directive('cxWalletDecryptDrtv', cxWalletDecryptDrtv);
-app.controller('tabsCtrl', ['$scope', 'globalService', '$translate', '$sce', 'gapiAuth2', tabsCtrl]);
+app.controller('tabsCtrl', ['$rootScope', '$scope', 'globalService', '$translate', '$sce', tabsCtrl]);
+// app.controller('tabsCtrl', ['$scope', 'globalService', '$translate', '$sce', 'gapiAuth2', tabsCtrl]);
 app.controller('viewCtrl', ['$scope', 'globalService', '$sce', viewCtrl]);
 app.controller('walletGenCtrl', ['$scope', walletGenCtrl]);
 app.controller('bulkGenCtrl', ['$scope', bulkGenCtrl]);
@@ -297,7 +432,7 @@ app.controller('tokenCreationCtrl', ['$scope', '$sce', 'walletService', tokenCre
 
 if (IS_CX) {
   app.controller('addWalletCtrl', ['$scope', '$sce', addWalletCtrl]);
-  app.controller('myWalletsCtrl', ['$scope', '$sce','walletService', myWalletsCtrl]);
+  app.controller('myWalletsCtrl', ['$scope', '$sce', 'walletService', myWalletsCtrl]);
   app.controller('mainPopCtrl', ['$scope', '$sce', mainPopCtrl]);
   app.controller('quickSendCtrl', ['$scope', '$sce', quickSendCtrl]);
   app.controller('cxDecryptWalletCtrl', ['$scope', '$sce', 'walletService', cxDecryptWalletCtrl]);
