@@ -284,8 +284,8 @@ app.service('GAPIService', function ($window) {
 app.run(function ($rootScope, $window, GAPIService) {
   $rootScope.isLogin = false;
 
-  var authorizeButton = document.getElementById('authorize-button');
-  var signoutButton = document.getElementById('signout-button');
+  // var authorizeButton = document.getElementById('authorize-button');
+  // var signoutButton = document.getElementById('signout-button');
 
   $window.gapi.load('client:auth2', () => {
     var auth2 = gapi.auth2.init({
@@ -293,13 +293,13 @@ app.run(function ($rootScope, $window, GAPIService) {
       scope: 'https://www.googleapis.com/auth/drive.appdata'
     }).then(function () {
 
-      authorizeButton.onclick = function(e) {
-        $window.gapi.auth2.getAuthInstance().signIn()
-      };
+      // authorizeButton.onclick = function(e) {
+      //   $window.gapi.auth2.getAuthInstance().signIn()
+      // };
 
-      signoutButton.onclick = function (e) {
-        $window.gapi.auth2.getAuthInstance().signOut()
-      };
+      // signoutButton.onclick = function (e) {
+      //   $window.gapi.auth2.getAuthInstance().signOut()
+      // };
 
       var updateSate = function (state) {
         $rootScope.isLogin = state;
@@ -409,7 +409,7 @@ app.directive('ngResize', ngResizeDrtv);
 app.directive('walletBalanceDrtv', balanceDrtv);
 app.directive('walletDecryptDrtv', walletDecryptDrtv);
 app.directive('cxWalletDecryptDrtv', cxWalletDecryptDrtv);
-app.controller('tabsCtrl', ['$rootScope', '$scope', 'globalService', '$translate', '$sce', tabsCtrl]);
+app.controller('tabsCtrl', ['$rootScope', '$scope', 'globalService', '$translate', '$sce', 'GAPIService', tabsCtrl]);
 // app.controller('tabsCtrl', ['$scope', 'globalService', '$translate', '$sce', 'gapiAuth2', tabsCtrl]);
 app.controller('viewCtrl', ['$scope', 'globalService', '$sce', viewCtrl]);
 app.controller('walletGenCtrl', ['$scope', walletGenCtrl]);

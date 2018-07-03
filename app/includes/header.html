@@ -262,15 +262,15 @@
             </li>
 
 
-            <li class="nav-item help navbar-right" ng-if="!isLogin">
+            <li class="nav-item help navbar-right" ng-if="!auth.isLogin">
               <!-- <google-sign-in width="250" height="50" longtitle="true" theme="light"></google-sign-in> -->
               <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
               <!-- <button type="button" class="btn btn-primary" ng-click="authorize()">Connect to GAPI</button> -->
-              <button id="authorize-button" class="btn-nav"><span>Authorize</span></button>
+              <button id="authorize-button" class="btn-nav" ng-click="login()"><span>Authorize</span></button>
             </li>
 
-            <li class="nav-item help navbar-right" ng-if="isLogin">
-              <button id="signout-button" class="btn-nav"><span>Sign Out</span></button>
+            <li class="nav-item help navbar-right" ng-if="auth.isLogin">
+              <button id="signout-button" class="btn-nav" ng-click="logout()"><span>Sign Out</span></button>
             </li>
 
             <!-- <li class="nav-item help navbar-right" ng-if="auth.isAuthenticated()">
