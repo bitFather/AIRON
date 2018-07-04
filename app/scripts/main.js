@@ -9,13 +9,6 @@ var angularSanitize = require('angular-sanitize');
 var angularAnimate = require('angular-animate');
 var angularRouter = require('@uirouter/angularjs/release/angular-ui-router');
 
-// var Auth0 = require('auth0-js');
-// var angularAuth0 = require('angular-auth0');
-// var angularLock = require('angular-lock');
-// var angularJwt = require('angular-jwt');
-// var angularOAuth2 = require('angular-google-oauth2');
-// var angularGApi = require('./staticJS/gapi');
-
 var bip39 = require('bip39');
 var HDKey = require('hdkey');
 window.hd = { bip39: bip39, HDKey: HDKey };
@@ -144,19 +137,6 @@ app.config(['$animateProvider', function ($animateProvider) {
 }]);
 
 // AIRON provader
-// app.config(function (gapiAuth2CredentialsProvider) {
-//   gapiAuth2CredentialsProvider.client_id = '1032421929628-0coe3od5hl8699s9klm64htda1nk1b0f.apps.googleusercontent.com';
-// });
-// app.config(['angularAuth0Provider', function (angularAuth0Provider) {
-//   angularAuth0Provider.init({
-//     clientID: 'siGcQsetCMTcjyjOoBtLPPRko2IeRZwK',
-//     domain: 'farwydi.eu.auth0.com',
-//     responseType: 'token id_token',
-//     audience: 'https://farwydi.eu.auth0.com/userinfo',
-//     redirectUri: 'http://localhost:3000/callback',
-//     scope: 'openid'
-//   });
-// }]);
 app.config(['$stateProvider', function ($stateProvider) {
   $stateProvider
     .state('wallet', {
@@ -188,24 +168,12 @@ app.config(['$locationProvider', function ($locationProvider) {
   $locationProvider.html5Mode(true);
 }]);
 
-// app.value('GoogleApp', {
-//   apiKey: '61pkQLB2WDbEjRkoAQidEjAo',
-//   clientId: '1032421929628-0coe3od5hl8699s9klm64htda1nk1b0f.apps.googleusercontent.com',
-//   scopes: [
-//     // whatever scopes you need for your app, for example:
-//     'https://www.googleapis.com/auth/drive',
-//     'https://www.googleapis.com/auth/userinfo.profile'
-//     // ...
-//   ],
-//   prompt: 'none'
-// })
-
-app.service('GAPIService', function ($window) {
+app.service('GAPIService', function ($window,  $rootScope) {
   const filename = 'setting.json';
 
   return {
     read: function () {
-      return gapi.client.drive.files
+      return $window.gapi.client.drive.files
         .list({
           q: 'name="' + filename + '"',
           spaces: 'appDataFolder',
@@ -219,7 +187,7 @@ app.service('GAPIService', function ($window) {
           }
 
           // Если файла нет создаём его
-          return gapi.client.drive.files
+          return $window.gapi.client.drive.files
             .create({
               fields: 'id',
               resource: { name: filename, parents: ['appDataFolder'] }
@@ -230,15 +198,18 @@ app.service('GAPIService', function ($window) {
 
         }).then(function (id) {
           // Получаем контент по ид
-          return gapi.client.drive.files
+          return $window.gapi.client.drive.files
             .get({ fileId: id, alt: 'media' })
             .then(function (response) {
+
+              $rootScope.$broadcast('google:drive:get', true);
+
               return response.body;
             });
         });
     },
     save: function (data) {
-      return gapi.client.drive.files
+      return $window.gapi.client.drive.files
         .list({
           q: 'name="' + filename + '"',
           spaces: 'appDataFolder',
@@ -252,7 +223,7 @@ app.service('GAPIService', function ($window) {
           }
 
           // Если файла нет создаём его
-          return gapi.client.drive.files
+          return $window.gapi.client.drive.files
             .create({
               fields: 'id',
               resource: { name: file, parents: ['appDataFolder'] }
@@ -262,8 +233,10 @@ app.service('GAPIService', function ($window) {
             });
 
         }).then(function (id) {
+          $rootScope.$broadcast('google:drive:save', true);
+
           // Запись в файл
-          return gapi.client
+          return $window.gapi.client
             .request({
               path: '/upload/drive/v3/files/' + id,
               method: 'PATCH',
@@ -280,61 +253,42 @@ app.service('GAPIService', function ($window) {
     },
     state: false
   };
-});
-// app.run(function ($rootScope, gapiAuth2) {
-app.run(function ($rootScope, $window, GAPIService) {
-  // $rootScope.isLogin = false;
+}, '$window', '$rootScope');
 
-  // var authorizeButton = document.getElementById('authorize-button');
-  // var signoutButton = document.getElementById('signout-button');
+app.run(function ($rootScope, $window, GAPIService) {
+
+  var CLIENT_ID = '1032421929628-0coe3od5hl8699s9klm64htda1nk1b0f.apps.googleusercontent.com';
+  var API_KEY = 'AIzaSyDC5rBGeihtEpQZZpmQ0lRnC4aYNbT38pc';
+
+  // Array of API discovery doc URLs for APIs used by the quickstart
+  var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
+
+  // Authorization scopes required by the API; multiple scopes can be
+  // included, separated by spaces.
+  var SCOPES = 'https://www.googleapis.com/auth/drive.appdata';
 
   $window.gapi.load('client:auth2', () => {
-    var auth2 = gapi.auth2.init({
-      client_id: '1032421929628-0coe3od5hl8699s9klm64htda1nk1b0f.apps.googleusercontent.com',
-      scope: 'https://www.googleapis.com/auth/drive.appdata'
+    $window.gapi.client.init({
+      apiKey: API_KEY,
+      clientId: CLIENT_ID,
+      discoveryDocs: DISCOVERY_DOCS,
+      scope: SCOPES
     }).then(function () {
 
       var updateSate = function (state) {
         $rootScope.$broadcast('google:oauth2:signed-in', state);
 
-        // localStorage.setItem("setting", GAPIService.read());
+        if (state) {
+          localStorage.setItem("setting", GAPIService.read());
+        }
       }
 
       updateSate(gapi.auth2.getAuthInstance().isSignedIn.get());
 
       $window.gapi.auth2.getAuthInstance().isSignedIn.listen(updateSate);
     });
-
-
-
-    // var firstCheck = true;
-    // auth2.currentUser.listen((user) => {
-    //   if (!user.isSignedIn()) {
-    //     return firstCheck && $rootScope.$broadcast('google:oauth2:signed-in', false), firstCheck = false;
-    //   }
-    //   var profile = user.getBasicProfile();
-    //   if (!profile) return console.error('profile is undefinded');
-
-    //   var userPic = profile.getImageUrl();
-    //   var name = profile.getName();
-    //   var id = profile.getId();
-    //   var email = profile.getEmail();
-    //   $rootScope.$broadcast('google:oauth2:profile', { id, email, name, userPic });
-    // });
   });
-
-  // debugger;
-  // gapi.auth2.getAuthInstance().isSignedIn.listen(function (isSignedIn) {
-  //   debugger;
-  //   $rootScope.isLogin = isSignedIn;
-  // });
-  // $rootScope.$on('google:oauth2:signed-in', function (e, val) {
-  //   gapiAuth2.getAuthInstance().then(function (res) {
-  //     $rootScope.isLogin = res.instance.isSignedIn.get();
-  //   });
-  // });
-})
-
+});
 
 
 app.factory('globalService', ['$http', '$httpParamSerializerJQLike', globalService]);
@@ -342,56 +296,6 @@ app.factory('walletService', walletService);
 
 // AIRON directive
 app.directive('walletLoadedAiron', walletLoadedAironDrtv);
-
-app.service('authService', function ($state, $timeout) {
-
-  function login() {
-    // angularAuth0.authorize();
-  }
-
-  function handleAuthentication() {
-    // angularAuth0.parseHash(function (err, authResult) {
-    //   if (authResult && authResult.accessToken && authResult.idToken) {
-    //     setSession(authResult);
-    //     $state.go('home');
-    //   } else if (err) {
-    //     $timeout(function () {
-    //       $state.go('home');
-    //     });
-    //     console.log(err);
-    //   }
-    // });
-  }
-
-  function setSession(authResult) {
-    // // Set the time that the Access Token will expire at
-    // let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-    // localStorage.setItem('access_token', authResult.accessToken);
-    // localStorage.setItem('id_token', authResult.idToken);
-    // localStorage.setItem('expires_at', expiresAt);
-  }
-
-  function logout() {
-    // // Remove tokens and expiry time from localStorage
-    // localStorage.removeItem('access_token');
-    // localStorage.removeItem('id_token');
-    // localStorage.removeItem('expires_at');
-  }
-
-  function isAuthenticated() {
-    // // Check whether the current time is past the 
-    // // Access Token's expiry time
-    // let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
-    // return new Date().getTime() < expiresAt;
-  }
-
-  return {
-    login: login,
-    handleAuthentication: handleAuthentication,
-    logout: logout,
-    isAuthenticated: isAuthenticated
-  }
-}, '$state', '$timeout');
 
 app.directive('blockieAddress', blockiesDrtv);
 app.directive('addressField', ['$compile', addressFieldDrtv]);

@@ -2,8 +2,6 @@
 var viewWalletAironCtrl = function ($rootScope, $scope) {
     $scope.ajaxReq = ajaxReq;
 
-    // debugger;
-    // $scope.list = Drive.listFiles();
     $scope.statusLogin = false;
     $scope.$on('google:oauth2:signed-in', function (event, data) {
         $scope.statusLogin = data;
