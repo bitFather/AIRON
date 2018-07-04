@@ -277,12 +277,13 @@ app.service('GAPIService', function ($window) {
     },
     signOut: function () {
       $window.gapi.auth2.getAuthInstance().signOut();
-    }
+    },
+    state: false
   };
 });
 // app.run(function ($rootScope, gapiAuth2) {
 app.run(function ($rootScope, $window, GAPIService) {
-  $rootScope.isLogin = false;
+  // $rootScope.isLogin = false;
 
   // var authorizeButton = document.getElementById('authorize-button');
   // var signoutButton = document.getElementById('signout-button');
@@ -293,16 +294,8 @@ app.run(function ($rootScope, $window, GAPIService) {
       scope: 'https://www.googleapis.com/auth/drive.appdata'
     }).then(function () {
 
-      // authorizeButton.onclick = function(e) {
-      //   $window.gapi.auth2.getAuthInstance().signIn()
-      // };
-
-      // signoutButton.onclick = function (e) {
-      //   $window.gapi.auth2.getAuthInstance().signOut()
-      // };
-
       var updateSate = function (state) {
-        $rootScope.isLogin = state;
+        $rootScope.$broadcast('google:oauth2:signed-in', state);
 
         // localStorage.setItem("setting", GAPIService.read());
       }

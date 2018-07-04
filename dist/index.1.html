@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en" ng-app="mewApp">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,7 +18,7 @@
   <script type="text/javascript" src="js/etherwallet-static.min.js"></script>
   <script type="text/javascript" src="js/etherwallet-master.js"></script>
   <meta name="description" content="Airon.io is a free, open-source, client-side interface for generating Ethereum wallets & more. Interact with the Ethereum blockchain easily & securely.">
-  <meta property="og:description"  content="Free, open-source, client-side Ethereum wallet. Enabling you to interact with the blockchain easily & securely.">
+  <meta property="og:description" content="Free, open-source, client-side Ethereum wallet. Enabling you to interact with the blockchain easily & securely.">
   <meta name="twitter:description" content="Free, open-source, client-side Ethereum wallet. Enabling you to interact with the blockchain easily & securely.">
   <meta name="robots" content="index,follow">
   <meta name="googlebot" content="index,follow">
@@ -28,8 +29,7 @@
   <link href="images/fav/manifest.json" rel="manifest">
   <link href="images/fav/safari-pinned-tab.svg" rel="mask-icon" color="#2f99b0">
   <link href="images/fav/favicon.ico" rel="shortcut icon">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="apple-mobile-web-app-title" content="Airon.io &middot; Your Key to Ethereum">
   <meta name="application-name" content="Airon.io">
   <meta name="msapplication-config" content="images/fav/browserconfig.xml">
@@ -46,7 +46,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@Airon.io">
   <meta name="twitter:creator" content="@Airon.io">
-  <script src="https://apis.google.com/js/platform.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
   <!-- <script src="https://apis.google.com/js/client.js"></script> -->
 
   <!-- <script src="/bower_components/ngGAPI/gapi.js"></script> -->
@@ -80,29 +80,38 @@
 }
 </script>
 </head>
+
 <body>
 
-<header class="{{curNode.name}} {{curNode.service}} {{curNode.service}} nav-index-{{gService.currentTab}}" aria-label="header" ng-controller='tabsCtrl' >
+  <header class="{{curNode.name}} {{curNode.service}} {{curNode.service}} nav-index-{{gService.currentTab}}" aria-label="header"
+    ng-controller='tabsCtrl'>
 
-  <section class="bg-gradient header-branding">
-    <section class="container">
-      
-      <a class="brand" href="/" aria-label="Go to homepage">
-        <img src="images/logo-myetherwallet.svg"   height="64px" width="245px" alt="Airon.io" />
-      </a>
-      
-      
-      <a ng-click="mobileMenuIsOpen = !mobileMenuIsOpen" class="mobile-menu">
-        <span ></span>
-      </a>
-      <div class="tagline" ng-class="{opened: mobileMenuIsOpen}">
-        <span class="dropdown dropdown-lang" ng-cloak>
-      <li tabindex="0"  aria-haspopup="true" aria-expanded="false" aria-label="change language. current language {{curLang}}" class="dropdown-toggle  btn btn-white" ng-click="dropdown = !dropdown">{{curLang}}<i class="caret"></i>
-      <ul class="dropdown-menu" ng-show="dropdown">
-        <li><a ng-class="{true:'active'}[curLang=='English']"         ng-click="changeLanguage('en','English'        )"> English         </a></li>
-        <li><a ng-class="{true:'active'}[curLang=='简体中文']"         ng-click="changeLanguage('zhcn','简体中文'      )"> 简体中文         </a></li>
-        <li><a ng-class="{true:'active'}[curLang=='繁體中文']"         ng-click="changeLanguage('zhtw','繁體中文'      )"> 繁體中文         </a></li>
-        <!--
+    <section class="bg-gradient header-branding">
+      <section class="container">
+        
+        <a class="brand" href="/" aria-label="Go to homepage">
+          <img src="images/logo-myetherwallet.svg" height="64px" width="245px" alt="Airon.io" />
+        </a>
+         
+        <a ng-click="mobileMenuIsOpen = !mobileMenuIsOpen" class="mobile-menu">
+          <span></span>
+        </a>
+        <div class="tagline" ng-class="{opened: mobileMenuIsOpen}">
+          <span class="dropdown dropdown-lang" ng-cloak>
+            <li tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="change language. current language {{curLang}}" class="dropdown-toggle  btn btn-white"
+              ng-click="dropdown = !dropdown">{{curLang}}
+              <i class="caret"></i>
+              <ul class="dropdown-menu" ng-show="dropdown">
+                <li>
+                  <a ng-class="{true:'active'}[curLang=='English']" ng-click="changeLanguage('en','English'        )"> English </a>
+                </li>
+                <li>
+                  <a ng-class="{true:'active'}[curLang=='简体中文']" ng-click="changeLanguage('zhcn','简体中文'      )"> 简体中文 </a>
+                </li>
+                <li>
+                  <a ng-class="{true:'active'}[curLang=='繁體中文']" ng-click="changeLanguage('zhtw','繁體中文'      )"> 繁體中文 </a>
+                </li>
+                <!--
         <li><a ng-class="{true:'active'}[curLang=='Català']"          ng-click="changeLanguage('ca','Català'         )"> Català          </a></li>
         <li><a ng-class="{true:'active'}[curLang=='Deutsch']"         ng-click="changeLanguage('de','Deutsch'        )"> Deutsch         </a></li>
         <li><a ng-class="{true:'active'}[curLang=='Ελληνικά']"        ng-click="changeLanguage('el','Ελληνικά'       )"> Ελληνικά        </a></li>
@@ -125,89 +134,87 @@
         <li><a ng-class="{true:'active'}[curLang=='Русский']"         ng-click="changeLanguage('ru','Русский'        )"> Русский         </a></li>
         <li><a ng-class="{true:'active'}[curLang=='Tiếng Việt']"      ng-click="changeLanguage('vi','Tiếng Việt'     )"> Tiếng Việt      </a></li>
         -->
-        <li role="separator" class="divider"></li>
-        <li><a data-toggle="modal" data-target="#disclaimerModal" translate="FOOTER_4"> Disclaimer </a></li>
-      </ul>
-      </li>
-    </span>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a data-toggle="modal" data-target="#disclaimerModal" translate="FOOTER_4"> Disclaimer </a>
+                </li>
+              </ul>
+            </li>
+          </span>
 
-        <span class="dropdown dropdown-gas" ng-class="{opened: gasPriceMsg && ajaxReq.type=='ETH'}" ng-cloak>
-      <li tabindex="0" aria-haspopup="true" aria-label="adjust gas price" class="dropdown-toggle  btn btn-white" ng-click="dropdownGasPrice = !dropdownGasPrice">
-        <span translate="OFFLINE_Step2_Label_3">Gas Price</span>:
-          {{gas.value}} Gwei
-          <i class="caret"></i>
-      <ul class="dropdown-menu gas-menu"  ng-show="dropdownGasPrice">
-        <div class="header--gas">
-          <span translate="OFFLINE_Step2_Label_3">Gas Price</span>:
-          {{gas.value}} Gwei
-          <input type="range" ng-model="gas.value" min="{{gas.min}}" max="{{gas.max}}" step="{{gas.step}}" ng-change="gasChanged()"/>
-          <p class="small col-xs-4 text-left"> <!--translate="GAS_Price_1"-->
-            Really, really slow
-          </p>
-          <p class="small col-xs-4 text-center"> <!--translate="GAS_Price_2"-->
-            Maybe Fast?
-          </p>
-          <p class="small col-xs-4 text-right"> <!--translate="GAS_Price_3"-->
-            Fast
-          </p>
-          <br />
-          <p class="small" style="white-space:normal;font-weight:300;margin: 2rem 0 0;" translate="GAS_PRICE_Desc"></p>
-          <a class="small"
-             translate="x_ReadMore"
-             href="https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html"
-             target="_blank"
-             rel="noopener noreferrer"></a>
+          <span class="dropdown dropdown-gas" ng-class="{opened: gasPriceMsg && ajaxReq.type=='ETH'}" ng-cloak>
+            <li tabindex="0" aria-haspopup="true" aria-label="adjust gas price" class="dropdown-toggle  btn btn-white" ng-click="dropdownGasPrice = !dropdownGasPrice">
+              <span translate="OFFLINE_Step2_Label_3">Gas Price</span>: {{gas.value}} Gwei
+              <i class="caret"></i>
+              <ul class="dropdown-menu gas-menu" ng-show="dropdownGasPrice">
+                <div class="header--gas">
+                  <span translate="OFFLINE_Step2_Label_3">Gas Price</span>: {{gas.value}} Gwei
+                  <input type="range" ng-model="gas.value" min="{{gas.min}}" max="{{gas.max}}" step="{{gas.step}}" ng-change="gasChanged()"
+                  />
+                  <p class="small col-xs-4 text-left">
+                    <!--translate="GAS_Price_1"-->
+                    Really, really slow
+                  </p>
+                  <p class="small col-xs-4 text-center">
+                    <!--translate="GAS_Price_2"-->
+                    Maybe Fast?
+                  </p>
+                  <p class="small col-xs-4 text-right">
+                    <!--translate="GAS_Price_3"-->
+                    Fast
+                  </p>
+                  <br />
+                  <p class="small" style="white-space:normal;font-weight:300;margin: 2rem 0 0;" translate="GAS_PRICE_Desc"></p>
+                  <a class="small" translate="x_ReadMore" href="https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html"
+                    target="_blank" rel="noopener noreferrer"></a>
+                </div>
+              </ul>
+            </li>
+            <p class="dropdown-gas__msg" ng-show="gasPriceMsg && ajaxReq.type=='ETH'">
+              The network is really full right now. Check
+              <a href="https://ethgasstation.info/" target="_blank" rel="noopener noreferrer">Eth Gas Station</a>
+              for gas price to use.
+            </p>
+          </span>
+
+          <!-- Warning: The separators you see on the frontend are in styles/etherwallet-custom.less. If you add / change a node, you have to adjust these. Ping tayvano if you're not a CSS wizard -->
+          <span class="dropdown dropdown-node" ng-cloak>
+            <li tabindex="0" aria-haspopup="true" aria-label="change node. current node {{curNode.name}} node by {{curNode.service}}"
+              class="dropdown-toggle  btn btn-white" ng-click="dropdownNode = !dropdownNode">
+              <span translate="X_Network">Network:</span>
+              {{curNode.name}}
+              <small>({{curNode.service}})</small>
+              <i class="caret"></i>
+              <ul class="dropdown-menu" ng-show="dropdownNode">
+                <li ng-repeat="(key, value) in nodeList">
+                  <a ng-class="{true:'active'}[curNode == key]" ng-click="changeNode(key)">
+                    {{value.name}}
+                    <small> ({{value.service}}) </small>
+                    <img ng-show="value.service=='Custom'" src="images/icon-remove.svg" class="node-remove" title="Remove Custom Node" ng-click="removeNodeFromLocal(value.name)"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a ng-click="customNodeModal.open(); dropdownNode = !dropdownNode;" translate="X_Network_Custom">
+                    Add Custom Network / Node
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </span>
         </div>
-      </ul>
-      </li>
-      <p class="dropdown-gas__msg"
-         ng-show="gasPriceMsg && ajaxReq.type=='ETH'">
-        The network is really full right now. Check
-        <a href="https://ethgasstation.info/"
-           target="_blank" rel="noopener noreferrer">Eth Gas Station</a>
-        for gas price to use.
-      </p>
-    </span>
-
-        <!-- Warning: The separators you see on the frontend are in styles/etherwallet-custom.less. If you add / change a node, you have to adjust these. Ping tayvano if you're not a CSS wizard -->
-        <span class="dropdown dropdown-node" ng-cloak>
-      <li tabindex="0"
-          aria-haspopup="true"
-          aria-label="change node. current node {{curNode.name}} node by {{curNode.service}}"
-          class="dropdown-toggle  btn btn-white"
-          ng-click="dropdownNode = !dropdownNode">
-           <span translate="X_Network">Network:</span>
-           {{curNode.name}}
-           <small>({{curNode.service}})</small>
-           <i class="caret"></i>
-      <ul class="dropdown-menu" ng-show="dropdownNode">
-        <li ng-repeat="(key, value) in nodeList">
-          <a ng-class="{true:'active'}[curNode == key]" ng-click="changeNode(key)">
-            {{value.name}}
-            <small> ({{value.service}}) </small>
-            <img ng-show="value.service=='Custom'" src="images/icon-remove.svg" class="node-remove" title="Remove Custom Node" ng-click="removeNodeFromLocal(value.name)"/>
-          </a>
-        </li>
-        <li>
-          <a ng-click="customNodeModal.open(); dropdownNode = !dropdownNode;" translate="X_Network_Custom">
-            Add Custom Network / Node
-          </a>
-        </li>
-      </ul>
-      </li>
-    </span>
-      </div>
+      </section>
     </section>
-  </section>
 
-  <section class="nav-section">
-    <nav role="navigation" aria-label="main navigation" class="container nav-container overflowing" >
-      <a aria-hidden="true" ng-show="showLeftArrow" class="nav-arrow-left" ng-click="scrollLeft(100);" ng-mouseover="scrollHoverIn(true,2);" ng-mouseleave="scrollHoverOut()">&#171;</a>
-      <div class="nav-scroll" ng-class="{opened: true}">
-        <ul class="nav-inner">
+    <section class="nav-section">
+      <nav role="navigation" aria-label="main navigation" class="container nav-container overflowing">
+        <a aria-hidden="true" ng-show="showLeftArrow" class="nav-arrow-left" ng-click="scrollLeft(100);" ng-mouseover="scrollHoverIn(true,2);"
+          ng-mouseleave="scrollHoverOut()">&#171;</a>
+        <div class="nav-scroll" ng-class="{opened: true}">
+          <ul class="nav-inner">
 
 
-          <!-- <li ng-repeat="(key1, tab) in tabs" \
+            <!-- <li ng-repeat="(key1, tab) in tabs" \
               class="nav-item {{tab.name}}" \
               ng-show="tab.mew && !tab.hidden">
 
@@ -239,32 +246,30 @@
 
           </li> -->
 
-          <li class="nav-item">
-            <a class="btn-airon-menu" ui-sref-active="active" ui-sref="wallet">
-              Wallet
-            </a>
-          </li>
+            <li class="nav-item">
+              <a class="btn-airon-menu" ui-sref-active="active" ui-sref="wallet">
+                Wallet
+              </a>
+            </li>
 
-          <li class="nav-item">
-            <a class="btn-airon-menu" ui-sref-active="active" ui-sref="token-creation">
-              Create Token
-            </a>
-          </li>
-          
-          
-          <li class="nav-item help navbar-right" ng-if="!isLogin">
-            <google-sign-in width="250" height="50" longtitle="true" theme="light"></google-sign-in>
-          <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
-          <!-- <button type="button" class="btn btn-primary" ng-click="authorize()">Connect to GAPI</button> -->
-          </li>
+            <li class="nav-item">
+              <a class="btn-airon-menu" ui-sref-active="active" ui-sref="token-creation">
+                Create Token
+              </a>
+            </li>
 
-          <li class="nav-item help navbar-right" ng-if="isLogin">
-            <a class="btn-airon-menu" ng-click="auth.logout()">
-              logout
-            </a>
-          </li>
+            <li class="nav-item help navbar-right" ng-if="!statusLogin">
+              <!-- <google-sign-in width="250" height="50" longtitle="true" theme="light"></google-sign-in> -->
+              <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+              <!-- <button type="button" class="btn btn-primary" ng-click="authorize()">Connect to GAPI</button> -->
+              <button id="authorize-button" class="btn-nav" ng-click="login()"><span>Authorize</span></button>
+            </li>
 
-          <!-- <li class="nav-item help navbar-right" ng-if="auth.isAuthenticated()">
+            <li class="nav-item help navbar-right" ng-if="statusLogin">
+              <button id="signout-button" class="btn-nav" ng-click="logout()"><span>Sign Out</span></button>
+            </li>
+
+            <!-- <li class="nav-item help navbar-right" ng-if="auth.isAuthenticated()">
             <a class="btn-airon-menu" ng-click="auth.logout()">    
                 Logout <i class="material-icons">exit_to_app</i>
             </a>
@@ -276,7 +281,7 @@
             </a>
           </li> -->
 
-          <!--
+            <!--
           <li class="nav-item help">
             <a href="https://myetherwallet.github.io/knowledge-base/" target="_blank" rel="noopener noreferrer">
               <span translate="яNAV_Help">
@@ -285,18 +290,14 @@
             </a>
           </li>
           -->
-        </ul>
-      </div>
-      <a aria-hidden="true"
-         ng-show="showRightArrow"
-         class="nav-arrow-right"
-         ng-click="scrollRight(100);"
-         ng-mouseover="scrollHoverIn(false,2);"
-         ng-mouseleave="scrollHoverOut()">&#187;</a>
-    </nav>
-  </section>
+          </ul>
+        </div>
+        <a aria-hidden="true" ng-show="showRightArrow" class="nav-arrow-right" ng-click="scrollRight(100);" ng-mouseover="scrollHoverIn(false,2);"
+          ng-mouseleave="scrollHoverOut()">&#187;</a>
+      </nav>
+    </section>
 
-   <article class="modal fade" id="customNodeModal" tabindex="-1">
+     <article class="modal fade" id="customNodeModal" tabindex="-1">
   <section class="modal-dialog">
     <section class="modal-content">
 
@@ -376,11 +377,9 @@
     </section>
   </section>
 </article>
- 
   
 
-</header>
-
+  </header>
 
 <section class="container" style="min-height: 50%" ng-controller='viewCtrl'>
 
