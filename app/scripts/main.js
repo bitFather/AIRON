@@ -168,7 +168,7 @@ app.config(['$locationProvider', function ($locationProvider) {
   $locationProvider.html5Mode(true);
 }]);
 
-app.service('GAPIService', function ($window,  $rootScope) {
+app.service('GAPIService', function ($window, $rootScope) {
   const filename = 'setting.json';
 
   return {
@@ -201,9 +201,6 @@ app.service('GAPIService', function ($window,  $rootScope) {
           return $window.gapi.client.drive.files
             .get({ fileId: id, alt: 'media' })
             .then(function (response) {
-
-              $rootScope.$broadcast('google:drive:get', true);
-
               return response.body;
             });
         });
@@ -276,11 +273,16 @@ app.run(function ($rootScope, $window, GAPIService) {
     }).then(function () {
 
       var updateSate = function (state) {
-        $rootScope.$broadcast('google:oauth2:signed-in', state);
-
         if (state) {
-          localStorage.setItem("setting", GAPIService.read());
+          GAPIService.read().then((e) => {
+            localStorage.setItem("setting", e);
+
+            $rootScope.$broadcast('google:drive:get', true);
+          });
+
         }
+
+        $rootScope.$broadcast('google:oauth2:signed-in', state);
       }
 
       updateSate(gapi.auth2.getAuthInstance().isSignedIn.get());
@@ -290,6 +292,29 @@ app.run(function ($rootScope, $window, GAPIService) {
   });
 });
 
+app.controller('mainCtrl', ['$scope', function ($scope) {
+  $scope.doneLoading = false;
+  $scope.$on('google:drive:get', function (event, data) {
+    $scope.doneLoading = true;
+    $scope.$apply();
+  });
+}]);
+
+app.directive('googleSignIn', ['$window', function ($window) {
+  return {
+    restrict: 'E',
+    template: `<div id="google-auth-btn"></div>`,
+    replace: false,
+    link: function (scope, el, attrs) {
+      $window.gapi.signin2.render('google-auth-btn', {
+        'width': attrs.width || 250,
+        'height': attrs.height || 50,
+        'longtitle': attrs.longtitle === 'false' ? false : true,
+        'theme': attrs.theme || 'light'
+      });
+    }
+  }
+}]);
 
 app.factory('globalService', ['$http', '$httpParamSerializerJQLike', globalService]);
 app.factory('walletService', walletService);

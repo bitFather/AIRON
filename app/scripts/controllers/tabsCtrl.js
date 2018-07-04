@@ -1,12 +1,9 @@
 'use strict'
-// var tabsCtrl = function ($scope, globalService, $translate, $sce, gapiAuth2) {
 var tabsCtrl = function ($rootScope, $scope, globalService, $translate, $sce, GAPIService) {
-    // $scope.auth = gapiAuth2;
-    // $scope.auth = GAPIService;
-
     $scope.statusLogin = false;
     $scope.$on('google:oauth2:signed-in', function (event, data) {
         $scope.statusLogin = data;
+
         $scope.$apply();
     });
 
@@ -17,11 +14,6 @@ var tabsCtrl = function ($rootScope, $scope, globalService, $translate, $sce, GA
     $scope.logout = function () {
         GAPIService.signOut();
     }
-
-    // $scope.authorize = function () {
-    //     debugger;
-    //     GAPI.init();
-    // }
 
     $scope.mobileMenuIsOpen = false;
     $scope.gService = globalService

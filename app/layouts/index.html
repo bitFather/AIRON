@@ -1,25 +1,37 @@
- @@include( '../includes/header.html', { "site": "mew" } )
+<!DOCTYPE html>
+<html lang="en" ng-app="mewApp">
 
-<section class="container" style="min-height: 50%" ng-controller='viewCtrl'>
+<head>
+  @@include('../includes/head.html')
+</head>
 
-  <div class="tab-content">
+<body ng-controller="mainCtrl">
 
-    <section ui-view></section>
+  <main ng-if="doneLoading">
+    @@include( '../includes/header.html', { "site": "mew" } )
 
-  </div>
+    <section class="container" style="min-height: 50%" ng-controller='viewCtrl'>
+
+      <div class="tab-content">
+
+        <section ui-view></section>
+
+      </div>
 
 
-  @@include('../includes/alerts.tpl')
+      @@include('../includes/alerts.tpl')
 
 
-  <!--
-  <section class="loading-wrap" ng-hide="1==1">
+    </section>
+
+    @@include( '../includes/footer.tpl', { "site": "mew" } )
+  </main>
+
+  <section class="loading-wrap" ng-if="!doneLoading">
     <div class="loading">
-      <img src="images/loading.gif" />
       <h1> Loading... </h1>
   </section>
-  -->
 
-</section>
+</body>
 
-@@include( '../includes/footer.tpl', { "site": "mew" } )
+</html>
