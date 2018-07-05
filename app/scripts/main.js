@@ -282,7 +282,7 @@ app.run(function ($rootScope, $window, GAPIService) {
 
         }
 
-        $rootScope.$broadcast('google:oauth2:signed-in', state);
+        $rootScope.$broadcast('google:oauth2:status', state);
       }
 
       updateSate(gapi.auth2.getAuthInstance().isSignedIn.get());
@@ -295,7 +295,18 @@ app.run(function ($rootScope, $window, GAPIService) {
 app.controller('mainCtrl', ['$scope', function ($scope) {
   $scope.doneLoading = false;
   $scope.$on('google:drive:get', function (event, data) {
-    $scope.doneLoading = true;
+    if (!$scope.doneLoading) {
+      $scope.doneLoading = true;
+      $scope.$apply();
+    }
+  });
+
+  $scope.statusLogin = false;
+  $scope.$on('google:oauth2:status', function (event, data) {
+    $scope.statusLogin = data;
+    if (!data) {
+      $scope.doneLoading = true;
+    }
     $scope.$apply();
   });
 }]);

@@ -1,16 +1,5 @@
 'use strict'
 var tabsCtrl = function ($rootScope, $scope, globalService, $translate, $sce, GAPIService) {
-    $scope.statusLogin = false;
-    $scope.$on('google:oauth2:signed-in', function (event, data) {
-        $scope.statusLogin = data;
-
-        $scope.$apply();
-    });
-
-    $scope.login = function () {
-        GAPIService.signIn();
-    }
-
     $scope.logout = function () {
         GAPIService.signOut();
     }
