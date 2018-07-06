@@ -2,35 +2,44 @@
 <html lang="en" ng-app="mewApp">
 
 <head>
-  @@include('../includes/head.html')
+    <title>Airon.io</title>
+    <base href="/">
+    <meta charset="utf-8">
+
+    <link href="images/fav/favicon.ico" rel="shortcut icon">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/etherwallet-master.min.css">
+
+    @@include('../includes/head.html')
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <script type="text/javascript" src="js/etherwallet-static.min.js"></script>
+    <script type="text/javascript" src="js/etherwallet-master.js"></script>
 </head>
 
 <body ng-controller="mainCtrl">
 
-  <main ng-if="doneLoading">
-    @@include( '../includes/header.html', { "site": "mew" } )
+    <section ng-if="doneLoading">
+        @@include( '../includes/header.html', { "site": "mew" } )
 
-    <section class="container" style="min-height: calc(100% - 200px)" ng-class="{'gcenter': !statusLogin}" ng-controller='viewCtrl'>
+        <style>.fix { min-height: calc(100vh - 261px); }</style>
 
-      <div class="tab-content">
+        <section class="container" ng-controller='viewCtrl' ng-class="{'gcenter fix': !statusLogin}">
 
-        <section ui-view></section>
+            <section ui-view></section>
 
-      </div>
+            @@include('../includes/alerts.tpl')
 
+        </section>
 
-      @@include('../includes/alerts.tpl')
-
-
+        @@include( '../includes/footer.tpl', { "site": "mew" } )
     </section>
 
-    @@include( '../includes/footer.tpl', { "site": "mew" } )
-  </main>
-
-  <section class="loading-wrap" ng-if="!doneLoading">
-    <div class="loading">
-      <h1> Loading... </h1>
-  </section>
+    <section class="loading-wrap" ng-if="!doneLoading">
+        <h1> Loading... </h1>
+    </section>
 
 </body>
 

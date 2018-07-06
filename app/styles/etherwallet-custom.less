@@ -489,21 +489,16 @@ label small {
 
 .loading-wrap {
   position: fixed;
-  top:0;left:0;right:0;bottom:0;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
   background-color: fadeOut(black,30%);
   z-index: 999;
-  text-align: center;
-
-  .loading {
-    position: absolute;
-    text-align: center;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-60%);
-  }
-  img {
-    border-radius: 50%;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   h1 {
     animation: opacity 2000ms infinite ease-in-out;
     color: white;

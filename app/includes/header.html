@@ -3,18 +3,14 @@
 
   <section class="bg-gradient header-branding">
     <section class="container">
-      @@if (site === 'mew' ) {
       <a class="brand" href="/" aria-label="Go to homepage">
         <img src="images/logo-myetherwallet.svg" height="64px" width="245px" alt="Airon.io" />
       </a>
-      } @@if (site === 'cx' ) {
-      <a class="brand" href="/cx-wallet.html" aria-label="Go to homepage">
-        <img src="images/logo-myetherwalletcx.svg" height="64px" width="245px" alt="Airon.io" />
-      </a>
-      }
+
       <a ng-click="mobileMenuIsOpen = !mobileMenuIsOpen" class="mobile-menu">
         <span></span>
       </a>
+
       <div class="tagline" ng-class="{opened: mobileMenuIsOpen}">
         <span class="dropdown dropdown-lang" ng-cloak>
           <li tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="change language. current language {{curLang}}" class="dropdown-toggle  btn btn-white"
@@ -203,7 +199,12 @@
     </nav>
   </section>
 
-  @@if (site === 'mew' ) { @@include( './header-node-modal.tpl', { "site": "mew" } ) } @@if (site === 'cx' ) { @@include( './header-node-modal.tpl',
-  { "site": "cx" } ) }
+  @@if (site === 'mew' ) {
+    @@include( './header-node-modal.tpl', { "site": "mew" } )
+  }
+  
+  @@if (site === 'cx' ) {
+    @@include( './header-node-modal.tpl', { "site": "cx" } )
+  }
 
 </header>

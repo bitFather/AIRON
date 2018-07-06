@@ -1,3 +1,7 @@
+.push {
+    margin-left: auto;
+}
+
 .auth {
     &-wrapper {
         background: #fff;
@@ -70,22 +74,17 @@
     }
 }
 
-body {
-    position: relative;
-}
-
 .gcenter {
-     position: absolute;
-    top: 48px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    height: calc(100vh - 261px);
 }
 
 .footer-bot {
     position: absolute;
-    right: 0;
-    left: 0;
+    // right: 0;
+    // left: 0;
     bottom: 0;
 }
 
@@ -324,9 +323,4 @@ nav.nav-bar {
             font-weight: 600;
         }
     }
-}
-
-.wallet-scroll {
-    overflow-y: scroll;
-    padding-right: 19px;
 }
