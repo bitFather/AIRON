@@ -350,9 +350,13 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
 
     $scope.delWallet = function () {
         if ($scope.selectWallet !== null) {
-            $scope.wallets.forEach(function (item, i) {
-                $scope.wallets.splice(i, 1);
-            });
+            $scope.wallets.splice($scope.selectWallet, 1);
+
+            let up = localStorage.getItem('setting');
+            up = JSON.parse(up);
+            up.splice($scope.selectWallet, 1);
+            localStorage.setItem('setting', JSON.stringify(up));
+            GAPIService.save(up);
 
             $scope.dropdownOptionsMenu = false;
         }
