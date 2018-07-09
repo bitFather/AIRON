@@ -1,6 +1,28 @@
 'use strict';
-var viewWalletAironCtrl = function ($rootScope, $scope) {
+var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     $scope.ajaxReq = ajaxReq;
+
+    $scope.loadFromSetting = function () {
+        let walletsRaw = JSON.parse(localStorage.getItem('setting'));
+        $scope.wallets = [];
+
+        walletsRaw.forEach(function (e) {
+            let wallet = new aironWallet(e);
+            wallet.pullBalance(() => {
+                if (!$scope.$$phase) {
+                    $scope.$apply();
+                }
+            });
+
+            $scope.wallets.push(wallet);
+        });
+    }
+
+    $scope.loadFromSetting();
+
+    $scope.$on('google:drive:get', function () {
+        $scope.loadFromSetting();
+    });
 
     $scope.backStage = function () {
         $scope.txState = $scope.txState - 1;
@@ -23,7 +45,8 @@ var viewWalletAironCtrl = function ($rootScope, $scope) {
     $scope.hidePK = true;
     $scope.isSSL = window.location.protocol == 'https:';
     $scope.modelPK = {
-        manualprivkey: '5a4a80af6e1c21dbe768b95c1140be6d5f2fd2488517c2f09d805c8cf6c2ef7b',
+        // manualprivkey: '5a4a80af6e1c21dbe768b95c1140be6d5f2fd2488517c2f09d805c8cf6c2ef7b',
+        manualprivkey: '',
         privPassword: ''
     };
 
@@ -221,13 +244,9 @@ var viewWalletAironCtrl = function ($rootScope, $scope) {
             });
         });
     }
-    $scope.selectMoney = function (c, s) {
-        $scope.selectId = c.id;
-        $scope.deselectCascad();
-        c.select = true;
-
-        $scope.selectWallet = s;
-        $scope.rename.newWalletName = s.name;
+    $scope.selectWalletFunc = function (indx) {
+        $scope.select = true;
+        $scope.selectWallet = indx;
     };
 
     $scope.dropdownWalletMenu = false;
@@ -255,45 +274,24 @@ var viewWalletAironCtrl = function ($rootScope, $scope) {
             $scope.notifier.danger(globalFuncs.errorMsgs[46])
             return
         }
-
-        $scope.wallets.push({
-            name: name,
-            filename: "test.airon-wallet",
-            addres: address,
-            eth: 0,
-            star: false,
-            select: false,
-            id: 0,
-            tokens: [],
-            hide: false
+        let rawWallet = { name: name, address: address };
+        let wallet = new aironWallet(rawWallet);
+        wallet.pullBalance(() => {
+            if (!$scope.$$phase) {
+                $scope.$apply();
+            }
         });
+
+        let up = localStorage.getItem('setting');
+        up = JSON.parse(up);
+        up.push(rawWallet);
+        localStorage.setItem('setting', JSON.stringify(up));
+        GAPIService.save(up);
+
+        $scope.wallets.push(wallet);
 
         $scope.dropdownWalletMenu = false;
         $scope.addWalletModal.close();
-
-        // ajaxReq.getAddressTokenBalance(address, data => {
-        //     const tokenList = data.tokensInfo.map(x => {
-        //         return {
-        //             address: x.address,
-        //             name: x.symbol,
-        //             amount: x.balance,
-        //             isFavour: false,
-        //         }
-        //     })
-
-        //     // ajaxReq.getBalance(address, data => {
-        //     //     $scope.data.push({
-        //     //         address: address,
-        //     //         name: name,
-        //     //         ethBalance: etherUnits.toEther(data.data.balance, 'wei'),
-        //     //         onlyFavour: false,
-        //     //         date: Date.now(),
-        //     //         tokenList: tokenList,
-        //     //     })
-        //     //     globalFuncs.safeWalletToLocal($scope.data[$scope.data.length - 1])
-        //     //     if (!$scope.$$phase) $scope.$apply();
-        //     // })
-        // })
 
         $scope.newWalletName = '';
         $scope.newWalletAddress = '';
@@ -336,61 +334,6 @@ var viewWalletAironCtrl = function ($rootScope, $scope) {
     $scope.rename = {
         newWalletName: ''
     };
-
-    $scope.wallets = [
-        {
-            name: "Gold Wallet",
-            filename: "test.airon-wallet",
-            addres: "0x8d12A197cB00D4747a1fe03395095ce2A5CC6819",
-            eth: 8.88888888,
-            star: true,
-            select: false,
-            id: 0,
-            tokens: [
-                {
-                    name: "xxx",
-                    count: 12.5448454,
-                    select: false,
-                    id: 1,
-                    star: true
-                },
-                {
-                    name: "cec",
-                    count: 135232.5448454,
-                    select: false,
-                    id: 2,
-                    star: false
-                }
-            ],
-            hide: false
-        },
-        {
-            name: "Prem Wallet",
-            filename: "test.airon-wallet",
-            addres: "0x5dcaa1d8d8132e5bf9cf12deccfc0cecf26a780d",
-            eth: 8.88888888,
-            star: false,
-            select: false,
-            id: 3,
-            tokens: [
-                {
-                    name: "xxx",
-                    count: 12.5448454,
-                    select: false,
-                    id: 4,
-                    star: false
-                },
-                {
-                    name: "cec",
-                    count: 135232.5448454,
-                    select: false,
-                    id: 5,
-                    star: false
-                }
-            ],
-            hide: true
-        }
-    ];
 }
 
 module.exports = viewWalletAironCtrl;

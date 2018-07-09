@@ -5,4 +5,4 @@ var http = require('http');
 var app = express();
 app.use(vhost('localhost', require('./index.js').app));
 var httpServer = http.createServer(app);
-httpServer.listen(80);
+httpServer.listen(4569);
