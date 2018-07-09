@@ -160,6 +160,11 @@ app.config(['$stateProvider', function($stateProvider) {
             controller: 'tokenCreationCtrl',
             template: require('../includes/tokenCreation.html')
         })
+        // .state('send-tx', {
+        //     url: '/send-tx',
+        //     controller: 'sendTxCtrl',
+        //     template: require('../includes/sendTx.tpl')
+        // })
         .state('callback', {
             url: '/callback',
             controller: 'callbackCtrl',

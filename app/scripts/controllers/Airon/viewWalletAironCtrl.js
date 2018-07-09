@@ -32,7 +32,34 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
 
     $scope.goEx = function () {
         if ($scope.selectWallet !== null) {
-            window.location = "https://etherscan.io/address/" + $scope.selectWallet.addres;
+            var win = window.open("https://etherscan.io/address/" + $scope.wallets[$scope.selectWallet].address, '_blank');
+            win.focus();
+        }
+    }
+
+    $scope.refresh = function () {
+        GAPIService.read().then(function (e) {
+            localStorage.setItem("setting", e);
+            $scope.loadFromSetting();
+        });
+    }
+
+    $scope.copyToClipboard = function () {
+        if ($scope.selectWallet !== null) {
+            var walletIds = document.getElementById("walletIds");
+            var byId = walletIds.children[$scope.selectWallet];
+
+            var copyText = byId.getElementsByClassName('wallet-address');
+
+            var textarea = document.createElement('textarea');
+            textarea.id = 'temp_element';
+            textarea.style.height = 0;
+            document.body.appendChild(textarea);
+            textarea.value = copyText[0].innerText;
+            var selector = document.querySelector('#temp_element');
+            selector.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
         }
     }
 

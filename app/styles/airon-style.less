@@ -2,6 +2,32 @@
     margin-left: auto;
 }
 
+.btn-floating {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: 50%;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+
+    i {
+        line-height: 56px;
+        width: inherit;
+        display: inline-block;
+        text-align: center;
+        font-size: 1.6rem;
+    }
+}
+
+.dis {
+    background-color: #fff;
+    color: #000;
+    margin-bottom: 7px;
+
+    &:hover {
+        background-color: #DFDFDF;
+    }
+}
+
 .auth {
     &-wrapper {
         background: #fff;
@@ -140,6 +166,7 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    width: 116px;
 
     i {
         margin-bottom: 8px;
@@ -149,6 +176,9 @@
     padding: 10px;
     max-width: 115px;
     min-width: 80px;
+
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-circle {
@@ -214,6 +244,10 @@ nav.nav-bar {
 .airon-dropdown {
     position: absolute;
     top: 50px;
+    
+    &-row {
+        overflow: hidden;
+    }
 
     &-icon {
         display: flex;
@@ -266,10 +300,6 @@ nav.nav-bar {
         padding: 24px;
         display: flex;
         flex-direction: row;
-
-        span {
-            display: block;
-        }
 
         border: 1px solid transparent;
 

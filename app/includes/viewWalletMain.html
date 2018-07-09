@@ -75,36 +75,47 @@
                         </div>
                     </div>
 
-                    <div class="airon-icon push" ng-click="decryptModalOpen()">
-                        <i class="material-icons dp48">payment</i>
+                    <div class="airon-icon push">
+                        <div class="btn-floating dis" ng-click="decryptModalOpen()">
+                            <i class="material-icons">payment</i>
+                        </div>
                         <span>Payment</span>
                     </div>
 
                     <div class="airon-icon">
-                        <i class="material-icons dp48">filter_none</i>
+                        <div class="btn-floating dis" ng-click="copyToClipboard()">
+                            <i class="material-icons">filter_none</i>
+                        </div>
                         <span>Copy address</span>
                     </div>
 
                     <div class="airon-icon">
-                        <i class="material-icons dp48">refresh</i>
+                        <div class="btn-floating dis" ng-click="refresh()">
+                            <i class="material-icons">refresh</i>
+                        </div>
                         <span>Refresh</span>
                     </div>
 
-                    <div class="airon-icon" ng-click="goEx()">
-                        <i class="material-icons dp48">view_headline</i>
+                    <div class="airon-icon">
+                        <div class="btn-floating dis" ng-click="goEx()">
+                            <i class="material-icons">view_headline</i>
+                        </div>
                         <span>History</span>
                     </div>
 
                     <div class="airon-icon">
-                        <i class="material-icons dp48">attach_money</i>
+                        <div class="btn-floating dis">
+                            <i class="material-icons">attach_money</i>
+                        </div>
                         <span>Equivalent</span>
                     </div>
 
-                    <div class="airon-icon" ng-click="showOption()">
-                        <i class="material-icons dp48">more_vert</i>
+                    <div class="airon-icon">
+                        <div class="btn-floating dis" ng-click="showOption()">
+                            <i class="material-icons">more_vert</i>
+                        </div>
                         <span>Options</span>
                     </div>
-
 
                 </nav>
 
@@ -119,20 +130,20 @@
                     </div>
                 </div>
 
-                <div class="wallet-scroll">
+                <div class="wallet-scroll" id="walletIds">
                     <div class="wallet-block" ng-repeat="wallet in wallets" ng-class="{'active': selectWallet == $index}" ng-click="selectWalletFunc($index)">
                         <div class="wallet-content">
-                            <span class="wallet-title">{{ wallet.name }}</span>
-                            <span class="wallet-address">{{ wallet.address }}</span>
+                            <div class="wallet-title">{{ wallet.name }}</div>
+                            <div class="wallet-address">{{ wallet.address }}</div>
 
-                            <span class="wallet-group wallet-eth" ng-class="{'wallet-group-select': wallet.select}">
+                            <div class="wallet-group wallet-eth" ng-class="{'wallet-group-select': wallet.select}">
                                 <span class="wallet-count">{{ wallet.balance }}</span>
                                 <span class="wallet-name">ETH</span>
                                 <span class="wallet-space"></span>
                                 <i class="material-icons" ng-click="toggleStar(wallet)">{{ wallet.star ? 'star' : 'star_border' }}</i>
-                            </span>
+                            </div>
 
-                            <div class="wallet-token" ng-repeat="token in wallet.tokens" ng-if="token.star">
+                            <!-- <div class="wallet-token" ng-repeat="token in wallet.tokens" ng-if="token.star">
                                 <span class="wallet-group" ng-class="{'wallet-group-select': token.select}">
                                     <span class="wallet-count">{{ token.count }}</span>
                                     <span class="wallet-name">{{ token.name }}</span>
@@ -150,7 +161,7 @@
                                         <i class="material-icons" ng-click="toggleStar(token)">{{ token.star ? 'star' : 'star_border' }}</i>
                                     </span>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <i class="wallet-arrow material-icons" ng-click="toggleWallet(wallet)">{{wallet.hide ? 'arrow_drop_down' : 'arrow_drop_up'}}</i>
