@@ -300,6 +300,9 @@ app.run(function($rootScope, $window, GAPIService) {
                     // ]);
 
                     GAPIService.read().then((e) => {
+                        if (e === "") {
+                            e = "[]";
+                        }
                         localStorage.setItem("setting", e);
 
                         $rootScope.$broadcast('google:drive:get', true);

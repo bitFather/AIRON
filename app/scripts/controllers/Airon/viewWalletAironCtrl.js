@@ -6,9 +6,9 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         let setting = localStorage.getItem('setting');
         $scope.wallets = [];
 
-        if (setting) {
+        if (setting !== null) {
             let walletsRaw = JSON.parse(setting);
-       
+
             walletsRaw.forEach(function (e) {
                 let wallet = new aironWallet(e);
                 wallet.pullBalance(() => {
@@ -16,7 +16,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
                         $scope.$apply();
                     }
                 });
-    
+
                 $scope.wallets.push(wallet);
             });
         }
@@ -317,9 +317,15 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         });
 
         let up = localStorage.getItem('setting');
-        up = JSON.parse(up);
-        up.push(rawWallet);
-        localStorage.setItem('setting', JSON.stringify(up));
+        if (up !== null) {
+            up = JSON.parse(up);
+            up.push(rawWallet);
+            localStorage.setItem('setting', JSON.stringify(up));
+        }
+        else {
+            up = "[]";
+        }
+
         GAPIService.save(up);
 
         $scope.wallets.push(wallet);
@@ -363,7 +369,10 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
             up = JSON.parse(up);
             up.splice($scope.selectWallet, 1);
             localStorage.setItem('setting', JSON.stringify(up));
+
             GAPIService.save(up);
+
+            $scope.selectWallet = null;
 
             $scope.dropdownOptionsMenu = false;
         }
