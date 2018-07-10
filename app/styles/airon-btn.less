@@ -1,0 +1,101 @@
+.btn {
+  &-floating {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: 50%;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+    i {
+      line-height: 56px;
+      width: inherit;
+      display: inline-block;
+      text-align: center;
+      font-size: 1.6rem;
+    }
+  }
+
+  &-circle {
+    background-color: #0398c6;
+    border-radius: 23px;
+    padding: 10px;
+    padding: 0 22px;
+    // text-transform: uppercase;
+    color: #fff;
+    font-size: 1.07rem;
+  }
+
+  &-cursor {
+    cursor: pointer;
+  }
+
+  &-shadown {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  &-nav {
+    color: #095f79;
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px;
+    white-space: nowrap;
+    position: relative;
+    min-height: 2.75rem;
+  }
+
+  &-airon {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    border: none;
+    line-height: 48px;
+    height: 48px;
+
+    i {
+      font-size: 1.4rem;
+      line-height: inherit;
+      color: inherit;
+
+      &.left {
+        float: left;
+        margin-right: 6px;
+      }
+    }
+
+    &-menu {
+      i {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.dis {
+  background-color: #fff;
+  color: #000;
+  margin-bottom: 7px;
+
+  &:hover {
+    background-color: #dfdfdf;
+  }
+}
+
+.airon-icon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 116px;
+
+  i {
+    margin-bottom: 8px;
+  }
+  text-align: center;
+  padding: 10px;
+  max-width: 115px;
+  min-width: 80px;
+  align-items: center;
+  justify-content: center;
+}

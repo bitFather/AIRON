@@ -237,7 +237,7 @@ app.service('GAPIService', function($window, $rootScope) {
                             resource: { name: file, parents: ['appDataFolder'] }
                         })
                         .then(function(response) {
-                            return result.id;
+                            return response.result.id;
                         });
 
                 }).then(function(id) {

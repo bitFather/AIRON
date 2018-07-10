@@ -3,19 +3,23 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     $scope.ajaxReq = ajaxReq;
 
     $scope.loadFromSetting = function () {
-        let walletsRaw = JSON.parse(localStorage.getItem('setting'));
+        let setting = localStorage.getItem('setting');
         $scope.wallets = [];
 
-        walletsRaw.forEach(function (e) {
-            let wallet = new aironWallet(e);
-            wallet.pullBalance(() => {
-                if (!$scope.$$phase) {
-                    $scope.$apply();
-                }
+        if (setting) {
+            let walletsRaw = JSON.parse(setting);
+       
+            walletsRaw.forEach(function (e) {
+                let wallet = new aironWallet(e);
+                wallet.pullBalance(() => {
+                    if (!$scope.$$phase) {
+                        $scope.$apply();
+                    }
+                });
+    
+                $scope.wallets.push(wallet);
             });
-
-            $scope.wallets.push(wallet);
-        });
+        }
     }
 
     $scope.loadFromSetting();
@@ -59,6 +63,9 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
             var selector = document.querySelector('#temp_element');
             selector.select();
             document.execCommand('copy');
+
+            $scope.notifier.success("Copy to Clipboard: " + textarea.value, 5000);
+
             document.body.removeChild(textarea);
         }
     }

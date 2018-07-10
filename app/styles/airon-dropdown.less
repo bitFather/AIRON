@@ -1,0 +1,45 @@
+.airon-dropdown {
+  position: absolute;
+  top: 65px;
+  left: -20px;
+
+  &-row {
+    overflow: hidden;
+  }
+
+  &-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &-b {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+
+      i {
+        margin-bottom: 8px;
+      }
+      text-align: center;
+      padding: 10px;
+      width: 100px;
+    }
+  }
+
+  &-block {
+    display: flex;
+    flex-direction: row;
+    padding: 18px;
+    overflow: hidden;
+  }
+}
+
+.dropdown-back {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.12);
+  z-index: 100;
+}
