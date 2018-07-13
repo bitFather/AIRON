@@ -2,6 +2,32 @@
 var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     $scope.ajaxReq = ajaxReq;
 
+    $scope.updateTokens = function (wallet, force) {
+        let tokens = localStorage.getItem('tokens_' + wallet.address);
+
+        if (!tokens || force) {
+            ajaxReq.getAddressTokenBalance(wallet.address, data => {
+                if (!data.error) {
+                    if (wallet.tokenList.length > 0) {
+                        wallet.tokenList = data.tokensInfo.map((e, i) => {
+                            e.IsFavour = wallet.tokenList[i].IsFavour;
+                            return e;
+                        });
+                    } else {
+                        wallet.tokenList = data.tokensInfo;
+                    }
+
+                    localStorage.setItem('tokens_' + wallet.address, JSON.stringify(wallet.tokenList));
+                }
+            });
+        }
+        else {
+            if (wallet.tokenList.length == 0) {
+                wallet.tokenList = JSON.parse(tokens);
+            }
+        }
+    }
+
     $scope.loadFromSetting = function () {
         let setting = localStorage.getItem('setting');
         $scope.wallets = [];
@@ -11,15 +37,32 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
 
             walletsRaw.forEach(function (e) {
                 let wallet = new aironWallet(e);
+                wallet.tokenList = e.tokens;
                 wallet.pullBalance(() => {
                     if (!$scope.$$phase) {
                         $scope.$apply();
                     }
                 });
 
+                $scope.updateTokens(wallet, false);
+
                 $scope.wallets.push(wallet);
             });
         }
+    }
+
+    $scope.updateTokenIsFavour = (token) => {
+        if (token.IsFavour !== true) {
+            token.IsFavour = true;
+        }
+        else {
+            token.IsFavour = !token.IsFavour;
+        }
+
+        let save = $scope.wallets.map(e => e.toSave());
+        localStorage.setItem('setting', save);
+
+        GAPIService.save(save);
     }
 
     $scope.loadFromSetting();
@@ -45,6 +88,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         GAPIService.read().then(function (e) {
             localStorage.setItem("setting", e);
             $scope.loadFromSetting();
+            $scope.updateTokens(wallet, true);
         });
     }
 

@@ -140,7 +140,16 @@
                                 <span class="wallet-count">{{ wallet.balance }}</span>
                                 <span class="wallet-name">ETH</span>
                                 <span class="wallet-space"></span>
-                                <i class="material-icons" ng-click="toggleStar(wallet)">{{ wallet.star ? 'star' : 'star_border' }}</i>
+                                <!-- <i class="material-icons" ng-click="toggleStar(wallet)">{{ wallet.star ? 'star' : 'star_border' }}</i> -->
+                            </div>
+
+                            <div ng-if="!wallet.hide" class="wallet-token" ng-repeat="token in wallet.tokenList track by $index">
+                                <span class="wallet-group" ng-class="{'wallet-group-select': token.select}">
+                                    <span class="wallet-count">{{ token.balance }}</span>
+                                    <span class="wallet-name">{{ token.symbol }}</span>
+                                    <span class="wallet-space"></span>
+                                    <i class="material-icons" ng-click="updateTokenIsFavour(token)">{{ token.IsFavour ? 'star' : 'star_border' }}</i>
+                                </span>
                             </div>
 
                             <!-- <div class="wallet-token" ng-repeat="token in wallet.tokens" ng-if="token.star">
