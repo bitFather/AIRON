@@ -1,5 +1,5 @@
 'use strict';
-var walletGenCtrl = function($scope) {
+var walletGenCtrl = function($scope, $state, GAPIService) {
     $scope.password = "";
     $scope.wallet = null;
     $scope.showWallet = false;
@@ -46,7 +46,20 @@ var walletGenCtrl = function($scope) {
         $scope.showPaperWallet = true;
     }
     $scope.getAddress = function(){
-        globalFuncs.changeHash('send-transaction');
+        let rawWallet = { name: "name", address: $scope.wallet.getAddressString() };
+
+        let up = localStorage.getItem('setting');
+        if (up === null) {
+            up = "[]";
+        }
+
+        up = JSON.parse(up);
+        up.push(rawWallet);
+        localStorage.setItem('setting', JSON.stringify(up));
+
+        GAPIService.save(up);
+
+        $state.go('wallet');
     }
 };
 

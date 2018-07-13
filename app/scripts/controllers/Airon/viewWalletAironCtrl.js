@@ -317,14 +317,13 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         });
 
         let up = localStorage.getItem('setting');
-        if (up !== null) {
-            up = JSON.parse(up);
-            up.push(rawWallet);
-            localStorage.setItem('setting', JSON.stringify(up));
-        }
-        else {
+        if (up === null) {
             up = "[]";
         }
+
+        up = JSON.parse(up);
+        up.push(rawWallet);
+        localStorage.setItem('setting', JSON.stringify(up));
 
         GAPIService.save(up);
 

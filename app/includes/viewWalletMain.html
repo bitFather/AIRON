@@ -56,7 +56,7 @@
 
                     <div class="dropdown-back" ng-show="dropdownWalletMenu || dropdownOptionsMenu" ng-click="hideMenu()"></div>
 
-                    <div class="airon-dropdown">
+                    <div class="airon-dropdown airon-dropdown-action__pos">
                         <div class="dropdown-menu dropdown-menu-left airon-dropdown-block" ng-show="dropdownWalletMenu">
                             <div class="airon-dropdown-icon-b" ng-click="addWalletModal.open()">
                                 <div class="airon-dropdown-icon">
@@ -76,7 +76,7 @@
                     </div>
 
                     <div class="airon-icon push">
-                        <div class="btn-floating dis" ng-click="decryptModalOpen()">
+                        <div class="btn-floating dis" ui-sref="send-tx">
                             <i class="material-icons">payment</i>
                         </div>
                         <span>Payment</span>
@@ -119,7 +119,7 @@
 
                 </nav>
 
-                <div class="airon-dropdown-options">
+                <div class="airon-dropdown airon-dropdown-option__pos">
                     <div class="dropdown-menu dropdown-menu-left airon-dropdown-row" ng-show="dropdownOptionsMenu">
                         <div class="airon-dropdown-icon-b" ng-click="renameWalletModal.open()">
                             <span>Rename wallet</span>

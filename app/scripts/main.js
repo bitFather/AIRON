@@ -160,11 +160,11 @@ app.config(['$stateProvider', function($stateProvider) {
             controller: 'tokenCreationCtrl',
             template: require('../includes/tokenCreation.html')
         })
-        // .state('send-tx', {
-        //     url: '/send-tx',
-        //     controller: 'sendTxCtrl',
-        //     template: require('../includes/sendTx.tpl')
-        // })
+        .state('send-tx', {
+            url: '/send-tx',
+            controller: 'sendTxCtrl',
+            template: require('../includes/sendTx.html')
+        })
         .state('callback', {
             url: '/callback',
             controller: 'callbackCtrl',
@@ -285,20 +285,6 @@ app.run(function($rootScope, $window, GAPIService) {
 
             var updateSate = function(state) {
                 if (state) {
-                    // var x1 = new Wallet(ethUtil.crypto.randomBytes(32));
-                    // var x2 = new Wallet(ethUtil.crypto.randomBytes(32));
-
-                    // GAPIService.save([
-                    //     {
-                    //         name: 'Gold Wallet',
-                    //         address: "0xEA674fdDe714fd979de3EdF0F56AA9716B898ec8"
-                    //     },
-                    //     {
-                    //         name: 'Platinum Wallet',
-                    //         address: "0x2492Ccd415E1Caa0aC3B51C28efB96682009cB2B"
-                    //     }
-                    // ]);
-
                     GAPIService.read().then((e) => {
                         if (e === "") {
                             e = "[]";
@@ -371,9 +357,8 @@ app.directive('walletBalanceDrtv', balanceDrtv);
 app.directive('walletDecryptDrtv', walletDecryptDrtv);
 app.directive('cxWalletDecryptDrtv', cxWalletDecryptDrtv);
 app.controller('tabsCtrl', ['$rootScope', '$scope', 'globalService', '$translate', '$sce', 'GAPIService', tabsCtrl]);
-// app.controller('tabsCtrl', ['$scope', 'globalService', '$translate', '$sce', 'gapiAuth2', tabsCtrl]);
 app.controller('viewCtrl', ['$scope', 'globalService', '$sce', viewCtrl]);
-app.controller('walletGenCtrl', ['$scope', walletGenCtrl]);
+app.controller('walletGenCtrl', ['$scope', '$state', 'GAPIService', walletGenCtrl]);
 app.controller('bulkGenCtrl', ['$scope', bulkGenCtrl]);
 app.controller('onboardingCtrl', ['$scope', onboardingCtrl]);
 app.controller('decryptWalletCtrl', ['$scope', '$sce', 'walletService', decryptWalletCtrl]);
