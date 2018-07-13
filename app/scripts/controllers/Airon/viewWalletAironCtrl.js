@@ -37,7 +37,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
 
             walletsRaw.forEach(function (e) {
                 let wallet = new aironWallet(e);
-                wallet.tokenList = e.tokens;
+                wallet.tokenList = e.tokenList;
                 wallet.pullBalance(() => {
                     if (!$scope.$$phase) {
                         $scope.$apply();
@@ -352,13 +352,16 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
             $scope.notifier.danger(globalFuncs.errorMsgs[46])
             return
         }
-        let rawWallet = { name: name, address: address };
+        let rawWallet = { name: name, address: address, tokenList: [] };
         let wallet = new aironWallet(rawWallet);
         wallet.pullBalance(() => {
             if (!$scope.$$phase) {
                 $scope.$apply();
             }
         });
+        wallet.tokenList = [];
+
+        $scope.updateTokens(wallet, true);
 
         let up = localStorage.getItem('setting');
         if (up === null) {
