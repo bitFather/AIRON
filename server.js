@@ -18,7 +18,7 @@ var httpServer = http.createServer(app);
 httpServer.listen(3000);
 
 const hostname = '0.0.0.0';
-const port = 3000;
+const port = 3001;
 
 const server = app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);  

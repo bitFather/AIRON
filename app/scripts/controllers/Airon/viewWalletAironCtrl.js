@@ -22,7 +22,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
             });
         }
         else {
-            if (wallet.tokenList.length == 0) {
+            if (!wallet.tokenList || wallet.tokenList.length == 0) {
                 wallet.tokenList = JSON.parse(tokens);
             }
         }
@@ -37,7 +37,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
 
             walletsRaw.forEach(function (e) {
                 let wallet = new aironWallet(e);
-                wallet.tokenList = e.tokenList;
+                wallet.tokenList = e.tokens;
                 wallet.pullBalance(() => {
                     if (!$scope.$$phase) {
                         $scope.$apply();
@@ -60,9 +60,10 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         }
 
         let save = $scope.wallets.map(e => e.toSave());
-        localStorage.setItem('setting', save);
 
         GAPIService.save(save);
+
+        localStorage.setItem('setting', JSON.stringify(save));
     }
 
     $scope.loadFromSetting();
