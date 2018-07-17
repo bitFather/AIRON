@@ -9,11 +9,10 @@
     padding: 24px;
     display: flex;
     flex-direction: row;
-    border: 1px solid transparent;
+
+    border: 1px solid #000;
 
     &:hover {
-      border-bottom: 1px solid #0398c6;
-      border-right: 1px solid #0398c6;
       cursor: pointer;
     }
   }
@@ -71,8 +70,12 @@
   &-scroll {
     overflow-x: scroll;
     height: 600px;
+
+    border: 1px solid #000;
+    padding: 0 8px;
+
     .active {
-      border: 1px solid #0398c6;
+      background-color: lighten(#0398c6, 30%);
     }
   }
 

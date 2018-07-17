@@ -386,7 +386,13 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
 
     $scope.renameWallet = function () {
         if ($scope.selectWallet !== null) {
-            $scope.selectWallet.name = $scope.rename.newWalletName;
+            $scope.wallets[$scope.selectWallet].name = $scope.rename.newWalletName;
+
+            $scope.rename.newWalletName = "";
+
+            let save = $scope.wallets.map(e => e.toSave());
+            GAPIService.save(save);
+            localStorage.setItem('setting', JSON.stringify(save));
 
             $scope.dropdownOptionsMenu = false;
             $scope.renameWalletModal.close();

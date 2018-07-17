@@ -105,7 +105,7 @@ function removeAllTokenConflicts(conflictWithDefaultTokens, localTokens) {
 
 AironWallet.prototype.toSave = function () {
   return {
-    address: this.address, name: this.address, tokens: this.tokenList.map(e => {
+    address: this.address, name: this.name, tokens: this.tokenList.map(e => {
       return {
         address: e.address,
         balance: e.balance,
