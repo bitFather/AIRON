@@ -31,7 +31,7 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
         hwRskPath: "m/44'/137'/0'/0",      // first address : m/44'/137'/0'/0/0
     };
     $scope.HDWallet.dPath = $scope.HDWallet.defaultDPath;
-    // $scope.mnemonicModel = new Modal(document.getElementById('mnemonicModel'));
+
     $scope.$watch('ajaxReq.type', function () {
         $scope.nodeType = $scope.ajaxReq.type;
         $scope.setdPath();
@@ -212,7 +212,7 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
     }
     $scope.setHDWallet = function () {
         walletService.wallet = $scope.wallet = $scope.HDWallet.wallets[$scope.HDWallet.id];
-        // $scope.mnemonicModel.close();
+        $scope.$parent.$parent.$parent.txState = 0;
         $scope.notifier.info(globalFuncs.successMsgs[1]);
         $scope.wallet.type = "default";
     }
@@ -233,8 +233,7 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
                 $scope.wallet = Wallet.getWalletFromPrivKeyFile($scope.fileContent, $scope.filePassword);
                 walletService.password = $scope.filePassword;
             } else if ($scope.showMDecrypt) {
-                // $scope.mnemonicModel = new Modal(document.getElementById('mnemonicModel'));
-                // $scope.mnemonicModel.open();
+                $scope.$parent.$parent.$parent.txState = 'mnemonicModel';
                 $scope.onHDDPathChange($scope.mnemonicPassword);
             } else if ($scope.showParityDecrypt) {
                 $scope.wallet = Wallet.fromParityPhrase($scope.parityPhrase);
@@ -243,7 +242,10 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
         } catch (e) {
             $scope.notifier.danger(globalFuncs.errorMsgs[6] + e);
         }
-        if ($scope.wallet != null) $scope.notifier.info(globalFuncs.successMsgs[1]);
+        if ($scope.wallet != null) {
+            $scope.notifier.info(globalFuncs.successMsgs[1]);
+            $scope.$parent.$parent.$parent.txState = 1;
+        }
         $scope.wallet.type = "default";
     };
     $scope.decryptAddressOnly = function () {
@@ -266,8 +268,8 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
         }
     }
     $scope.HWWalletCreate = function (publicKey, chainCode, walletType, path) {
-        // $scope.mnemonicModel = new Modal(document.getElementById('mnemonicModel'));
-        // $scope.mnemonicModel.open();
+        $scope.$parent.$parent.$parent.txState = 'mnemonicModel';
+
         $scope.HDWallet.hdk = new hd.HDKey();
         $scope.HDWallet.hdk.publicKey = new Buffer(publicKey, 'hex');
         $scope.HDWallet.hdk.chainCode = new Buffer(chainCode, 'hex');
