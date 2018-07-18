@@ -44,17 +44,16 @@
     </div>
 </div>
 
-
 <main ng-if="statusLogin" class="wallet-box">
     <article class="row">
         <article class="row block">
-            <section class="accordion">
+            <section>
                 <nav class="nav-bar">
                     <div class="btn-airon btn-circle btn-shadown" ng-click="showAddMenu()">
                         <i class="material-icons left">add</i> Create
                     </div>
 
-                    <div class="dropdown-back" ng-show="dropdownWalletMenu || dropdownOptionsMenu" ng-click="hideMenu()"></div>
+                    <div class="dropdown-back" ng-show="dropdownWalletMenu || dropdownOptionsMenu || dropdownEquivalentMenu" ng-click="hideMenu()"></div>
 
                     <div class="airon-dropdown airon-dropdown-action__pos">
                         <div class="dropdown-menu dropdown-menu-left airon-dropdown-block" ng-show="dropdownWalletMenu">
@@ -104,7 +103,7 @@
                     </div>
 
                     <div class="airon-icon">
-                        <div class="btn-floating dis">
+                        <div class="btn-floating dis" ng-click="showEquivalent()">
                             <i class="material-icons">attach_money</i>
                         </div>
                         <span>Equivalent</span>
@@ -126,6 +125,41 @@
                         </div>
                         <div class="airon-dropdown-icon-b" ng-click="delWallet()">
                             <span>Delete wallet</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="airon-dropdown airon-dropdown-equivalent__pos">
+                    <div class="dropdown-menu dropdown-menu-left airon-dropdown-row" ng-show="dropdownEquivalentMenu">
+                        <div ng-show="ajaxReq.type=='ETH'">
+                            <h5 translate="sidebar_Equiv" class="equivalent-text">Equivalent Values:</h5>
+                            <div class="equivalent">
+                                <ul>
+                                    <li>BTC:
+                                        <span class="mono wrap">{{wallets[selectWallet].btcBalance | number}}</span>
+                                    </li>
+                                    <li>USD:
+                                        <span class="mono wrap">{{wallets[selectWallet].usdBalance | currency:"$"}}</span>
+                                    </li>
+                                    <li>CHF:
+                                        <span class="mono wrap">{{wallets[selectWallet].chfBalance | currency:" "}}</span>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>REP:
+                                        <span class="mono wrap">{{wallets[selectWallet].repBalance | number}}</span>
+                                    </li>
+                                    <li>EUR:
+                                        <span class="mono wrap">{{wallets[selectWallet].eurBalance | currency:"€"}}</span>
+                                    </li>
+                                    <li>GBP:
+                                        <span class="mono wrap">{{wallets[selectWallet].gbpBalance | currency:"£"}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="equivalent-text">
+                                <small> These are only the equivalent values for ETH, not tokens. Sorry! </small>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -277,19 +311,6 @@
                                 <img src="images/icon-help-3.svg" width="16px" height="16px" style="margin: 0 5px 5px">
                             </a>
                         </label>
-
-                        <!-- Private
-                        <label aria-flowto="aria8" class="radio">
-                            <input aria-flowto="aria8" class="airon-fix-marge" aria-label="private key" type="radio" ng-model="walletType" value="pasteprivkey"
-                            />
-                            <span translate="x_PrivKey2">
-                                Private Key
-                            </span>
-                            <a href="https://myetherwallet.github.io/knowledge-base/private-keys-passwords/difference-beween-private-key-and-keystore-file.html"
-                                target="_blank" rel="noopener noreferrer">
-                                <img src="images/icon-help-3.svg" width="16px" height="16px" style="margin: 0 5px 5px">
-                            </a>
-                        </label> -->
                     </section>
 
                     <section class="col-md-8 col-sm-6">
@@ -705,7 +726,8 @@
                         <!-- TREZOR -->
                         <div ng-if="walletType=='trezor'">
                             <div class="form-group">
-                                <a style="width: 100%" id="aria7" class="btn btn-primary" ng-click="scanTrezor()" ng-show="walletType=='trezor'" tabindex="0" role="button" translate="ADD_Trezor_scan">
+                                <a style="width: 100%" id="aria7" class="btn btn-primary" ng-click="scanTrezor()" ng-show="walletType=='trezor'" tabindex="0"
+                                    role="button" translate="ADD_Trezor_scan">
                                     Connect to TREZOR
                                 </a>
                             </div>
@@ -733,7 +755,8 @@
                         <!-- Ledger -->
                         <div ng-if="walletType=='ledger'">
                             <div class="form-group">
-                                <a style="width: 100%" class="btn btn-primary" ng-click="scanLedger()" ng-show="walletType=='ledger'" role="button" tabindex="0" translate="ADD_Ledger_scan">
+                                <a style="width: 100%" class="btn btn-primary" ng-click="scanLedger()" ng-show="walletType=='ledger'" role="button" tabindex="0"
+                                    translate="ADD_Ledger_scan">
                                     SCAN
                                 </a>
                             </div>
@@ -757,7 +780,7 @@
                                         </span>
                                     </li>
                                     <li>
-                                        <a  href="https://myetherwallet.github.io/knowledge-base/hardware-wallets/ledger-hardware-wallet-unable-to-connect-on-myetherwallet.html"
+                                        <a href="https://myetherwallet.github.io/knowledge-base/hardware-wallets/ledger-hardware-wallet-unable-to-connect-on-myetherwallet.html"
                                             target="_blank" rel="noopener noreferrer">
                                             Still not working? More Troubleshooting Tips
                                         </a>
@@ -770,8 +793,8 @@
                         <!-- MetaMask -->
                         <div ng-if="walletType=='metamask'">
                             <div class="form-group">
-                                <a id="aria3" class="btn btn-primary" style="width: 100%" ng-click="scanMetamask()" ng-show="walletType=='metamask'" tabindex="0" role="button"
-                                    translate="ADD_MetaMask">
+                                <a id="aria3" class="btn btn-primary" style="width: 100%" ng-click="scanMetamask()" ng-show="walletType=='metamask'" tabindex="0"
+                                    role="button" translate="ADD_MetaMask">
                                     Connect to MetaMask
                                 </a>
                             </div>

@@ -244,13 +244,20 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     $scope.showAddMenu = function () {
         $scope.dropdownWalletMenu = true;
     }
+    $scope.showEquivalent = () => {
+        if ($scope.selectWallet !== null) {
+            $scope.dropdownEquivalentMenu = true;
+        }
+    }
     $scope.hideMenu = function () {
         $scope.dropdownOptionsMenu = false;
         $scope.dropdownWalletMenu = false;
+        $scope.dropdownEquivalentMenu = false;
     }
 
     $scope.dropdownOptionsMenu = false;
     $scope.dropdownWalletMenu = false;
+    $scope.dropdownEquivalentMenu = false;
 
 
     $scope.delWallet = function () {
