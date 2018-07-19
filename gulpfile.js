@@ -95,7 +95,6 @@ gulp.task('styles', function() {
         .pipe(cssnano({ autoprefixer: false, safe: true }))
         .pipe(rename(less_destFileMin))
         .pipe(gulp.dest(less_destFolder))
-        .pipe(gulp.dest(less_destFolder_CX))
         .pipe(notify(onSuccess('Styles')))
 });
 
@@ -181,35 +180,26 @@ let readMe = './README.md';
 
 gulp.task('copy', ['staticJS'], function() {
     gulp.src(imgSrcFolder)
-        .pipe(gulp.dest(dist + 'images'))
-        .pipe(gulp.dest(dist_CX + 'images'));
+        .pipe(gulp.dest(dist + 'images'));
 
     gulp.src(fontSrcFolder)
-        .pipe(gulp.dest(dist + 'fonts'))
-        .pipe(gulp.dest(dist_CX + 'fonts'));
+        .pipe(gulp.dest(dist + 'fonts'));
 
     gulp.src(staticJSSrcFile)
-        .pipe(gulp.dest(dist + 'js'))
-        .pipe(gulp.dest(dist_CX + 'js'));
+        .pipe(gulp.dest(dist + 'js'));
 
     gulp.src(jQueryFile)
-        .pipe(gulp.dest(dist + 'js'))
-        .pipe(gulp.dest(dist_CX + 'js'));
+        .pipe(gulp.dest(dist + 'js'));
 
     gulp.src(jsonFile)
-        .pipe(gulp.dest(dist))
-        .pipe(gulp.dest(dist_CX));
+        .pipe(gulp.dest(dist));
 
     gulp.src(readMe)
         .pipe(gulp.dest(dist));
 
-    gulp.src(bin)
-        .pipe(gulp.dest(dist + 'bin'));
-
-    return gulp.src(cxSrcFiles)
-        .pipe(gulp.dest(dist_CX + 'browser_action'))
-
-    .pipe(notify(onSuccess(' Copy ')))
+    return gulp.src(bin)
+        .pipe(gulp.dest(dist + 'bin'))
+        .pipe(notify(onSuccess(' Copy ')));
 });
 
 
