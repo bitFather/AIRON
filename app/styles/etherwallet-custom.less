@@ -671,9 +671,12 @@ label small {
   }
 }
 
-header {
-  margin-bottom: 1em;
+@media screen and (min-width: @screen-sm) {
+  header {
+    margin-bottom: 1em;
+  }
 }
+
 header.ETH {
   .nav-container                         { border-top: 0.25rem solid @brand-eth;  }
   & + .container + .pre-footer + .footer { border-top: 0.25rem solid @brand-eth;  }

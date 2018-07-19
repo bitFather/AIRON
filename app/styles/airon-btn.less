@@ -1,10 +1,25 @@
+@media screen and (max-width: @screen-sm) {
+  #create__btn {
+    display: none;
+  }
+}
+
+@media screen and (min-width: @screen-sm) {
+  #first__icon {
+    margin-left: auto;
+  }
+}
+
 .btn {
   &-floating {
     width: 56px;
     height: 56px;
     padding: 0;
     border-radius: 50%;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+    @media screen and (min-width: @screen-sm) {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    }
 
     i {
       line-height: 56px;
@@ -87,15 +102,22 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  width: 116px;
 
   i {
     margin-bottom: 8px;
   }
   text-align: center;
   padding: 10px;
-  max-width: 115px;
-  min-width: 80px;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: @screen-sm) {
+    padding: 0;
+  }
+
+  span {
+    @media screen and (max-width: @screen-sm) {
+      display: none;
+    }
+  }
 }
