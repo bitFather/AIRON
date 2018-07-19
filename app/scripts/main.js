@@ -263,7 +263,16 @@ app.service('GAPIService', function($window, $rootScope) {
     };
 }, '$window', '$rootScope');
 
-app.run(function($rootScope, $window, GAPIService) {
+app.run(function($rootScope, $window, GAPIService, $templateCache) {
+    
+    $templateCache.put('header-node-modal', require('../includes/header-node-modal.html'));
+
+    $templateCache.put('auth-wrapper', require('../includes/auth-wrapper.html'));
+    $templateCache.put('send-tx-stage_0', require('../includes/send-tx-stage_0.html'));
+    $templateCache.put('send-tx-stage_1', require('../includes/send-tx-stage_1.html'));
+    $templateCache.put('send-tx-stage_2', require('../includes/send-tx-stage_2.html'));
+    $templateCache.put('send-tx-stage_3', require('../includes/send-tx-stage_3.html'));
+    $templateCache.put('send-tx-stage_mnemonicModel', require('../includes/send-tx-stage_mnemonicModel.html'));
 
     var CLIENT_ID = '1032421929628-0coe3od5hl8699s9klm64htda1nk1b0f.apps.googleusercontent.com';
     var API_KEY = 'AIzaSyDC5rBGeihtEpQZZpmQ0lRnC4aYNbT38pc';

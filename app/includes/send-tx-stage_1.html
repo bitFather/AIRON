@@ -1,0 +1,91 @@
+<section class="modal-content">
+
+    <div class="modal-body modal-airon">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close Dialog">&times;</button>
+
+        <h2 class="modal-title text-center">
+            <span>Send Token</span>
+        </h2>
+
+        <!-- To Address -->
+        <div class="form-group">
+            <address-field placeholder="0x7cB57B5A97eAbe94205C07890BE4c1aD31E486A8" var-name="tx.to"></address-field>
+        </div>
+
+        <!-- Amount to Send -->
+        <section class="form-group">
+
+            <div class="col-sm-11">
+                <label translate="SEND_amount">
+                    Amount to Send:
+                </label>
+            </div>
+
+            <div class="col-sm-11">
+
+                <div class="input-group">
+
+                    <input type="text" class="form-control" placeholder="{{ 'SEND_amount_short' | translate }}" ng-model="tx.value" ng-disabled="tx.readOnly || checkTxReadOnly"
+                        ng-class="Validator.isPositiveNumber(tx.value) ? 'is-valid' : 'is-invalid'" />
+
+                    <div class="input-group-btn">
+
+                        <a style="min-width: 170px" class="btn btn-default dropdown-toggle" class="dropdown-toggle" ng-click="dropdownAmount = !dropdownAmount"
+                            ng-class="dropdownEnabled ? '' : 'disabled'">
+                            <strong>
+                                {{unitReadable}}
+                                <i class="caret"></i>
+                            </strong>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Amount to Send - Transfer Entire Balance -->
+            <p class="col-xs-12" ng-hide="tx.readOnly">
+                <a ng-click="transferAllBalance()">
+                    <span class="strong" translate="SEND_TransferTotal">
+                        Send Entire Balance
+                    </span>
+                </a>
+            </p>
+
+        </section>
+
+        <!-- Gas Limit -->
+        <section class="form-group">
+            <div class="col-sm-11">
+                <a href="https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html" target="_blank" rel="noopener noreferrer">
+                    <img src="images/icon-help.svg" class="help-icon" />
+                    <p class="account-help-text" translate="GAS_LIMIT_Desc"></p>
+                </a>
+                <label translate="TRANS_gas">
+                    Gas Limit:
+                </label>
+                <input type="text" class="form-control" placeholder="21000" ng-model="tx.gasLimit" ng-change="gasLimitChanged=true" ng-disabled="tx.readOnly || checkTxReadOnly"
+                    ng-class="Validator.isPositiveNumber(tx.gasLimit) ? 'is-valid' : 'is-invalid'" />
+            </div>
+        </section>
+
+        <!-- Advanced Option Panel -->
+        <a ng-click="showAdvance=true">
+            <p class="strong" translate="TRANS_advanced" style="margin-left: 15px">
+                + Advanced: Add Data
+            </p>
+        </a>
+        <!-- / Advanced Option Panel -->
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-default" ng-click="$parent.txState = 0">
+            Back
+        </button>
+
+        <button class="btn btn-primary" ng-click="generateTx()">
+            Generate Transaction
+        </button>
+    </div>
+</section>

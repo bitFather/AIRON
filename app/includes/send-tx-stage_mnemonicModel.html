@@ -1,0 +1,217 @@
+<section class="modal-content">
+
+    <div class="modal-body" role="document">
+
+        <button aria-label="Close" type="button" class="close" data-dismiss="modal">&times;</button>
+
+        <!-- Select HD Path -->
+        <h4 id="modalTitle" class="modal-title" translate="ADD_Radio_5_Path" style="margin-bottom: .25rem">
+            Select HD derivation path:
+        </h4>
+
+        <p class="alert alert-danger" ng-hide="ajaxReq.type=='ETH'||ajaxReq.type=='ETC'||ajaxReq.type=='ROPSTEN ETH'||ajaxReq.type=='RINKEBY ETH'||ajaxReq.type=='KOVAN ETH'||ajaxReq.type=='EXP'||ajaxReq.type=='UBQ'||ajaxReq.type=='ELLA'">
+            We do not know the correct path for this network.
+            <a href="https://github.com/kvhnuke/etherwallet/issues" target="_blank" rel="noopener noreferrer">
+                Please open a github issue
+            </a>
+            so we can discuss / be enlightened.
+        </p>
+
+        <section class="row">
+
+            <div class="col-sm-4">
+                <label class="radio small">
+                    <input aria-describedby="Path: Jaxx, Metamask, Exodus, imToken - {{HDWallet.defaultDPath}}" ng-change="onHDDPathChange()"
+                        ng-model="HDWallet.dPath" type="radio" value="{{HDWallet.defaultDPath}}" />
+                    <span ng-bind="HDWallet.defaultDPath"></span>
+                    <p class="small">
+                        Jaxx, Metamask, Exodus, imToken, TREZOR (ETH) &amp; Digital Bitbox
+                    </p>
+                </label>
+            </div>
+
+            <div class="col-sm-4">
+                <label class="radio small">
+                    <input aria-describedby="Path: Ledger (ETH) {{HDWallet.ledgerPath}}" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath"
+                        type="radio" value="{{HDWallet.ledgerPath}}" />
+                    <span ng-bind="HDWallet.ledgerPath"></span>
+                    <p class="small">
+                        Ledger (ETH)
+                    </p>
+                </label>
+
+                <label class="radio small">
+                    <input aria-describedby="Path: Ledger (ETC) {{HDWallet.ledgerClassicPath}}" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath"
+                        type="radio" value="{{HDWallet.ledgerClassicPath}}" />
+                    <span ng-bind="HDWallet.ledgerClassicPath"></span>
+                    <p class="small">
+                        Ledger (ETC)
+                    </p>
+                </label>
+            </div>
+
+            <div class="col-sm-4">
+                <label class="radio small">
+                    <input aria-describedby="Path: TREZOR (ETC) {{HDWallet.trezorClassicPath}}" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath"
+                        type="radio" value="{{HDWallet.trezorClassicPath}}" />
+                    <span ng-bind="HDWallet.trezorClassicPath"></span>
+                    <p class="small">
+                        TREZOR (ETC)
+                    </p>
+                </label>
+            </div>
+
+            <div class="col-sm-4">
+                <label class="radio small">
+                    <input aria-describedby="Path: SingularDTV {{HDWallet.singularDTVPath}}" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath"
+                        type="radio" value="{{HDWallet.singularDTVPath}}" />
+                    <span ng-bind="HDWallet.singularDTVPath"></span>
+                    <p class="small">
+                        SingularDTV
+                    </p>
+                </label>
+            </div>
+
+        </section>
+
+        <section class="row">
+            <div class="col-sm-4">
+                <label class="radio small">
+                    <input aria-describedby="Path: TREZOR - TESTNET - {{HDWallet.trezorTestnetPath}}" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath"
+                        type="radio" value="{{HDWallet.trezorTestnetPath}}" />
+                    <span ng-bind="HDWallet.trezorTestnetPath"></span>
+                    <p class="small">
+                        Network: Testnets
+                    </p>
+                </label>
+            </div>
+
+            <div class="col-sm-4">
+                <label class="radio small">
+                    <input aria-describedby="Path: TREZOR (ETC) {{HDWallet.hwExpansePath}}" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath"
+                        type="radio" value="{{HDWallet.hwExpansePath}}" />
+                    <span ng-bind="HDWallet.hwExpansePath"></span>
+                    <p class="small">
+                        Network: Expanse
+                    </p>
+                </label>
+            </div>
+
+            <div class="col-sm-4">
+                <label class="radio small">
+                    <input aria-describedby="Path: TREZOR (ETC) {{HDWallet.hwUbqPath}}" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath"
+                        type="radio" value="{{HDWallet.hwUbqPath}}" />
+                    <span ng-bind="HDWallet.hwUbqPath"></span>
+                    <p class="small">
+                        Network: Ubiq
+                    </p>
+                </label>
+            </div>
+
+            <div class="col-sm-4">
+                <label class="radio small">
+                    <input aria-describedby="Path: TREZOR (ELLA) {{HDWallet.hwEllaismPath}}" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath"
+                        type="radio" value="{{HDWallet.hwEllaismPath}}" />
+                    <span ng-bind="HDWallet.hwEllaismPath"></span>
+                    <p class="small">
+                        Network: Ellaism
+                    </p>
+                </label>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-sm-4">
+                <label class="radio small">
+                    <p class="small">
+                        <strong>
+                            Your Custom Path
+                        </strong>
+                    </p>
+                    <input aria-describedby="Path: Enter your own - {{HDWallet.customDPath}}" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath"
+                        type="radio" value="{{HDWallet.customDPath}}" />
+                    <input aria-describedby="Path: Enter your own - {{HDWallet.customDPath}}" type="text" class="form-control input-sm" ng-model="HDWallet.customDPath"
+                        ng-change="onCustomHDDPathChange()" style="float: right;margin: 0 0 .5rem;" />
+                </label>
+            </div>
+        </section>
+
+
+
+        <h4 id="modalTitle2" class="modal-title" translate="MNEM_1" style="margin: .5rem 0">
+            Please select the address you would like to interact with.
+        </h4>
+
+        <table class="small table table-striped table-mnemonic">
+            <tr>
+                <th translate="x_Address">
+                    Address
+                </th>
+                <th translate="MYWAL_Bal">
+                    Balance
+                </th>
+                <th translate="sidebar_TokenBal" class="text-center">
+                    Token
+                    <br>Balances
+                </th>
+            </tr>
+            <tr ng-repeat="wallet in HDWallet.wallets track by $index">
+                <td>
+                    <label>
+                        <input aria-describedby="modalTitle2" aria-label="Unlock wallet with {{wallet.getBalance()}} {{ajaxReq.type}}. Address: {{wallet.getChecksumAddressString()}}"
+                            name="addressSelect" ng-model="HDWallet.id" type="radio" value="{{$index}}" />
+                        <span class="small">
+                            {{wallet.getChecksumAddressString()}}
+                        </span>
+                    </label>
+                </td>
+
+                <td>
+                    <a href="{{ajaxReq.blockExplorerAddr.replace('[[address]]', wallet.getAddressString())}}" target="_blank" rel="noopener noreferrer">
+                        {{wallet.getBalance()}} {{ajaxReq.type}}
+                    </a>
+                </td>
+
+                <td class="text-center">
+                    <a href="https://ethplorer.io/address/{{wallet.getAddressString()}}" target="_blank" rel="noopener noreferrer" title="https://ethplorer.io/address/{{wallet.getAddressString()}}">
+                        <img src="images/icon-external-link.svg" title="https://ethplorer.io/address/{{wallet.getAddressString()}}" ng-click="removeTokenFromLocal(token.symbol)"
+                            ng-show="token.type!=='default'" />
+                    </a>
+                </td>
+
+            </tr>
+
+            <tr class="m-addresses">
+
+                <td>
+                    <a ng-click="AddRemoveHDAddresses(false)" ng-show="HDWallet.numWallets > 5" role="link" tabindex="0" translate="MNEM_prev">
+                        Previous Addresses
+                    </a>
+                </td>
+
+                <td></td>
+
+                <td>
+                    <a ng-click="AddRemoveHDAddresses(true)" role="link" tabindex="0" translate="MNEM_more">
+                        More Addresses
+                    </a>
+                </td>
+
+            </tr>
+        </table>
+
+        <div class="clearfix button-group">
+            <button aria-label="Unlock this Wallet" class="btn btn-primary pull-right" style="margin: 0 .1rem" ng-click="setHDWallet()"
+                role="button" tabindex="0" translate="ADD_Label_6">
+                Access Wallet
+            </button>
+
+            <button aria-label="Cancel - Will close dialog" class="btn btn-default pull-right" style="margin: 0 .1rem" data-dismiss="modal"
+                role="button" tabindex="0" translate="x_Cancel">
+                Cancel
+            </button>
+        </div>
+
+    </div>
+
+</section>

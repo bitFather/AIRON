@@ -168,9 +168,8 @@
 
   <section class="nav-section" ng-if="statusLogin">
     <nav role="navigation" aria-label="main navigation" class="container nav-container overflowing">
-      <a aria-hidden="true" ng-show="showLeftArrow" class="nav-arrow-left" ng-click="scrollLeft(100);" ng-mouseover="scrollHoverIn(true,2);"
-        ng-mouseleave="scrollHoverOut()">&#171;</a>
-      <div class="nav-scroll" ng-class="{opened: true}">
+
+      <div class="nav-scroll">
         <ul class="nav-inner">
 
           <li class="nav-item">
@@ -185,7 +184,7 @@
             </a>
           </li>
 
-          <li class="nav-item help navbar-right">
+          <li class="nav-item navbar-right">
             <a class="btn-airon-menu" ng-click="logout()">
               Logout
               <i class="material-icons">exit_to_app</i>
@@ -194,17 +193,11 @@
 
         </ul>
       </div>
-      <a aria-hidden="true" ng-show="showRightArrow" class="nav-arrow-right" ng-click="scrollRight(100);" ng-mouseover="scrollHoverIn(false,2);"
-        ng-mouseleave="scrollHoverOut()">&#187;</a>
+
+
     </nav>
   </section>
 
-  @@if (site === 'mew' ) {
-    @@include( './header-node-modal.tpl', { "site": "mew" } )
-  }
-  
-  @@if (site === 'cx' ) {
-    @@include( './header-node-modal.tpl', { "site": "cx" } )
-  }
+  <article ng-include=" 'header-node-modal' " class="modal fade" id="customNodeModal" tabindex="-1"></article>
 
 </header>

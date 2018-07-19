@@ -243,6 +243,8 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
 
     $scope.sendTx = function() {
         $scope.sendTxModal.close();
+        $scope.$parent.txState = 0;
+
         uiFuncs.sendTx($scope.signedTx, function(resp) {
             if (!resp.isError) {
                 var checkTxLink = "https://www.airon.io?txHash=" + resp.data + "#check-tx-status";

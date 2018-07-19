@@ -57,19 +57,23 @@ function notifyFunc(msg) {
 
 
 // HTML / TPL Pages
-let htmlFiles = app + 'layouts/*.html';
-let tplFiles = app + 'includes/*.tpl';
-let htmlTplFiles = app + 'includes/*.html';
+let htmlLayouts = app + 'layouts/*.html';
+let htmlFiles = [
+    htmlLayouts,
+    app + 'includes/head.html',
+    app + 'includes/header.html',
+    app + 'includes/alerts.html',
+    app + 'includes/footer.html'
+];
+let htmlIncludes = app + 'includes/**/*.{tpl,html}';
 
-gulp.task('html', ['js'], function(done) {
-    return gulp.src(htmlFiles)
+gulp.task('html', function(done) {
+    return gulp.src(htmlLayouts)
         .pipe(plumber({ errorHandler: onError }))
         .pipe(fileinclude({ prefix: '@@', basepath: '@file' }))
         .pipe(gulp.dest(dist))
-        .pipe(gulp.dest(dist_CX))
         .pipe(notify(onSuccess('HTML')))
 });
-
 
 
 // styles: Compile and Minify Less / CSS Files
@@ -116,7 +120,6 @@ function bundle_js(bundler) {
         .pipe(buffer())
         .pipe(rename(js_destFile))
         .pipe(gulp.dest(js_destFolder))
-        .pipe(gulp.dest(js_destFolder_CX))
         .pipe(notify(onSuccess('JS')))
 }
 
@@ -384,13 +387,17 @@ gulp.task('pushlive', ['getVersion'], function() {
 // git push --tags
 // gulp pushlive ( git subtree push --prefix dist origin gh-pages )
 
-gulp.task('watchJS',      function() { gulp.watch(js_watchFolder,   ['js']            ) })
 gulp.task('watchJSDebug', function() { gulp.watch(js_watchFolder,   ['js-debug']      ) })
 gulp.task('watchJSProd',  function() { gulp.watch(js_watchFolder,   ['js-production'] ) })
-gulp.task('watchLess',    function() { gulp.watch(less_watchFolder, ['styles']        ) })
-gulp.task('watchPAGES',   function() { gulp.watch(htmlFiles,        ['html']          ) })
+
+// Use
+gulp.task('watchIncludes', function () { gulp.watch(htmlIncludes, ['js']) })
+gulp.task('watchJS', function () { gulp.watch(js_watchFolder, ['js']) })
+gulp.task('watchLess', function () { gulp.watch(less_watchFolder, ['styles']) })
+gulp.task('watchLayouts', function () { gulp.watch(htmlFiles, ['html']) })
+gulp.task('watch', ['watchJS', 'watchLess', 'watchLayouts', 'watchIncludes'])
+
 gulp.task('watchTPL',     function() { gulp.watch(tplFiles,         ['html']          ) })
-gulp.task('watchHTMLTPL', function () { gulp.watch(htmlTplFiles,         ['html']          ) })
 gulp.task('watchCX',      function() { gulp.watch(cxSrcFiles,       ['copy']          ) })
 
 gulp.task('bump',          function() { return bumpFunc( 'patch' ) });
@@ -407,7 +414,8 @@ gulp.task('zipit',  function(cb) { runSequence('clean', 'zip', cb);             
 
 gulp.task('commit', function(cb) { runSequence('add', 'commitV', 'tag', cb);                   });
 
-gulp.task('watch', ['watchJS', 'watchLess', 'watchPAGES', 'watchHTMLTPL', 'watchTPL', 'watchCX'])
+
+
 gulp.task('watchProd', ['watchJSProd', 'watchLess', 'watchPAGES', 'watchTPL', 'watchCX'])
 
 gulp.task('build', ['js', 'html', 'styles', 'copy']);
