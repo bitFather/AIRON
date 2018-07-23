@@ -153,7 +153,9 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     };
 
     $scope.sendTxModalOpen = function () {
-        $scope.sendTxModal.open();
+        if ($scope.selectWallet !== null) {
+            $scope.sendTxModal.open();
+        }
     }
 
     $scope.selectWalletFunc = function (indx) {
