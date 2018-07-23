@@ -8,12 +8,13 @@
         </h2>
 
         <!-- To Address -->
-        <div class="form-group">
+        <div class="row form-group">
             <address-field placeholder="0x7cB57B5A97eAbe94205C07890BE4c1aD31E486A8" var-name="tx.to"></address-field>
         </div>
 
+
         <!-- Amount to Send -->
-        <section class="form-group">
+        <section class="row form-group">
 
             <div class="col-sm-11">
                 <label translate="SEND_amount">
@@ -38,11 +39,41 @@
                             </strong>
                         </a>
 
+                        <!-- Amount to Send - Dropdown -->
+                        <ul class="dropdown-menu dropdown-menu-right ovh" ng-show="dropdownAmount && !tx.readOnly">
+                            <li>
+                                <a ng-class="{true:'active'}[tx.sendMode=='ether']" ng-click="setSendMode('ether')">
+                                    {{ajaxReq.type}}
+                                </a>
+                            </li>
+                            <li ng-repeat="token in wallet.tokenObjs track by $index" ng-show="token.balance!=0 &&
+                                   token.balance!='loading' &&
+                                   token.balance!='Click to Load' &&
+                                   token.balance.trim()!='Not a valid ERC-20 token' ||
+                                   token.type!=='default'">
+                                <a ng-class="{true:'active'}[unitReadable == token.getSymbol()]" ng-click="setSendMode('token', $index, token.getSymbol())">
+                                    {{token.getSymbol()}}
+                                </a>
+                            </li>
+                        </ul>
+
                     </div>
 
                 </div>
 
             </div>
+
+            <!-- Amount to Send - Load Token Balances
+              <a class="col-sm-1 send__load-tokens"
+                 title="Load Token Balances"
+                 ng-click="wallet.setTokens(); globalService.tokensLoaded=true"
+                 ng-hide="globalService.tokensLoaded">
+                  <img src="images/icon-load-tokens.svg" width="16" height="16" />
+                  <p translate="SEND_LoadTokens">
+                    Load Tokens
+                  </p>
+              </a>
+              -->
 
             <!-- Amount to Send - Transfer Entire Balance -->
             <p class="col-xs-12" ng-hide="tx.readOnly">
@@ -55,10 +86,14 @@
 
         </section>
 
+
+
+
         <!-- Gas Limit -->
-        <section class="form-group">
-            <div class="col-sm-11">
-                <a href="https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html" target="_blank" rel="noopener noreferrer">
+        <section class="row form-group">
+            <div class="col-sm-11 clearfix">
+                <a class="account-help-icon" href="https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html" target="_blank"
+                    rel="noopener noreferrer">
                     <img src="images/icon-help.svg" class="help-icon" />
                     <p class="account-help-text" translate="GAS_LIMIT_Desc"></p>
                 </a>
@@ -72,15 +107,79 @@
 
         <!-- Advanced Option Panel -->
         <a ng-click="showAdvance=true">
-            <p class="strong" translate="TRANS_advanced" style="margin-left: 15px">
+            <p class="strong" translate="TRANS_advanced">
                 + Advanced: Add Data
             </p>
         </a>
+
+
+
+        <div ng-show="showAdvance || checkTxPage">
+
+            <!-- Data -->
+            <section class="row form-group">
+                <div class="col-sm-11 clearfix" ng-show="tx.sendMode=='ether'">
+                    <span class="account-help-icon">
+                        <img src="images/icon-help.svg" class="help-icon" />
+                        <p class="account-help-text" translate="OFFLINE_Step2_Label_6b">
+                            This is optional.
+                        </p>
+                    </span>
+
+                    <label translate="TRANS_data"> Data: </label>
+
+                    <input type="text" class="form-control" placeholder="0x6d79657468657277616c6c65742e636f6d20697320746865206265737421" ng-model="tx.data"
+                        ng-disabled="tx.readOnly || checkTxReadOnly" ng-class="Validator.isValidHex(tx.data) ? 'is-valid' : 'is-invalid'"
+                    />
+
+                </div>
+            </section>
+
+
+            <!-- Nonce -->
+            <section class="row form-group" ng-show="checkTxPage">
+                <div class="col-sm-11 clearfix">
+
+                    <a class="account-help-icon" href="https://myetherwallet.github.io/knowledge-base/transactions/what-is-nonce.html" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="images/icon-help.svg" class="help-icon" />
+                        <p class="account-help-text" translate="NONCE_Desc"></p>
+                    </a>
+
+                    <label translate="OFFLINE_Step2_Label_5">
+                        Nonce
+                    </label>
+                    <input type="text" class="form-control" placeholder="2" ng-model="tx.nonce" ng-disabled="checkTxReadOnly" ng-class="Validator.isPositiveNumber(tx.nonce) ? 'is-valid' : 'is-invalid'"
+                    />
+
+                </div>
+            </section>
+
+
+            <!-- Gas Price -->
+            <section class="row form-group" ng-show="checkTxPage">
+                <div class="col-sm-11 clearfix">
+                    <a class="account-help-icon" href="https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="images/icon-help.svg" class="help-icon" />
+                        <p class="account-help-text" translate="GAS_PRICE_Desc"></p>
+                    </a>
+
+                    <label translate="OFFLINE_Step2_Label_3">
+                        Gas Price:
+                    </label>
+                    <input type="text" class="form-control" placeholder="50" ng-model="tx.gasPrice" ng-disabled="checkTxReadOnly" ng-class="Validator.isPositiveNumber(tx.gasPrice) ? 'is-valid' : 'is-invalid'"
+                    />
+
+                </div>
+            </section>
+
+        </div>
         <!-- / Advanced Option Panel -->
     </div>
 
     <div class="modal-footer">
-        <button class="btn btn-default" ng-click="$parent.txState = 0">
+        <button class="btn btn-default" ng-click="$parent.$parent.txState = 0">
             Back
         </button>
 

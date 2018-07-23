@@ -342,6 +342,8 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
             walletService.wallet = wallet
             $scope.notifier.info(globalFuncs.successMsgs[6])
             $scope.wallet.type = "default";
+
+            $scope.$parent.$parent.$parent.txState = 1;
         });
     };
 
