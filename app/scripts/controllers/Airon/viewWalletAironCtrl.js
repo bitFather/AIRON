@@ -157,6 +157,10 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
             $scope.sendTxModal.open();
         }
     }
+    $scope.selectPay = null;
+    $scope.selectPayFunc = (idx) => {
+        $scope.selectPay = idx;
+    }
 
     $scope.selectWalletFunc = function (indx) {
         $scope.select = true;
