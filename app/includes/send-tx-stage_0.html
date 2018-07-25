@@ -474,23 +474,12 @@
                 <input class="form-control" aria-label="Enter the Digital Bitbox password" aria-describedby="selectedTypeDigitalBitbox" type="password"
                     placeholder="Digital Bitbox password" spellcheck="false" value="" ng-model="HDWallet.digitalBitboxSecret"
                 />
-                <div class="form-group">
-                    <a style="width: 100%" tabindex="0" role="button" class="btn btn-primary" ng-click="scanDigitalBitbox()" translate="ADD_DigitalBitbox_scan">
-                        Connect your Digital Bitbox
-                    </a>
-                </div>
             </div>
             <!-- / Digital Bitbox -->
 
 
             <!-- TREZOR -->
             <div ng-if="walletType=='trezor'">
-                <div class="form-group">
-                    <a style="width: 100%" id="aria7" class="btn btn-primary" ng-click="scanTrezor()" ng-show="walletType=='trezor'" tabindex="0"
-                        role="button" translate="ADD_Trezor_scan">
-                        Connect to TREZOR
-                    </a>
-                </div>
                 <div role="alert" ng-show="trezorError">
                     <p class="strong text-danger">
                         {{trezorErrorString}}
@@ -514,12 +503,6 @@
 
             <!-- Ledger -->
             <div ng-if="walletType=='ledger'">
-                <div class="form-group">
-                    <a style="width: 100%" class="btn btn-primary" ng-click="scanLedger()" ng-show="walletType=='ledger'" role="button" tabindex="0"
-                        translate="ADD_Ledger_scan">
-                        SCAN
-                    </a>
-                </div>
                 <div role="alert" ng-show="ledgerError">
                     <p class="strong text-danger">
                         {{ledgerErrorString}}
@@ -550,29 +533,41 @@
             </div>
             <!-- / Ledger -->
 
-            <!-- MetaMask -->
-            <div ng-if="walletType=='metamask'">
-                <div class="form-group">
-                    <a id="aria3" class="btn btn-primary" style="width: 100%" ng-click="scanMetamask()" ng-show="walletType=='metamask'" tabindex="0"
-                        role="button" translate="ADD_MetaMask">
-                        Connect to MetaMask
-                    </a>
-                </div>
-            </div>
-            <!-- / MetaMask -->
-
-            <!-- View Only -->
-            <div ng-if="walletType=='addressOnly'">
-            </div>
-            <!-- / View Only -->
-
 
         </section>
     </div>
 
     <div class="modal-footer">
-        <button ng-disabled="!(showFDecrypt||showPDecrypt||showMDecrypt||showParityDecrypt)" class="btn btn-primary" ng-click="decryptWallet()">
+        <button ng-if="['fileupload', 'pastemnemonic', 'pasteprivkey'].includes(walletType)" ng-disabled="!(showFDecrypt||showPDecrypt||showMDecrypt||showParityDecrypt)" class="btn btn-primary"
+            ng-click="decryptWallet()">
             UNLOCK
         </button>
+
+        <!-- MetaMask -->
+        <a ng-if="walletType=='metamask'" id="aria3" class="btn btn-primary" style="width: 100%" ng-click="scanMetamask()" ng-show="walletType=='metamask'"
+            tabindex="0" role="button" translate="ADD_MetaMask">
+            Connect to MetaMask
+        </a>
+        <!-- / MetaMask -->
+
+        <!-- Ledger -->
+        <a ng-if="walletType=='ledger'" style="width: 100%" class="btn btn-primary" ng-click="scanLedger()" ng-show="walletType=='ledger'" role="button" tabindex="0"
+                         translate="ADD_Ledger_scan"> SCAN
+        </a>
+        <!-- / Ledger -->
+
+        <!-- TREZOR -->
+        <a ng-if="walletType=='trezor'" style="width: 100%" id="aria7" class="btn btn-primary" ng-click="scanTrezor()" ng-show="walletType=='trezor'" tabindex="0"
+            role="button" translate="ADD_Trezor_scan">
+            Connect to TREZOR
+        </a>
+        <!-- / TREZOR -->
+
+        <!-- Digital Bitbox -->
+        <a ng-if="walletType=='digitalBitbox'" style="width: 100%" tabindex="0" role="button" class="btn btn-primary" ng-click="scanDigitalBitbox()" translate="ADD_DigitalBitbox_scan">
+            Connect your Digital Bitbox
+        </a>
+        <!-- / Digital Bitbox -->
+
     </div>
 </section>
