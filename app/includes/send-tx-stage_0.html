@@ -538,7 +538,7 @@
     </div>
 
     <div class="modal-footer">
-        <button ng-if="['fileupload', 'pastemnemonic', 'pasteprivkey'].includes(walletType)" ng-disabled="!(showFDecrypt||showPDecrypt||showMDecrypt||showParityDecrypt)" class="btn btn-primary"
+        <button style="width: 100%" ng-if="['fileupload', 'pastemnemonic', 'pasteprivkey'].includes(walletType)" ng-disabled="!(showFDecrypt||showPDecrypt||showMDecrypt||showParityDecrypt)" class="btn btn-primary"
             ng-click="decryptWallet()">
             UNLOCK
         </button>
