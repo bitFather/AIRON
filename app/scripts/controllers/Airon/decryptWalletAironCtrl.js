@@ -333,17 +333,30 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
     $scope.scanMetamask = function () {
         window.web3.eth.getAccounts(function (err, accounts) {
             if (err) $scope.notifier.danger(err + '. Are you sure you are on a secure (SSL / HTTPS) connection?')
+
+            var $airon = $scope.$parent.$parent.$parent;
+
             var address = accounts[0]
             var addressBuffer = Buffer.from(address.slice(2), 'hex');
+
+            var swa = $airon.wallets[$airon.selectWallet].address;
+
+            if (swa.toLowerCase() != address.toLowerCase()) {
+                $airon.txState = 0;
+                $scope.notifier.danger("Неверный кошелёк");
+                $airon.sendTxModal.close();
+                return;
+            }
+
             var wallet = new Web3Wallet(addressBuffer);
-            wallet.setBalance(false);
+            
             // set wallet
             $scope.wallet = wallet
             walletService.wallet = wallet
-            $scope.notifier.info(globalFuncs.successMsgs[6])
+            // $scope.notifier.info(globalFuncs.successMsgs[6])
             $scope.wallet.type = "default";
 
-            $scope.$parent.$parent.$parent.txState = 1;
+            $airon.txState = 1;
         });
     };
 

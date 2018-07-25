@@ -5,18 +5,17 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
     $scope.ajaxReq = ajaxReq;
     $scope.unitReadable = ajaxReq.type;
     // $scope.sendTxModal = new Modal(document.getElementById('sendTransaction'));
-    walletService.wallet = null;
+    // walletService.wallet = null;
     walletService.password = '';
     $scope.showAdvance = $rootScope.rootScopeShowRawTx = false;
     $scope.dropdownEnabled = true;
     $scope.Validator = Validator;
     $scope.gasLimitChanged = false;
     $scope.tx.readOnly = globalFuncs.urlGet('readOnly') == null ? false : true;
-    var currentTab = $scope.globalService.currentTab;
-    var tabs = $scope.globalService.tabs;
+
     $scope.tokenTx = {
         to: '',
-        value: 0,
+        value: 0,   
         id: -1
     };
     $scope.customGasMsg = '';
@@ -85,10 +84,18 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
         return walletService.wallet.getAddressString();
     }, function() {
         if (walletService.wallet == null) return;
+        debugger;
         $scope.wallet = walletService.wallet;
         $scope.wd = true;
-        $scope.wallet.setBalance(applyScope);
+
         $scope.wallet.setTokens();
+        $scope.wallet.setBalance(applyScope);
+
+        var $airon = $scope.$parent;
+
+        $scope.wallet.tokenObjs[$airon.selectPay].setBalance(applyScope);
+
+
         if ($scope.parentTxConfig) {
             var setTxObj = function() {
                 $scope.addressDrtv.ensAddressField = $scope.parentTxConfig.to;
