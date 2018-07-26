@@ -29,51 +29,11 @@
                     <input type="text" class="form-control" placeholder="{{ 'SEND_amount_short' | translate }}" ng-model="tx.value" ng-disabled="tx.readOnly || checkTxReadOnly"
                         ng-class="Validator.isPositiveNumber(tx.value) ? 'is-valid' : 'is-invalid'" />
 
-                    <div class="input-group-btn">
-
-                        <a style="min-width: 170px" class="btn btn-default dropdown-toggle" class="dropdown-toggle" ng-click="dropdownAmount = !dropdownAmount"
-                            ng-class="dropdownEnabled ? '' : 'disabled'">
-                            <strong>
-                                {{unitReadable}}
-                                <i class="caret"></i>
-                            </strong>
-                        </a>
-
-                        <!-- Amount to Send - Dropdown -->
-                        <ul class="dropdown-menu dropdown-menu-right ovh" ng-show="dropdownAmount && !tx.readOnly">
-                            <li>
-                                <a ng-class="{true:'active'}[tx.sendMode=='ether']" ng-click="setSendMode('ether')">
-                                    {{ajaxReq.type}}
-                                </a>
-                            </li>
-                            <li ng-repeat="token in wallet.tokenObjs track by $index" ng-show="token.balance!=0 &&
-                                   token.balance!='loading' &&
-                                   token.balance!='Click to Load' &&
-                                   token.balance.trim()!='Not a valid ERC-20 token' ||
-                                   token.type!=='default'">
-                                <a ng-class="{true:'active'}[unitReadable == token.getSymbol()]" ng-click="setSendMode('token', $index, token.getSymbol())">
-                                    {{token.getSymbol()}}
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
+                    <div class="input-group-addon">{{unitReadable}}</div>
 
                 </div>
 
             </div>
-
-            <!-- Amount to Send - Load Token Balances -->
-              <!-- <a class="col-sm-1 send__load-tokens"
-                 title="Load Token Balances"
-                 ng-click="wallet.setTokens(); globalService.tokensLoaded=true"
-                 ng-hide="globalService.tokensLoaded">
-                  <img src="images/icon-load-tokens.svg" width="16" height="16" />
-                  <p translate="SEND_LoadTokens">
-                    Load Tokens
-                  </p>
-              </a> -->
-             
 
             <!-- Amount to Send - Transfer Entire Balance -->
             <p class="col-xs-12" ng-hide="tx.readOnly">

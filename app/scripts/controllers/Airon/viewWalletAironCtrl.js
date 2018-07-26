@@ -157,14 +157,23 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
             $scope.sendTxModal.open();
         }
     }
+    $scope.selectWalletObj = null;
+    $scope.selectTokenObj = null;
+
     $scope.selectPay = null;
     $scope.selectPayFunc = (idx) => {
         $scope.selectPay = idx;
+
+        setTimeout((idx) => {
+            $scope.selectTokenObj = $scope.selectWalletObj.tokenList[idx];
+        }, 10, idx);
     }
 
-    $scope.selectWalletFunc = function (indx) {
+    $scope.selectWalletFunc = function (idx) {
         $scope.select = true;
-        $scope.selectWallet = indx;
+        $scope.selectWallet = idx;
+
+        $scope.selectWalletObj = $scope.wallets[idx];
     };
 
     $scope.dropdownWalletMenu = false;

@@ -340,6 +340,7 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
             var addressBuffer = Buffer.from(address.slice(2), 'hex');
 
             var swa = $airon.wallets[$airon.selectWallet].address;
+            $airon.selectWalletAddress = address;
 
             if (swa.toLowerCase() != address.toLowerCase()) {
                 $airon.txState = 0;
@@ -351,6 +352,7 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
             var wallet = new Web3Wallet(addressBuffer);
             
             // set wallet
+            wallet.selectToken = $airon.selectTokenObj;
             $scope.wallet = wallet
             walletService.wallet = wallet
             // $scope.notifier.info(globalFuncs.successMsgs[6])
