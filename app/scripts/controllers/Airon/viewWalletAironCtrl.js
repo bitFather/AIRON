@@ -2,99 +2,85 @@
 var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     $scope.ajaxReq = ajaxReq;
 
-    $scope.updateTokensForce = (wallet) => {
-        ajaxReq.getAddressTokenBalance(wallet.address, data => {
-            if (!data.error) {
-                if (wallet.tokenList.length > 0) {
-                    wallet.tokenList = data.tokensInfo.map((e, i) => {
-                        if (wallet.tokenList[i]['IsFavour']) {
-                            e.IsFavour = wallet.tokenList[i].IsFavour;
-                        }
-                        else {
-                            e.IsFavour = false;
-                        }
+    $scope.updateInterval = 10000;
 
-                        return e;
-                    });
-                } else {
-                    wallet.tokenList = data.tokensInfo;
-                }
+    $scope.createWallet = (address, name, favourList) => {
+        let wallet = {
+            name: name,
+            address: address,
+            tokenList: [],
+            balance: "loading...",
+            favourList: favourList
+        };
 
-                localStorage.setItem('tokens_' + wallet.address, JSON.stringify(wallet.tokenList));
-            }
-        });
-    }
-
-    $scope.updateTokens = function (wallet, force) {
-        let tokens = localStorage.getItem('tokens_' + wallet.address);
-
-        if (!tokens || force) {
-            ajaxReq.getAddressTokenBalance(wallet.address, data => {
-                if (!data.error) {
-                    if (wallet.tokenList.length > 0) {
-                        wallet.tokenList = data.tokensInfo.map((e, i) => {
-                            if (i > wallet.tokenList.length - 1) {
-                                e.IsFavour = false;
-                            } else {
-                                e.IsFavour = wallet.tokenList[i].IsFavour;
-                            }
-                            return e;
-                        });
-                    } else {
-                        wallet.tokenList = data.tokensInfo;
-                    }
-
-                    localStorage.setItem('tokens_' + wallet.address, JSON.stringify(wallet.tokenList));
-                }
-            });
+        let lut = localStorage.getItem('last_update_time');
+        if (!lut) {
+            lut = 0;
         }
         else {
-            if (!wallet.tokenList || wallet.tokenList.length == 0) {
-                wallet.tokenList = JSON.parse(tokens);
-            }
+            lut = JSON.parse(lut);
         }
+        let now = new Date().getTime();
+
+        const wait = (now - lut) > $scope.updateInterval ? 0 : $scope.updateInterval - (now - lut);
+        console.log(wait);
+
+        setTimeout(() => {
+            ajaxReq.getAddressTokenBalance(wallet.address, data => {
+                wallet.balance = data.balance;
+                wallet.tokenList = data.tokensInfo.map(x => {
+                    return {
+                        address: x.address,
+                        symbol: x.symbol,
+                        decimal: x.decimal,
+                        balance: x.balance,
+                        isFavour: wallet.favourList.includes(x.address),
+                        parant: wallet
+                    }
+                });
+            });
+        }, wait);
+
+        localStorage.setItem('last_update_time', now);
+
+        return wallet;
     }
 
-    $scope.loadFromSetting = function () {
+    $scope.loadFromSetting = () => {
         let setting = localStorage.getItem('setting');
         $scope.wallets = [];
 
         if (setting !== null) {
             let walletsRaw = JSON.parse(setting);
 
-            walletsRaw.forEach(function (e) {
-                let wallet = new aironWallet(e);
-                wallet.tokenList = e.tokens;
-                wallet.pullBalance(() => {
-                    if (!$scope.$$phase) {
-                        $scope.$apply();
-                    }
-                });
-
-                $scope.updateTokens(wallet, false);
-
-                $scope.wallets.push(wallet);
+            walletsRaw.forEach(e => {
+                $scope.wallets.push($scope.createWallet(e.address, e.name, e.favourList));
             });
         }
     }
 
     $scope.updateTokenIsFavour = (token) => {
-        if (token.IsFavour !== true) {
-            token.IsFavour = true;
+        token.IsFavour = !token.IsFavour;
+
+        let l = token.parant.favourList;
+        l.includes(token.address) ? l.splice(l.indexOf(token.address), 1) : l.push(token.address);
+        token.parant.favourList = l;
+
+        let setting = localStorage.getItem('setting');
+
+        if (setting !== null) {
+            setting = JSON.parse(setting);
+
+            const wallet = setting.find(e => e.address === token.parant.address);
+            const idxWallet = setting.indexOf(wallet);
+
+            setting[idxWallet].favourList = token.parant.favourList;
         }
-        else {
-            token.IsFavour = !token.IsFavour;
-        }
 
-        let save = $scope.wallets.map(e => e.toSave());
-
-        GAPIService.save(save);
-
-        localStorage.setItem('setting', JSON.stringify(save));
+        localStorage.setItem('setting', JSON.stringify(setting));
+        GAPIService.save(setting);
     }
-
-    $scope.loadFromSetting();
-
+    
     $scope.$on('google:drive:get', function () {
         $scope.loadFromSetting();
     });
@@ -111,8 +97,8 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     $scope.refresh = function () {
         GAPIService.read().then(function (e) {
             localStorage.setItem("setting", e);
+
             $scope.loadFromSetting();
-            $scope.updateTokens(wallet, true);
         });
     }
 
@@ -201,16 +187,8 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
             $scope.notifier.danger(globalFuncs.errorMsgs[46])
             return
         }
-        let rawWallet = { name: name, address: address, tokenList: [] };
-        let wallet = new aironWallet(rawWallet);
-        wallet.pullBalance(() => {
-            if (!$scope.$$phase) {
-                $scope.$apply();
-            }
-        });
-        wallet.tokenList = [];
 
-        $scope.updateTokens(wallet, true);
+        let wallet = $scope.createWallet(address, name, []);
 
         let up = localStorage.getItem('setting');
         if (up === null) {
@@ -218,7 +196,11 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         }
 
         up = JSON.parse(up);
-        up.push(rawWallet);
+        up.push({
+            address: wallet.address,
+            name: wallet.name,
+            favourList: wallet.favourList,
+        });
         localStorage.setItem('setting', JSON.stringify(up));
 
         GAPIService.save(up);
@@ -234,13 +216,18 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
 
     $scope.renameWallet = function () {
         if ($scope.selectWallet !== null) {
-            $scope.wallets[$scope.selectWallet].name = $scope.rename.newWalletName;
+            let wallet = $scope.wallets[$scope.selectWallet];
 
+            wallet.name = $scope.rename.newWalletName;
+
+            let setting = localStorage.getItem('setting');
+            setting = JSON.parse(setting);
+
+            setting[$scope.selectWallet].name = $scope.rename.newWalletName;
             $scope.rename.newWalletName = "";
 
-            let save = $scope.wallets.map(e => e.toSave());
-            GAPIService.save(save);
-            localStorage.setItem('setting', JSON.stringify(save));
+            localStorage.setItem('setting', JSON.stringify(setting));
+            GAPIService.save(setting);
 
             $scope.dropdownOptionsMenu = false;
             $scope.renameWalletModal.close();

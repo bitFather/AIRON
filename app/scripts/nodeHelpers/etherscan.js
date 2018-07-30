@@ -7,6 +7,7 @@ etherscan.searchResultParser = data => {
     return {result:data.results,total:data.total}
 }
 etherscan.tokenInfoParser = data => {
+    debugger;
     return {
         balance: data.ETH.balance,
         tokensInfo: data.tokens ? data.tokens.map(x => {

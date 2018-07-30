@@ -255,13 +255,14 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
         if (txData.gasPrice && txData.nonce) txData.isOffline = true;
 
         if ($scope.tx.sendMode == 'token') {
-            debugger;
-            $scope.$airon.selectTokenObj.getBalance();
+
+            // $scope.$airon.selectTokenObj.getBalance();
             // if the amount of tokens you are trying to send > tokens you have, throw error
             if (!isEnough($scope.tx.value, $scope.$airon.selectTokenObj.balance)) {
                 $scope.notifier.danger(globalFuncs.errorMsgs[0]);
                 return;
             }
+
             txData.to = $scope.$airon.selectTokenObj.getContractAddress();
             txData.data = $scope.$airon.selectTokenObj.getData($scope.tokenTx.to, $scope.tokenTx.value).data;
             txData.value = '0x00';
@@ -327,6 +328,8 @@ var sendTxCtrl = function($scope, $sce, walletService, $rootScope) {
         $scope.parsedSignedTx = {}
 
         var txData = new ethUtil.Tx(signedTx)
+
+        debugger;
 
         $scope.parsedSignedTx.gasPrice = {}
         $scope.parsedSignedTx.txFee = {}

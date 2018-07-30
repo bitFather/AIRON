@@ -142,7 +142,7 @@ customNode.prototype.getTokensList = function(term, callback) {
 
 customNode.prototype.getAddressTokenBalance = function(address, callback) {
     ajaxReq.http.get(this.tokenInfoUrl.replace('[[address]]',address)).then(function(data) {
-        console.log(data.data);
+        // console.log(data.data);
         callback(this.tokenInfoParser(data.data));
     }.bind(this), function(data) {
         callback({ error: true, msg: "connection error", data: "" });

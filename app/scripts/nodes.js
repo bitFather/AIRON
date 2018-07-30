@@ -51,6 +51,7 @@ nodes.nodeList = {
                 tokensInfo: data.tokens ? data.tokens.map(x => {
                         return {
                             address: x.tokenInfo.address,
+                            decimal: x.tokenInfo.decimals,
                             symbol: x.tokenInfo.symbol,
                             balance: x.tokenInfo.decimals > 0 ? new BigNumber(x.balance).div(10 ** x.tokenInfo.decimals).toString() : x.balance,
                         }

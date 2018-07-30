@@ -164,7 +164,6 @@
                             <span class="wallet-group" ng-class="{'activeToken': selectPay == $index}" ng-click="selectPayFunc($index)">
                                 <span class="wallet-count">{{ token.balance }}</span>
                                 <span class="wallet-name">{{ token.symbol }}</span>
-                                <span class="wallet-space"></span>
                                 <i class="material-icons" ng-click="updateTokenIsFavour(token)">{{ token.IsFavour ? 'star' : 'star_border' }}</i>
                             </span>
                         </div>
