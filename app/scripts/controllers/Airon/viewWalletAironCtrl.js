@@ -2,7 +2,25 @@
 var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     $scope.ajaxReq = ajaxReq;
 
-    $scope.updateInterval = 10000;
+    document.addEventListener('click', e => {
+        let children = document.getElementById('walletHolder').children;
+        let idxFind = false;
+        for (let x of children) {
+            idxFind = e.path.includes(x);
+            if (idxFind) {
+                break;
+            }
+        }
+
+        if (!idxFind) {
+            $scope.selectWallet = null;
+            $scope.selectWalletObj = null;
+            $scope.selectTokenObj = null;
+            $scope.selectPay = null;
+
+            $scope.$apply();
+        }
+    });
 
     $scope.createWallet = (address, name, favourList) => {
         let wallet = {
@@ -76,6 +94,9 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     });
 
     $scope.selectWallet = null;
+    $scope.selectWalletObj = null;
+    $scope.selectTokenObj = null;
+    $scope.selectPay = null;
 
     $scope.goEx = function () {
         if ($scope.selectWallet !== null) {
@@ -94,8 +115,8 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
 
     $scope.copyToClipboard = function () {
         if ($scope.selectWallet !== null) {
-            var walletIds = document.getElementById("walletIds");
-            var byId = walletIds.children[$scope.selectWallet];
+            var walletHolder = document.getElementById("walletHolder");
+            var byId = walletHolder.children[$scope.selectWallet];
 
             var copyText = byId.getElementsByClassName('wallet-address');
 
@@ -133,10 +154,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
             $scope.sendTxModal.open();
         }
     }
-    $scope.selectWalletObj = null;
-    $scope.selectTokenObj = null;
 
-    $scope.selectPay = null;
     $scope.selectPayFunc = (idx) => {
         $scope.selectPay = idx;
 
