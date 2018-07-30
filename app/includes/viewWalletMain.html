@@ -146,7 +146,7 @@
                             <a ui-sref="generate-wallet">Create a New Wallet</a>
                         </p>
                     </div>
-                    <div class="wallet-block" ng-repeat="wallet in wallets" ng-class="{'active': selectWallet == $index}" ng-click="selectWalletFunc($index)">
+                    <div class="wallet-block" ng-repeat="wallet in wallets" ng-class="{'active': selectedWalletId == $index}" ng-click="selectWallet($index)">
 
                         <div class="wallet-line">
                             <div class="wallet-title">{{ wallet.name }}</div>
@@ -155,25 +155,27 @@
 
                         <div class="wallet-address">{{ wallet.address }}</div>
 
-                        <div class="wallet-group wallet-eth" ng-class="{'wallet-group-select': wallet.select}" ng-click="selectPayFunc('eth')">
+                        <!-- group eth -->
+                        <div class="wallet-group wallet-eth" ng-class="{'activeToken': (selectedWalletObj == wallet && selectedMethod == 'eth')}"
+                            ng-click="selectPay($parent.$index, 'eth', wallet)">
                             <span class="wallet-count-eth">{{ wallet.balance }}</span>
                             <span class="wallet-name-eth">ETH</span>
                         </div>
 
-                        <div class="wallet-token" ng-repeat="token in wallet.tokenList" ng-if="token.IsFavour == true">
-                            <span class="wallet-group" ng-class="{'activeToken': selectPay == $index}" ng-click="selectPayFunc($index)">
-                                <span class="wallet-count">{{ token.balance }}</span>
-                                <span class="wallet-name">{{ token.symbol }}</span>
-                                <i class="material-icons" ng-click="updateTokenIsFavour(token)">{{ token.IsFavour ? 'star' : 'star_border' }}</i>
-                            </span>
+                        <!-- group favour -->
+                        <div class="wallet-group wallet-token" ng-repeat="token in wallet.tokenList" ng-if="token.IsFavour == true" ng-class="{'activeToken': selectedTokenObj == token}"
+                            ng-click="selectPay($index, 'token', token)">
+                            <span class="wallet-count">{{ token.balance }}</span>
+                            <span class="wallet-name">{{ token.symbol }}</span>
+                            <i class="material-icons" ng-click="updateTokenIsFavour(token)">{{ token.IsFavour ? 'star' : 'star_border' }}</i>
                         </div>
 
-                        <div ng-if="!wallet.hide && token.IsFavour != true" class="wallet-token" ng-repeat="token in wallet.tokenList">
-                            <span class="wallet-group" ng-class="{'activeToken': selectPay == $index}" ng-click="selectPayFunc($index)">
-                                <span class="wallet-count">{{ token.balance }}</span>
-                                <span class="wallet-name">{{ token.symbol }}</span>
-                                <i class="material-icons" ng-click="updateTokenIsFavour(token)">{{ token.IsFavour ? 'star' : 'star_border' }}</i>
-                            </span>
+                        <!-- group hide -->
+                        <div class="wallet-group wallet-token" ng-repeat="token in wallet.tokenList" ng-if="!wallet.hide && token.IsFavour != true"
+                            ng-class="{'activeToken': selectedTokenObj == token}" ng-click="selectPay($index, 'token', token)">
+                            <span class="wallet-count">{{ token.balance }}</span>
+                            <span class="wallet-name">{{ token.symbol }}</span>
+                            <i class="material-icons" ng-click="updateTokenIsFavour(token)">{{ token.IsFavour ? 'star' : 'star_border' }}</i>
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,44 @@
 var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     $scope.ajaxReq = ajaxReq;
 
+    $scope.selectedWalletId = null;
+    $scope.selectedTokenId = null;
+
+    $scope.selectedWalletObj = null;
+    $scope.selectedTokenObj = null;
+    $scope.selectedMethod = null; // 'eth' 'token'
+
+    $scope.resetSeleced = () => {
+        $scope.selectedWalletId = null;
+        $scope.selectedTokenId = null;
+
+        $scope.selectedWalletObj = null;
+        $scope.selectedTokenObj = null;
+        $scope.selectedMethod = null;
+    }
+
+    $scope.selectPay = (idx, method, obj) => {
+        $scope.resetSeleced();
+
+        $scope.selectedMethod = method;
+
+        if ($scope.selectedMethod === 'token') {
+            $scope.selectedWalletObj = obj.parant;
+            $scope.selectedTokenObj = obj.parant.tokenList[idx];
+            $scope.selectedTokenId = idx;
+        }
+
+        if ($scope.selectedMethod === 'eth') {
+            $scope.selectedWalletObj = obj;
+            $scope.selectedWalletId = idx;
+        }
+    }
+
+    $scope.selectWallet = (idx) => {
+        $scope.selectedWalletObj = $scope.wallets[idx];
+        $scope.selectedWalletId = idx;
+    }
+
     document.addEventListener('click', e => {
         let children = document.getElementById('walletHolder').children;
         let idxFind = false;
@@ -13,10 +51,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         }
 
         if (!idxFind) {
-            $scope.selectWallet = null;
-            $scope.selectWalletObj = null;
-            $scope.selectTokenObj = null;
-            $scope.selectPay = null;
+            $scope.resetSeleced();
 
             $scope.$apply();
         }
@@ -93,11 +128,6 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         $scope.loadFromSetting();
     });
 
-    $scope.selectWallet = null;
-    $scope.selectWalletObj = null;
-    $scope.selectTokenObj = null;
-    $scope.selectPay = null;
-
     $scope.goEx = function () {
         if ($scope.selectWallet !== null) {
             var win = window.open("https://etherscan.io/address/" + $scope.wallets[$scope.selectWallet].address, '_blank');
@@ -154,21 +184,6 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
             $scope.sendTxModal.open();
         }
     }
-
-    $scope.selectPayFunc = (idx) => {
-        $scope.selectPay = idx;
-
-        setTimeout((idx) => {
-            $scope.selectTokenObj = $scope.selectWalletObj.tokenList[idx];
-        }, 10, idx);
-    }
-
-    $scope.selectWalletFunc = function (idx) {
-        $scope.select = true;
-        $scope.selectWallet = idx;
-
-        $scope.selectWalletObj = $scope.wallets[idx];
-    };
 
     $scope.dropdownWalletMenu = false;
 
