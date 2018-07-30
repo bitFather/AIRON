@@ -56,64 +56,69 @@
 
         <br />
 
-        <table class="table small table-condensed table-hover">
-            <tbody>
-                <tr>
-                    <td class="small text-right">To Address:</td>
-                    <td class="small text-left mono">{{parsedSignedTx.to}}
-                        <br />
-                        <em>
-                            <small>If sending tokens, this should be the token contract address.</small>
-                        </em>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="small text-right">From Address:</td>
-                    <td class="small text-left mono">{{parsedSignedTx.from}}</td>
-                </tr>
-                <tr>
-                    <td class="small text-right">Amount to Send:</td>
-                    <td class="small text-left mono">{{parsedSignedTx.value}} ETH</td>
-                </tr>
-                <tr>
-                    <td class="small text-right">Account Balance:</td>
-                    <td class="small text-left mono">{{parsedSignedTx.balance}}</td>
-                </tr>
-                <tr>
-                    <td class="small text-right">Coin:</td>
-                    <td class="small text-left mono">{{unitReadable}}</td>
-                </tr>
-                <tr>
-                    <td class="small text-right">Network:</td>
-                    <td class="small text-left mono">{{ajaxReq.type}} by {{ajaxReq.service}}</td>
-                </tr>
-                <tr>
-                    <td class="small text-right">Gas Limit:</td>
-                    <td class="small text-left mono">{{parsedSignedTx.gasLimit}}</td>
-                </tr>
-                <tr>
-                    <td class="small text-right">Gas Price:</td>
-                    <td class="small text-left mono">{{parsedSignedTx.gasPrice.gwei}} GWEI
-                        <small>({{parsedSignedTx.gasPrice.eth}} ETH)</small>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="small text-right">Max TX Fee:</td>
-                    <td class="small text-left mono"> {{parsedSignedTx.txFee.eth}} ETH
-                        <small>({{parsedSignedTx.txFee.gwei}} GWEI)</small>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="small text-right">Nonce:</td>
-                    <td class="small text-left mono">{{parsedSignedTx.nonce}}</td>
-                </tr>
-                <tr>
-                    <td class="small text-right">Data:</td>
-                    <td class="small text-left mono">{{parsedSignedTx.data}}</td>
-                </tr>
+        <div class="wallet-table">
+            <div class="wallet-table-line">
+                <span>To Address:</span>
+                <span class="push">{{parsedSignedTx.to}}</span>
+            </div>
+            <div>
+                <small>If sending tokens, this should be the token contract address.</small>
+            </div>
 
-            </tbody>
-        </table>
+            <div class="wallet-table-line">
+                <span>From Address:</span>
+                <span class="push">{{parsedSignedTx.from}}</span>
+            </div>
+
+            <div class="wallet-table-line">
+                <span>Amount to Send:</span>
+                <span class="push">{{parsedSignedTx.value}} ETH</span>
+            </div>
+
+            <div class="wallet-table-line">
+                <span>Account Balance:</span>
+                <span class="push">{{parsedSignedTx.balance}}</span>
+            </div>
+
+            <div class="wallet-table-line">
+                <span>Coin:</span>
+                <span class="push">{{parsedSignedTx.from}}</span>
+            </div>
+
+            <div class="wallet-table-line">
+                <span>Network:</span>
+                <span class="push">{{ajaxReq.type}} by {{ajaxReq.service}}</span>
+            </div>
+
+            <div class="wallet-table-line">
+                <span>Gas Limit:</span>
+                <span class="push">{{parsedSignedTx.gasLimit}}</span>
+            </div>
+
+
+            <div class="wallet-table-line">
+                <span>Gas Price:</span>
+                <span class="push">{{parsedSignedTx.gasPrice.gwei}} GWEI
+                    <small>({{parsedSignedTx.gasPrice.eth}} ETH)</small>
+                </span>
+            </div>
+
+            <div class="wallet-table-line">
+                <span>Max TX Fee:</span>
+                <span class="push">{{parsedSignedTx.txFee.eth}}</span>
+            </div>
+
+            <div class="wallet-table-line">
+                <span>Nonce:</span>
+                <span class="push">{{parsedSignedTx.nonce}}</span>
+            </div>
+
+            <div class="wallet-table-line">
+                <span>Data:</span>
+                <span class="push hide-tx">{{parsedSignedTx.data}}</span>
+            </div>
+
+        </div>
     </div>
 
     <div class="modal-footer">

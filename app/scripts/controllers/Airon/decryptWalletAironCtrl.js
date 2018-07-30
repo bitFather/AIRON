@@ -9,6 +9,7 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
     $scope.isSSL = window.location.protocol == 'https:';
     $scope.ajaxReq = ajaxReq;
     $scope.nodeType = $scope.ajaxReq.type;
+    $scope.$airon = $scope.$parent.$parent.$parent;
     $scope.HDWallet = {
         numWallets: 0,
         walletsPerDialog: 5,
@@ -222,32 +223,49 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
             if ($scope.showPDecrypt && $scope.requirePPass) {
                 $scope.wallet = Wallet.fromMyEtherWalletKey($scope.manualprivkey, $scope.privPassword);
                 walletService.password = $scope.privPassword;
-            } else if ($scope.showPDecrypt && !$scope.requirePPass) {
+            }
+            else if ($scope.showPDecrypt && !$scope.requirePPass) {
                 if (!$scope.Validator.isValidHex($scope.manualprivkey)) {
                     $scope.notifier.danger(globalFuncs.errorMsgs[37]);
                     return;
                 }
                 $scope.wallet = new Wallet(fixPkey($scope.manualprivkey));
                 walletService.password = '';
-            } else if ($scope.showFDecrypt) {
+            }
+            else if ($scope.showFDecrypt) {
                 $scope.wallet = Wallet.getWalletFromPrivKeyFile($scope.fileContent, $scope.filePassword);
                 walletService.password = $scope.filePassword;
-            } else if ($scope.showMDecrypt) {
+            }
+            else if ($scope.showMDecrypt) {
                 $scope.$parent.$parent.$parent.txState = 'mnemonicModel';
                 $scope.onHDDPathChange($scope.mnemonicPassword);
-            } else if ($scope.showParityDecrypt) {
+            }
+            else if ($scope.showParityDecrypt) {
                 $scope.wallet = Wallet.fromParityPhrase($scope.parityPhrase);
             }
-            walletService.wallet = $scope.wallet;
-        } catch (e) {
+
+            var address = $scope.wallet.getAddressString();
+            var swa = $scope.$airon.selectedWalletObj.address;
+
+            if (swa.toLowerCase() != address.toLowerCase()) {
+                $scope.$airon.txState = 0;
+                $scope.notifier.danger("Неверный кошелёк");
+                $scope.$airon.sendTxModal.close();
+                return;
+            }
+        }
+        catch (e) {
             $scope.notifier.danger(globalFuncs.errorMsgs[6] + e);
         }
-        if ($scope.wallet != null) {
+
+        if ($scope.$airon.selectedWalletObj != null) {
             $scope.notifier.info(globalFuncs.successMsgs[1]);
-            $scope.$parent.$parent.$parent.txState = 1;
+            $scope.$airon.txState = 1;
         }
-        $scope.wallet.type = "default";
+
+        $scope.$airon.selectedWalletObj.type = "default";
     };
+
     $scope.decryptAddressOnly = function () {
         if ($scope.Validator.isValidAddress($scope.addressOnly)) {
             var tempWallet = new Wallet();
@@ -337,7 +355,6 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
             var $airon = $scope.$parent.$parent.$parent;
 
             var address = accounts[0];
-            debugger;
             var swa = $airon.selectedWalletObj.address;
 
             if (swa.toLowerCase() != address.toLowerCase()) {
@@ -347,18 +364,14 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
                 return;
             }
 
-            var addressBuffer = Buffer.from(address.slice(2), 'hex');
+            const addressBuffer = Buffer.from(address.slice(2), 'hex');
+            $scope.wallet = new Web3Wallet(addressBuffer);
+            $scope.wallet.type = "default";
 
-            // var wallet = new Web3Wallet(addressBuffer);
-            
-            // // set wallet
-            // wallet.selectToken = $airon.selectTokenObj;
-            // $scope.wallet = wallet
-            // walletService.wallet = wallet
-            // // $scope.notifier.info(globalFuncs.successMsgs[6])
-            // $scope.wallet.type = "default";
+            walletService.wallet = $scope.wallet;
 
             $airon.txState = 1;
+            $scope.$apply();
         });
     };
 
