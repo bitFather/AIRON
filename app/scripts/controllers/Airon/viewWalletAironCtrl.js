@@ -28,7 +28,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
                 });
             }
             else {
-                wallet.balance = data.msg;
+                wallet.balance = data.msg + ", please wait.";
                 wallet.tokenList = [];
             }
         });
