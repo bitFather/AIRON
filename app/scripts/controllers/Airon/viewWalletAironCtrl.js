@@ -13,35 +13,19 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
             favourList: favourList
         };
 
-        let lut = localStorage.getItem('last_update_time');
-        if (!lut) {
-            lut = 0;
-        }
-        else {
-            lut = JSON.parse(lut);
-        }
-        let now = new Date().getTime();
-
-        const wait = (now - lut) > $scope.updateInterval ? 0 : $scope.updateInterval - (now - lut);
-        console.log(wait);
-
-        setTimeout(() => {
-            ajaxReq.getAddressTokenBalance(wallet.address, data => {
-                wallet.balance = data.balance;
-                wallet.tokenList = data.tokensInfo.map(x => {
-                    return {
-                        address: x.address,
-                        symbol: x.symbol,
-                        decimal: x.decimal,
-                        balance: x.balance,
-                        isFavour: wallet.favourList.includes(x.address),
-                        parant: wallet
-                    }
-                });
+        ajaxReq.getAddressTokenBalance(wallet.address, data => {
+            wallet.balance = data.balance;
+            wallet.tokenList = data.tokensInfo.map(x => {
+                return {
+                    address: x.address,
+                    symbol: x.symbol,
+                    decimal: x.decimal,
+                    balance: x.balance,
+                    isFavour: wallet.favourList.includes(x.address),
+                    parant: wallet
+                }
             });
-        }, wait);
-
-        localStorage.setItem('last_update_time', now);
+        });
 
         return wallet;
     }
@@ -80,7 +64,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         localStorage.setItem('setting', JSON.stringify(setting));
         GAPIService.save(setting);
     }
-    
+
     $scope.$on('google:drive:get', function () {
         $scope.loadFromSetting();
     });
