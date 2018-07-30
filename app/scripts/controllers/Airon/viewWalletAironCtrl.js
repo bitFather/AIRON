@@ -6,6 +6,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     $scope.selectedTokenId = null;
 
     $scope.selectedWalletObj = null;
+    $scope.selectedWalletOutside = null;
     $scope.selectedTokenObj = null;
     $scope.selectedMethod = null; // 'eth' 'token'
 
@@ -37,13 +38,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     }
 
     $scope.selectWallet = (idx) => {
-        const old =  $scope.selectedWalletObj;
-        $scope.selectedWalletObj = $scope.wallets[idx];
-        if (old != $scope.selectedWalletObj) {
-            $scope.resetSeleced();
-        }
-        
-        $scope.selectedWalletId = idx;
+        $scope.selectedWalletOutside = $scope.wallets[idx];
     }
 
     document.addEventListener('click', e => {
@@ -57,7 +52,22 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         }
 
         if (!idxFind) {
+            let ignore = ['sendTxModal', 'paymentBtn'];
+            ignore = ignore.map(i => {
+                return document.getElementById(i);
+            });
+    
+            for (let x of ignore) {
+                idxFind = e.path.includes(x);
+                if (idxFind) {
+                    break;
+                }
+            }
+        }
+
+        if (!idxFind) {
             $scope.resetSeleced();
+            $scope.selectedWalletOutside = null;
 
             $scope.$apply();
         }

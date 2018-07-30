@@ -35,7 +35,7 @@
 
                     <div id="first__icon"></div>
 
-                    <div class="airon-icon" ng-if="selectWallet !== null">
+                    <div class="airon-icon" ng-if="selectWallet !== null" id="paymentBtn">
                         <div class="btn-floating dis" ng-click="sendTxModalOpen()">
                             <i class="material-icons">payment</i>
                         </div>
@@ -146,7 +146,7 @@
                             <a ui-sref="generate-wallet">Create a New Wallet</a>
                         </p>
                     </div>
-                    <div class="wallet-block" ng-repeat="wallet in wallets" ng-class="{'active': selectedWalletId == $index}" ng-click="selectWallet($index)">
+                    <div class="wallet-block" ng-repeat="wallet in wallets" ng-class="{'active': selectedWalletOutside == wallet}" ng-click="selectWallet($index)">
 
                         <div class="wallet-line">
                             <div class="wallet-title">{{ wallet.name }}</div>

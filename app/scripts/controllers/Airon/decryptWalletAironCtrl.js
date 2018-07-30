@@ -336,11 +336,9 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
 
             var $airon = $scope.$parent.$parent.$parent;
 
-            var address = accounts[0]
-            var addressBuffer = Buffer.from(address.slice(2), 'hex');
-
-            var swa = $airon.wallets[$airon.selectWallet].address;
-            $airon.selectWalletAddress = address;
+            var address = accounts[0];
+            debugger;
+            var swa = $airon.selectedWalletObj.address;
 
             if (swa.toLowerCase() != address.toLowerCase()) {
                 $airon.txState = 0;
@@ -349,14 +347,16 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
                 return;
             }
 
-            var wallet = new Web3Wallet(addressBuffer);
+            var addressBuffer = Buffer.from(address.slice(2), 'hex');
+
+            // var wallet = new Web3Wallet(addressBuffer);
             
-            // set wallet
-            wallet.selectToken = $airon.selectTokenObj;
-            $scope.wallet = wallet
-            walletService.wallet = wallet
-            // $scope.notifier.info(globalFuncs.successMsgs[6])
-            $scope.wallet.type = "default";
+            // // set wallet
+            // wallet.selectToken = $airon.selectTokenObj;
+            // $scope.wallet = wallet
+            // walletService.wallet = wallet
+            // // $scope.notifier.info(globalFuncs.successMsgs[6])
+            // $scope.wallet.type = "default";
 
             $airon.txState = 1;
         });
