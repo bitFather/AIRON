@@ -25,6 +25,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
 
         if ($scope.selectedMethod === 'token') {
             $scope.selectedWalletObj = obj.parant;
+            $scope.selectedWalletId = $scope.wallets.indexOf($scope.selectedWalletObj);
             $scope.selectedTokenObj = obj.parant.tokenList[idx];
             $scope.selectedTokenId = idx;
         }
@@ -36,7 +37,12 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     }
 
     $scope.selectWallet = (idx) => {
+        const old =  $scope.selectedWalletObj;
         $scope.selectedWalletObj = $scope.wallets[idx];
+        if (old != $scope.selectedWalletObj) {
+            $scope.resetSeleced();
+        }
+        
         $scope.selectedWalletId = idx;
     }
 
