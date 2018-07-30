@@ -38,7 +38,15 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     }
 
     $scope.selectWallet = (idx) => {
-        $scope.selectedWalletOutside = $scope.wallets[idx];
+        const news = $scope.wallets[idx];
+
+        if ($scope.selectedWalletObj != news && $scope.selectedMethod != 'token') {
+                $scope.selectedWalletObj = news;
+                $scope.selectedMethod = 'eth';
+                $scope.selectedWalletId = idx;
+        }
+        
+        $scope.selectedWalletOutside = news;
     }
 
     document.addEventListener('click', e => {
@@ -56,7 +64,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
             ignore = ignore.map(i => {
                 return document.getElementById(i);
             });
-    
+
             for (let x of ignore) {
                 idxFind = e.path.includes(x);
                 if (idxFind) {
