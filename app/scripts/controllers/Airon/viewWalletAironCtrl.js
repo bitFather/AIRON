@@ -14,17 +14,23 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         };
 
         ajaxReq.getAddressTokenBalance(wallet.address, data => {
-            wallet.balance = data.balance;
-            wallet.tokenList = data.tokensInfo.map(x => {
-                return {
-                    address: x.address,
-                    symbol: x.symbol,
-                    decimal: x.decimal,
-                    balance: x.balance,
-                    isFavour: wallet.favourList.includes(x.address),
-                    parant: wallet
-                }
-            });
+            if (!data.error) {
+                wallet.balance = data.balance;
+                wallet.tokenList = data.tokensInfo.map(x => {
+                    return {
+                        address: x.address,
+                        symbol: x.symbol,
+                        decimal: x.decimal,
+                        balance: x.balance,
+                        isFavour: wallet.favourList.includes(x.address),
+                        parant: wallet
+                    }
+                });
+            }
+            else {
+                wallet.balance = data.msg;
+                wallet.tokenList = [];
+            }
         });
 
         return wallet;
