@@ -49,7 +49,12 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
     }
 
     document.addEventListener('click', e => {
-        let children = document.getElementById('walletHolder').children;
+        let holder = document.getElementById('walletHolder');
+        if (!holder) {
+            return;
+        }
+        
+        let children = holder.children;
         let idxFind = false;
         for (let x of children) {
             idxFind = e.path.includes(x);
@@ -174,7 +179,7 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
                 else {
                     wallet = $scope.createWallet(e.address, e.name, e.favourList);
                 }
-                
+
                 $scope.wallets.push(wallet);
             });
         }
