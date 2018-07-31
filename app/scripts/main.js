@@ -131,19 +131,19 @@ var callbackCtrl = require('./controllers/Airon/callbackCtrl');
 
 // var app = angular.module('mewApp', ['googleOAuth2', 'pascalprecht.translate', 'ngSanitize', 'ngAnimate', 'ui.router']);
 var app = angular.module('mewApp', ['pascalprecht.translate', 'ngSanitize', 'ngAnimate', 'ui.router']);
-app.config(['$compileProvider', function($compileProvider) {
+app.config(['$compileProvider', function ($compileProvider) {
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(|blob|https|mailto):/);
 }]);
-app.config(['$translateProvider', function($translateProvider) {
+app.config(['$translateProvider', function ($translateProvider) {
     $translateProvider.useMissingTranslationHandlerLog();
     new translate($translateProvider);
 }]);
-app.config(['$animateProvider', function($animateProvider) {
+app.config(['$animateProvider', function ($animateProvider) {
     $animateProvider.classNameFilter(/^no-animate$/);
 }]);
 
 // AIRON provader
-app.config(['$stateProvider', function($stateProvider) {
+app.config(['$stateProvider', function ($stateProvider) {
     $stateProvider
         .state('wallet', {
             url: '/',
@@ -171,26 +171,26 @@ app.config(['$stateProvider', function($stateProvider) {
             template: require('../includes/callback.html')
         });
 }]);
-app.config(['$urlRouterProvider', function($urlRouterProvider) {
+app.config(['$urlRouterProvider', function ($urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 }]);
-app.config(['$locationProvider', function($locationProvider) {
+app.config(['$locationProvider', function ($locationProvider) {
     $locationProvider.hashPrefix('');
     $locationProvider.html5Mode(true);
 }]);
 
-app.service('GAPIService', function($window, $rootScope) {
+app.service('GAPIService', function ($window, $rootScope) {
     const filename = 'setting.json';
 
     return {
-        read: function() {
+        read: function () {
             return $window.gapi.client.drive.files
                 .list({
                     q: 'name="' + filename + '"',
                     spaces: 'appDataFolder',
                     fields: 'files(id)'
                 })
-                .then(function(response) {
+                .then(function (response) {
                     // Проверка на наличие файла
                     if (response.result.files && response.result.files.length > 0) {
                         // Возврощает индификатор файла
@@ -203,27 +203,27 @@ app.service('GAPIService', function($window, $rootScope) {
                             fields: 'id',
                             resource: { name: filename, parents: ['appDataFolder'] }
                         })
-                        .then(function(response) {
+                        .then(function (response) {
                             return response.result.id;
                         });
 
-                }).then(function(id) {
+                }).then(function (id) {
                     // Получаем контент по ид
                     return $window.gapi.client.drive.files
                         .get({ fileId: id, alt: 'media' })
-                        .then(function(response) {
+                        .then(function (response) {
                             return response.body;
                         });
                 });
         },
-        save: function(data) {
+        save: function (data) {
             return $window.gapi.client.drive.files
                 .list({
                     q: 'name="' + filename + '"',
                     spaces: 'appDataFolder',
                     fields: 'files(id)'
                 })
-                .then(function(response) {
+                .then(function (response) {
                     // Проверка на наличие файла
                     if (response.result.files && response.result.files, length > 0) {
                         // Возврощает индификатор файла
@@ -236,11 +236,11 @@ app.service('GAPIService', function($window, $rootScope) {
                             fields: 'id',
                             resource: { name: file, parents: ['appDataFolder'] }
                         })
-                        .then(function(response) {
+                        .then(function (response) {
                             return response.result.id;
                         });
 
-                }).then(function(id) {
+                }).then(function (id) {
                     $rootScope.$broadcast('google:drive:save', true);
 
                     // Запись в файл
@@ -253,18 +253,18 @@ app.service('GAPIService', function($window, $rootScope) {
                         });
                 });
         },
-        signIn: function() {
+        signIn: function () {
             $window.gapi.auth2.getAuthInstance().signIn();
         },
-        signOut: function() {
+        signOut: function () {
             $window.gapi.auth2.getAuthInstance().signOut();
         },
         state: false
     };
 }, '$window', '$rootScope');
 
-app.run(function($rootScope, $window, GAPIService, $templateCache) {
-    
+app.run(function ($rootScope, $window, GAPIService, $templateCache) {
+
     $templateCache.put('header-node-modal', require('../includes/header-node-modal.html'));
 
     $templateCache.put('auth-wrapper', require('../includes/auth-wrapper.html'));
@@ -290,9 +290,9 @@ app.run(function($rootScope, $window, GAPIService, $templateCache) {
             clientId: CLIENT_ID,
             discoveryDocs: DISCOVERY_DOCS,
             scope: SCOPES
-        }).then(function() {
+        }).then(function () {
 
-            var updateSate = function(state) {
+            var updateSate = function (state) {
                 if (state) {
                     GAPIService.read().then((e) => {
                         if (e === "") {
@@ -315,9 +315,9 @@ app.run(function($rootScope, $window, GAPIService, $templateCache) {
     });
 });
 
-app.controller('mainCtrl', ['$scope', function($scope) {
+app.controller('mainCtrl', ['$scope', function ($scope) {
     $scope.doneLoading = false;
-    $scope.$on('google:drive:get', function(event, data) {
+    $scope.$on('google:drive:get', function (event, data) {
         if (!$scope.doneLoading) {
             $scope.doneLoading = true;
             $scope.$apply();
@@ -325,7 +325,7 @@ app.controller('mainCtrl', ['$scope', function($scope) {
     });
 
     $scope.statusLogin = false;
-    $scope.$on('google:oauth2:status', function(event, data) {
+    $scope.$on('google:oauth2:status', function (event, data) {
         $scope.statusLogin = data;
         if (!data) {
             $scope.doneLoading = true;
@@ -334,12 +334,12 @@ app.controller('mainCtrl', ['$scope', function($scope) {
     });
 }]);
 
-app.directive('googleSignIn', ['$window', function($window) {
+app.directive('googleSignIn', ['$window', function ($window) {
     return {
         restrict: 'E',
         template: `<div id="google-auth-btn"></div>`,
         replace: false,
-        link: function(scope, el, attrs) {
+        link: function (scope, el, attrs) {
             $window.gapi.signin2.render('google-auth-btn', {
                 'width': attrs.width || 250,
                 'height': attrs.height || 50,
@@ -394,7 +394,7 @@ if (IS_CX) {
 }
 
 // AIRON controller
-app.controller('viewWalletAironCtrl', ['$rootScope', '$scope', 'GAPIService', viewWalletAironCtrl]);
+app.controller('viewWalletAironCtrl', ['$scope', 'GAPIService', viewWalletAironCtrl]);
 app.controller('decryptWalletAironCtrl', ['$scope', '$sce', 'walletService', decryptWalletAironCtrl]);
 app.controller('loginAironCtrl', ['$scope', loginAironCtrl]);
 app.controller('callbackCtrl', ['authService', callbackCtrl]);

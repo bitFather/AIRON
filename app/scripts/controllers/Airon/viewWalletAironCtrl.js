@@ -1,5 +1,5 @@
 'use strict';
-var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
+var viewWalletAironCtrl = function ($scope, GAPIService) {
     $scope.ajaxReq = ajaxReq;
 
     $scope.selectedWalletId = null;
@@ -181,9 +181,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         GAPIService.save(setting);
     }
 
-    $scope.$on('google:drive:get', function () {
-        $scope.loadFromSetting();
-    });
+    $scope.loadFromSetting();
 
     $scope.goEx = function () {
         if ($scope.selectWallet !== null) {
