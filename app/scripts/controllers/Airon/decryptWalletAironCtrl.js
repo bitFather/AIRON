@@ -253,17 +253,18 @@ var decryptWalletCtrl = function ($scope, $sce, walletService) {
                 $scope.$airon.sendTxModal.close();
                 return;
             }
+
+            walletService.wallet = $scope.wallet;
         }
         catch (e) {
             $scope.notifier.danger(globalFuncs.errorMsgs[6] + e);
         }
 
-        if ($scope.$airon.selectedWalletObj != null) {
+        if (walletService.wallet != null) {
             $scope.notifier.info(globalFuncs.successMsgs[1]);
+            walletService.wallet.type = "default";
             $scope.$airon.txState = 1;
         }
-
-        $scope.$airon.selectedWalletObj.type = "default";
     };
 
     $scope.decryptAddressOnly = function () {
