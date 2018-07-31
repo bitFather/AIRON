@@ -12,7 +12,7 @@
                         </div>
                     </div>
 
-                    <div class="dropdown-back" ng-show="dropdownWalletMenu || dropdownOptionsMenu || dropdownEquivalentMenu" ng-click="hideMenu()"></div>
+                    <div id="backPlate" class="dropdown-back" ng-show="dropdownWalletMenu || dropdownOptionsMenu || dropdownEquivalentMenu" ng-click="hideMenu()"></div>
 
                     <div class="airon-dropdown airon-dropdown-action__pos">
                         <div class="dropdown-menu dropdown-menu-left airon-dropdown-block" ng-show="dropdownWalletMenu">
@@ -42,35 +42,35 @@
                         <span>Payment</span>
                     </div>
 
-                    <div class="airon-icon" ng-if="selectWallet !== null">
+                    <div class="airon-icon" ng-if="selectWallet !== null" id="copyBtn">
                         <div class="btn-floating dis" ng-click="copyToClipboard()">
                             <i class="material-icons">filter_none</i>
                         </div>
                         <span>Copy address</span>
                     </div>
 
-                    <div class="airon-icon" ng-if="selectWallet !== null">
+                    <div class="airon-icon" ng-if="selectWallet !== null" id="refteshBtn">
                         <div class="btn-floating dis" ng-click="refresh()">
                             <i class="material-icons">refresh</i>
                         </div>
                         <span>Refresh</span>
                     </div>
 
-                    <div class="airon-icon" ng-if="selectWallet !== null">
+                    <div class="airon-icon" ng-if="selectWallet !== null" id="historyBtn">
                         <div class="btn-floating dis" ng-click="goEx()">
                             <i class="material-icons">view_headline</i>
                         </div>
                         <span>History</span>
                     </div>
 
-                    <div class="airon-icon" ng-if="selectWallet !== null">
+                    <div class="airon-icon" ng-if="selectWallet !== null" id="equivalentBtn">
                         <div class="btn-floating dis" ng-click="showEquivalent()">
                             <i class="material-icons">attach_money</i>
                         </div>
                         <span>Equivalent</span>
                     </div>
 
-                    <div class="airon-icon" ng-if="selectWallet !== null">
+                    <div class="airon-icon" ng-if="selectWallet !== null" id="optionsBtn">
                         <div class="btn-floating dis" ng-click="showOption()">
                             <i class="material-icons">more_vert</i>
                         </div>
@@ -104,31 +104,31 @@
                     </div>
                 </div>
 
-                <div class="airon-dropdown airon-dropdown-equivalent__pos">
+                <div class="airon-dropdown airon-dropdown-equivalent__pos" id="equivalentBox">
                     <div class="dropdown-menu dropdown-menu-left airon-dropdown-row" ng-show="dropdownEquivalentMenu">
                         <div ng-show="ajaxReq.type=='ETH'">
                             <h5 translate="sidebar_Equiv" class="equivalent-text">Equivalent Values:</h5>
                             <div class="equivalent">
                                 <ul>
                                     <li>BTC:
-                                        <span class="mono wrap">{{wallets[selectWallet].btcBalance | number}}</span>
+                                        <span class="mono wrap">{{selectedWalletObj.btcBalance | number}}</span>
                                     </li>
                                     <li>USD:
-                                        <span class="mono wrap">{{wallets[selectWallet].usdBalance | currency:"$"}}</span>
+                                        <span class="mono wrap">{{selectedWalletObj.usdBalance | currency:"$"}}</span>
                                     </li>
                                     <li>CHF:
-                                        <span class="mono wrap">{{wallets[selectWallet].chfBalance | currency:" "}}</span>
+                                        <span class="mono wrap">{{selectedWalletObj.chfBalance | currency:" "}}</span>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li>REP:
-                                        <span class="mono wrap">{{wallets[selectWallet].repBalance | number}}</span>
+                                        <span class="mono wrap">{{selectedWalletObj.repBalance | number}}</span>
                                     </li>
                                     <li>EUR:
-                                        <span class="mono wrap">{{wallets[selectWallet].eurBalance | currency:"€"}}</span>
+                                        <span class="mono wrap">{{selectedWalletObj.eurBalance | currency:"€"}}</span>
                                     </li>
                                     <li>GBP:
-                                        <span class="mono wrap">{{wallets[selectWallet].gbpBalance | currency:"£"}}</span>
+                                        <span class="mono wrap">{{selectedWalletObj.gbpBalance | currency:"£"}}</span>
                                     </li>
                                 </ul>
                             </div>

@@ -41,11 +41,10 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         const news = $scope.wallets[idx];
 
         if ($scope.selectedWalletObj != news && $scope.selectedMethod != 'token') {
-                $scope.selectedWalletObj = news;
-                $scope.selectedMethod = 'eth';
-                $scope.selectedWalletId = idx;
+            $scope.selectedWalletObj = news;
+            $scope.selectedMethod = 'eth';
+            $scope.selectedWalletId = idx;
         }
-        
         $scope.selectedWalletOutside = news;
     }
 
@@ -60,7 +59,17 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
         }
 
         if (!idxFind) {
-            let ignore = ['sendTxModal', 'paymentBtn'];
+            let ignore = [
+                'equivalentBox',
+                'sendTxModal',
+                'paymentBtn',
+                'copyBtn',
+                'refteshBtn',
+                'historyBtn',
+                'equivalentBtn',
+                'optionsBtn',
+                'backPlate'
+            ];
             ignore = ignore.map(i => {
                 return document.getElementById(i);
             });
@@ -92,7 +101,6 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
 
         ajaxReq.getAddressTokenBalance(wallet.address, data => {
             if (!data.error) {
-                wallet.balance = data.balance;
                 wallet.tokenList = data.tokensInfo.map(x => {
                     return {
                         address: x.address,
@@ -101,6 +109,31 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
                         balance: x.balance,
                         isFavour: wallet.favourList.includes(x.address),
                         parant: wallet
+                    }
+                });
+
+                wallet.balance = wallet.usdBalance = wallet.eurBalance = wallet.btcBalance = wallet.chfBalance = wallet.repBalance = wallet.gbpBalance = 'loading';
+                ajaxReq.getBalance(wallet.address, data => {
+                    if (data.error) {
+                        wallet.balance = data.msg;
+                    }
+                    else {
+                        wallet.balance = etherUnits.toEther(data.data.balance, 'wei');
+                        ajaxReq.getETHvalue(data => {
+                            wallet.usdPrice = etherUnits.toFiat('1', 'ether', data.usd);
+                            wallet.gbpPrice = etherUnits.toFiat('1', 'ether', data.gbp);
+                            wallet.eurPrice = etherUnits.toFiat('1', 'ether', data.eur);
+                            wallet.btcPrice = etherUnits.toFiat('1', 'ether', data.btc);
+                            wallet.chfPrice = etherUnits.toFiat('1', 'ether', data.chf);
+                            wallet.repPrice = etherUnits.toFiat('1', 'ether', data.rep);
+
+                            wallet.usdBalance = etherUnits.toFiat(wallet.balance, 'ether', data.usd);
+                            wallet.gbpBalance = etherUnits.toFiat(wallet.balance, 'ether', data.gbp);
+                            wallet.eurBalance = etherUnits.toFiat(wallet.balance, 'ether', data.eur);
+                            wallet.btcBalance = etherUnits.toFiat(wallet.balance, 'ether', data.btc);
+                            wallet.chfBalance = etherUnits.toFiat(wallet.balance, 'ether', data.chf);
+                            wallet.repBalance = etherUnits.toFiat(wallet.balance, 'ether', data.rep);
+                        });
                     }
                 });
             }
@@ -154,7 +187,7 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
 
     $scope.goEx = function () {
         if ($scope.selectWallet !== null) {
-            var win = window.open("https://etherscan.io/address/" + $scope.wallets[$scope.selectWallet].address, '_blank');
+            var win = window.open("https://etherscan.io/address/" + $scope.selectedWalletObj.address, '_blank');
             win.focus();
         }
     }
@@ -168,17 +201,12 @@ var viewWalletAironCtrl = function ($rootScope, $scope, GAPIService) {
     }
 
     $scope.copyToClipboard = function () {
-        if ($scope.selectWallet !== null) {
-            var walletHolder = document.getElementById("walletHolder");
-            var byId = walletHolder.children[$scope.selectWallet];
-
-            var copyText = byId.getElementsByClassName('wallet-address');
-
+        if ($scope.selectedWalletObj !== null) {
             var textarea = document.createElement('textarea');
             textarea.id = 'temp_element';
             textarea.style.height = 0;
             document.body.appendChild(textarea);
-            textarea.value = copyText[0].innerText;
+            textarea.value = $scope.selectedWalletObj.address;
             var selector = document.querySelector('#temp_element');
             selector.select();
             document.execCommand('copy');

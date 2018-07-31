@@ -58,64 +58,64 @@
 
         <div class="wallet-table">
             <div class="wallet-table-line">
-                <span>To Address:</span>
-                <span class="push">{{parsedSignedTx.to}}</span>
+                <span class="mono">To Address:</span>
+                <span class="mono push">{{parsedSignedTx.to}}</span>
             </div>
             <div>
-                <small>If sending tokens, this should be the token contract address.</small>
+                <small class="mono">If sending tokens, this should be the token contract address.</small>
             </div>
 
             <div class="wallet-table-line">
-                <span>From Address:</span>
-                <span class="push">{{parsedSignedTx.from}}</span>
+                <span class="mono">From Address:</span>
+                <span class="mono push">{{parsedSignedTx.from}}</span>
             </div>
 
             <div class="wallet-table-line">
-                <span>Amount to Send:</span>
-                <span class="push">{{parsedSignedTx.value}} ETH</span>
+                <span class="mono">Amount to Send:</span>
+                <span class="mono push">{{parsedSignedTx.value}} ETH</span>
             </div>
 
             <div class="wallet-table-line">
-                <span>Account Balance:</span>
-                <span class="push">{{parsedSignedTx.balance}}</span>
+                <span class="mono">Account Balance:</span>
+                <span class="mono push">{{parsedSignedTx.balance}}</span>
             </div>
 
             <div class="wallet-table-line">
-                <span>Coin:</span>
-                <span class="push">{{parsedSignedTx.from}}</span>
+                <span class="mono">Coin:</span>
+                <span class="mono push">{{parsedSignedTx.from}}</span>
             </div>
 
             <div class="wallet-table-line">
-                <span>Network:</span>
-                <span class="push">{{ajaxReq.type}} by {{ajaxReq.service}}</span>
+                <span class="mono">Network:</span>
+                <span class="mono push">{{ajaxReq.type}} by {{ajaxReq.service}}</span>
             </div>
 
             <div class="wallet-table-line">
-                <span>Gas Limit:</span>
-                <span class="push">{{parsedSignedTx.gasLimit}}</span>
+                <span class="mono">Gas Limit:</span>
+                <span class="mono push">{{parsedSignedTx.gasLimit}}</span>
             </div>
 
 
             <div class="wallet-table-line">
-                <span>Gas Price:</span>
-                <span class="push">{{parsedSignedTx.gasPrice.gwei}} GWEI
+                <span class="mono">Gas Price:</span>
+                <span class="mono push">{{parsedSignedTx.gasPrice.gwei}} GWEI
                     <small>({{parsedSignedTx.gasPrice.eth}} ETH)</small>
                 </span>
             </div>
 
             <div class="wallet-table-line">
-                <span>Max TX Fee:</span>
-                <span class="push">{{parsedSignedTx.txFee.eth}}</span>
+                <span class="mono">Max TX Fee:</span>
+                <span class="mono push">{{parsedSignedTx.txFee.eth}}</span>
             </div>
 
             <div class="wallet-table-line">
-                <span>Nonce:</span>
-                <span class="push">{{parsedSignedTx.nonce}}</span>
+                <span class="mono">Nonce:</span>
+                <span class="mono push">{{parsedSignedTx.nonce}}</span>
             </div>
 
             <div class="wallet-table-line">
-                <span>Data:</span>
-                <span class="push hide-tx">{{parsedSignedTx.data}}</span>
+                <span class="mono">Data:</span>
+                <span class="mono push hide-tx">{{parsedSignedTx.data}}</span>
             </div>
 
         </div>

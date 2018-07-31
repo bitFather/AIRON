@@ -91,6 +91,9 @@ var sendTxCtrl = function ($scope, $sce, walletService, $rootScope) {
         if (globalFuncs.urlGet('data') || globalFuncs.urlGet('value') || globalFuncs.urlGet('to') || globalFuncs.urlGet('gaslimit') || globalFuncs.urlGet('sendMode') || globalFuncs.urlGet('gas') || globalFuncs.urlGet('tokensymbol')) $scope.hasQueryString = true // if there is a query string, show an warning at top of page
 
     }
+
+    $scope.balance = 0;
+
     $scope.$watch(() => {
 
         if (walletService.wallet == null) {
@@ -108,6 +111,8 @@ var sendTxCtrl = function ($scope, $sce, walletService, $rootScope) {
 
         if ($scope.$airon.selectedMethod == 'eth') {
             $scope.unitReadable = ajaxReq.type;
+            $scope.tx.sendMode = 'ether';
+            $scope.balance = $scope.selectedWalletObj.balance;
         }
         else {
             $scope.unitReadable = $scope.$airon.selectedTokenObj.symbol;
@@ -123,7 +128,10 @@ var sendTxCtrl = function ($scope, $sce, walletService, $rootScope) {
                 $scope.$airon.selectedTokenObj.type
             );
             $scope.$airon.selectedTokenObj.balance = balance;
+            $scope.balance = balance;
         }
+
+        applyScope();
     });
 
     $scope.$watch('ajaxReq.key', function () {
@@ -220,7 +228,7 @@ var sendTxCtrl = function ($scope, $sce, walletService, $rootScope) {
             $scope.notifier.danger(globalFuncs.errorMsgs[5]);
             return;
         }
-        
+
         var txData = uiFuncs.getTxData($scope);
         txData.gasPrice = $scope.tx.gasPrice ? '0x' + new BigNumber($scope.tx.gasPrice).toString(16) : null;
         txData.nonce = $scope.tx.nonce ? '0x' + new BigNumber($scope.tx.nonce).toString(16) : null;
