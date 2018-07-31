@@ -111,35 +111,34 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
                         parant: wallet
                     }
                 });
+            }
+            else { 
+                wallet.tokenList = [];
+            }
+        });
 
-                wallet.balance = wallet.usdBalance = wallet.eurBalance = wallet.btcBalance = wallet.chfBalance = wallet.repBalance = wallet.gbpBalance = 'loading';
-                ajaxReq.getBalance(wallet.address, data => {
-                    if (data.error) {
-                        wallet.balance = data.msg;
-                    }
-                    else {
-                        wallet.balance = etherUnits.toEther(data.data.balance, 'wei');
-                        ajaxReq.getETHvalue(data => {
-                            wallet.usdPrice = etherUnits.toFiat('1', 'ether', data.usd);
-                            wallet.gbpPrice = etherUnits.toFiat('1', 'ether', data.gbp);
-                            wallet.eurPrice = etherUnits.toFiat('1', 'ether', data.eur);
-                            wallet.btcPrice = etherUnits.toFiat('1', 'ether', data.btc);
-                            wallet.chfPrice = etherUnits.toFiat('1', 'ether', data.chf);
-                            wallet.repPrice = etherUnits.toFiat('1', 'ether', data.rep);
-
-                            wallet.usdBalance = etherUnits.toFiat(wallet.balance, 'ether', data.usd);
-                            wallet.gbpBalance = etherUnits.toFiat(wallet.balance, 'ether', data.gbp);
-                            wallet.eurBalance = etherUnits.toFiat(wallet.balance, 'ether', data.eur);
-                            wallet.btcBalance = etherUnits.toFiat(wallet.balance, 'ether', data.btc);
-                            wallet.chfBalance = etherUnits.toFiat(wallet.balance, 'ether', data.chf);
-                            wallet.repBalance = etherUnits.toFiat(wallet.balance, 'ether', data.rep);
-                        });
-                    }
-                });
+        wallet.balance = wallet.usdBalance = wallet.eurBalance = wallet.btcBalance = wallet.chfBalance = wallet.repBalance = wallet.gbpBalance = 'loading';
+        ajaxReq.getBalance(wallet.address, data => {
+            if (data.error) {
+                wallet.balance = data.msg + ", please wait.";
             }
             else {
-                wallet.balance = data.msg + ", please wait.";
-                wallet.tokenList = [];
+                wallet.balance = etherUnits.toEther(data.data.balance, 'wei');
+                ajaxReq.getETHvalue(data => {
+                    wallet.usdPrice = etherUnits.toFiat('1', 'ether', data.usd);
+                    wallet.gbpPrice = etherUnits.toFiat('1', 'ether', data.gbp);
+                    wallet.eurPrice = etherUnits.toFiat('1', 'ether', data.eur);
+                    wallet.btcPrice = etherUnits.toFiat('1', 'ether', data.btc);
+                    wallet.chfPrice = etherUnits.toFiat('1', 'ether', data.chf);
+                    wallet.repPrice = etherUnits.toFiat('1', 'ether', data.rep);
+
+                    wallet.usdBalance = etherUnits.toFiat(wallet.balance, 'ether', data.usd);
+                    wallet.gbpBalance = etherUnits.toFiat(wallet.balance, 'ether', data.gbp);
+                    wallet.eurBalance = etherUnits.toFiat(wallet.balance, 'ether', data.eur);
+                    wallet.btcBalance = etherUnits.toFiat(wallet.balance, 'ether', data.btc);
+                    wallet.chfBalance = etherUnits.toFiat(wallet.balance, 'ether', data.chf);
+                    wallet.repBalance = etherUnits.toFiat(wallet.balance, 'ether', data.rep);
+                });
             }
         });
 

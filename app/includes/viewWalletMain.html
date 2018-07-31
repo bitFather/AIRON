@@ -35,42 +35,42 @@
 
                     <div id="first__icon"></div>
 
-                    <div class="airon-icon" ng-if="selectWallet !== null" id="paymentBtn">
+                    <div class="airon-icon" id="paymentBtn" ng-if="selectedWalletObj !== null">
                         <div class="btn-floating dis" ng-click="sendTxModalOpen()">
                             <i class="material-icons">payment</i>
                         </div>
                         <span>Payment</span>
                     </div>
 
-                    <div class="airon-icon" ng-if="selectWallet !== null" id="copyBtn">
+                    <div class="airon-icon" id="copyBtn" ng-if="selectedWalletObj !== null">
                         <div class="btn-floating dis" ng-click="copyToClipboard()">
                             <i class="material-icons">filter_none</i>
                         </div>
                         <span>Copy address</span>
                     </div>
 
-                    <div class="airon-icon" ng-if="selectWallet !== null" id="refteshBtn">
+                    <div class="airon-icon" id="refteshBtn">
                         <div class="btn-floating dis" ng-click="refresh()">
                             <i class="material-icons">refresh</i>
                         </div>
                         <span>Refresh</span>
                     </div>
 
-                    <div class="airon-icon" ng-if="selectWallet !== null" id="historyBtn">
+                    <div class="airon-icon" id="historyBtn" ng-if="selectedWalletObj !== null">
                         <div class="btn-floating dis" ng-click="goEx()">
                             <i class="material-icons">view_headline</i>
                         </div>
                         <span>History</span>
                     </div>
 
-                    <div class="airon-icon" ng-if="selectWallet !== null" id="equivalentBtn">
+                    <div class="airon-icon" id="equivalentBtn" ng-if="selectedWalletObj !== null">
                         <div class="btn-floating dis" ng-click="showEquivalent()">
                             <i class="material-icons">attach_money</i>
                         </div>
                         <span>Equivalent</span>
                     </div>
 
-                    <div class="airon-icon" ng-if="selectWallet !== null" id="optionsBtn">
+                    <div class="airon-icon" id="optionsBtn" ng-if="selectedWalletObj !== null">
                         <div class="btn-floating dis" ng-click="showOption()">
                             <i class="material-icons">more_vert</i>
                         </div>
