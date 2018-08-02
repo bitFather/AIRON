@@ -94,9 +94,11 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
         if (!idxFind) {
             let ignore = [
                 'equivalentBox',
+                'optionsBox',
                 'sendTxModal',
                 'paymentBtn',
                 'copyBtn',
+                'renameWallet',
                 'refteshBtn',
                 'historyBtn',
                 'equivalentBtn',
@@ -258,7 +260,7 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
     $scope.loadFromSetting();
 
     $scope.goEx = function () {
-        if ($scope.selectWallet !== null) {
+        if ($scope.selectedWalletObj !== null) {
             var win = window.open("https://etherscan.io/address/" + $scope.selectedWalletObj.address, '_blank');
             win.focus();
         }
@@ -304,7 +306,7 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
     };
 
     $scope.sendTxModalOpen = function () {
-        if ($scope.selectWallet !== null) {
+        if ($scope.selectedWalletObj !== null) {
             $scope.sendTxModal.open();
         }
     }
@@ -362,15 +364,15 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
     }
 
     $scope.renameWallet = function () {
-        if ($scope.selectWallet !== null) {
-            let wallet = $scope.wallets[$scope.selectWallet];
+        if ($scope.selectedWalletObj !== null) {
+            let wallet = $scope.selectedWalletObj;
 
             wallet.name = $scope.rename.newWalletName;
 
             let setting = localStorage.getItem('setting');
             setting = JSON.parse(setting);
 
-            setting[$scope.selectWallet].name = $scope.rename.newWalletName;
+            setting[$scope.selectedWalletId].name = $scope.rename.newWalletName;
             $scope.rename.newWalletName = "";
 
             localStorage.setItem('setting', JSON.stringify(setting));
@@ -409,7 +411,7 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
         }
     }
     $scope.showEquivalent = () => {
-        if ($scope.selectWallet !== null) {
+        if ($scope.selectedWalletObj !== null) {
             $scope.dropdownEquivalentMenu = true;
         }
     }
@@ -425,17 +427,17 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
 
 
     $scope.delWallet = function () {
-        if ($scope.selectWallet !== null) {
-            $scope.wallets.splice($scope.selectWallet, 1);
+        if ($scope.selectedWalletObj !== null) {
+            $scope.wallets.splice($scope.selectedWalletId, 1);
 
             let up = localStorage.getItem('setting');
             up = JSON.parse(up);
-            up.splice($scope.selectWallet, 1);
+            up.splice($scope.selectedWalletId, 1);
             localStorage.setItem('setting', JSON.stringify(up));
 
             GAPIService.save(up);
 
-            $scope.selectWallet = null;
+            $scope.resetSeleced();
 
             $scope.dropdownOptionsMenu = false;
         }
