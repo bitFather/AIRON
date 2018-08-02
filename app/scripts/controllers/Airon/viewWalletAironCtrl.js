@@ -77,22 +77,11 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
     }
 
     document.addEventListener('click', e => {
-        let holder = document.getElementById('walletHolder');
-        if (!holder) {
-            return;
-        }
-
-        let children = holder.children;
         let idxFind = false;
-        for (let x of children) {
-            idxFind = e.path.includes(x);
-            if (idxFind) {
-                break;
-            }
-        }
 
         if (!idxFind) {
             let ignore = [
+                'walletHolder',
                 'equivalentBox',
                 'optionsBox',
                 'sendTxModal',
