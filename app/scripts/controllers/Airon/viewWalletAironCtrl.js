@@ -2,6 +2,34 @@
 var viewWalletAironCtrl = function ($scope, GAPIService) {
     $scope.ajaxReq = ajaxReq;
 
+    $scope.showLoginPage = false;
+    $scope.loading = false;
+
+    $scope.$watch('statusLogin', (newValue, oldValue) => {
+        if (!newValue && oldValue) {
+            // Logout
+            localStorage.removeItem("setting");
+            $scope.wallets.forEach(e => {
+                localStorage.removeItem("ch" + e.address);
+            });
+            $scope.wallets = [];
+
+            if (!$scope.$$phase) $scope.$apply();
+        }
+
+        if (newValue && !oldValue) {
+            // Login
+            $scope.showLoginPage = false;
+            $scope.loading = true;
+            GAPIService.read().then(function (e) {
+                localStorage.setItem("setting", e);
+    
+                $scope.loadFromSetting();
+                $scope.loading = false;
+            });
+        }
+    });
+
     $scope.selectedWalletId = null;
     $scope.selectedTokenId = null;
 
@@ -53,7 +81,7 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
         if (!holder) {
             return;
         }
-        
+
         let children = holder.children;
         let idxFind = false;
         for (let x of children) {
@@ -183,6 +211,8 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
                 $scope.wallets.push(wallet);
             });
         }
+
+        if (!$scope.$$phase) $scope.$apply();
     }
 
     $scope.__rmReq = r => {
@@ -355,7 +385,28 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
         $scope.dropdownOptionsMenu = true;
     }
     $scope.showAddMenu = function () {
-        $scope.dropdownWalletMenu = true;
+        if ($scope.statusLogin) {
+            $scope.dropdownWalletMenu = true;
+        }
+        else {
+            $scope.showLoginPage = true;
+        }
+    }
+    $scope.showAddWalletModal = function () {
+        if ($scope.statusLogin) {
+            $scope.addWalletModal.open()
+        }
+        else {
+            $scope.showLoginPage = true;
+        }
+    }
+    $scope.showCreateWalletUrl = () => {
+        if ($scope.statusLogin) {
+            $scope.go('generate-wallet');
+        }
+        else {
+            $scope.showLoginPage = true;
+        }
     }
     $scope.showEquivalent = () => {
         if ($scope.selectWallet !== null) {

@@ -1,6 +1,6 @@
-<div ng-include=" 'auth-wrapper' " class="auth-wrapper" ng-if="!statusLogin"></div>
+<div ng-include=" 'auth-wrapper' " class="auth-wrapper" ng-if="showLoginPage"></div>
 
-<main ng-if="statusLogin" class="wallet-box">
+<main ng-if="!showLoginPage" class="wallet-box">
     <article class="row">
         <article class="row block">
             <section>
@@ -49,7 +49,7 @@
                         <span>Copy address</span>
                     </div>
 
-                    <div class="airon-icon" id="refteshBtn">
+                    <div class="airon-icon" id="refteshBtn" ng-if="statusLogin">
                         <div class="btn-floating dis" ng-click="refresh()">
                             <i class="material-icons">refresh</i>
                         </div>
@@ -141,10 +141,11 @@
 
                 <div class="wallet-scroll" id="walletHolder">
                     <div ng-if="wallets.length == 0" class="wallet-no">
-                        <p>No wallets.
-                            <a ng-click="addWalletModal.open()">Add wallet</a> now or
-                            <a ui-sref="generate-wallet">Create a New Wallet</a>
+                        <p ng-if="!loading">No wallets.
+                            <a ng-click="showAddWalletModal()">Add wallet</a> now or
+                            <a ng-click="showCreateWalletUrl()">Create a New Wallet</a>
                         </p>
+                        <p ng-if="loading">Loading...</p>
                     </div>
                     <div class="wallet-block" ng-repeat="wallet in wallets" ng-class="{'active': selectedWalletOutside == wallet}" ng-click="selectWallet($index)">
 
