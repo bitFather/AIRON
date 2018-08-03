@@ -2,7 +2,7 @@
 var etherscan = function() {}
 etherscan.SERVERURL = "https://api.etherscan.io/api";
 etherscan.SearchURL = "https://ethplorer.io/service/service.php?search=";
-etherscan.tokenInfoUrl = 'https://api.ethplorer.io/getAddressInfo/[[address]]?apiKey=freekey'
+etherscan.tokenInfoUrl = 'https://api.ethplorer.io/getAddressInfo/[[address]]?apiKey=qritsp8412JVnNB82'
 etherscan.searchResultParser = data => {
     return {result:data.results,total:data.total}
 }

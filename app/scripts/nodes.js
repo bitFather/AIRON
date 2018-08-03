@@ -45,7 +45,7 @@ nodes.nodeList = {
         'service': 'Main Network',
         'lib': new nodes.customNode('https://api.myetherapi.com/eth', 'https://ethplorer.io/service/service.php?search=',data => {
             return {result:data.results,total:data.total}
-        }, 'https://api.ethplorer.io/getAddressInfo/[[address]]?apiKey=freekey', data => {
+        }, 'https://api.ethplorer.io/getAddressInfo/[[address]]?apiKey=qritsp8412JVnNB82', data => {
             return {
                 balance: data.ETH.balance,
                 tokensInfo: data.tokens ? data.tokens.map(x => {
@@ -86,7 +86,7 @@ nodes.nodeList = {
         'service': 'infura.io',
         'lib': new nodes.infuraNode('https://mainnet.infura.io/mew','https://ethplorer.io/service/service.php?search=',data => {
             return {result:data.results,total:data.total}
-        }, 'https://api.ethplorer.io/getAddressInfo/[[address]]?apiKey=freekey', data => {
+        }, 'https://api.ethplorer.io/getAddressInfo/[[address]]?apiKey=qritsp8412JVnNB82', data => {
             return {
                 balance: data.ETH.balance,
                 tokensInfo: data.tokens ? data.tokens.map(x => {
@@ -113,7 +113,7 @@ nodes.nodeList = {
         'service': 'Giveth.io',
         'lib': new nodes.customNode('https://mew.giveth.io','https://ethplorer.io/service/service.php?search=',data => {
             return {result:data.results,total:data.total}
-        }, 'https://api.ethplorer.io/getAddressInfo/[[address]]?apiKey=freekey', data => {
+        }, 'https://api.ethplorer.io/getAddressInfo/[[address]]?apiKey=qritsp8412JVnNB82', data => {
             return {
                 balance: data.ETH.balance,
                 tokensInfo: data.tokens ? data.tokens.map(x => {
