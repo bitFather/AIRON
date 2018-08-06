@@ -4,7 +4,7 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
 
     $scope.showLoginPage = false;
     $scope.loading = false;
-
+    
     $scope.$watch('statusLogin', (newValue, oldValue) => {
         if (!newValue && oldValue) {
             // Logout
@@ -23,7 +23,7 @@ var viewWalletAironCtrl = function ($scope, GAPIService) {
             $scope.loading = true;
             GAPIService.read().then(function (e) {
                 localStorage.setItem("setting", e);
-    
+
                 $scope.loadFromSetting();
                 $scope.loading = false;
             });

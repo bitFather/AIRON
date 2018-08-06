@@ -13,6 +13,10 @@ var sendTxCtrl = function ($scope, $sce, walletService, $rootScope) {
     $scope.gasLimitChanged = false;
     $scope.tx.readOnly = globalFuncs.urlGet('readOnly') == null ? false : true;
     $scope.$airon = $scope.$parent;
+    $scope.x = {};
+    $scope.x.walletType = '';
+
+    
 
     $scope.tokenTx = {
         to: '',
@@ -34,6 +38,26 @@ var sendTxCtrl = function ($scope, $sce, walletService, $rootScope) {
         gasPrice: globalFuncs.urlGet('gasprice') == null ? null : globalFuncs.urlGet('gasprice'),
         donate: false,
         tokensymbol: globalFuncs.urlGet('tokensymbol') == null ? false : globalFuncs.urlGet('tokensymbol'),
+    }
+
+    $scope.resetPay = (e) => {
+        let last = e.path[0];
+        if (last == document.getElementById('sendTxModal')) {
+            $scope.$airon.txState = 0;
+            $scope.x.walletType = '';
+            $scope.tx = {
+                // if there is no gasLimit or gas key in the URI, use the default value. Otherwise use value of gas or gasLimit. gasLimit wins over gas if both present
+                gasLimit: globalFuncs.defaultTxGasLimit,
+                data: "",
+                to: "",
+                unit: "ether",
+                value: "",
+                nonce: null,
+                gasPrice: null,
+                donate: false,
+                tokensymbol: false,
+            }
+        }
     }
 
 

@@ -186,7 +186,7 @@
 </main>
 
 <!-- Modal Tx -->
-<article class="modal fade" id="sendTxModal" tabindex="-1" ng-controller='sendTxCtrl'>
+<article class="modal fade" id="sendTxModal" tabindex="-1" ng-controller='sendTxCtrl' ng-click="resetPay($event)">
     <section ng-include=" 'send-tx-stage_0' " ng-if="txState == 0" ng-controller="decryptWalletAironCtrl" class="modal-dialog"></section>
 
     <section ng-include=" 'send-tx-stage_mnemonicModel' " ng-if="txState == 'mnemonicModel'" ng-controller="decryptWalletAironCtrl"
