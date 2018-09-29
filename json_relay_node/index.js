@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var response = require('./response');
 var wait = require('wait.for');
 var app = express();
-var phishingSites = ["myetherwallet.io", "ether-wall.com"];
+var phishingSites = ["myetherwallet.io", "etherwall.com"];
 Array.prototype.contains = function(str) {
     if(str === undefined) return false;
 	for (var i=0;i<this.length;i++) if (str.indexOf(this[i]) > -1) return true;

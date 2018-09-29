@@ -43,7 +43,7 @@ nodes.nodeList = {
         'tokenList': require('./tokens/ethTokens.json'),
         'abiList': require('./abiDefinitions/ethAbi.json'),
         'service': 'Main Network',
-        'lib': new nodes.customNode('https://api.myetherapi.com/eth', 'https://ethplorer.io/service/service.php?search=',data => {
+        'lib': new nodes.customNode('https://api.myetherwallet.com/eth', 'https://ethplorer.io/service/service.php?search=',data => {
             return {result:data.results,total:data.total}
         }, 'https://api.ethplorer.io/getAddressInfo/[[address]]?apiKey=qritsp8412JVnNB82', data => {
             return {
